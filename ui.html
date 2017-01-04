@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>javascript ui</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <style>
+    #wrap {width: 800px; margin: 50px auto;}
+    #depth1 {width: 100%; text-align: center; background-color: tomato;}
+    #depth1 > li {width: 25%; float: left;}
+    #depth1 > li > a {display: block; padding: 10px 0; border-radius: 25px; border: 5px solid #000;}
+    #depth1:after {content: ''; clear:both; display: block;}
+    .depth2 > li {padding: 10px 0;}
+    .depth2 {display: none;}
+  </style>
+    <script>
+      function listenEvent(eventTarget, eventType, eventHandler) {
+        if (eventTarget.addEventListener) {
+          eventTarget.addEventListener(eventType, eventHandler, false);
+        } else if (eventTarget.attachEvent) {
+          eventType = "on" + eventType;
+          eventTarget.attachEvent(eventType, eventHandler);
+        } else {
+          eventTarget["on" + eventType] = eventHandler;
+        }
+      }
+
+      listenEvent(window, "load", function() {
+        listenEvent(document.getElementById("depth1"),"mouseenter", menuOver);
+        listenEvent(document.getElementById("depth1"),"mouseleave", menuOut);
+        //listenEvent(document.getElement("menu").nextSibling,"mouseenter", clickBox);
+        // listenEvent(document.getElementById("two"),"click", clickBox);
+        // listenEvent(document.getElementById("stop"),"click", stopProp);
+      });
+
+      function menuOver(evt) {
+        for( i = 0; i < b.length; i++ ) {
+          b[i].style.display = "block";
+        }
+      }
+
+      function menuOut(evt) {
+        for( i = 0; i < b.length; i++ ) {
+          b[i].style.display = "none";
+        }
+      }
+
+    </script>
+</head>
+<body>
+  <div id="wrap">
+    <div id="menu">
+      <ul id="depth1">
+        <li><a href="#;">첫번째 메뉴</a>
+          <ul class="depth2">
+            <li>메뉴1</li>
+            <li>메뉴1</li>
+            <li>메뉴1</li>
+            <li>메뉴1</li>
+          </ul>
+        </li>
+        <li><a href="#;">두번째 메뉴</a>
+          <ul class="depth2">
+            <li>메뉴2</li>
+            <li>메뉴2</li>
+            <li>메뉴2</li>
+            <li>메뉴2</li>
+          </ul>
+        </li>
+        <li><a href="#;">세번째 메뉴</a>
+          <ul class="depth2">
+            <li>메뉴3</li>
+            <li>메뉴3</li>
+            <li>메뉴3</li>
+            <li>메뉴3</li>
+          </ul>
+        </li>
+        <li><a href="#;">네번째 메뉴</a>
+          <ul class="depth2">
+            <li>메뉴4</li>
+            <li>메뉴4</li>
+            <li>메뉴4</li>
+            <li>메뉴4</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    var a = document.getElementById("depth1");
+    var b = a.getElementsByTagName("ul");
+    var c = document.getElementsByClassName("depth2");
+    console.log(a);
+    console.log(b);
+    console.log(c);
+  </script>
+</body>
+</html>

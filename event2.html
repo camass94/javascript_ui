@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>이벤트 전파 방지</title>
+  <style>
+    #one {
+      width: 100px; height: 100px; background-color: tomato;
+    }
+    #two {
+      width: 50px; height: 100px; background-color: skyblue;
+    }
+    #stop {
+      display: block;
+    }
+  </style>
+  <script>
+    // 전파 취소 여부를 가리키는 전역 변수
+    var stopPropagation = false;
+
+    function listenEvent(eventTarget, eventType, eventHandler) {
+      if (eventTarget.addEventListener) {
+        eventTarget.addEventListener(eventType, eventHandler, false);
+      } else if (eventTarget.attachEvent) {
+        eventType = "on" + eventType;
+        eventTarget.attachEvent(eventType, eventHandler);
+      } else {
+        eventTarget["on" + eventType] = eventHandler;
+      }
+    }
+
+    // 전파 취소
+    function canclePropagation (event) {
+      if (event.stopPropagation) {
+        event.stopPropagation();
+      } else {
+        event.cancelBubble = true;
+      }
+    }
+
+    listenEvent(window, "load", function() {
+      listenEvent(document.getElementById("one"),"click", clickBox);
+      listenEvent(document.getElementById("two"),"click", clickBox);
+      listenEvent(document.getElementById("stop"),"click", stopProp);
+    });
+
+    function stopProp () {
+      stopPropagation = true;
+    }
+
+    function clickBox(evt) {
+      evt = evt || window.event;
+      alert("Hi from " + this.id);
+      if(stopPropagation) {
+        canclePropagation(evt);
+      }
+    }
+
+    // function clickBoxOne(evt) {
+    //   alert("one 안녕하세요");
+    // }
+    //
+    // function clickBoxTwo(evt) {
+    //   alert("two 안녕하세요.");
+    //   if (stopPropagation) {
+    //     canclePropagation(evt);
+    //   }
+    // }
+  </script>
+</head>
+<body>
+  <div id="one">
+    <div id="two">
+      <p>inner</p>
+    </div>
+  </div>
+  <button id="stop">이벤트 전파 중지</button>
+</body>
+</html>
