@@ -36,14 +36,14 @@
       });
 
       function menuOver(evt) {
-        for( i = 0; i < b.length; i++ ) {
-          b[i].style.display = "block";
+        for( i = 0; i < depth2.length; i++ ) {
+          depth2[i].style.display = "block";
         }
       }
 
       function menuOut(evt) {
-        for( i = 0; i < b.length; i++ ) {
-          b[i].style.display = "none";
+        for( i = 0; i < depth2.length; i++ ) {
+          depth2[i].style.display = "none";
         }
       }
 
@@ -89,11 +89,9 @@
     </div>
   </div>
   <script>
-    var a = document.getElementById("depth1");
-    var b = a.getElementsByTagName("ul");
+    var depth1 = document.getElementById("depth1");
+    var depth2 = depth1.getElementsByTagName("ul");
     var c = document.getElementsByClassName("depth2");
-    console.log(a);
-    console.log(b);
     console.log(c);
   </script>
 </body>
