@@ -1,0 +1,34 @@
+{
+  "name": "icf",
+  "version": "0.2.0",
+  "authors": [
+    "iCrossing <technology@icrossing.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ic": "https://git.icrossing.net/web-development/ic.git",
+    "jquery": "~2.1.0",
+    "jquery-legacy": "jquery#1.10",
+    "requirejs": "~2.1.10",
+    "requirejs-text": "~2.0.12",
+    "swipe": "~2.0.0",
+    "chosen": "~1.1.0",
+    "modernizr": "~2.7.1",
+    "fastclick": "~1.0.0",
+    "jquery.cookie": "~1.4.1",
+    "lodash": "~2.4.1",
+    "almond": "~0.2.9",
+    "bourbon": "~3.2"
+  },
+  "devDependencies": {
+    "gremlins.js": "~0.1.0"
+  }
+}

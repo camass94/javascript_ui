@@ -1,0 +1,255 @@
+npm install -g express express-generator nodemon forever
+
+express --css sass --ejs ./
+
+npm install
+
+app.js 파일 수정 ->
+
+<!-- old -->
+app.use(require('node-sass-middleware')({
+  src: path.join(__dirname, 'public'),
+  dest: path.join(__dirname, 'public'),
+  indentedSyntax: true,
+  sourceMap: true
+}));
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+<!-- new -->
+/* Start */
+var sassMiddleWare = require('node-sass-middleware');
+var connectSSI = require('connect-ssi');
+var fs = require('fs');
+app.use(connectSSI({
+    ext: '.js.inc',
+    baseDir: __dirname + '/ui'
+}));
+app.use(connectSSI({
+    ext: '.inc',
+    baseDir: __dirname + '/ui'
+}));
+app.use(connectSSI({
+    ext: '.incl',
+    baseDir: __dirname + '/ui'
+}));
+app.use(connectSSI({
+    ext: '.html',
+    baseDir: __dirname + '/ui'
+}));
+app.use(sassMiddleWare({
+    src: path.join(__dirname, 'ui/lg4-common-ar/scss'),
+    dest: path.join(__dirname, 'ui/lg4-common-ar/css'),
+    debug: true,
+    indentedSyntax: false,
+    sourceMap: true,
+    prefix: '/lg4-common-ar/css'
+}));
+app.use(sassMiddleWare({
+    src: path.join(__dirname, 'ui/lg4-common-gp/scss'),
+    dest: path.join(__dirname, 'ui/lg4-common-gp/css'),
+    debug: true,
+    indentedSyntax: false,
+    sourceMap: true,
+    prefix: '/lg4-common-gp/css'
+}));
+app.use(sassMiddleWare({
+    src: path.join(__dirname, 'ui/lg4-common-global/scss'),
+    dest: path.join(__dirname, 'ui/lg4-common-global/css'),
+    debug: true,
+    indentedSyntax: false,
+    sourceMap: true,
+    prefix: '/lg4-common-global/css'
+}));
+app.use(function(req, res, next) {
+    if (req.method != 'POST') return next();
+
+    var originalUrl = req.originalUrl,
+        exts        = ['html','json'],
+        ext         = originalUrl.split('.')[originalUrl.split('.').length-1],
+        filePath    = path.join(process.cwd(), 'ui', originalUrl),
+        alertText   = '<script>alert("존재하지 않는 파일입니다.")</script>';
+
+    if (exts.indexOf(ext) < 0) return;
+
+    fs.exists(filePath, function(result) {
+        if (!result) return res.end(alertText);
+        fs.readFile(filePath, 'utf8', function(result, body) {
+            return res.send(body);
+        });
+    });
+});
+app.use(express.static(path.join(__dirname, 'ui')));
+/* End */
+
+
+
+packge.json 파일수정
+
+<!-- 내용전부 -->
+{
+  "name": "exlg",
+  "version": "0.2.1",
+  "description": "A common starting point for iCrossing web projects.",
+  "author": "David",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "private": true,
+  "devDependencies": {
+    "amdclean": "^2.2.3",
+    "async": "^0.9.0",
+    "autoprefixer-core": "^5.2.1",
+    "bower": "~1.2.8",
+    "connect-livereload": "^0.4.0",
+    "connect-ssi": "git://github.com/anguspiv/connect-ssi.git",
+    "grunt": "^0.4.5",
+    "grunt-autoprefixer": "^1.0.0",
+    "grunt-combine-media-queries": "^1.0.19",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-compass": "~0.7.1",
+    "grunt-contrib-connect": "^0.10.1",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-csslint": "~0.2.0",
+    "grunt-contrib-cssmin": "^0.12.3",
+    "grunt-contrib-jshint": "^0.11.1",
+    "grunt-contrib-requirejs": "^0.4.4",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-csscomb": "^3.0.0",
+    "grunt-filerev": "^0.2.1",
+    "grunt-filerev-includes": "^0.0.1",
+    "grunt-gremlins": "0.0.3",
+    "grunt-jquerybuilder": "^0.1.4",
+    "grunt-jsbeautifier": "^0.2.7",
+    "grunt-jsdoc": "~0.5.1",
+    "grunt-lodash": "^0.3.0",
+    "grunt-modernizr": "^0.6.0",
+    "grunt-multi-servers": "0.0.2",
+    "grunt-newer": "~0.6.1",
+    "grunt-pixrem": "^0.1.2",
+    "grunt-postcss": "^0.5.5",
+    "grunt-processhtml": "^0.3.3",
+    "grunt-shell": "^1.1.2",
+    "grunt-ssi": "^0.2.1",
+    "grunt-subgrunt": "^0.4.0",
+    "grunt-usemin": "^3.0.0",
+    "grunt-webfont": "^0.5.2",
+    "install": "^0.1.7",
+    "jquery": "git://github.com/jquery/jquery.git",
+    "load-grunt-config": "~0.7.1"
+  },
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "connect-ssi": "^1.1.0",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "ejs": "~2.3.3",
+    "express": "~4.13.1",
+    "express-compile-sass": "^3.0.4",
+    "grunt-sass": "^1.1.0",
+    "morgan": "~1.6.1",
+    "node-sass": "^3.4.2",
+    "node-sass-middleware": "0.8.0",
+    "serve-favicon": "~2.3.0"
+  }
+}
+
+
+
+bin\www 수정
+
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var app = require('../app');
+var debug = require('debug')('LG4-GP:server');
+var http = require('http');
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+var port = normalizePort(process.env.PORT || '80');
+app.set('port', port);
+
+/**
+ * Create HTTP server.
+ */
+
+var server = http.createServer(app);
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+server.listen(port, function() {
+  console.log('server is running at port no ', port);
+});
+server.on('error', onError);
+server.on('listening', onListening);
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  var bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('Listening on ' + bind);
+}
+
+
+nodemon

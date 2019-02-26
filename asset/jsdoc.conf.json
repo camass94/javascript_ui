@@ -1,0 +1,28 @@
+{
+    "tags": {
+        "allowUnknownTags": true
+    },
+    "source": {
+        "includePattern": ".+\\.js(doc)?$"
+    },
+    "plugins": ["plugins/markdown"],
+    "markdown": {
+        "parser": "gfm",
+        "hardwrap": true
+    },
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false,
+        "default": {
+            "outputSourceFiles": true
+        },
+        "systemName": "Project Name",
+        "footer": "footer text from jsdoc.conf.json",
+        "copyright" : "[Company Name] Copyright © 2015",
+        "navType" : "vertical",
+        "theme" : "spacelab",
+        "linenums" : true,
+        "collapseSymbols": false,
+        "inverseNav": true
+    }
+}
