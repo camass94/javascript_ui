@@ -1,0 +1,51 @@
+[기본 설치 목록]
+1. node
+2. ruby
+3. git
+4. python
+5. fontForge
+Grunt Webfont Path 설정 (시스템속성/환경변수) 
+=> C:\Program Files (x86)\FontForgeBuilds\bin
+6. npm 설치 패키지
+bower - [https://github.com/bower/bower]
+Grunt CLI - [https://github.com/gruntjs/grunt-cli]
+Sass - [http://sass-lang.com/install]
+Compass - [http://compass-style.org/install/]
+n(optional) - [https://github.com/visionmedia/n]
+
+--------------------------------------------------------------
+
+[npm 전역 설치]
+1. Grunt Client : npm install -g grunt-cli
+2. Bower : npm install -g bower
+3. npm install -g grunt-webfont
+
+[npm 프로젝트별 설치]
+1. npm install (package.json) 
+2. bower install (bower.json) 
+3. gem install compass (Compass Package 설치)
+4. grunt 확인
+
+--------------------------------------------------------------
+
+[path 변경]
+C:\LGCOM4\workspace\LG4_UI_GP\grunt\path.js
+git update-index --skip-worktree C:\LGCOM4\workspace\LG4_UI_GP\grunt\path.js
+--------------------------------------------------------------
+
+npm install -g grunt-cli
+npm install -g grunt-webfont
+npm install -g bower
+npm install
+bower install
+gem install compass
+grunt build
+
+
+
+
+
+
+
+
+
