@@ -1,0 +1,1 @@
+require(['mkt/pdp-tabs','mkt/product-pdp-improv', 'mkt/product-pdp-mobile']);

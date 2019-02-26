@@ -1,0 +1,1 @@
+require(['support/_etc']);

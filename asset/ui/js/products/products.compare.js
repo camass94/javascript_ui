@@ -1,0 +1,1 @@
+require(['mkt/product-compare']);
