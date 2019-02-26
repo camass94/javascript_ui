@@ -1,0 +1,1014 @@
+.myprofile-area {
+    .required-fields {
+        @include device-property(font-size, 18px, 14px);
+        @if $is-mobile == 1 {
+            padding:0 20px;
+        }
+        color:$red-lg;
+        text-align:right;
+        font-style:italic;
+        @include device-property(margin, 40px 0 10px, 30px 0 10px);
+    }
+
+    .email-account {
+        border:1px solid $grey-silver;
+        background:#e9ecf0;
+
+        @if $is-mobile == 1 {
+            background:#e9ecf0;
+            border-width:1px 0 1px;
+            padding:20px;
+        } @else {
+            background:#e9ecf0;
+            border-width:1px 0 1px;
+            padding:30px 40px;
+            @include clearfix;
+        }
+        @include device-property(margin-bottom, 0, 20px);
+        // @include device-property(padding, 10px 40px, 20px);
+
+        dl {
+            position:relative;
+            vertical-align: top;
+            padding-right: 10px;
+            line-height:1.2;
+            @include device-property(display,table-row,block);
+            @include device-property(width, 50%, 100%);
+            @include device-property(margin, 10px -5px 10px 0, 0);
+            &:after {
+                content:"";
+                display:block;
+                clear:both
+            }
+            & + dl {
+                dt {
+                    @include device-property('padding-top',22px,0);
+                    &:after {
+                        @include device-property('padding-top',22px,0);
+                    }
+                }
+                dd {
+                    @include device-property('padding-top',22px,0);
+                }
+            }
+        }
+
+        dt {
+            @include device-property(font-size, 20px, 18px);
+            @include device-property(font-family, $font-family-semibold, $font-family-regular);
+
+            position:relative;
+
+            @if $is-mobile == 0 {
+                width:15%;
+                display:table-cell;
+                padding-right:20px;
+                white-space:nowrap;
+            }@else {
+                width:100%;
+                display:block;
+                padding-right:5px;
+            }
+
+            &:after {
+                position:absolute;
+                content:":";
+                @include device-property(right,10px,auto);
+                @include device-property(padding-left,0,20px);
+                top: 0;
+            }
+        }
+
+        dd {
+            position:relative;
+            @include device-property(width, 35%, 100%);
+            @include device-property(font-size, 20px, 18px);
+            @include device-property(display,table-cell,block);
+            @include device-property(padding-left,8px,0);
+            font-family:$font-family-regular;
+            margin:0;
+            //word-break: break-word;
+            @if $is-mobile == 1 {
+                margin:10px 0 15px;
+            }
+            > img.facebook-icon, img.runrunwang-icon {
+                padding:0 10px 0 5px;
+            }
+            .disconnect-facebook {
+                @if $is-mobile == 0 {
+                    position:absolute;
+                    display:block;
+                } @else {
+                    display:inline-block;
+                }
+                text-decoration:underline;
+                font-size:20px;
+                color:$red-lg;
+                .icon {
+                    margin-left:5px;
+                    font-size:18px;
+                    text-decoration:none;
+                }
+            }
+
+            > strong {
+                color:$red-lg;
+                font-weight:normal;
+                @include device-property(font-size,22px,20px);
+            }
+
+            > span {
+                @include device-property(font-size, 20px, 16px);
+                font-family:$font-family-regular;
+                color:$grey-mine-shaft;
+                @if $is-mobile == 1 {
+                    display:inline-block;
+                }
+            }
+
+            &+dt { padding-left:1em; }
+        }
+        &.facebook-only {
+            dl {
+                width:100%;
+                dd {
+                    .disconnect-facebook {
+                        position:relative;
+                        display:inline-block;
+                        margin-left:10px;
+                    }
+
+                }
+            }
+        }
+        .check {
+            @include device-property(font-size, 20px, 16px);
+            @if $is-mobile == 1 {
+                margin-top:20px
+            }
+
+            > button {
+                background:$red-lg;
+                padding:5px 12px;
+                @include device-property(font-size, 20px, 18px);
+                @include device-property(margin, 0 0 0 5px, 20px 0 0 0);
+                @include device-property(width, auto, 100%);
+                &:hover {
+                    background:$red-btn-over;
+                }
+            }
+        }
+
+        .edit-text {
+            font-family:$font-family-regular;
+            color:$red-lg;
+            @include device-property(font-size, 20px, 16px);
+            @if $is-mobile == 1 {
+                margin:10px 0;
+            }
+
+            .icon {
+                position:relative;
+                top:-3px;
+                margin-right:10px;
+            }
+
+            button {
+                @if $is-mobile == 0 {
+                    height:30px;
+                    padding:0;
+                    margin-left:15px;
+                    font-size:20px;
+                    line-height:30px;
+                } @else {
+                    width:100%;
+                    margin:25px 0 10px;
+                }
+            }
+        }
+
+        .not-registered-text {
+            margin-top:10px;
+            color:$grey-mine-shaft;
+            font-family:$font-family-regular;
+            @include device-property(font-size, 20px, 18px);
+            @include device-property(line-height, 26px, 24px);
+
+            button {
+                @if $is-mobile == 0 {
+                    position:relative;
+                    top:-14px;
+                    left:20px;
+                    height:30px;
+                    padding:0;
+                    margin-left:15px;
+                    font-size:20px;
+                    line-height:30px;
+                } @else {
+                    width:100%;
+                    margin:25px 0 10px;
+                }
+            }
+        }
+    }
+    .table-style-row {
+        &.my-profile {
+            margin-bottom:0;
+            @include device-property(margin-top,30px,20px);
+        }
+
+    }
+
+    .button-right {
+        text-align:right;
+        font-family:$font-family-regular;
+        @include device-property(margin, 30px 0 0, 20px 20px 0);
+        @include dmv(margin-bottom, 0, 30px);
+        padding-top:30px;
+
+        > a {
+            @include device-property(width, auto, 100%);
+        }
+
+        @if $is-mobile == 1 {
+            &:after {
+                content:"";
+                display:block;
+                clear:both;
+            }
+        }
+
+        > p {
+            margin:0 0 20px 0;
+            @include device-property(font-size, 20px, 16px);
+            text-align:left;
+
+            a {
+                @include device-property(width, auto, 100%);
+                display:inline-block;
+                text-decoration:underline;
+            }
+        }
+
+        .btn-grey {
+            background:$grey-dove;
+            &:hover {
+                background: darken($grey-dove, 5);
+            }
+        }
+
+        button {
+            @if $is-mobile == 1 {
+                float:left;
+                width:48%;
+                &:last-child {
+                    float:right;
+                }
+            } @else {
+                margin-left:6px;
+            }
+        }
+
+        a {
+            @if $is-mobile == 0 {
+                margin-left:6px;
+            }
+        }
+    }
+
+    .change-password {
+        padding-top:30px;
+        @include device-property(padding-top,0,30px);
+        border-top:1px solid $grey;
+        @include device-property(margin-bottom, 15px, 20px);
+
+        > p {
+            @include device-property(margin, 30px 2.5% 20px, 0 20px 15px);
+            @include device-property(font-size, 20px, 18px);
+        }
+    }
+
+    .info {
+        @extend %list-inline;
+        border-bottom:1px solid $grey-silver;
+        margin-bottom:30px;
+        padding:0 0 35px;
+
+        &:after {
+            content:"";
+            display:block;
+            clear:both
+        }
+
+        > li {
+            position:relative;
+            @include device-property(float, left, none);
+            @include device-property(width, 50%, 100%);
+            @include device-property(font-size, 20px, 18px);
+            @include device-property(padding, 13px 2.5%, 7px 20px);
+            font-family:$font-family-regular;
+
+            label, .sns-title {
+                display:block;
+                margin-bottom:5px;
+                font-family:$font-family-regular;
+                @if $is-mobile == 0 {
+                    @include rem-multi (font-size,20px, 20px, 24px);
+                }
+
+            }
+
+            input {
+                width:100%;
+                color:$grey-dove;
+            }
+
+            p {
+                color:$grey-dove;
+                @include device-property(margin, 11px 0, 8px 0 10px);
+                @include device-property(font-size, 20px, 16px);
+                @include device-property(line-height, 22px, 20px);
+            }
+
+            .required {
+                color:$red-lg;
+            }
+        }
+
+        > li.col-span {
+            display:block;
+            float:none;
+            clear:both;
+
+            &:after {
+                content:"";
+                display:block;
+                clear:both;
+            }
+        }
+
+        > li.full-col {
+            display:block;
+            float:none;
+            clear:both;
+            width:100%;
+            dt {
+                margin-bottom:5px;
+                @include dmv(font-size,24px,18px);
+            }
+            dd {
+                margin-left:0;
+            }
+        }
+
+        > li:first-child {
+            @include device-property(padding-left, 2.5%, 20px);
+        }
+    }
+    .sns_box {
+        @include device-property(display,inline-block,block);
+        & + .sns_box {
+            @include device-property(margin,0 0 0 55px,15px 0 0 0);
+        }
+        .icon-link {
+            display:inline;
+            margin:0 0 0 10px;
+
+            position:relative;
+            margin-bottom:0;
+            background:none;
+            overflow:auto;
+            width:auto;
+            height:auto;
+
+            .sns-connect-dis { display:none; }
+            &.connected {
+                .sns-connect-con { display:none; }
+                .sns-connect-dis { display:inline; }
+            }
+        }
+
+    }
+    .edit-profile > form{
+        @extend .signup-registraion;
+        @if $is-mobile == 1 {
+            margin:0;
+        }
+        .fieldbox {
+            @include dmv(padding,0,20px);
+            @include dmv(margin-left,-2.5%,0);
+            @include dmv(margin-top,30px,0);
+        }
+        .email-account {
+            dl {
+                float:none;
+                width:100%;
+                margin-top:0;
+            }
+            dd {
+                width:100%;
+                .desc {
+                    @include device-property(font-size,22px,16px);
+                    display:inline-block;
+                    color:$grey-dove;
+                    font-family:$font-family-light;
+                }
+                i.icon {
+                    vertical-align: text-bottom;
+                    margin-right:.5em;
+                }
+                strong {
+                    @include device-property(margin-right,1em,0);
+                }
+            }
+            .email-field {
+                display:none;
+            }
+		}
+
+        .secondary-email {
+            margin:20px 0 0;
+            > span.styled-checkbox {
+                &.checked ~ .email-field {
+                    display:block;
+                }
+            }
+            .use-check {
+                @include device-property(font-size,20px,16px);
+                display:inline;
+            }
+            .email-field {
+                label {
+                    display:block;
+                    margin:20px 0 10px;
+                    @include device-property(font-size, 20px, 18px);
+                    @include device-property(font-family, $font-family-semibold, $font-family-regular);
+                    white-space:nowrap;
+                    .required {
+                        color:$red-lg;
+                    }
+                }
+                .email-field-input {
+                    position: relative;
+                    @include device-property(width,47.5%,100%);
+                }
+                .guide-text{
+                    display:inline-block;
+                    padding-top:7px;
+                    color:$grey-dove;
+                    line-height:1.375;
+                    font-family:$font-family-regular;
+                    @include device-property(font-size, 20px, 16px);
+                    span {
+                        vertical-align: middle;
+                        margin-left:.5em;
+                    }
+                }
+            }
+        }
+        @if $is-mobile == 0 {
+            #editForm {
+                position:relative;
+                .required-fields {
+                    position:absolute;
+                    right:0;
+                    top:-35px;
+                }
+            }
+        }
+
+        hr {
+            @include device-property(margin, 0 2.5%, 0 20px);
+            border-bottom:1px solid $grey;
+        }
+
+        .change-password {
+            .info {
+                padding:0;
+                margin:0;
+                border:none;
+            }
+
+            .button-right {
+                @if $is-mobile == 0 {
+                    padding-right:2.5%;
+                    margin-bottom:35px;
+                } @else {
+                    float:none;
+                    margin-top:15px;
+                    button {
+                        width:100%;
+                    }
+                }
+            }
+        }
+
+        .account-field {
+            padding:20px 0 15px;
+            border-top:1px solid #bbb;
+
+            p {
+                color:$grey-mine-shaft;
+                &.sns-detail {
+
+                    @if $is-mobile == 1 {
+                        margin-top:8px;
+                        > span {
+                            display:block;
+                            font-size:18px;
+                            margin-bottom:10px;
+                        }
+                    } @else {
+                        margin-top:15px;
+                    }
+                }
+
+                label {
+                    display:inline;
+                    @include device-property(font-size, 20px, 16px);
+                }
+
+                > span .icon-facebook-top-layer {
+                    position:relative;
+                    top:-1px;
+                    color:#355999;
+                    font-size:27px;
+                    margin-right:8px;
+                }
+
+                .icon-link {
+                    @if $is-mobile == 0 {
+                        margin-left:8px;
+                    } @else {
+                        font-size:16px;
+                    }
+                }
+            }
+        }
+
+        .detail-field {
+            .info {
+                border-bottom:0;
+                padding:0;
+            }
+        }
+
+        @if $is-mobile == 1 {
+            .button-right {
+                a[rel] {
+                    float:left;
+                    width: 48%;
+                }
+            }
+        }
+
+        [data-role='fb'] {
+            @extend .info
+        }
+
+        .button-right {
+            border-top:1px solid #ccc;
+        }
+
+        /* PJTBTOBCSR-138 */
+        .company-information {
+
+            .is-mobile & {
+                padding: 0 20px;
+                margin-bottom: -20px;
+            }
+
+            .accordion {
+                margin-left: 5%;
+                .contents {
+                    margin: 0 -25px -10px;
+                    .field-text.half-col {
+                        float: left;
+                        width: 50%;
+                        margin-bottom: 25px;
+                        padding-left: 25px;
+                        padding-right: 25px;
+                    }
+                    .field-text.full-col {
+                        float: left;
+                        width: 100%;
+                        margin-bottom: 25px;
+                        padding-left: 25px;
+                        padding-right: 25px;
+                    }
+                }
+
+                .item {
+                    .active {
+                        display: none;
+                        margin: 0;
+                        float: none;
+                        width: auto;
+                    }
+                    .deactive {
+                        display: block;
+                        margin: 0;
+                        float: none;
+                        width: auto;
+                    }
+                    &.active {
+                        .active {display: block;}
+                        .deactive {display: none;}
+                    }
+                }
+
+                .is-mobile & {
+                    margin-left: -2rem;
+                    margin-right: -2rem;
+                    .contents {
+                        margin: 0;
+                        .field-text {
+                            float: none;
+                            width: 100%;
+                            margin-bottom: 0.7rem;
+                            padding-left: 0;
+                            padding-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+        /* //PJTBTOBCSR-138 */
+	}
+
+    .policy-wrapper {
+        @if $is-mobile == 1 {
+            margin-left: 2rem;
+            margin-right: 2rem;
+        }
+    }
+
+    .button-right {
+        text-align:right;
+        font-family:$font-family-regular;
+        @include device-property(margin, 30px 0 0, 20px 20px 0);
+        @include dmv(margin-bottom, 0, 30px);
+        margin-top:30px;
+        padding-top:30px;
+        > a {
+            @include device-property(width, auto, 100%);
+        }
+
+        @if $is-mobile == 1 {
+            &:after {
+                content:"";
+                display:block;
+                clear:both;
+            }
+        }
+
+        > p {
+            margin:0 0 20px 0;
+            @include device-property(font-size, 20px, 16px);
+            text-align:left;
+
+            a {
+                @include device-property(width, auto, 100%);
+                text-decoration:underline;
+            }
+        }
+
+        .btn-grey {
+            background:$grey-dove;
+            &:hover {
+                background: darken($grey-dove, 5);
+            }
+        }
+
+        button {
+            @if $is-mobile == 1 {
+                float:left;
+                width:48%;
+
+                &:last-child {
+                    float:right;
+                }
+            } @else {
+                margin-left:6px;
+            }
+        }
+
+        a {
+            @if $is-mobile == 1 {
+                &:last-child {
+                    margin-top:10px;
+                }
+            } @else {
+                margin-left:6px;
+            }
+        }
+    }
+
+    .agree-box {
+        @if $is-mobile == 0 {
+            margin:30px 2.5% 20px;
+        } @else {
+            padding:7px 20px;
+        }
+
+        span label {
+            @include device-property(font-size, 20px, 17px);
+        }
+    }
+
+    /* PJTBTOBCSR-138 */
+    [role="accordion"] {
+        .item {
+            border: 1px solid #bbb;
+            border-radius: 3px;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+
+            .is-mobile & {
+                border: none;
+                border-top: 1px solid #bbb;
+                border-radius: 0;
+                -moz-border-radius: 0;
+                -webkit-border-radius: 0;
+            }
+        }
+        .anchor {
+            position: relative;
+            padding: 15px 25px;
+            background: #e9ecf1;
+            .is-mobile & {
+                background: #e5e5e5;
+            }
+            h5 {
+                font-family: "LG Smart SemiBold", Tahoma, Arial, sans-serif;
+                font-size: 26px;
+                .is-mobile & {
+                    font-size: 18px;
+                }
+            }
+            button {
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 0 20px;
+                font-size: 18px;
+                line-height: 61px;
+                color: #666;
+                background: transparent;
+                border: none;
+                i {
+                    margin-left: 5px;
+                    font-size: 14px;
+                }
+
+                .is-mobile & {
+                    line-height: 51px;
+                    i {
+                        font-size: 28px;
+                    }
+                }
+            }
+        }
+        .description {
+            padding: 25px;
+            font-size: 24px;
+            .is-mobile & {
+                padding: 15px 20px;
+                font-size: 18px;
+            }
+        }
+        .contents {
+            padding: 15px 25px;
+            .is-mobile & {
+                padding: 15px 20px;
+            }
+        }
+    }
+    /* //PJTBTOBCSR-138 */
+    
+    /* PJTEUGDPR-1 20180122 add */
+	.gdrp-form {
+	    border: 1px solid #bbb;
+	    background: #e9ecf0;
+	    border-width: 1px 0;
+	    padding: 30px 40px;
+	    margin: 20px 0 0;
+	    @if $is-mobile == 1 {
+	    	padding: 20px;
+	    }
+		
+		.gdrp {
+			margin: 0;
+			padding: 0;
+			
+			li {
+				padding-bottom: 8px;
+				list-style: none;
+				@if $is-mobile == 1 {
+					font-size: 1.7rem;
+				} @else {
+					font-size: 2rem;
+				}
+				
+				> span {
+					position: relative;
+					display: inline-block;
+					width: 60px;
+					height: 30px;
+					margin: 0 0 0 10px;
+					vertical-align: middle;
+					
+					&.focus {
+						outline: 1px dotted #111;
+					}
+					
+					input {
+						position: absolute;
+						left: 0;
+						top: 0;
+						display: inline-block;
+						width: 60px;
+						height: 30px;
+						opacity: 0.0000000000003;
+						z-index: 1;
+						cursor: pointer;
+						
+						+ .off {
+							display: inline-block;
+							position: absolute;
+							left: 0;
+							top: 0;
+							width: 60px;
+							height: 30px;
+							text-indent: -20000px;
+							background: url(/lg4-common-gp/img/common/icon_set_off.png) no-repeat 0 0;
+						}
+						
+						&:checked + .off {
+							display: none;
+						}
+						
+						+ .off + .on {
+							display: none;
+						}
+						
+						&:checked + .off + .on {
+							display: inline-block;
+							position: absolute;
+							left: 0;
+							top: 0;
+							width: 60px;
+							height: 30px;
+							text-indent: -20000px;
+							background: url(/lg4-common-gp/img/common/icon_set_on.png) no-repeat 0 0;
+						}
+					}
+				}
+			}
+		}
+		
+		.btn-area {
+			text-align: right;
+			margin: 15px 0 0;
+			
+			.btn.disabled {
+				pointer-events: none;
+				background: #666;
+			}
+		}
+	}
+    /* //PJTEUGDPR-1 20180122 add */
+}
+
+/* modal layer */
+.modal-content {
+    .delete-notice-list {
+        list-style-type:none;
+        margin:0;
+        padding:0;
+        li {
+            margin-top:5px;
+            text-indent:-10px;
+            padding-left:10px;
+            font-family:$font-family-regular;
+            @include device-property(font-size, 20px, 18px);
+            @include device-property(line-height, 30px, 24px);
+            color:$grey-mine-shaft;
+            &:first-child {
+                margin-top:0;
+            }
+        }
+    }
+    .pw-input {
+        margin-top:30px;
+        background-color:#e9ecf1;
+        padding:40px;
+        @include device-property(padding, 40px, 20px 15px);
+        label {
+            display:block;
+            @include device-property(font-family,$font-family-regular,$font-family-semibold);
+            @include device-property(font-size, 24px, 18px);
+            color:$grey-mine-shaft;
+        }
+        input {
+            margin-top:13px;
+            display:block;
+            border-radius:5px;
+            width:100%;
+            height:40px;
+            line-height:40px;
+            padding:0 10px;
+            border:1px solid #a6b0ba;
+            font-size:24px;
+        }
+        & > span {
+            @include device-property(display, block, inline);
+        }
+    }
+    /* modal popup */
+    .disconnect-facebook {
+        text-align:center;
+        font-size:24px;
+        line-height:30px;
+        font-family:$font-family-regular;
+        color:$grey-mine-shaft;
+        margin:10px 0 0 0;
+    }
+}
+
+/* LGECS-670 20161011 add */
+.wrapper.change-password form.change-password {border: none;}
+.wrapper.change-password form.change-password div.change-password {border: none;}
+.wrapper.change-password .change-password > p.required-fields {margin: 0 2.5% 0 0; font-size: 15px;}
+.wrapper.change-password .password-details { padding: 5px 15px; }
+.wrapper.change-password .password-details .check { padding-bottom: 60px; }
+.wrapper.change-password .password-details .check .download-reference { float: right; }
+.wrapper.change-password .password-details .check .download-reference a:before { top: 2px; }
+.wrapper.change-password .password-details .check .software-reference { display: none; clear: both; padding: 10px 30px; margin-top: 20px; background: #ededed; }
+.wrapper.change-password .password-details .check .software-reference ul { list-style-type: none; padding: 0; }
+.wrapper.change-password .password-details .check .software-reference ul .icon { font-size: 0.8em; margin: 0 5px 2px 0;}
+.wrapper.change-password .password-details p { float: none !important; width: 100% !important; }
+.wrapper.change-password .dim {top: 0px;right: 0px;bottom: 0px;left: 0px;width: 100%;height: 100%;position: fixed;z-index: 300;background: rgb(0, 0, 0);opacity: 0.75;}
+.wrapper.change-password .dim + .modal-content {position: fixed; width: 540px; z-index: 300; background: #fff; text-align: center; border-radius: 5px;}
+.wrapper.change-password .useful-link {margin-top: 0;}
+.is-mobile .wrapper.change-password .dim + .modal-content {width: 90%;}
+.is-mobile .wrapper.change-password .tip.success-hide {padding-bottom: 0;}
+.is-mobile .myprofile-area .button-right > a.profile-password {margin-top: 10px;}
+
+#signupForm .password-details { padding: 5px 15px; }
+#signupForm .password-details .check { padding-bottom: 60px; }
+#signupForm .password-details .check .download-reference { float: right; }
+#signupForm .password-details .check .download-reference a:before { top: 2px; }
+#signupForm .password-details .check .software-reference { display: none; clear: both; padding: 10px 30px; margin-top: 20px; background: #ededed; }
+#signupForm .password-details .check .software-reference ul { list-style-type: none; padding: 0; }
+#signupForm .password-details .check .software-reference ul .icon { font-size: 0.8em; margin: 0 5px 2px 0;}
+#signupForm .password-details p { float: none !important; width: 100% !important; }
+
+.support-content.reminder .tip p { text-align: center; padding-top: 40px; }
+.support-content.reminder .change-reminder { text-align: center; }
+.support-content.reminder .change-reminder a { margin: 40px 10px 0; }
+.is-mobile .support-content.reminder .change-reminder .button-center { padding-bottom: 30px; }
+/* //LGECS-670 20161011 add */
+
+// @import "./component/form-builder";
+
+/*LGECS-1278 20180713 add */
+.signin-area {
+	#forgotForm {
+		.input.input-find-pw {
+			padding-right: 0;
+			> span:first-child {
+			    display: block;
+				@if $is-mobile == 1 {
+					padding-right: 78px;
+				} @else {
+					padding-right: 109px;
+				}
+			}
+			.captcha {
+				padding-top: 20px;
+				.prompt {
+					label {
+						color: #333 !important;
+					}
+				}
+				.captcha-inner {
+					padding-left: 0; background: #fff; padding: 10px 20px; border-radius: 5px; border: 1px solid #aaa;
+					.LBD_CaptchaDiv {
+						margin: 0 auto !important; position: relative;
+						.LBD_CaptchaIconsDiv {
+							width: 24px !important; left: auto; right: 0;
+						}
+					}
+					.validationDiv {
+						padding: 15px 0 0;
+						.msg-error {
+							bottom: 108px !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/*//LGECS-1278 20180713 add */

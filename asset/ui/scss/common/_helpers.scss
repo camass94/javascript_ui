@@ -1,0 +1,55 @@
+//.hide-mobile,
+.hide-lt-medium {
+    @include mobile-lt-medium {
+        display: none !important;
+    }
+}
+
+// .hide-desktop {
+//     @include desktop-only {
+//         display: none !important;
+//     }
+// }
+
+//.hide-desktop,
+.hide-gt-medium {
+    @include screen(gt-medium) {
+        display: none !important;
+    }
+}
+
+
+.red {
+    color: $red-lg;
+}
+
+// gradients
+
+.gradient-white-to-grey-light {
+    @include linear-gradient($white, $grey-light);
+}
+
+.gradient-grey-alabaster-to-grey-light {
+    @include linear-gradient($grey-alabaster, $grey-light);
+}
+
+.gradient-grey-athens-to-grey-light {
+    @include linear-gradient($grey-athens, $grey-light);
+}
+
+.gradient-top-grey-light-to-white {
+    @include linear-gradient(to bottom, $grey-light 0%, $white 100px, $fallback: $white);
+}
+
+.gradient-bottom{
+	@include background-image(linear-gradient($white, #d4d4d4));
+	background-size: 100% 340px;
+	background-repeat:no-repeat;
+	background-position:bottom;
+}
+.gradient-top{
+	@include background-image(linear-gradient(#d4d4d4,$white));
+	background-size: 100% 100px;
+	background-repeat:no-repeat;
+	background-position:top;
+}

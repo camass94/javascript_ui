@@ -1,0 +1,115 @@
+// Custom Mixins not included in ic
+
+@mixin device-property($property, $desktop-value, $mobile-value){
+    @if($is-mobile==1) {
+        #{$property}:$mobile-value;
+    }@else{
+        #{$property}:$desktop-value;
+    }
+}
+@mixin dmv($prop,$desktop-value, $mobile-value){
+    @if($is-mobile==1) {
+        @include rem($prop, $mobile-value);
+    }@else{
+    	@include rem($prop, $desktop-value);
+    }
+}
+@mixin mobile-only {
+    @if ($is-mobile == 1) {
+        @content;
+    }
+}
+
+@mixin desktop-only {
+    @if ($is-mobile == 0) {
+        @content;
+    }
+}
+
+@mixin mobile-gt-micro {
+    @include mobile-only {
+        @include screen(gt-micro) {
+            @content;
+        }
+    }
+}
+
+@mixin mobile-micro {
+    @include mobile-gt-micro {
+        @content;
+    }
+}
+
+@mixin mobile-gt-mini {
+    @include mobile-only {
+        @include screen(gt-mini) {
+            @content;
+        }
+    }
+}
+
+@mixin mobile-mini {
+    @include mobile-gt-mini {
+        @content;
+    }
+}
+
+@mixin mobile-lt-mini {
+    @include mobile-only {
+        @include screen(lt-mini) {
+            @content;
+        }
+    }
+}
+
+@mixin mobile-gt-small {
+    @include mobile-only {
+        @include screen(gt-small) {
+            @content;
+        }
+    }
+}
+
+@mixin mobile-small {
+    @include mobile-gt-small {
+        @content;
+    }
+}
+
+@mixin mobile-lt-small {
+    @include mobile-only {
+        @include screen(lt-small) {
+            @content;
+        }
+    }
+}
+
+@mixin mobile-lt-medium {
+    @include mobile-only {
+        @include screen(lt-medium) {
+            @content;
+        }
+    }
+}
+@mixin mobile-lt-medium-large {
+    @include mobile-only {
+        @include screen(lt-medium-large) {
+            @content;
+        }
+    }
+}
+
+@mixin tablet-only {
+    @if $is-mobile == 0 {
+        @include screen(lt-large) {
+            @content;
+        }
+    }
+}
+@mixin desktop-min {
+    @if ($is-mobile == 0) {
+        @include screen(large) {
+            @content;
+        }
+    }
+}

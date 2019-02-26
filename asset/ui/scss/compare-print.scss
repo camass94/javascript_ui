@@ -1,0 +1,123 @@
+/* Reset */
+body, h1, h2, h3, h4, h5, h6, div, p, blockquote, pre, address, ul, ol, li, dl, dt, dd, table, caption, th, td, form, fieldset, legend, hr {margin:0; padding:0;}
+h1, h2, h3, h4, h5, h6 {font-size:100%;}
+ul, ol {list-style:none;}
+img, fieldset, abbr, acronym {border:0;}
+input, select, button, textarea {color:#777; font-size:100%; font-size:12px; line-height:1.5; font-family:'Malgun Gothic', dotum, sans-serif;}
+address, caption, cite, code, dfn, em, var {font-style:normal; font-weight:normal;}
+body {color:#333; font-size:12px; line-height:1.5; font-family:'Malgun Gothic', dotum, sans-serif; }
+a {text-decoration:none;}
+a:focus, a:hover, a:active {text-decoration:none;}
+label {cursor:pointer;}
+* {-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+body {padding:89px 0 54px; background:-moz-linear-gradient(top, #ececec, white 45px); background:-webkit-gradient(linear, 0 0, 0 45, from(#ececec), to(#fff)); background-repeat:repeat-x;}
+
+$is-mobile:0 !default;
+$header-height:64px !default;
+
+@import "../bower_components/bourbon/dist/bourbon";
+@import "../bower_components/ic/scss/ic";
+@import "base/base";
+
+.wrapper {padding-top:0;}
+.compare-view-item { overflow: hidden; width: 1200px; margin: 0 auto; padding: 0 !important; } /* LGEPJT-337 : 20171121 modify */
+.compare-view-item .compare-title {margin-bottom:34px; font-size:50px; line-height:60px; font-weight:normal; color:#333;}
+.compare-view-item .compare-view-left {float:left; width:18%; padding-top:13px;}
+.compare-view-item .compare-item {width:924px; margin-left:280px;}
+.compare-view-item .compare-item .item-list {overflow:hidden; margin:0 36px 0 61px;}
+.compare-view-item .compare-item .item-list .item {float:left; width:205px; height:261px; border-left:1px solid #bbb; margin-left:-1px;height:400px;} //LGEGMO-3580 : 20180306 modify
+.compare-view-item .compare-item .item-list .item:first-child {border-left:0;}
+.compare-view-item .compare-item .item-list .item .item-area {width:155px; margin:0 auto;}
+.compare-view-item .compare-item .item-list .item .item-img {overflow:hidden; height:100px; margin-top:29px;}
+.compare-view-item .compare-item .item-list .item .item-img img {width:100%;}
+.compare-view-item .compare-item .item-list .item .item-list-info {margin-top:8px; font-size:13px; line-height:17px; color:#333;}
+.compare-view-item .compare-item .item-list .item .item-details {margin-top:7px;}
+.compare-view-item .compare-item .item-list .item .ratings {width:91px; height:16px; margin-bottom:5px; background:url(/lg4-common-gp/img/mysearch/bg_ratings.png) no-repeat 0 0; text-align:left;}
+.compare-view-item .compare-item .item-list .item .ratings span {display:inline-block; height:16px; background:url(/lg4-common-gp/img/mysearch/bg_ratings.png) no-repeat 0 -16px; font-size:14px; line-height:16px; color:#a50034; text-indent:100px;}
+.compare-view-item .compare-item .item-list .item .item-buy-btn {display:inline-block; width:130px; padding:1px 0 2px; border-radius:6px; -webkit-border-radius:6px; background:#a50034; font-size:18px; color:#fff; text-align:center;}
+.compare-view-item .compare-item .item-list .item .item-price strong {display:block; font-size:24px; font-weight:normal; color:#333;}
+.compare-view-item .compare-item .item-list .item .item-price strong em {font-size:14px; line-height:30px; vertical-align:top;}
+.compare-view-item .compare-item .item-list .item .item-price span {display:block; margin-top:-7px; font-size:14px; line-height:18px; color:#333;}
+.compare-item-info {overflow:hidden; width:1200px; margin:0 auto 50px; padding-bottom:0; text-align:left; line-height:23px;}
+.compare-item-info i {line-height:23px;}
+.compare-item-info .info-summary { display: none; background: #f4f5f7; } /* LGEPJT-337 : 20171121 modify */
+.compare-item-info .summary-title {padding:7px 0 8px 20px; border-top:1px solid #bbb; font-size:26px; line-height:40px; color:#333;}
+.compare-item-info .info-list {overflow:hidden;}
+.compare-item-info .info-list .info-title {float:left; width:280px; border-bottom:1px solid #bbb;}
+.compare-item-info .info-list .info-title li {padding:7px 0 8px 20px; border-top:1px solid #bbb; font-size:14px; line-height:40px; color:#333;}
+.compare-item-info .info-list .info-title li input.chk {vertical-align:middle;}
+.compare-item-info .info-list .info-cont {width:920px; margin-left:280px; padding:0 40px 0 59px; border-bottom:1px solid #bbb; background:url(/lg4-common-gp/img/mysearch/bg_compare_info.png) repeat 0 0;}
+.compare-item-info .info-list .info-view {overflow:hidden; width:100%;}
+.compare-item-info .info-list .info-cont-view {overflow:hidden;}
+.compare-item-info .info-list .info-cont-list { float: left; width: 267px !important; border-left: 1px solid #bbb; } /* LGEPJT-337 : 20171121 modify */
+/*.compare-item-info .info-list .info-cont-list:first-child {width:200px; border-left:0;} LGEPJT-337 : 20171121 remove */
+.compare-item-info .info-list .info-cont-list li {padding:7px 0 8px 20px; border-top:1px solid #bbb; font-size:14px; line-height:40px; color:#333;}
+.compare-item-info .compare-sub-title {padding:8px 20px 8px !important; font-size:26px; line-height:39px; color:#333;}
+.compare-item-info .info-list-title { padding: 7px 0 8px 20px; border-top: 1px solid #bbb; font-weight: bold; } /* LGEPJT-337 : 20171121 modify */
+.compare-item-info .info-list-title a {display:block; padding-left:28px; font-size:14px; line-height:40px; color:#a50034;}
+.compare-item-info .info-technical {margin-top:-1px;}
+.compare-item-info .info-technical .info-list .info-title li {padding-left:72px;}
+.compare-view-item .compare-item .item-list .item .item-details .no-rating {display:block; font-size:14px; color:#a50034; text-decoration:underline;}
+
+.rating .points_wrap i:before, .product-area .rating .points_wrap i:before {line-height:25px;}
+.rating, .product-area .rating {margin:2rem 0; color:#a50034;}
+.rating .points_wrap, .product-area .rating .points_wrap {display:inline-block; position:relative; z-index:-1;}
+.rating .points_wrap .review_bg, .product-area .rating .points_wrap .review_bg {position:relative; top:-4px; max-height:30px; line-height:23px;}
+.rating .points_wrap .review_point, .product-area .rating .points_wrap .review_point {overflow:hidden; position:absolute; top:0; left:0; width:100%; min-height:25px;}
+.rating .points_wrap i, .product-area .rating .points_wrap i {font-size:140px; line-height:25px; color:#333;}
+.rating .points_wrap .review_point i.points, .product-area .rating .points_wrap .review_point i.points {color:#a50034;}
+.compare-view-item .compare-item .item-list .item .rating .points_wrap i {font-size:93px;}
+.compare-view-item .compare-item .item-list .item .rating {margin:0 0 2px;}
+.compare-view-item .compare-item .item-list .item .rating span {color:#a50034;}
+.compare-view-item .compare-item .item-list .item .rating .points_wrap {vertical-align:top;}
+.compare-view-item .compare-item .item-list .item .rating .points_wrap i {font-size:93px;}
+.compare-view-item .compare-item .item-list .item .item-price {margin-top:-6px;}
+.compare-view-item .compare-item .item-list .item .item-details .no-rating {margin-bottom:6px;}
+.compare-item-info .info-list .info-cont-list li i.icon-check {font-size:21px; color:#a50034;}
+.compare-item-info .info-list .info-title li {overflow:hidden; height:auto; line-height:22px;}
+.compare-item-info .info-list .info-cont-list li {overflow:hidden; height:auto; line-height:22px;}
+.compare-item-info .info-list-title .view-title i, 
+.compare-item-info .info-list-title .hidden-title i {margin-right:4px; font-size:21px; text-decoration:none;}
+.compare-item-info .info-list-title {color:#a50034;}
+.compare-item-info .info-view li { background-image: none !important; } /* LGEPJT-337 : 20171121 add */
+
+body { padding: 0 0 54px;}
+.compare-print { width:1200px;}
+.compare-print .compare-view-item { width:1200px;}
+.compare-print .compare-view-item .compare-item { width:924px;}
+.compare-print .compare-item-info, .compare-view-item,
+.compare-print .compare-item-info { width:1200px;}
+.compare-print .compare-view-item .compare-item,
+.compare-print .compare-item-info .info-list .info-cont { width:924px;}
+.compare-print .compare-item-info .info-list .info-cont { padding:0 40px 0 60px; background:none !important; } /* LGEPJT-337 : 20171121 modify */
+.compare-print .compare-item-info .info-list .info-title { width:340px;}
+.compare-print .compare-item-info .info-technical .info-list .info-title {background:#fff;}
+.compare-print .compare-item-info .info-list .info-cont-list li { padding:11px 20px 0 27px; overflow:hidden; word-break:break-all; }
+.compare-print .compare-item-info .info-list .info-cont-list:first-child { border-left: 0 !important; } /* LGEPJT-337 : 20171121 add */
+.compare-print .compare-item-info .info-list .info-title li { padding:11px 0 0 20px;}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.compare-view-item .compare-item .item-list .item .item-img { height:155px;} /* LGEPJT-337 : 20171121 modify */
+.compare-print { width:1167px; margin:0 auto;}
+.compare-print .compare-item-info, .compare-view-item, .compare-print .compare-item-info { width:1167px;}
+.compare-view-item .compare-item .item-list .item { height:auto;}
+.compare-print .compare-item-info, .compare-view-item, .compare-print .compare-item-info { width:1167px;}
+
+.compare.compare-print {width:1000px;}
+.compare-print .compare-item-info, .compare-view-item, .compare-print .compare-item-info { width:1000px;}
+.compare-print .compare-view-item {width:1000px;}
+.compare-print .compare-view-item .compare-item, .compare-print .compare-item-info .info-list .info-cont {margin-left:200px;width:800px;padding:0;}
+.compare-view-item .compare-item .item-list {margin:0;}
+.compare-view-item .compare-item .item-list .item { width: 267px !important; } /* LGEPJT-337 : 20171121 modify */
+.compare-print .compare-item-info .info-list .info-title {width:200px;}
+
+.info-summary,
+.compare-view-item {page-break-inside: avoid;}
+.info-technical {page-break-inside: avoid;}
+
+.compare.compare-print .compare-view-item {page-break-before: always;}
+.compare.compare-print .compare-view-item:first-child {page-break-before: avoid;}

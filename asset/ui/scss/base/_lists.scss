@@ -1,0 +1,22 @@
+%list-unstyled {
+    list-style: none;
+    padding-left: 0;
+}
+
+%list-inline {
+    @extend %list-unstyled;
+
+    > li {
+        display: inline-block;
+        *display:inline;
+        zoom:1; 
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        a {
+        	display:block;
+        }
+    }
+}

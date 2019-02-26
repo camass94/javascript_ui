@@ -1,0 +1,402 @@
+.no-registered {
+    @include device-property(padding, 30px 30px 45px, 30px 20px);
+    margin-bottom:30px;
+    text-align:center;
+
+    background:#e9ecf0;
+    border:1px solid $grey-silver;
+    border-width:1px 0 1px;
+
+    strong {
+        @if $is-mobile == 1 {
+            font-size:18px;
+            line-height:18px;
+            font-family:$font-family-regular;
+        } @else {
+            font-size:26px;
+            font-family:$font-family-light;
+        }
+        font-weight:$font-weight-base;
+    }
+
+
+    p {
+        @if $is-mobile == 1 {
+            margin:20px 0 24px;
+            font-size:18px;
+        } @else {
+            margin:10px 0 35px;
+            font-size:20px;
+        }
+        span {color:$red;text-decoration:underline;}
+    }
+
+    .btn-register {
+        position:relative;
+        @include device-property(font-size, 20px, 18px);
+        font-family:$font-family-regular;
+
+        &:before {
+            @extend %icon;
+            @extend .icon-circle-two-bg;
+
+            margin:0 auto 10px;
+            font-size:65px;
+            color:$red-lg;
+        }
+
+        .icon {
+            position:absolute;
+            top:-11px;
+            left:0;
+            width:65px;
+            font-size:40px;
+            color:$white;
+            text-align:center;
+        }
+
+        &:hover, &:focus, &:active {
+            text-decoration:none;
+            &:before {
+                color: darken($red-lg, 5);
+            }
+        }
+
+        span {
+            display:block
+        }
+    }
+    &.bottom-no{
+        margin-bottom:0;
+    }
+
+    & +.button-right {
+        @if $is-mobile == 1 {
+            padding:0 20px 40px;
+            a {
+                width:100%;
+            }
+        }
+    }
+}
+
+.my-product-list {
+    @if $is-mobile == 1 {
+        margin-bottom:40px;
+    }
+    .registerd-item {
+        margin:0;
+        font-family:$font-family-regular;
+        color:$grey-mine-shaft;
+        @include device-property(font-size,24px,18px);
+        @if $is-mobile == 1 {
+            padding:0 20px 15px 20px;
+        }
+        em {
+            font-style:normal;
+            color:$red-lg;
+            padding-right:5px;
+        }
+    }
+    .table-style-row {
+        @include device-property(margin,20px 0 0 0,0);
+        @if $is-mobile == 1 {
+            & + .table-style-row {
+                border-top:0;
+            }
+        }
+        .thumbnail {
+            padding:0;
+            border-width:0 1px 1px 0;
+            span {
+                display:block;
+                margin:0 auto;
+
+                /* PJTBTOBCSR-138 */
+                text-align: center;
+                /* //PJTBTOBCSR-138 */
+
+                @include device-property(width,170px,200px);
+            }
+        }
+    }
+}
+.my-product-detail {
+    border-top:1px solid #bbbbbb;
+    .detail-inner {
+        @include device-property(padding,35px 0,30px 20px);
+        border-bottom:1px solid #bbbbbb;
+        @include clearfix;
+        .thumb {
+            @include device-property(float,left,none);
+            @include device-property(margin,30px 65px 0 10px,0 auto 30px);
+            width:200px;
+            height:200px;
+            img {
+                width:100%;
+            }
+            .icon-link {
+                display: block;
+                text-align:center;
+                strong {
+                    font-size:26px;
+                }
+                .icon-new-window-2 {
+                    height:30px;
+                    font-size:22px;
+                }
+            }
+        }
+        .content {
+            @include device-property(margin,0 0 0 275px,0 auto);
+            @if $is-mobile == 0 {
+                border-left:1px solid #bbb;
+            }
+            .product-breadcrumbs {
+                @include device-property (margin-top,0,10px);
+                span {
+                    display:inline-block;
+                    font-family:$font-family-regular;
+                    font-size:18px;
+                    line-height:30px;
+                    color:$grey-mine-shaft;
+                    &:before {
+                        display:inline-block;
+                        font-family:$font-family-regular;
+                        font-size:18px;
+                        line-height:30px;
+                        content:'>';
+                        padding:0 2px;
+                        color:$grey-mine-shaft;
+                    }
+                    &:first-child {
+                        &:before {
+                            display:none;
+                        }
+                    }
+                }
+            }
+            .model-number {
+                strong {
+                    font-weight:normal;
+                    font-family:$font-family-regular;
+                    @include device-property (font-size,26px,22px);
+                    @include device-property (line-height,30px,28px);
+                }
+            }
+            .model-detail {
+                @include device-property (margin-top,15px,0);
+                ul {
+                    list-style-type:none;
+                    padding:0;
+                    margin:0;
+                    li {
+                        display:table-row;
+                        // @include device-property (min-width,385px,auto);
+                        @include device-property (margin,0 -5px 0 0,0);
+                        @include device-property (padding,0 10px 0 0,0);
+                        vertical-align:top;
+                        strong {
+                            display:table-cell;
+                            @if $is-mobile == 1 {
+                                width: 45%;
+                            }
+                            font-weight:normal;
+                            font-family:$font-family-semibold;
+                            @include device-property (font-size,20px,18px);
+                            @include device-property (line-height,36px,30px);
+                            @include device-property (min-width,270px,140px);
+                            color:$grey-mine-shaft;
+                            white-space: nowrap;
+                        }
+                        span {
+                            position:relative;
+                            display:table-cell;
+                            @if $is-mobile == 1 {
+                                width: 55%;
+                            }
+                            font-family:$font-family-regular;
+                            @include device-property (font-size,20px,18px);
+                            @include device-property (line-height,36px,30px);
+                            color:$grey-mine-shaft;
+                            word-break:break-word;
+                            padding-left:20px;
+                            &:after {
+                                display:block;
+                                content:':';
+                                position:absolute;
+                                left:10px;
+                                top:0;
+                                font-family:$font-family-regular;
+                                @include device-property (font-size,20px,18px);
+                                @include device-property (line-height,36px,30px);
+                                color:$grey-mine-shaft;
+                            }
+                        }
+                    }
+                }
+            }
+            .btn-additional {
+               @include device-property(padding,20px 0 30px, 28px 0 20px);
+                .icon-link {
+                    strong {
+                        font-size:20px;
+                        @if $is-mobile == 1 {
+                            font-family:$font-family-regular;
+                        }
+                    }
+                    i {
+                        font-size:16px;
+                    }
+                }
+                & > a {
+                    margin-right:15px;
+                    @include device-property(display,inline-block,block);
+                    & + a {
+                        @if $is-mobile == 1 {
+                            margin-top:15px;
+                        }
+                    }
+                }
+            }
+            .content-inner {
+                padding-left:50px;
+                .product-breadcrumbs {
+                    margin-bottom:13px;
+                }
+            }
+        }
+        .btn-area {
+            .btn-function {
+                @include device-property(margin,30px 0 0, 20px 0 0);
+                text-align:right;
+                @if $is-mobile == 1 {
+                    @include clearfix;
+                }
+                a,button {
+                    @if $is-mobile == 1 {
+                        float:right;
+                        width:48%;
+                        &:first-child {
+                            float:left;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .additional-inner {
+        @include device-property(padding,30px 0 40px,30px 20px);
+        border-bottom:1px solid #bbbbbb;
+        .tit {
+            font-family:$font-family-semibold;
+            line-height:36px;
+            @include device-property (font-size,24px,20px);
+            @include device-property (line-height,36px,30px);
+            color:$grey-mine-shaft;
+            margin-top:30px;
+            &:first-child {
+                margin-top:0;
+            }
+
+        }
+        .sub-tit {
+            font-family:$font-family-semibold;
+            @include device-property (font-size,20px,18px);
+            @include device-property (line-height,30px,24px);
+            color:$grey-mine-shaft;
+        }
+        .information-list {
+            list-style-type:none;
+            margin:0;
+            padding:0;
+            li {
+                font-family:$font-family-regular;
+                @include device-property (font-size,20px,18px);
+                @include device-property (line-height,30px,24px);
+                color:$grey-mine-shaft;
+            }
+        }
+        .additional-list {
+            list-style-type:none;
+            margin:0;
+            padding:0;
+            @include clearfix;
+            li {
+                @if $is-mobile == 0 {
+                    display:inline-block;
+                    margin-right:30px;
+                }
+                @else {
+                    display:block;
+                    position:relative;
+                    padding-left:16px;
+                    &:before {
+                        position:absolute;
+                        top:50%;
+                        left:0;
+                        margin-top:-2px;
+                        width:5px;
+                        height:5px;
+                        background:url($path-img + "support/blt-addtional-list-red.png") no-repeat;
+                        content:'';
+                    }
+                }
+                a,em {
+                    font-family:$font-family-regular;
+                    @include device-property (font-size,20px,18px);
+                    @include device-property (line-height,36px,30px);
+                    @include device-property (text-decoration,underline,none);
+                    color:$red-lg;
+                }
+                .icon-new-window-2 {
+                    font-size:15px;
+                }
+            }
+            li + li + li + li {
+                min-width:133px;
+            }
+        }
+        &:after {
+            display:block; clear:both; content:'';
+        }
+        & > div {
+            float:left;
+            width:50%;
+            .tit {
+                margin-bottom:16px;
+            }
+        }
+        .inner-warranty {
+            .information-list {
+                @if $is-mobile == 0 {
+                    padding-right:40px;
+                    border-right:1px solid #bbb;
+                    min-height:80px;
+                }
+            }
+        }
+        .inner-product-support {
+            @if $is-mobile == 0 {
+                padding-left:40px;
+            }
+        }
+    }
+    .btn-right {
+        @if $is-mobile == 1 {
+            margin-bottom:30px !important;
+        }
+    }
+}
+
+/* modal popup */
+.modal-content {
+    .delete-my-products {
+        text-align:center;
+        @include device-property(font-size, 20px, 18px);
+        @include device-property(line-height, 30px, 24px);
+        font-family:$font-family-regular;
+        color:$grey-mine-shaft;
+        margin:10px 0 0 0;
+    }
+}

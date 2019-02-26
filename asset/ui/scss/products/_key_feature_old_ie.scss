@@ -1,0 +1,70 @@
+
+html.lt-ie9 {
+.key-feature {
+		h4 { 
+			font-size:44px; 
+			margin-bottom:0;
+		}
+		h5 {
+			font-size:20px;
+		}
+		ul.features {
+			
+			li {
+				font-size:24px;
+				line-height:25px;
+				
+				margin-right:10px; 
+				
+			}
+			&:after {
+				clear:both;
+				content:"";
+				display:block;
+			}
+		}
+
+		.sizes {
+			margin-top:25px;
+			h5 {line-height:20px; }
+			ul {
+				li { line-height:20px; 
+					a { text-decoration:underline; color:#a50034; font-size:20px;  }
+					&.active  {
+						a {
+							color:#333; text-decoration:none; font-family:$font-family-semibold;
+						}
+					}
+
+				}
+			}
+		}
+		.colors {
+			margin-top:25px;
+			h5 { margin-bottom:10px;  }
+			ul { 
+				li {
+
+					line-height:28px; 
+					
+					.color_chip { display:inline-block; width:22px; height:22px; margin:0 auto; }
+					.color_chip_cover { width:28px; height:28px; border:2px solid $border-lg !important;}//LGEGMO-3179 modify
+					a { text-decoration:underline; color:#a50034; font-size:16px;display:inline-block;position:relative;
+						> span {
+							display:inline-block;
+						}
+					}
+					&.active {
+						.color_chip_wrap { border:2px solid #000;  }
+						 
+						a {
+							color:$grey-mine-shaft; text-decoration:none; font-family:$font-family-semibold;
+						}
+
+					}
+				}
+				
+			}
+		}
+	}
+}

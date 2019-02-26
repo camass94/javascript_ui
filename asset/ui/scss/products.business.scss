@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+$is-mobile:0 !default;
+$header-height:64px !default;
+
+@import "../bower_components/bourbon/dist/bourbon";
+@import "../bower_components/ic/scss/ic";
+@import "base/base_products";
+@import "common/common";
+
+@mixin transition-duration() {
+	transition-duration: 0.5s; -webkit-transition-duration: 0.5s; -moz-transition-duration: 0.5s;-o-transition-duration: 0.5s;
+}
+
+@import "business/top-title";
+@import "business/style-form";
+@import "business/contact";
+
+@import "business/video";
+@import "business/resources";
+@import "business/text";
+/* LGEPJT-91 */
+@import "business/cl";
+@import "business/year-list";
+/* //LGEPJT-91 */

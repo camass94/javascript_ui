@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+$is-mobile:1 !default;
+$header-height:64px !default;
+$header-padding:54px !default;
+
+@import "../bower_components/bourbon/dist/bourbon";
+@import "../bower_components/ic/scss/ic";
+@import "base/base_products";
+@import "common/common";
+
+@import "products/search-result";
+@import "products/notice-board";
+@import "products/promotion";
+@import "products/recipes";
+@import "products/energy-star";
+@import "products/microsite-m";  // LGEPJT-337 20171121 Add

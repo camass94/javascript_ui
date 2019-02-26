@@ -1,0 +1,167 @@
+@import "isold";
+
+@mixin screen($size, $ie_include:null) {
+    @if $isoldie == 0 {
+        @if $size == "oldie" {
+            /* DO NOTHING */
+        }
+        @else if $size == "modern" {
+            @content;
+        }
+        @else if $size == "gt-micro" or $size == "micro" {
+            /*
+            * min-width: 320px
+            */
+            @media screen and (min-width: 20em) { @content; }
+        }
+        @else if $size == "lt-micro" {
+            /*
+            * max-width: 319px;
+            */
+            @media screen and (max-width:19.9375em) { @content; }
+        }
+        @else if $size == "gt-mini" or $size == "mini" {
+            /*
+            * min-width: 480px
+            */
+            @media screen and (min-width: 30em) { @content; }
+        }
+        @else if $size == "lt-mini" {
+            /*
+            * max-width: 479px;
+            */
+            @media screen and (max-width:29.9375em) { @content; }
+        }
+        @else if $size == "gt-small" or $size == "small" {
+            /*
+            * min-width: 640px
+            */
+            @media screen and (min-width: 40em) { @content; }
+        }
+        @else if $size == "gt-small-portrait" {
+            /*
+            * min-width: 640px; portrait mode
+            */
+            @media screen and (min-width: 40em) and (orientation : portrait) { @content; }
+        }
+        @else if $size == "lt-small"  {
+            /*
+            * max-width: 639px
+            */
+            @media screen and (max-width: 39.9375em) { @content; }
+        }
+        @else if $size == "lt-small-short"  {
+            /*
+            * max-width: 639px
+            * max-height: 480px
+            */
+            @media screen and (max-height: 29.9375em) and (max-width: 40em) { @content; }
+        }
+        @else if $size == "gt-medium" or $size == "medium" {
+            /*
+            * LARGE TABLETS
+            * min-width: 768px
+            */
+            @media screen and (min-width: 48em) { @content; }
+        }
+        @else if $size == "lt-medium"  {
+            /*
+            * MOBILE
+            * max-width: 767px
+            */
+            @media screen and (max-width: 47.9375em) { @content; }
+        }
+        @else if $size == "medium-landscape" {
+            /*
+            * max-height: 800px
+            * landscape only (for small landscape screens)
+            */
+            @media screen and (orientation : landscape) and (max-height: 50em) { @content; }
+        }
+        @else if $size == "gt-medium-large" or $size == "medium-large" {
+            /*
+            * min-width: 880px
+            */
+            @media screen and (min-width: 55em) { @content; }
+        }
+        @else if $size == "lt-medium-large"  {
+            /*
+            * max-width: 879px
+            */
+            @media screen and (max-width: 54.9375em) { @content; }
+        }
+        @else if $size == "gt-large" or $size == "large" {
+            /*
+            * min-width: 1024px
+            */
+            @media screen and (min-width: 64em) { @content; }
+        }
+        @else if $size == "lt-large" {
+            /*
+            * max-width: 1023px
+            */
+            @media screen and (max-width: 63.9375em) { @content; }
+        }
+        @else if $size == "gt-extra-large" or $size == "extra-large" {
+            /*
+            * min-width: 1280px
+            */
+            @media screen and (min-width: 80em) { @content; }
+        }
+        @else if $size == "lt-extra-large" {
+            /*
+            * max-width: 1279px
+            */
+            @media screen and (max-width: 79.93750em) { @content; }
+        }
+        @else if $size == "gt-wide" or $size == "wide" {
+            /*
+            * min-width: 1440px
+            */
+            @media screen and (min-width: 90em) { @content; }
+        }
+        @else if $size == "lt-wide" {
+            /*
+            * max-width: 1439px
+            */
+            @media screen and (max-width: 89.9375em) { @content; }
+        }
+        @else if $size == "gt-full" or $size == "full" {
+            /*
+            * min-width: 1600px
+            */
+            @media screen and (min-width: 100em) { @content; }
+        }
+        @else if $size == "lt-full" {
+            /*
+            * max-width: 1600px
+            */
+            @media screen and (max-width: 100em) { @content; }
+        }
+        @else {
+            /*
+            * CUSTOM
+            * eg: "(min-width: 1824px)"
+            */
+            @media screen and #{$size} { @content; }
+        }
+    }
+    @else {
+        /*
+        * ON OLD IE's Only, show only styles related to full desktop resolution
+        * $ie_include flag can be set to include custom media query styles on a per-case basis
+        */
+        @if $size == "oldie" {
+            @content;
+        }
+        @else if $ie_include == true {
+            @content;
+        }
+        @else if $ie_include == null and $size != "full"  and $size != "fullest" and $size != "medium-wider" and $size != "lt-large" and $size != "lt-medium-wide" and $size != "medium-only" and $size!="small" and $size!="short"{
+            @content;
+        }
+        @else {
+            // Do nothing
+        }
+    }
+}

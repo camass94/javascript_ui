@@ -1,0 +1,402 @@
+/*
+ * 'rem' is a Sass mixin that converts pixel values to rem values for whatever property is passed to it.
+ * It returns two lines of code - one of the regular pixel values (for IE), and another with the
+ * converted rem values (for everyone else). Special thanks to Chris Epstein (http://chriseppstein.github.com)
+ * and Martin Bavio (http://martinbavio.com) for the help and code!
+ *
+ * Sample input:
+ * .element {
+ *   @include rem('padding',10px 0 2px 5px);
+ * }
+ *
+ * Sample output:
+ * .element {
+ *   padding: 10px 0 2px 5px;
+ *   padding: 1rem 0 0.2rem 0.5rem;
+ * }
+ *
+ */
+@function strip-units($number) {
+    @return $number / ($number * 0 + 1);
+}
+
+// Baseline, measured in pixels
+// The value should be the same as the font-size value for the html element
+// If the html element's font-size is set to 62.5% (of the browser's default font-size of 16px),
+// then the variable below would be 10px.
+$baseline_px: 10px;
+$baseline_width: 1280px;
+$max_width_device: large;
+$med_width_device: medium;
+$vw_enabled: true;
+
+@mixin rem($property, $px_values) {
+    // Convert the baseline into rems
+    $baseline_rem: ($baseline_px / 1rem);
+    $baseline_vw: ($baseline_width / 100vw);
+
+    // Print the first line in pixel values
+    #{$property}: $px_values;
+
+    // If there is only one (numeric) value, return the property/value line for it.
+    @if type-of($px_values) == 'number' {
+        // Skip rem calculation if number is 0 or a percentage
+        @if $px_values == 0 {
+            // do nothing
+        }
+        @elseif unit($px_values) == "%" {
+            //do nothing
+        }
+        // convert it from px to rem
+        @else {
+            #{$property}: $px_values / $baseline_rem;
+        }
+    }
+
+    // If there is more than one value, create a list and perform equations on each value
+    @else {
+        // Create an empty list that we can dump values into
+        $rem_values: ();
+
+        @each $value in $px_values {
+            // If the value is zero, return 0
+            @if $value == 0 {
+                $rem_values: append($rem_values, $value);
+            }
+            @elseif type_of($value) == "string" {
+                $rem_values: append($rem_values, $value);
+            }
+            @elseif type_of($value) == "color" {
+                $rem_values: append($rem_values, $value);
+            }
+            @elseif $value == auto {
+                $rem_values: append($rem_values, $value);
+            }
+            @elseif $value == inherit {
+                $rem_values: append($rem_values, $value);
+            }
+            @elseif unit($value) == "%" {
+                $rem_values: append($rem_values, $value);
+            }
+            // If the value is not zero, convert it from px to rem
+            @else {
+                $rem_values: append($rem_values, ($value / $baseline_rem) );
+            }
+        }
+        // Return the property and its list of converted values
+        #{$property}: $rem_values;
+    }
+}
+
+@mixin rem-multi($property, $micro, $small:$micro, $medium:$small, $medium-large:$medium, $large:$medium-large, $extra-large:$large, $wide:$extra-large, $max:$wide){
+    @if $is-mobile == 1 {
+        @include rem($property, $micro);
+
+        @include screen(small) {
+            @include rem($property, $small);
+        }
+    } @else {
+        @include rem($property, $micro);
+
+    }
+
+    @include screen(small) {
+        @include rem($property, $small);
+    }
+    @include screen(medium) {
+        @include rem($property, $medium);
+    }
+    @include screen(medium-large) {
+        @include rem($property, $medium-large);
+    }
+    @include screen(large) {
+        @include rem($property, $large);
+    }
+    @include screen(extra-large) {
+        @include rem($property, $extra-large);
+    }
+    @include screen(wide) {
+        @include rem($property, $wide);
+    }
+    @include screen(full) {
+        @include rem($property, $max);
+    }
+
+    @media \0screen {
+        @include rem($property, $extra-large);
+    }
+
+}
+@mixin rem-multi-full($property, $micro, $small:$micro, $medium:$small, $medium-large:$medium, $large:$medium-large, $extra-large:$large, $wide:$extra-large, $max:$wide){
+
+ @include rem($property, $micro);
+
+    @include screen(small) {
+        @include rem($property, $small);
+    }
+    @include screen(medium) {
+        @include rem($property, $medium);
+    }
+    @include screen(medium-large) {
+        @include rem($property, $medium-large);
+    }
+    @include screen(large) {
+        @include rem($property, $large);
+    }
+    @include screen(extra-large) {
+        @include rem($property, $extra-large);
+    }
+    @include screen(wide) {
+        @include rem($property, $wide);
+    }
+    @include screen(full) {
+        @include rem($property, $max);
+    }
+}
+
+/*
+*  REMVW - rebuild of rem mixin adding device width/height with fallbacks
+*   requires modernizr with cssvwunit class enabled
+*/
+@mixin remvw($property, $px_values, $minw, $maxw) {
+    $baseline_vw: ($maxw / 100vw);
+    $min_px_values: $px_values;
+
+    @if type-of($px_values) == 'number' {
+        @if $px_values == 0 {
+            // do nothing
+        }
+        @elseif unit($px_values) == "%" {
+            // do nothing
+        }
+        @else {
+            $min_px_values: ($px_values / $maxw * $minw);
+        }
+    }
+    @else {
+        // Create an empty list that we can dump values into
+        $min_px_values: ();
+
+        @each $value in $px_values {
+            // If the value is zero, return 0
+            @if $value == 0 {
+                $min_px_values: append($min_px_values, $value);
+            }
+            @elseif type_of($value) == "string" {
+                $min_px_values: append($min_px_values, $value);
+            }
+            @elseif type_of($value) == "color" {
+                $min_px_values: append($min_px_values, $value);
+            }
+            @elseif $value == auto {
+                $min_px_values: append($min_px_values, $value);
+            }
+            @elseif $value == inherit {
+                $min_px_values: append($min_px_values, $value);
+            }
+            @elseif unit($value) == "%" {
+                $min_px_values: append($min_px_values, $value);
+            }
+            // If the value is not zero, convert it from px to rem
+            @else {
+                $min_px_values: append($min_px_values, ($value / $maxw * $minw));
+            }
+        }
+    }
+
+    @include rem($property, $min_px_values);
+
+    @if $vw_enabled {
+        .cssvwunit & {
+
+            // If there is only one (numeric) value, return the property/value line for it.
+            @if type-of($px_values) == 'number' {
+                @if $px_values == 0 {
+                    // do nothing
+                }
+
+                @elseif unit($px_values) == "%" {
+                    //do nothing
+                }
+
+                // convert it from px to rem and vw
+                @else {
+                    @include rem($property,($px_values / $maxw * $minw));
+                    #{$property}: $px_values / $baseline_vw;
+                }
+            }
+
+            // If there is more than one value, create a list and perform equations on each value
+            @else {
+                // Create an empty list that we can dump values into
+                $vw_values: ();
+
+                @each $value in $px_values {
+                    // If the value is zero, return 0
+                    @if $value == 0 {
+                        $vw_values: append($vw_values, $value);
+                    }
+                    @elseif type_of($value) == "string" {
+                        $vw_values: append($vw_values, $value);
+                    }
+                    @elseif type_of($value) == "color" {
+                        $vw_values: append($vw_values, $value);
+                    }
+                    @elseif $value == auto {
+                        $vw_values: append($vw_values, $value);
+                    }
+                    @elseif $value == inherit {
+                        $vw_values: append($vw_values, $value);
+                    }
+                    @elseif unit($value) == "%" {
+                        $vw_values: append($vw_values, $value);
+                    }
+
+                    // If the value is not zero, convert it from px to rem
+                    @else {
+                        $vw_values: append($vw_values, ($value / $baseline_vw) );
+                    }
+                }
+
+                #{$property}: $vw_values;
+            }
+        }
+    }
+}
+
+/**
+ * assigns property values within specified media-query ranges.
+ * @mixin
+ * @param {string} $property: name of css property to assign values to.
+ * @param {string} $micro:          value to assign to property in the range 320px - 650px
+ * @param {string} $medium:         value assigned to property in the range 769px - 1024px. defaults to $micro if not assigned.
+ * @param {string} $large:          value assigned to property in the range 1025px - 1280px. defaults to $medium if not assigned.
+ * @param {string} $max:            value assigned to property in the range 1281px and up. defaults to $large if not assigned.
+ * @param {string} $maxscreen:      optional value to assign largest media-query. defaults to 'full', which is min 1600px
+ */
+@mixin screenvw($property, $micro, $medium:$micro, $large:$medium, $max:$large, $maxscreen:full){
+    @if $is-mobile == 1 {
+        @include rem($property, $micro);
+    // @include screen(small) {
+    //     @include remvw($property, $small, 641px, 1600px);
+    // }
+    } @else {
+        @include rem($property, $micro);
+    }
+    @include screen(medium) {
+        @include remvw($property, $medium, 769px, 1600px);
+    }
+    @include screen(large) {
+        @include remvw($property, $large, 1025px, 1600px);
+    }
+    @include screen(extra-large) {
+        @include remvw($property, $max, 1281px, 1600px);
+    }
+    @include screen($maxscreen) {
+        @include rem($property, $max);
+        .cssvwunit & {
+            @include rem($property, $max);
+        }
+    }
+
+}
+
+/**
+ * Similar to screenvw, but features full range of media queries.
+ * assigns property values within specified media-query ranges.
+ * @mixin
+ * @param {string} $property: name of css property to assign values to.
+ * @param {string} $micro:          value to assign to property in the range 320px - 480px
+ * @param {string} $mini:           value to assign to property in the range 481px - 650px. defaults to $micro if not assigned.
+ * @param {string} $small:          value assigned to property in the range 651px - 780px. defaults to $mini if not assigned.
+ * @param {string} $medium:         value assigned to property in the range 781px - 880px. defaults to $small if not assigned.
+ * @param {string} $medium-large:   value assigned to property in the range 881px - 1024px. defaults to $medium if not assigned.
+ * @param {string} $large:          value assigned to property in the range 1025px - 1280px. defaults to $medium-large if not assigned.
+ * @param {string} $extra-large:    value assigned to property in the range 1281px - 1440px. defaults to $large if not assigned.
+ * @param {string} $wide:           value assigned to property in the range 1441px - 1600px. defaults to $extra-large if not assigned.
+ * @param {string} $max:            value assigned to property in the range 1601px and up. defaults to $wide if not assigned.
+ * @param {string} $maxscreen:      optional value to assign largest media-query. defaults to 'full', which is min 1600px
+ */
+@mixin screenvw-full($property, $micro, $mini:$micro, $small:$mini, $medium:$small, $medium-large:$medium, $large:$medium-large, $extra-large:$large, $wide:$extra-large, $max:$wide, $maxscreen:full){
+    @if $is-mobile == 1 {
+        @include rem($property, $micro);
+        @include screen(mini) {
+            @include remvw($property, $mini, 481px, 1600px);
+        }
+        @include screen(small) {
+            @include remvw($property, $small, 641px, 1600px);
+        }
+    } @else {
+        @include rem($property, $micro);
+    }
+    @include screen(medium) {
+        @include remvw($property, $medium, 769px, 1600px);
+    }
+    @include screen(medium-large) {
+        @include remvw($property, $medium-large, 881px, 1600px);
+    }
+    @include screen(large) {
+        @include remvw($property, $large, 1025px, 1600px);
+    }
+    @include screen(extra-large) {
+        @include remvw($property, $extra-large, 1281px, 1600px);
+    }
+    @include screen(wide) {
+        @include remvw($property, $wide, 1441px, 1600px);
+    }
+    @include screen($maxscreen) {
+        @include rem($property, $max);
+        .cssvwunit & {
+            @include rem($property, $max);
+        }
+    }
+}
+
+// Font size shortcut
+@mixin font-size($num) {
+    @include rem(font-size, $num);
+}
+
+@mixin line-height($val) {
+    @include rem(line-height, $val);
+}
+
+@mixin padding($val) {
+    @include rem(padding, $val);
+}
+
+@mixin padding-left($val) {
+    @include rem(padding-left, $val);
+}
+
+@mixin padding-top($val) {
+    @include rem(padding-top, $val);
+}
+
+@mixin padding-right($val) {
+    @include rem(padding-right, $val);
+}
+
+@mixin padding-bottom($val) {
+    @include rem(padding-bottom, $val);
+}
+
+@mixin margin($val) {
+    @include rem(margin, $val);
+}
+
+@mixin margin-left($val) {
+    @include rem(margin-left, $val);
+}
+
+@mixin margin-top($val) {
+    @include rem(margin-top, $val);
+}
+
+@mixin margin-right($val) {
+    @include rem(margin-right, $val);
+}
+
+@mixin margin-bottom($val) {
+    @include rem(margin-bottom, $val);
+}

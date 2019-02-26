@@ -1,0 +1,898 @@
+.pdp-improve .pdp-tabs {
+    $tabHeight: 39px;
+    $tabBg: #f2f2f2;
+
+    .pdp-improve-tab-wraper {
+        height: $tabHeight;
+        background: $tabBg;
+        min-height: inherit;
+        >.improv-tab-area {
+            position: relative;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding-right: 300px;
+
+            .improv-tabs-nav {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                display: table;
+                table-layout: fixed;
+                >li {
+                    position: relative;
+                    display: table-cell;
+                    vertical-align: middle;
+                    height: $tabHeight;
+                    background: $tabBg;
+                    border-bottom: 2px solid $tabBg;
+                    &.active,
+                    &:hover {
+                        border-bottom-color: #a50034;
+                        text-decoration: none;
+                    }
+                    &:before {
+                        margin: 0;
+                    }
+                    &+li {
+                        &:before {
+                            content: ' ';
+                            position: absolute;
+                            left: 0;
+                            top: 13px;
+                            width: 1px;
+                            height: 13px;
+                            bottom: auto;
+                            margin: 0;
+                            background: #bbb;
+                        }
+                    }
+
+                    a {
+                        width:100%;
+                        display: inline-block;
+                        height: $tabHeight - 2;
+                        font-size: 16px;
+                        padding: 0 10px;
+                        font-family: "LG Smart SemiBold", Tahoma, Arial, sans-serif;
+                        color: #333;
+                        text-decoration: none;
+                        word-wrap: break-word;
+                        word-break: break-word;
+                        vertical-align: middle;
+                        overflow: hidden;
+                        &:before {
+                            width:0;
+                            height:100%;
+                            display: inline-block;
+                            content: "";
+                            vertical-align: middle;
+                        }
+                        >span {
+                            width:99%;
+                            display: inline-block;
+                            line-height: 14px;
+                            vertical-align: middle;
+                     //       vertical-align: middle;
+                        }
+                    }
+                    i {
+                        display: none;
+                    }
+                }
+            }
+        }
+        
+        &.sticky{
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            z-index: 10;
+        }
+
+        &.sticky {
+            position:fixed;
+            top:58px;
+            width:100%;
+            min-width:768px;
+            $tabBg: #fff;
+            background: $tabBg;
+            height: 40px;
+            border-bottom: 1px solid #eaeaea;
+            z-index:999;
+            >.improv-tab-area {
+                padding-right: 0;
+
+                .purchase_options_buttons {
+                    display: none;
+                }
+
+                .improv-tabs-nav {
+                    max-width: 1600px;
+                    >li {
+                        position:relative;
+                        border-bottom: 1px solid #eaeaea;
+                        background: #fff !important;
+                        height: 40px;
+                        &.active,
+                        &:hover, &.on {
+
+                            border-bottom: 1px solid #a50034;
+                            text-decoration: none;
+                            a {
+                                height:39px;
+                            }
+                            &:after {
+                                content: "";
+                                width: 100%;
+                                height:1px;
+                                background: #a50034;
+                                position: absolute;
+                                left: 0;
+                                bottom:0;
+                            }
+                        }
+                        &.active {
+                            &:before {
+                               // display: none;
+                            }
+                        }
+                        a {
+                            font-size: 16px;
+                            height: 39px;
+                          //  line-height: 39px;
+                            background: #fff;
+                            &:hover,
+                            &:active {
+                                background: #fff;
+                            }
+                            &:after {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.pdp-improve .purchase_options_buttons {
+    position: absolute;
+    right: 30px;
+    top: 0;
+    
+    .options {
+        padding: 0;
+        margin: 0;
+        list-style:none;
+        &:after {
+            content:"";
+            display:block;
+            clear:both;
+        }
+        
+        >li {
+            position: relative;
+            display: inline-block;
+            height: 39px;
+            line-height: 39px;
+            font-size: 12px;
+            font-family: "LG Smart", Tahoma, Arial, sans-serif;
+            margin: 0;
+            padding: 0 9px 0 15px;
+            &:first-child {
+                padding-left: 12px;
+                vertical-align:top;
+            }
+            &.last {
+                padding-right: 0;
+            }
+            &+li {
+                &:before {
+                    content: ' ';
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    width: 1px;
+                    height: 13px;
+                    margin-top:-6.5px;
+                    background: #bbb;
+                }
+            }
+
+            label, input[type=checkbox], input[type=radio], label+span {
+                display: inline-block;
+                line-height: 15px;
+                vertical-align: middle;
+            }
+            label {
+                height:39px;
+                line-height: 39px;
+                vertical-align:top;
+            }
+            input[type=checkbox] {
+                margin-right: 7px;
+                vertical-align:middle;
+                line-height:1em;
+                position:relative;
+            }
+            &.compare > label > span {
+                display: inline-block;
+                max-width: 145px;
+                max-height: 35px;
+                line-height: 13px;
+                vertical-align: middle;
+                overflow: hidden;
+                text-align:left;
+            }
+            
+            a {
+                font-family: "LG Smart", Tahoma, Arial, sans-serif;
+                color: #333;
+                font-size: 12px;
+                letter-spacing: -0.5px;                 
+                &:hover i {
+                    text-decoration: none;
+                }
+            }
+            
+            .share_box {
+                &.top {
+                    
+                }
+                i.icon-share {
+                    display: inline-block;
+                    color: #a50034;
+                    padding-left: 5px;
+                    font-size: 16px;
+                    margin:0;
+                    text-decoration: none;
+                }
+                i.icon-triangle-down {
+                    //transform: rotate(0);
+                    //-ms-transform: rotate(0);
+                    color: #ccc;
+                    //bottom: 35px;
+                    right: 17px;
+                }
+                .product_share {
+                    left: auto !important;
+                    //top: 56px !important;
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+
+
+.return-to-compare-button + .product .pdp-improve .pdp-improve-wrap {
+    padding-top: 0
+}
+
+// pdp-new support css
+.pdp-improve .pdp-tabs {
+    .support .container {
+        &:before,
+        .image-section {
+            display: none;
+        }
+        .contents-section {
+            float: none;
+            width: 100%;
+            padding-left: 0;
+            text-align: center;
+            max-width: inherit;
+            .tit {
+                margin-bottom: 45px;
+            }
+            p a {text-decoration:underline;}
+            ul {
+                width:100%;
+                @include display(flex);
+                @include justify-content(flex-start);
+                @include flex-wrap(wrap);
+                text-align: left;
+                &.center-flex {
+                   @include justify-content(center); 
+                   li {
+                        width:33%;
+                   }
+                }
+                li {
+                    display: inline-block;
+                    width:33%;
+                    margin: 0;
+                    text-align: left;
+                    padding: 0 10px 10px 30px;
+                    vertical-align: top;
+                    border-left: 1px solid #bbb;
+                    margin-top:30px;
+                    &:nth-child(3n+1){
+                        border:0
+                    }
+                    .icon-block {
+                        position: relative;
+                        display: table;
+                        table-layout: fixed;
+                        width: 100%;
+                        min-height: 58px;
+                        margin-left: 0;
+                        /* icon */
+                        i.icon {
+                            display: table-cell;
+                            vertical-align: top;
+                            width: 50px;
+                            height: 50px;
+                            &:before {
+                                display: none;
+                            }
+                        }
+                        /* //icon */
+                        &:before {
+                            content: "";
+                            display: table-cell;
+                            width:0;
+                            height:58px;
+                        }
+                    }
+                    .content-title {
+                        display: table-cell;
+                        vertical-align: middle;
+                        font-size: 30px;
+                        color: #333;
+                        font-family: "LG Smart Light",Tahoma,Arial,sans-serif;
+                        padding-left: 10px;
+                        letter-spacing: -.5px;
+                        white-space: normal;
+                        word-wrap: break-word;
+                        word-break: break-word;
+                    }
+                    .content-block {
+                        width: 100%;
+                        margin: 0;
+                        display: inline-block;
+                        padding:0;
+                        word-wrap: break-word;
+                        word-break: break-word;
+                        p {
+                            display: block;
+                            font-size: 18px;
+                            color: #333;
+                            font-family: "LG Smart",Tahoma,Arial,sans-serif;
+                            letter-spacing: -.5px;
+                        }
+                    
+                    }
+                }
+                // end li
+                
+                &.inline-type {
+                    display: inline-block;
+                    >li {
+                        position: relative;
+                        display: inline-block;
+                        width: 25%;
+                        text-align: center;
+                        border: 0;
+                        &+li {
+                            &:before {
+                                content: ' ';
+                                width: 1px;
+                                height: 71px;
+                                background: #bbb;
+                                position: absolute;
+                                left: 0;
+                                top: 45px;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            
+        }
+        // end contents-section
+        
+        .contents-section.first-unit {
+            margin-bottom: 54px;
+            
+            ul {
+                display: block;
+                li {
+                    display: inline-block;
+                    width: 32.2%;
+                    height: auto !important;
+                    vertical-align: top;
+                    padding: 0;
+                    margin-left: .5%;
+                    margin-bottom: 14px;
+                    border: 0 !important;
+                     margin-top:0;
+                    h5 a {
+                    font-size: 21px;
+                        color: #333;
+                        text-decoration: underline;
+                        font-family: "LG Smart",Tahoma,Arial,sans-serif;
+                    }
+                    .content-block {
+                        display: inline-block;
+                        position: relative;
+                        width: 100%;
+                        min-height: 118px;
+                        padding: 26px 0 0 90px;
+                        margin: 0;
+                        border: 1px solid #ececec;
+                        border-radius: 10px;
+                        background: #fafafa;
+                        box-shadow: 3px 2px 5px #eee;
+                        -ms-box-shadow: 3px 2px 5px #eee;
+                        -webkit-box-shadow: 3px 2px 5px #eee;
+                        text-align: left;
+                        h5 {margin:0}
+                        .icon-img {
+                            position: absolute;
+                            width: 50px;
+                            height: 50px;
+                            top: 50%;
+                            margin-top: -25px;
+                            left: 25px;
+                        }
+                        
+                        p {
+                            font-size: 14px;
+                            color: #5d5d5d;
+                            line-height: 1em;
+                            padding-top:2px;
+                            font-family: "LG Smart",Tahoma,Arial,sans-serif;
+                        }
+                    }
+                }
+            }
+        }
+        // end contents-section.first-unit
+        @media screen and (max-width: 950px) {
+            .contents-section {
+                ul {
+                    display: block;
+                    &.center-flex {
+                       li {
+                            width:49%;
+                       }
+                    }
+                    li {
+                        display: inline-block;    
+                        width: 49%;
+                        padding-left: 30px;
+                        padding-right: 10px;
+                        padding-bottom: 20px;
+                        &:nth-child(3n+1) {
+                            border-left: 1px solid #bbb;
+                        }
+                        &:nth-child(odd) {
+                            border-left: 0;
+                        }
+                    }
+                }
+            }
+            .contents-section.first-unit {
+                ul {
+                    li {
+                        width: 48%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//tech-spec css
+.pdp-improve .pdp-tabs {
+    .tech_spec {
+        background: #fff;
+        margin-bottom: 54px;
+    }
+    .tech_spec_wrap{
+        border: 0;
+        
+        &:last-child {
+            padding-bottom:0;
+        }
+        &.center{
+            text-align:center;
+            
+            a{
+                font-size: 18px;
+                text-decoration:none;
+            }
+            i{  
+                //font-size:45px;
+                display:block;
+            }
+            i.icon-tab-plus{
+                &:before {
+                    content: ' ';
+                    display: inline-block;
+                    width: 40px;
+                    height: 40px;
+                    background: url(/lg4-common-gp/img/pdp/bt-specs-all_open.png) 0 0 no-repeat;
+                }
+            }
+            i.icon-tab-minus{
+                &:before {
+                    content: ' ';
+                    display: inline-block;
+                    width: 40px;
+                    height: 40px;
+                    background: url(/lg4-common-gp/img/pdp/bt-specs-all_close.png) 0 0 no-repeat;
+                }
+            }
+        }
+        &.spec_toggle{
+            margin-bottom: 0px;
+            padding-bottom: 0px;
+            display:table;
+            width:100%;
+            &.center{
+                border-bottom: 0;
+            }
+        }
+        a.specToggle{
+            display: block;
+            font-size: 28px;
+            text-align: left;
+            padding: 13px 0 11px;
+            font-weight: normal;
+            color:#333;
+            text-decoration:none;
+            border-bottom: 1px solid #cbcbcb;
+            
+            i{
+                //height: 24px;
+                margin-right:10px;
+                vertical-align:text-bottom;
+                &:before {
+                    content: ' ';
+                    display: inline-block;
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+            i.icon-tab-minus{
+                display:none;
+            }
+            i.icon-tab-plus{
+                display:inline-block;
+                &:before {
+                    background: url(/lg4-common-gp/img/pdp/bt-specs-list_open.png) 0 0 no-repeat;
+                }
+            }
+            &.on{
+                border-bottom: 0;
+                i.icon-tab-minus{
+                    display:inline-block;
+                    &:before {
+                        background: url(/lg4-common-gp/img/pdp/bt-specs-list_close.png) 0 0 no-repeat;
+                    }
+                }
+                i.icon-tab-plus{
+                    display:none;
+                }
+            }
+        }
+        .specItem {
+            display:none;
+            border-bottom:1px solid #cbcbcb;
+            ul{
+                list-style:none;
+                -moz-padding-start: 0px;
+                -webkit-padding-start: 0px;
+                -khtml-padding-start: 0px;
+                -o-padding-start: 0px;
+                padding-start: 0px;
+                padding: 0 40px;
+                margin: 0;
+                text-align:left;
+                li{
+                    padding: 17px 0;
+                    width:50%;
+                    display:inline-block;
+                    vertical-align:top;
+                    border-top:1px solid #cbcbcb;
+                    padding-right: 30px;
+                    box-sizing: border-box;
+                    &:nth-child(even){
+                        margin-left:-1%;
+                    }
+                    &:first-child,&:nth-child(2){
+                        border-top:none;
+                        padding-top: 0;
+                    }
+                    &.full {
+                        width: 100%;
+                    }
+                    .title{
+                        font-size: 20px;
+                        line-height: 20px;
+                        margin:5px 0 10px 0;
+                        font-family: "LG Smart",Tahoma,Arial,sans-serif;
+                        word-wrap: break-word;
+                        word-break: break-word;
+                    }
+                    .value{
+                        font-size: 18px;
+                        line-height: 21px;
+                        margin:0px;
+                        word-wrap: break-word;
+                        word-break: break-word;
+                    }
+                }
+            }
+            
+            &.eco-content {     
+                > ul ul {padding:0}
+                ul {
+                    li {
+                        padding-left:0;
+                        padding-right:0;
+                        width: 100%;
+                        &:first-child,&:nth-child(2){
+                            padding-top: 17px;
+                        }
+                        > .btn-wrap {
+                            margin-top: 0;
+                            padding: 17px 0;
+                        }
+                        a {
+                            &.pdf {
+                                position: relative;
+                                padding-right:33px;
+                                font-size:20px;
+                                line-height:24px;
+                                color:#333;
+                                padding-left:36px;
+                                background-size:19px 24px;
+                                @extend .icon-download;
+                                &:before {
+                                    position:absolute;
+                                    right: 0;
+                                    font-size:19px;
+                                    top:3px;
+                                    color:#999;
+                                    @extend %icon;
+
+                                }
+                            }
+                        }
+                    }
+                }
+                .eco-list:first-child {
+                    ul li:first-child {
+                        padding-top: 0;
+                    }
+                }
+                .eco-list {
+                    margin:0 40px;
+                    border-bottom:1px solid #cbcbcb;
+                    ul {
+                        padding:0
+                    }
+                }
+                > .btn-wrap {
+                    margin-top: 0;
+                    padding: 17px 0;
+                    margin:0 40px;
+                }
+            }
+        }
+    }
+}
+
+//review css
+.pdp-improve .pdp-tabs {
+    .tabs-panel .accordion-content .ratingreview {max-width:inherit;padding:0;}
+    #shoppilot-product-reviews-container {max-width: 1200px;margin: 30px auto 0;}
+    #sp-product-reviews-widget > div.sp-summary + div:not(.sp-reviews) {text-align:center;margin-bottom:20px}
+    #bvReview {max-width: 1200px; margin: 30px auto 0;}
+    .ratingreview .reviewToggle{
+        text-align:center;
+        font-size:45px;
+        text-decoration:none;
+        span{
+            font-size:20px;
+            display:block;
+            margin-top: 5px;
+            font-family: "LG Smart Light",Tahoma,Arial,sans-serif;
+        }
+        i.icon-close{
+            display:none;
+        }
+        i.icon-tab-plus{
+            display:inline-block;
+            &:before {
+                content: ' ';
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                background: url(/lg4-common-gp/img/pdp/bt-specs-all_open.png) 0 0 no-repeat;
+            }
+        }
+        &.on{
+            i.icon-close{
+                display:inline-block;
+                &:before {
+                    content: ' ';
+                    display: inline-block;
+                    width: 40px;
+                    height: 40px;
+                    background: url(/lg4-common-gp/img/pdp/bt-specs-all_close.png) 0 0 no-repeat;
+                }
+            }
+            i.icon-tab-plus{
+                display:none;
+            }
+        }
+    }
+    #BVRRContainer.toggle , #RUBVContainer.toggle{
+        display:none;
+    } 
+}
+
+.pdp-improve .pdp-tabs .tabs-panels.float {padding-top:98px}
+.pdp-improve .pdp-tabs .tabs-panel .accordion-content {position:relative;padding-top:60px;padding-bottom:80px;}
+.pdp-improve .pdp-tabs .tabs-panel#features .accordion-content {padding:0 0 80px}
+.pdp-improve .pdp-tabs .tabs-panel .accordion-content:before {content:"";position:absolute;top:-80px;left:0;width:100%;height:80px;
+    @include background-image(linear-gradient(#fff 55px, #f6f7f9));
+}
+.pdp-improve .pdp-tabs .tabs-panel:first-child .accordion-content {padding-top:60px;}
+.pdp-improve .pdp-tabs .tabs-panel:first-child .accordion-content:before {display:none}
+.pdp-improve .pdp-tabs .tech_spec {margin-bottom:0;padding-top:0}
+.pdp-improve .pdp-tabs .support {margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0}
+.pdp-improve .pdp-tabs #accessories .product-lists {margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0}
+.pdp-improve .tech_spec .tech_spec_wrap {max-width:1200px;margin:0 auto;padding:0}
+.pdp-improve .support .type-text-2column>.first-unit h5 {margin:0}
+
+.pdp-improve .pdp-tabs .support .container .contents-section ul li .icon-block i.icon.icon-chat {background: url(/lg4-common-gp/img/pdp/pdp-icon-chat.png) 0 6px no-repeat;}
+.pdp-improve .pdp-tabs .support .container .contents-section ul li .icon-block i.icon.icon-circle-chat-email {background: url(/lg4-common-gp/img/pdp/pdp-icon-chat-email.png) 0 6px no-repeat;}
+.pdp-improve .pdp-tabs .support .container .contents-section ul li .icon-block i.icon.icon-circle-warranty {background: url(/lg4-common-gp/img/pdp/pdp-icon-warranty.png) 0 6px no-repeat;}
+.pdp-improve .pdp-tabs .support .container .contents-section ul li .icon-block i.icon.icon-circle-find-center {background: url(/lg4-common-gp/img/pdp/pdp-icon-find-center.png) 0 6px no-repeat;}
+.pdp-improve .pdp-tabs .support .container .contents-section ul li .icon-block i.icon.icon-email {background: url(/lg4-common-gp/img/pdp/pdp-icon-email.png) 0 6px no-repeat;}
+.pdp-improve .pdp-tabs .support .container .contents-section ul li .icon-block i.icon.icon-circle-skype {background: url(/lg4-common-gp/img/pdp/pdp-icon-skype.png) 0 6px no-repeat;}
+.pdp-improve .pdp-tabs .support .container .contents-section ul li .icon-block i.icon.icon-circle-how-to-tips {background: url(/lg4-common-gp/img/pdp/pdp-icon-how-to-tips.png) 0 6px no-repeat;}
+.pdp-improve .pdp-tabs .support .container .contents-section ul li .icon-block i.icon.icon-suggest-video {background: url(/lg4-common-gp/img/pdp/pdp-icon-suggest-video.png) 0 6px no-repeat;}
+.pdp-improve .pdp-tabs .support .container .contents-section ul li .icon-block i.icon.icon-circle-manuals {background: url(/lg4-common-gp/img/pdp/pdp-icon-manuals.png) 0 6px no-repeat;}
+.pdp-improve .pdp-tabs .support .container .contents-section ul li .icon-block i.icon.icon-file-download {background: url(/lg4-common-gp/img/pdp/pdp-icon-file-download.png) 0 6px no-repeat;}
+.pdp-improve .pdp-tabs .support .container .contents-section ul li .icon-block i.icon.icon-circle-telephone {background: url(/lg4-common-gp/img/pdp/pdp-icon-telephone.png) 0 6px no-repeat;}
+.pdp-improve .pdp-tabs .support .container .contents-section ul li .icon-block i.icon.icon-pdp-business {background: url(/lg4-common-gp/img/pdp/pdp-icon-business.png) 0 6px no-repeat;}
+.pdp-improve .pdp-tabs .support .container .contents-section ul li .icon-block i.icon.icon-circle-twitter {background: url(/lg4-common-gp/img/pdp/pdp-icon-twitter.png) 0 6px no-repeat;}
+/* LGEAR-1000 add:20180809 */
+.pdp-improve .pdp-tabs .support .container .contents-section ul li .icon-block i.icon.icon-whatsapp {background: url(/lg4-common-gp/img/pdp/pdp-icon-whatsapp.png) 0 6px no-repeat;}
+/* //LGEAR-1000 add:20180809 */
+/* LGERU-3761 add:20181203 */
+.pdp-improve .pdp-tabs .support .container .contents-section ul li .icon-block i.icon.icon-viber {background: url(/lg4-common-gp/img/pdp/pdp-icon-viber.png) no-repeat 0 6px;}
+/* //LGERU-3761 add:20181203 */
+.pdp-improve .improve-info-wrap.sticky .purchase_options_buttons .options>li input[type=checkbox] {top:-1px}
+.pdp-improve .support .contents-section:before {display:none}
+.pdp-improve #ratings-reviews {padding:0}
+
+.pdp-improve .pdp-tabs .tech_spec_wrap + .tech_spec_wrap.spec_toggle.center {margin-top:20px}
+.pdp-improve .pdp-tabs .pdp-improve-tab-wraper>.improv-tab-area.press-tab {padding-right:340px}
+.pdp-improve .pdp-tabs .pdp-improve-tab-wraper.sticky > .improv-tab-area.press-tab {padding-right:0}
+.pdp-improve .press-tab .purchase_options_buttons .options>li.compare>label> span {max-width:86px}
+.pdp-improve .support .support-content p.h3 {margin-top:0}
+
+.pdp-improve .pdp-tabs .pdp-improve-tab-wraper > .improv-tab-area .improv-tabs-nav.column2 > li {width:50%}
+.pdp-improve .pdp-tabs .pdp-improve-tab-wraper > .improv-tab-area .improv-tabs-nav.column3 > li {width:33%}
+.pdp-improve .pdp-tabs .pdp-improve-tab-wraper > .improv-tab-area .improv-tabs-nav.column4 > li {width:25%}
+.pdp-improve .pdp-tabs .pdp-improve-tab-wraper > .improv-tab-area .improv-tabs-nav.column5 > li {width:20%}
+
+.pdp-improve .with-carousel.twin {padding:60px 0 80px}
+.pdp-improve .with-carousel.twin h3 {padding-bottom:3rem}
+.pdp-improve .with-carousel.twin .container .product .slide-inner {display:table;width:100%;table-layout: fixed;}
+.pdp-improve .with-carousel.twin .container .product .slide-inner .img-link {width:33%;float:none;display:table-cell;}
+.pdp-improve .with-carousel.twin .container .product .slide-inner .copy-area {position:relative;padding:2rem 0 0 1.5rem;float:none;display:table-cell;vertical-align:top;word-break:break-all}
+.pdp-improve .with-carousel.twin .container .product .slide-inner .copy-area .cta-button{position:absolute;bottom:2rem;left:1.5rem;width:100%;max-width:226px;}
+.pdp-improve .with-carousel.twin .container .product .slide-inner .copy-area .cta-button a {font-size:16px}
+.pdp-improve .with-carousel.twin .container .product .slide-inner .copy-area .model-name {max-height:62px;height:auto}
+.pdp-improve #resource .resources h3 {padding-top:0}
+.pdp-improve .pdp-tabs .tabs-panels > section {position:relative;padding-top:60px;padding-bottom:80px;}
+html[data-countrycode="ae"] .pdp-improve .press-tab .purchase_options_buttons .options>li.compare>label>span {max-width:81px}
+
+.product .pdp-improve .tabs-panel .support .container .contents-section {display:block}
+.pdp-improve .support .container .contents-section ul::after {content: '';display: block;clear: both;}
+.pdp-improve .support .container .contents-section ul.icon-link li {float: left;width: 50%;margin-top: 0;margin-bottom: 40px;text-align: center;}
+.pdp-improve .support .container .contents-section ul.icon-link li a {color: #333;}
+.pdp-improve .support .container .contents-section ul.icon-link li a h5{font-size:30px;margin: 10px 0 0;word-break:break-all}
+.pdp-improve .support .container .contents-section ul.icon-link li a:hover,
+.pdp-improve .support .container .contents-section ul.icon-link li a:focus {text-decoration: none;}
+.pdp-improve .support .container .image-section .table-box{height: auto;}
+
+@media screen and (max-width: 1280px) {
+    .pdp-improve .pdp-tabs .pdp-improve-tab-wraper > .improv-tab-area {padding-right:270px}
+    .pdp-improve .purchase_options_buttons {right:20px}
+    .pdp-improve .ProductHero .pdp-improve-wrap .improve-info-wrap.sticky {
+
+        .sticky_wrap {
+            padding: 0 20px;
+            .improve-info-text {
+                .improve-info-model {
+                    font-size: 20px;
+                }
+                .improve-info-title {
+                    font-size: 20px;
+                }
+            }
+            
+            .improve-info-product {
+                > div {
+                    &.improve-info-options {
+                        .btn, a.btn {
+                            font-size: 13px;
+                        }
+                        .purchase_options_buttons {
+                            .options {
+                                > li {
+                                    font-size: 12px;
+                                    padding: 0 5px 0 10px;
+                                    a {
+                                        font-size:12px;
+                                        vertical-align:middle;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 1024px) {
+    .pdp-improve .pdp-tabs .pdp-improve-tab-wraper > .improv-tab-area {padding-right:250px}
+    .pdp-improve .purchase_options_buttons .options > li.compare > label > span {max-width:110px}
+    .pdp-improve .ProductHero .pdp-improve-wrap .improve-info-wrap.sticky {
+        .sticky_wrap {
+            .improve-info-text {
+                .info-text-top {line-height:1em;padding-top:7px;}
+                .info-text-top .improve-info-model ,.info-text-top .improve-info-title {
+                    display: inline-block;
+                    line-height: 25px;
+                    height: 25px;
+                    margin-top: 0;
+                }
+
+                .info-text-bottom {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 275px;
+                    line-height:1em;
+                    height: auto;
+                    //overflow: hidden;
+                    .review_points, #BVRRSummaryContainer {
+                        position: static;
+                        left: 0;
+                        bottom: 0;
+                        margin: 0;
+                        width: 275px;
+                        >div:first-child,
+                        > a {
+                            margin-top: 0 !important;
+                        }
+                        button {margin:0 !important;padding:0 !important}
+                    }
+                }
+
+                
+            }
+        }
+    }
+    .pdp-improve .ProductHero .pdp-improve-wrap .improve-info-wrap.sticky .sticky_wrap > .improve-info-text .review_points, .pdp-improve .ProductHero .pdp-improve-wrap .improve-info-wrap.sticky .sticky_wrap > .improve-info-text #BVRRSummaryContainer {height:auto}
+    .pdp-improve .pdp-tabs .pdp-improve-tab-wraper>.improv-tab-area.press-tab {padding-right:312px}
+    .pdp-improve .press-tab .purchase_options_buttons {right:10px}
+}

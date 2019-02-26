@@ -1,0 +1,39 @@
+.footer,//LGEGMO-2927 add
+.footer-seo{
+	&.grey-background{
+		background: $grey-light;
+	}
+
+	color:#666;
+	text-align:left;
+
+	hr{
+		margin:26px 0;
+		border-color:#ccc;
+	}
+
+	p, .p, h1{
+		font-size:14px;
+		font-family:$font-family-regular;
+		display:inline;
+		//.lt-ie9 & {font-family:'LG Smart Light';font-style:normal;}
+		line-height:20px;
+		margin:0;
+		a{
+			text-decoration:underline;
+			&:hover {
+				color:#d80546;
+			}
+		}
+	}
+
+	.content-container{
+		@extend %container;
+		padding-top:40px;
+		padding-bottom:40px;
+
+		@include screen(lt-medium) {
+			padding:20px;
+		}
+	}
+}

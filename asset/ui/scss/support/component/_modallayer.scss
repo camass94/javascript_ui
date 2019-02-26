@@ -1,0 +1,167 @@
+.modal-layer {
+	display: none;
+	// @include transition-property(top);
+	// @include transition-duration($rollover-duration);
+	font-family: $font-family-regular;
+	.close-modal {
+		position: absolute;
+        @if $is-mobile == 1 {
+            right:12px;
+            top:7px;
+            font-size:22px;
+        } @else {
+            right:15px;
+            top:15px;
+            font-size:25px;
+        }
+		span {
+			position: absolute;
+			width: 0;
+			height: 0;
+			font-size: 0;
+			overflow: hidden;
+			text-indent: -999em;
+		}
+		&:hover, &:focus, &:active {
+			text-decoration: none;
+		}
+		&:before {
+			color: $grey-dove;
+		}
+	}
+}
+.modal-inner {
+	overflow-x: hidden;
+	width: 95%;
+	background: $white;
+	@include device-property(border-radius, 5px, 0);
+}
+.modal-title {
+	display: block;
+	font-family: $font-family-light;
+	font-weight: $font-weight-base;
+	@include device-property(padding-right, 50px, 30px);
+	@include rem-multi (font-size, 24px, 24px, 34px, 40px);
+	@include rem-multi (line-height, 26px, 26px, 34px, 40px);
+	@include rem-multi (padding-bottom, 15px, 15px, 30px, 35px);
+	@include rem-multi (margin-bottom, 15px, 15px, 30px, 35px);
+	border-bottom: 1px solid $grey-silver;
+	@if $is-mobile == 1 {
+		word-break:break-all;
+	}
+}
+.modal-content {
+	@include rem-multi (padding, 20px, 20px, 30px, 40px);
+	.modal-bottom {
+		text-align: center;
+		@include rem-multi (margin, 20px 0, 30px 0, 30px 0);
+		button {
+			margin-left: 6px;
+			min-width: 95px;
+			&.first-child {
+				margin-left: 0;
+			}
+
+			@if $is-mobile == 1 {
+				font-size:18px;
+			}
+		}
+	}
+	.alert-title-ex {
+		text-align: center;
+		@include rem-multi (font-size, 18px, 20px, 24px);
+	}
+	.btn-two-w50 {
+		overflow: hidden;
+		.btn {
+			width: 49%;
+			float: right;
+			@include rem-multi (font-size, 16px, 16px, 23px);
+			&:first-child {
+				float: left;
+			}
+		}
+	}
+	.bottom-center {
+		padding:30px 0 0;
+	}
+	&.repair-policy{
+		@if $is-mobile == 0 {
+			.modal-title{
+				margin-bottom:25px;
+				padding-bottom:20px;
+				font-size:40px;
+				font-family: $font-family-light;
+			}
+		}
+		.sub-header{
+			font-family: $font-family-semibold;
+			font-size:26px;
+		}
+		.title1{
+			font-size:24px;
+			margin-top:35px;
+		}
+		.title2{
+			font-size:18px;
+			font-family: $font-family-semibold;
+			margin-top:25px;
+		}
+		.sub-text{
+			font-size:20px;
+		}
+		p{
+			font-size:18px;
+			line-height:1.2;
+			margin:15px 0 0;
+		}
+		ul{
+			list-style: none;
+			padding:0;
+			li{
+				list-style: none;
+				font-size:18px;
+				margin:10px 0 0 15px;
+			}
+		}
+	}
+}
+
+.content-view-detail {
+	.modal-title {
+		border-bottom:0;
+		margin-bottom:0;
+	}
+}
+
+.jquery-modal {
+	// @include transition-property(opacity);
+	// @include transition-duration($rollover-duration);
+}
+
+.cs-modal-signin {
+	.modal-title {
+		@if $is-mobile == 0 {
+			font-size:40px;
+			line-height:40px;
+			margin-bottom:30px;
+		}
+
+		border-bottom:0;
+		padding-bottom:0;
+    }
+
+	@if $is-mobile == 0 {
+		.modal-content {
+			padding:30px;
+		}
+	}
+
+	.move-top {
+		display:none;
+	}
+}
+
+.modal-scroll-content {
+	@include device-property(max-height, 700px, 500px);
+}

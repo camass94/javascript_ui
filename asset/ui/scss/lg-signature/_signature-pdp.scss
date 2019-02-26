@@ -1,0 +1,181 @@
+//signature-hero
+.signature-hero.hero{
+  &.product-page{
+   @include rem-multi(margin-bottom, 15px, 15px, 35px, 35px, 35px, 35px, 35px, 35px);
+  }
+  max-width:1600px;
+  margin:0 auto;
+    .slick-slider{
+        max-width:1600px;
+        .slick-next, .slick-prev{
+            top:55%;
+            z-index: 2;
+        }
+        .slick-next {
+            @include rem-multi(right, 15px, 15px, 30px, 30px, 30px, 120px, 200px, 200px);
+        }
+        .slick-prev {
+            @include rem-multi(left, 15px, 15px, 30px, 30px, 30px, 120px, 200px, 200px);
+        }
+    }
+    .slick-dots{
+        position:absolute;
+        padding:5px 0 30px 0;
+    }
+   .top-module-wrap{
+        background: none;
+        position: absolute;
+        top: 0;
+        /*bottom: 0;  LGEGMO-2230 Modify 2016-08-24 */
+        left: 0;
+        right: 0;
+        z-index: 2;
+        .text-block{
+            background:none;
+            color:#fff;
+            @include rem-multi(padding-top, 30px, 30px, 56px, 70px, 70px, 70px, 70px);
+            @include rem-multi(margin-bottom, 10px, 10px, 30px, 30px, 30px, 30px, 30px);
+            .specs{
+                color:#fff;
+            }
+            .tools_wrap{
+                .tools{
+                    li {
+                        vertical-align: middle;
+
+                        &.no-cookies {
+                            position:relative;
+                        }
+                    }
+                    
+                    a{
+                      color:#fff;
+                      /* LGEGMO-2230 Modify Start */
+                        &:hover,
+                        &:focus {
+                            color:#a50034; 
+                        }
+                      /* //LGEGMO-2230 Modify End */
+                    }
+                    .disabled{
+                      color:#333;
+                    }
+                }
+            }
+        }
+    }
+    .bottom-module-wrap{
+        width:100%;       
+        margin-top:38px;
+        .hero-carousel-arrow{
+            .slick-list{
+                background:#000;
+                .visuals{
+                    max-width:1600px;
+                    .hero_video{
+                        width:55%;
+                        padding-top:21%;
+                        div{
+                            padding-top:0;
+                            max-width:none;
+                            iframe{
+                                border:0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .product-hero-layer{
+            min-height: 73.75%;
+            height:73.75%;
+           /*  @include rem-multi(min-height, 74%, 72%, 74%, 72%, 76%, 74%, 75%);
+            @include rem-multi(height, 74%, 72%, 74%, 72%, 76%, 74%, 75%); */
+            bottom:0;
+            @include rem-multi(top, 9%, 9%, 9%, 11%, 11%, 13%, 12%);
+           .product-hero-layer-inner{
+                background:#000;
+                .close{
+                  color:#999999;
+                }
+            }
+        }
+    }
+    .ly-signature-video {
+        
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        z-index:10;
+        background-color:#000;
+
+        &__iframe {
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            border:none;
+        }
+
+        &__close {
+            position:absolute;
+            top:20px;
+            right:20px;
+            z-index:100;
+            font-size:30px;
+        }  
+    }
+}
+.is-mobile{
+    .signature-hero.hero{
+        .bottom-module-wrap{
+            margin-top:0;
+            
+            .hero-carousel-arrow{
+                .slick-list{
+                    .visuals{
+                        max-width:768px;
+                        .hero_video{
+                            position:relative;
+                            max-width:768px;
+                            width:100%;
+                            margin:0 auto;
+                            padding-top:0;
+                            div{
+                               -webkit-transform:translateY(60%);
+                               transform:translateY(60%);
+                                iframe{
+                                    border:0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .text-block{
+            .tools_wrap {
+                display:block;
+                ul.tools {
+                    display:block;
+                    >li.u-hide-m {
+                        display:none;
+                    }
+                }
+            }
+        }
+        .ly-signature-video {
+            
+            &__close {
+                position:absolute;
+                top:10px;
+                right:10px;
+                z-index:100;
+                font-size:30px;
+            }  
+        }
+    }
+}

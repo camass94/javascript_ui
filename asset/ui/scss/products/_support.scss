@@ -1,0 +1,618 @@
+.support {
+	@include screenvw(padding, 75px 0);
+	h3 {
+		@include rem-multi(font-size, 21px, 34px);
+		@include rem-multi(padding-bottom, 20px, 30px);
+		letter-spacing:3px;
+		text-transform:uppercase;
+		.lt-ie9 & {
+			font-size: 34px;
+			padding-bottom: 30px;
+		}
+	}
+
+	.btn-wrap {
+		text-align: center;
+		@if $is-mobile == 0 {
+			margin-bottom:40px;
+		}
+		@else {
+			margin-bottom:20px;
+		}
+	}
+	/* LGEPJT-91 */
+	.tit {
+		font-size: 32px;
+		line-height:40px;
+		margin-bottom:35px;
+	}
+	/* //LGEPJT-91 */
+	.container {
+		position:relative;
+		margin:60px auto;
+		padding:0 30px;
+		@include clearfix;
+
+		&:before {
+			display:block;
+			position:absolute;
+			top:0;
+			left:50%;
+			content:"";
+			width:1px;
+			height:100%;
+			background:#bbb;
+		}
+
+		.tit {
+			font-size:32px;
+			line-height:40px;
+			margin-bottom:35px;
+		}
+
+		.content-title {
+			font-size:30px;
+			line-height:34px;
+			margin-bottom:8px;
+		}
+
+		a.product-support {
+			display:inline-block;
+			margin-bottom:60px;
+			text-decoration:none;
+		}
+
+		.image-section {
+			position:absolute;
+			height:100%;
+			width:39.58%;
+			.table-box {
+				display:table;
+				height:100%;
+				width:100%;
+				table-layout:fixed;
+				.image-box {
+					display:table-cell;
+					vertical-align:middle;
+				}
+			}
+		}
+
+		// .link-section {
+		// 	float:left;
+		// 	width: 50%;
+		// 	margin:0;
+		// 	padding:0 80px 0 0;
+		// 	font-family:$font-family-light;
+		// 	box-sizing:border-box;
+
+		// 	.link-list {
+		// 		margin:0;
+		// 		padding:0;
+		// 		list-style:none;
+
+		// 		> li {
+		// 			color:#333;
+
+		// 			& + li {
+		// 				margin-top:30px;
+		// 			}
+
+		// 			.tit {
+		// 				display:block;
+		// 				margin:0 0 10px 0;
+		// 				padding:0;
+
+		// 				a {
+		// 					display:inline-block;
+		// 					margin:0;
+		// 					padding:0;
+		// 					font-size:30px;
+		// 					line-height:36px;
+		// 					font-weight:normal;
+		// 					color:#333;
+		// 					text-decoration:none;
+		// 					word-break:break-word;
+
+		// 					&:hover,
+		// 					&:focus {
+		// 						text-decoration:none;
+		// 					}
+		// 				}
+		// 			}
+
+		// 			p {
+		// 				margin:0;
+		// 				padding:0;
+		// 				color:#333;
+		// 				font-size:20px;
+		// 				line-height:26px;
+		// 				word-break:break-word;
+		// 			}
+		// 		}
+		// 	}
+		// }
+
+		.contents-section {
+			float:right;
+			width:50%;
+			padding-left:80px;
+			color:#333;
+			box-sizing:border-box;
+
+			.container-head {
+				margin-bottom:20px;
+			}
+
+			ul {
+				margin:0;
+				padding:0;
+				list-style:none;
+				li {
+
+					& + li {
+						margin-top:40px;
+					}
+
+					.icon-block {
+						display:inline-block;
+						vertical-align:top;
+						width:48px;
+						i {
+							margin-top:-5px;
+							font-size:48px;
+							color:#6b6b6b;
+						}
+					}
+					.content-block {
+						display:inline-block;
+						width:80%;
+						margin-left:15px;
+					}
+				}
+			}
+			p {
+				margin:0;
+				padding:0;
+				font-size:20px;
+				line-height:26px;
+				font-family:$font-family-light;
+				a:hover {
+					text-decoration:underline;
+					color:#d80546;
+				}
+			}
+
+		}
+		/* LGEPJT-91 */
+		.contents-section.b2b {
+			float: none;
+			width: auto;
+			padding-left: 0;
+			position:relative;
+			max-width:1008px;
+			margin:0 auto;
+			margin-top: 35px;
+
+			&:after {
+				display:block;
+				content:'';
+				clear:both;
+			}
+			ul {
+				@if $is-mobile == 0 {
+					float:left;
+					width:50%;
+				}
+				&.second {
+					padding-left:40px;
+				}
+				li {
+					margin-top:40px;
+					&:first-child {
+						margin-top:0;
+					}
+
+					.icon-block {
+						display:table-cell;
+						vertical-align:top;
+						i {
+							margin-top: 0;
+						}
+					}
+					.content-block {
+						display:table-cell;
+						vertical-align:top;
+						width: auto;
+						margin-left:15px;
+						padding-left:20px;
+						.content-title {
+							margin-top:5px;
+						}
+					}
+				}
+			}
+			p {
+				a {
+					text-decoration: underline;
+				}
+			}
+		}
+		/* LGEPJT-91 */
+	}
+	//LGECI-2391 : 20160503 add Start
+  .not-Container {
+   text-decoration: none;
+	@if $is-mobile == 1 {
+	  width:100%;
+	}
+  }
+  .type-text-2column {
+	width : 100%;
+	display: inline-block;
+
+	@if $is-mobile == 0 {
+	  min-width: 768px;
+	  max-width: 1600px;
+	}
+	> .first-unit {
+
+	  @if $is-mobile == 1 {
+	  > ul{
+		  border-bottom: 1px solid #ededed;
+		  margin-top: 0 !important;
+		  border-top: none;
+		  padding-top: 30px;
+		  li {
+			//
+			h5{
+			  font-size: 28px;
+			  line-height: 26px;
+			  margin-bottom: 3px;
+			}
+			margin-bottom: 25px;
+			padding-bottom: 25px;
+			&:first-child {
+			  margin-top: 25px;
+			  border-top: 1px solid #ededed;
+			}
+		 }
+	   }
+	  } @else {
+		float:left;
+		width:50%;
+		margin-left:0;
+		padding-left:80px;
+		border-left:0;
+	   // border-right:1px solid #bbb;
+	  }
+	  h5 {
+		font-size: 30px;
+		line-height: 34px;
+		margin-bottom: 8px;
+		> a {
+		   text-decoration:none;
+		   color:#555;
+		   &:hover, &:focus {
+			 color:$red-lg;
+			 text-decoration: underline;
+		   }
+		}
+
+	  }
+	  + .contents-section {
+		//margin-left:50%;
+		border-left:0;
+	  }
+	}
+
+  }
+  //LGECI-2391 : 20160503 add End
+}
+
+@media screen and (max-width: 1024px) {
+	.support {
+		h3 {
+			font-size: 30px;
+			letter-spacing: 1px;
+		}
+		.container {
+			.tit {
+				font-size:28px;
+				line-height:34px;
+				word-break:break-word;
+			}
+			.content-title {
+				font-size:25px;
+				line-height:28px;
+			}
+			a.product-support {
+				margin-bottom:35px;
+			}
+			.link-section {
+
+				.link-list {
+					> li {
+
+						.tit {
+
+							a {
+								font-size:28px;
+								line-height:34px;
+							}
+						}
+
+						p {
+							font-size:16px;
+							line-height:22px;
+						}
+					}
+				}
+			}
+			.contents-section {
+				padding-left:60px;
+
+				ul {
+					li {
+						margin-bottom:30px;
+						.icon-block {
+							width:38px;
+							i {
+								font-size:38px;
+							}
+						}
+						.content-block {
+							margin-left:10px;
+						}
+					}
+				}
+				p {
+					font-size:16px;
+					line-height:22px;
+				}
+			}
+		}
+	}
+}
+
+.is-mobile {
+	.support {
+		@include screenvw(padding, 30px 0 25px);
+
+		.btn-wrap {
+			margin:0 20px;
+			padding-bottom:30px;
+			border-bottom:1px solid #ededed;
+		}
+
+		.support-content {
+			padding:0;
+			max-width:768px;
+			margin:0px auto;
+
+			.bottom-hr {
+				border-bottom:1px solid #ededed;
+				padding-bottom:25px;
+			}
+			h3 {
+				letter-spacing:0;
+
+				font-size:34px;
+				line-height:32px;
+				text-align:center;
+			}
+			p {
+				margin:0;
+				padding:0;
+			}
+			.container {
+				position:relative;
+				margin:0 auto;
+				padding:0 20px;
+				text-align:center;
+
+				&:before {
+					display:none;
+				}
+
+				p {
+					margin:0;
+					padding:0;
+					font-size:20px;
+					line-height:22px;
+					font-family:$font-family-light;
+				}
+				.tit {
+					margin-bottom:15px;
+					p {
+						font-size:30px;
+						line-height:32px;
+					}
+				}
+				.content-title {
+					font-size:34px;
+					line-height:32px;
+					margin-bottom:10px;
+				}
+				a.product-support {
+					display:block;
+					font-size:16px;
+					margin-bottom:0px;
+					width:100%;
+				}
+
+				.link-section {
+					float:none;
+					width:100%;
+					padding:0;
+
+					.link-list {
+
+						li {
+							padding:20px 25px;
+							/* LGEPJT-91 */
+							border-top:1px solid #ededed;
+							/* //LGEPJT-91 */
+							.tit {
+								margin:0 0 10px 0;
+
+							}
+
+							&:first-child {
+								border-top:1px solid #ededed;
+							}
+
+							& + li {
+								margin-top:0;
+							}
+						}
+					}
+				}
+
+				.contents-section {
+					display:block;
+					float:none;
+					width: 100%;
+					margin-left:0;
+					padding-left:0;
+					border-left:none;
+					color:#333333;
+
+					.contents-title {
+						padding:20px 25px;
+					}
+
+					.container-head {
+						margin-bottom:0;
+					}
+
+					ul {
+						margin:0;
+						padding:0;
+						list-style:none;
+
+						li {
+							padding:20px 25px;
+							margin-top:0;
+							margin-bottom:0;
+							border-top:1px solid #ededed;
+
+							&:first-child {
+								border-top:0;
+							}
+
+							& + li {
+								margin-top:0;
+							}
+
+							.icon-block {
+								display:block;
+								vertical-align:top;
+								width:auto;
+								margin-bottom:10px;
+								i {
+									font-size:30px;
+									color:#6b6b6b;
+								}
+							}
+							.content-block {
+								display:block;
+								width:auto;
+								margin-left:0;
+							}
+						}
+					}
+					.call-row {
+						margin-top: 10px;
+						a.red-block {
+							display: inline-block;
+							width: 71.5%;
+							padding: 5px 0 7px 0;
+							max-width: 200px;
+							background: #a50034;
+							color: $white;
+							border-radius: 6px;
+							text-decoration: none;
+							font-size: 15px;
+							line-height: 18px;
+							margin-bottom: 5px;
+							strong {
+								font-weight: normal;
+								display: block;
+								font-size: 18px;
+							}
+						}
+						&:first-child {
+							margin-top: 15px;
+						}
+					}
+				}
+			}
+		}
+	}
+	/* LGEPJT-91 */
+	.support.b2b {
+		.btn-wrap {
+			padding: 30px 0;
+			border-top: 1px solid #ededed;
+		}
+		h4.tit {
+			text-align: center;
+			font-size: 25px;
+			line-height: 40px;
+			margin-bottom: 35px;
+		}
+	}
+	/* //LGEPJT-91 */
+}
+
+@media screen and (max-width: 640px) {
+	.is-mobile {
+		.support {
+			.support-content {
+				h3 {
+					font-size:28px;
+					line-height:26px;
+
+				}
+				.container {
+					p {
+
+						font-size:16px;
+						line-height:22px;
+					}
+					.tit {
+						p {
+
+							font-size:24px;
+							line-height:26px;
+						}
+					}
+					.content-title {
+						font-size:28px;
+						line-height:26px;
+					}
+					a.product-support {
+						font-size:15px;
+					}
+					.contents-section {
+						ul {
+							li {
+
+								.icon-block {
+									i {
+										font-size:24px;
+										color:#6b6b6b;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+//LGECI-2391 : 20160503 add Start
+.underline{text-decoration:underline;}
+//LGECI-2391 : 20160503 add End

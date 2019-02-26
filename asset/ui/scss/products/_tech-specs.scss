@@ -1,0 +1,361 @@
+.tech_spec {
+	font-family:$font-family-light;color:#333;text-align:left;padding:50px 30px 0;
+	@extend .gradient-bottom;
+	.tech-spec-container {
+		//padding:0 5%;
+	}
+}
+
+.tech_spec {
+	.tech_spec_wrap { max-width:1200px; margin:0 auto; padding:0 0rem; padding-bottom:34px; margin-bottom:44px; border-bottom:1px solid #e6e6e6;
+
+		.eco-content {
+			.eco-list {
+				ul {
+					margin:0;
+					padding:0;
+					list-style:none;
+
+					li {
+						width:100%;
+						text-align:left;
+					}
+				}
+			}
+			table, .eco-list li {
+				td {
+					padding:5px 0;
+				}
+				a {
+					display:inline-block;
+					text-decoration:underline;
+					font-size:24px;
+					font-family: $font-family-light;
+					line-height:36px;
+					&.pdf {
+						padding-left:43px;
+						background:url('/lg4-common-gp/img/product/icon-eco-pdf.png') no-repeat 0 0;
+					}
+				}
+			}
+			.btn-wrap {
+				margin-top:25px;
+			}
+		}
+
+	.tech_spec_wrap.last {margin-bottom:0;}
+		table { width:100%; border-collapse:collapse; border:none; text-align:left; table-layout:fixed}
+		table caption, .eco-title { font-size:44px; text-align:left; padding-bottom:19px; font-weight:normal;}
+		table th { width:38%; padding:5px 1% 15px 0; font-size:24px; line-height:24px; text-align:left; vertical-align:top; font-weight:normal;}
+		table td, .eco-list li { width:58%; padding:5px 1% 15px 0; font-size:24px; line-height:24px; text-align:left; vertical-align:top;}
+		table tr { border-top:none; }
+		//span.op { display:inline; }
+
+		.product-summary {
+			th { width:27%; font-size:24px;padding:12px 1% 0px 0; font-weight:normal;}
+			td { width:27%; font-size:36px;line-height:36px; text-align:left;  padding:0px 1% 12px 0;}
+		}
+
+		.product-dimensions {
+			overflow:hidden;
+			th { padding:0; }
+			td { font-size:30px;line-height:30px; padding:35px 0 5px;}
+		}
+		&:last-child {
+			padding-bottom:54px;
+			margin-bottom:0;
+		}
+	}
+	.tech_spec_download {
+		text-align:right;
+		max-width:1200px;
+		margin:0 auto;
+		.tech_spec_wrap {
+			padding-bottom:20px;
+		}
+
+		.btn-tooltip-wrap {
+			display:inline-block;
+			position:relative;
+			margin:0;
+			padding:0;
+
+			&.active {
+				.download-tooltip {
+					display:block;
+				}
+			}
+
+			.download-tooltip {
+				display:none;
+				position:absolute;
+				top:57px;
+				left:50%;
+				width:224px;
+				margin:0 0 0 -112px;
+				padding:40px 0 0 0;
+				border:1px solid #ccc;
+				background:#fff;
+				box-sizing:border-box;
+				z-index: 1;
+
+				&:after {
+					display:block;
+					position:absolute;
+					content:"";
+					top:-10px;
+					left:50%;
+					width:14px;
+					height:11px;
+					margin-left:-7px;
+					background:url('/lg4-common-gp/img/product/bg-bubble-tail03.png') no-repeat;
+				}
+
+				.tooltip-close {
+					display:block;
+					position:absolute;
+					top:10px;
+					right:10px;
+					width:21px;
+					height:21px;
+					margin:0;
+					padding:0;
+					color:#333;
+
+					&:focus,
+					&:hover {
+						text-decoration: none;
+					}
+
+					i {
+						color:#333;
+						margin:0;
+						padding:0;
+						font-size:20px;
+						line-height:1;
+						vertical-align: top;
+
+						&:before {
+							vertical-align: top;
+						}
+					}
+
+				}
+
+				.down-content {
+					font-family:$font-family-light;
+					text-align:left;
+					.tit {
+						display:block;
+						margin:0;
+						padding:6px 18px 6px;
+						font-size:23px;
+						font-weight:normal;
+						line-height:1;
+						color:#fff;
+						background:#bbb;
+						word-break:break-word;
+					}
+
+					.download-list {
+						margin:0;
+						padding:15px 10px;
+						list-style:none;
+
+						> li {
+
+							a {
+								display:inline-block;
+								font-size:20px;
+								line-height:24px;
+								color:#333;
+								word-break:break-word;
+								text-decoration:underline;
+
+								&.pdf {
+									padding-left:29px;
+									background:url('/lg4-common-gp/img/product/icon-pdf.png') no-repeat 0 0;
+								}
+							}
+
+							& + li {
+								margin-top:10px;
+							}
+						}
+					}
+				}
+			}
+			@if $is-mobile == 1 {
+				position:static;
+				.dimmed-content {
+					position:fixed;
+					left:0;
+					top:0;
+					width:100%;
+					height:100%;
+					z-index:-1;
+					background-color:#000;
+					opacity:0.75;
+				}
+				.download-tooltip {
+					left:5px;
+					right:5px;
+					top:5px;
+					width:auto;
+					padding:0;
+					margin:0;
+					z-index:101;
+					&:after {
+						display:none;
+					}
+					.desc {
+						font-size:24px;
+						font-family:$font-family-regular;
+						margin:0;
+						padding:20px 10px;
+						text-align:left;
+						background-color:#fff;
+					}
+					.down-content {
+						background-color:#fff;
+						border-top:1px solid #bbb;
+						.tit {
+							background-color:#f5f5f7;
+							font-size:20px;
+							font-family:$font-family-semibold;
+							padding:20px 10px;
+							color:#333;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+
+.eco-content {
+	.eco-list {
+		li {
+			padding:5px 0;
+			font-size:24px;
+			line-height:24px;
+			text-align:left;
+		}
+	}
+}
+
+@media screen and (max-width: 1439px) {
+	.tech_spec .tech_spec_wrap {
+		table caption, .eco-title { font-size:35px;}
+		table th,
+		table td, .eco-list li {font-size:19px; line-height:19px;}
+		.product-summary {
+			th {font-size:19px;}
+			td {font-size:28px;line-height:28px;}
+		}
+		.product-dimensions {
+			td {font-size:24px;line-height:24px;}
+		}
+	}
+}
+@media screen and (max-width: 1023px) {
+	.tech_spec .tech_spec_wrap {
+		table caption, .eco-title { font-size:26px;}
+		table th,
+		table td, .eco-list li {font-size:14px; line-height:14px;}
+
+		.eco-content {
+			table, .eco-list li {
+
+				tr:last-child td {
+					border-bottom:1px solid #e6e6e6;
+				}
+
+				a {
+					font-size:14px;
+					line-height:24px;
+					&.pdf {
+						padding-left:28px;
+						background:url('/lg4-common-gp/img/product/icon-eco-pdf.png') no-repeat 0 0;
+						background-size:19px 24px;
+					}
+				}
+			}
+		}
+
+		.product-summary {
+			th {font-size:14px;}
+			td {font-size:21px;line-height:21px;}
+		}
+		.product-dimensions {
+			td {font-size:18px;line-height:18px;}
+		}
+	}
+}
+.is-mobile {
+	.tech_spec {
+		padding:10px 20px 0;
+		background:#fff;
+		position:relative;
+
+		.tech_spec_wrap { padding:0 0; padding-bottom:52px; border:0; margin-bottom:0;
+			table { width:100%; border-collapse:collapse; border-bottom:1px solid #e6e6e6; table-layout:fixed}
+			table caption, .eco-title { font-size:50px;text-align:left; padding-bottom:10px; }
+			table th { width:38%; padding:12px 1% 12px 0; font-size:25px; line-height:25px; text-align:left; vertical-align:top; font-weight:normal;}
+			table td, .eco-list li { width:58%; padding:12px 1%; font-size:25px;line-height:25px; text-align:right; vertical-align:top;}
+			table tr { border-top:1px solid #e6e6e6; }
+			//span.op { display:block; }
+			&:last-child {
+				margin-bottom:0;
+				border:none;
+				table { border:none; }
+			}
+
+			.eco-content {
+				table {
+
+					td {
+						padding:8px 0;
+						text-align: left;
+					}
+
+					tr:last-child td {
+						border-bottom:1px solid #e6e6e6;
+					}
+
+				}
+				.btn-wrap {
+					a {
+						width: 100%;
+					}
+				}
+			}
+
+		}
+	}
+	.tech_spec_download {
+		.tech_spec_wrap {
+			padding:0 0 20px;
+			margin:25px 0 32px !important;
+			border-bottom:1px solid #e6e6e6 !important;
+		}
+	}
+
+
+}
+@media screen and (max-width: 639px) {
+	.is-mobile .tech_spec .tech_spec_wrap {
+		table caption, .eco-title { font-size:39px;}
+		table th,
+		table td, .eco-list li {font-size:19px; line-height:19px;}
+	}
+}
+@media screen and (max-width: 439px) {
+	.is-mobile .tech_spec .tech_spec_wrap {
+		table caption, .eco-title { font-size:28px;}
+		table th,
+		table td, .eco-list li {font-size:14px; line-height:14px;}
+	}
+}

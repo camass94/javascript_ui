@@ -1,0 +1,332 @@
+%icon {
+	font-family:"lg-icon";
+	display:inline-block;
+	vertical-align:middle;
+	line-height:1;
+	font-weight:normal;
+	font-style:normal;
+	speak:none;
+	text-decoration:inherit;
+	text-transform:none;
+	text-rendering:optimizeLegibility;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+}
+
+/* eprivay - Tacit agreement */
+.agree-cookie-wrap {position:relative;background:#666; text-align:left}
+.agree-cookie {max-width:1240px;min-width:768px;margin:0 auto;padding:15px 2% 15px 1.29032%;color:#fff;font-size:14px;font-family:'LG Smart'}
+.agree-cookie a {color:#fff;text-decoration:underline;margin-left:4px}
+.agree-cookie .agree-cookie-close {position:absolute;right:1.29032%;top:11px;border:0;background:none;text-decoration:none}
+.agree-cookie .agree-cookie-close span {width:0;height:0;font-size:0;overflow:hidden}
+.agree-cookie .agree-cookie-close .icon {font-size:24px;color:#fff}
+
+@media only screen and (max-width:1240px) {
+	.agree-cookie {padding-right:70px}
+}
+
+@media only screen and (max-width:1024px) {
+	.agree-cookie {max-width:100%;min-width:100%;padding:20px;padding-right:35px}
+}
+
+/* eprivacy -Explicit consent */
+/* common */
+.eprivacy{background:#333;border-radius:5px;border:0;padding:5px 15px;font-weight:normal;border-radius:5px;line-height:1.5;font-size:15px;color:#fff;text-align:center;vertical-align:text-top;white-space:nowrap;text-transform:uppercase;text-decoration:none;cursor:pointer;}
+.save.eprivacy {padding: 5px 15px;margin:20px 1.29032%;background:#ac0032}
+.eprivacy.disabled {
+		cursor:default;font-weight:normal;text-shadow:none;
+		opacity:0.5;
+		filter: alpha(iopacity=50);
+		-ms-filter:alpha(opacity=50);
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"
+}
+.btn-small-on {
+	position:relative;top:11px;
+	margin:0 10px;
+	display:inline-block;
+	width:60px;
+	height:30px;
+	text-indent:-9999em;
+	overflow:hidden;
+	background:url('/lg4-common-gp/img/common/icon_set_on.png') no-repeat left top;
+}
+
+// PJTBTOBINS-1 : 20170322 modify Start
+.eprivacy-cookie {-webkit-transform: translate3d(0,0,0); position:relative;top:0;left:0;z-index:10; width:100%;background:#666;font-size:15px;font-family: "LG Smart light", Tahoma, Arial, sans-serif;
+  &.business {
+   .ec-tab-group {
+      position :absolute;
+      text-align :center;
+      background: none;
+      @media screen and (max-width: 767px) {
+        position :relative;
+      }
+      
+      @media screen and (min-width: 768px) {
+        .ec-tab-group-ul {
+          position :relative;
+          width: inherit;
+          max-width: inherit;
+          min-width: inherit;
+        }
+      }
+      .ec-tab-button {
+        float:none
+      }
+    } 
+  }
+}
+// PJTBTOBINS-1 : 20170322 modify End 
+.all-setting {position:relative;clear:both;overflow:hidden;width:100%;max-width:1240px;min-width:768px;margin:0 auto;padding:0 1.29032%}
+.all-setting p {display:inline-block;float:left;width:52%;padding:1.29032% 0;margin:0;line-height:20px;color:#fff;}
+.all-setting p a {margin-left:2px;color:#fff;text-decoration:underline;}
+.all-setting .btns-cookie {position:absolute;right:0;top:0;width:auto;padding-right:5%}
+.all-setting .btns-cookie button {margin-left:12px;text-transform:none}
+.all-setting .btns-cookie .active,
+.all-setting .btns-cookie .on {background:#ac0032}
+
+
+.all-setting .open-cookie-layer .icon {font-size:10px;margin-left:10px}
+.all-setting .open-cookie-layer .icon-triangle-up {display:inline-block}
+.all-setting .open-cookie-layer .icon-triangle-down {display:none}
+.all-setting .open-cookie-layer.active .icon-triangle-up {display:none}
+.all-setting .open-cookie-layer.active .icon-triangle-down {display:inline-block}
+
+.cookies-close-btn{
+	position:absolute;
+	top:21px;
+	right:1.29032%;
+	color:#fff;
+	background:none;
+	display:inline-block;
+	width:24px;
+	height:24px;
+	text-decoration:none !important;
+	border:0;
+	padding:0;
+}
+.cookies-close-btn .icon-close {font-size:24px}
+
+.setting-normal { padding:15px 0;background-color:#919191;font-size:15px;color:#fff;}
+.setting-normal a { float:right;width:20px;margin:-10px 0 0 0;}
+
+.setting-detail { height:auto;padding:10px 0;background-color:#f2f2f2}
+.setting-detail p a { color:#d80546;}
+.setting-detail .detail-wrap{max-width:1240px;min-width:768px;margin:0 auto}
+.setting-detail .detail-wrap > p {font-family:'LG smart';padding-bottom:35px;margin:1.29032%;font-size:16px;color:#333;background:url('/lg4-common-gp/img/common/bg_eprivay_gray.png') repeat-x left bottom}
+
+.setting-detail .detail-option { padding:0;overflow:hidden;display:flex;display:-webkit-flex}
+.setting-detail .detail-option dl { position:relative;float:left;width:21%;padding:5px 1.9%;margin:0 1.29032%;text-align:left;border-left:1px solid #b9b9bc;box-sizing:initial}
+.setting-detail .detail-option dl:first-child {border-left:0}
+.setting-detail .detail-option dt { padding-right:70px;font-size:18px;line-height:18px;color:#333;font-weight:normal;text-align:left;font-family: "LG Smart"}
+.setting-detail .detail-option dd { padding:0;margin:0 }
+.setting-detail .detail-option dd .eprivacy {position:absolute;right:6%;top:2px;display:none;width:60px;height:30px;margin-right:3px;vertical-align:middle;}
+.setting-detail .detail-option dd button span {width:0px;height:0;font-size:0;overflow:hidden;}
+.setting-detail .detail-option dd p { font-size:16px;padding:20px 0 0 0;color:#666;margin:0;text-align:left;}
+
+.setting-detail .detail-copy { padding:0;overflow:hidden;}
+.setting-detail .detail-copy em { display:block;float:left;width:200px;font-size:15px;color:#222;font-weight:bold;}
+.setting-detail .detail-copy p { display:block;float:left;width:510px;font-size:15px;font-family:arial;color:#5d5c5c;}
+.setting-detail .detail-copy button { float:right;}
+
+.setting-detail .detail-option dd .eprivacy {display:none;background:url('/lg4-common-gp/img/common/icon_set_off.png') no-repeat left top}
+.setting-detail .detail-option dd .eprivacy.on {display:inline-block}
+.setting-detail .detail-option dd .eprivacy.set-on {background:url('/lg4-common-gp/img/common/icon_set_on.png') no-repeat left top}
+.setting-detail .detail-option dd .eprivacy.disabled {cursor:default;font-weight:normal;text-shadow:none;}
+.setting-detail .detail-option dd .desc-toggle,
+.setting-detail .detail-option dd .desc-toggle.on {display:none}
+
+.ec-tab-group {visibility:hidden;height:0;margin:0 auto;background:#333}
+.ec-tab-group-ul{
+	height:32px;
+	cursor:pointer;
+	overflow:hidden;
+	list-style:none;
+	margin:0 auto;
+	width:100%;
+	max-width:1240px;
+	min-width:768px;
+}
+
+.ec-tab-button {float:right;padding:8px 17px;background:#666;color:#fff;border:0;font-size:15px;line-height:15px;border-bottom-left-radius:5px;border-bottom-right-radius:5px}
+.ec-tab-button .icon {font-size:10px;margin-left:10px}
+
+.cookie-mask {
+	display:none;
+	background: #000;
+	position: fixed;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+	opacity: 0.7;
+    filter: alpha(iopacity=70);
+    -ms-filter:alpha(opacity=70);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)"
+}
+
+.cookies-tooltip-close {border:0;background:none;position:absolute;right:10px;top:10px}
+.cookies-tooltip-close .icon {font-size:24px;color:#666}
+
+/* no-cookies static type */
+.no-cookies p {padding:0 20px;font-family:'LG Smart Light';font-size:20px;text-align:center}
+.no-cookies p button {background:none;border:0;color:#ac0032;text-decoration:underline}
+.no-cookies.content-block p {text-align:left}
+.no-cookies .icon-stars {color:#a5a5a5 !important}
+.no-cookies .product-lists .rating .points_wrap,
+.no-cookies .product-area .rating .points_wrap {
+  margin-right:0;
+}
+
+/* no-cookies tooltip type */
+.no-cookies-tooltips {display:block;position:absolute;top:0;left:0;margin:0 auto;width:410px}
+.no-cookies-tooltips div {display:block;position:relative;padding:18px 20px;text-align:left;z-index:4;border-radius:10px;background:#fff;color:#333 !important;border:1px solid #a5a5a5;background-image:linear-gradient(#fff,#f5f5f5);box-shadow:0 5px 15px rgba(0,0,0,.2);font-family:'LG smart Light';font-size:18px;line-height:22px}
+.no-cookies-tooltips .cookie-arrow {position: absolute;left:50%;bottom:-11px;z-index:4;}
+.no-cookies-tooltips .cookie-arrow:before{
+	position:absolute;
+	bottom:1px;
+	margin-left:-10px;
+	border-top: 11px solid #a5a5a5;
+	border-left: 11px solid transparent;
+	border-right: 11px solid transparent;
+	content:" ";
+}
+.no-cookies-tooltips .cookie-arrow::after{
+	position:absolute;
+	bottom:2px;
+	margin-left:-9px;
+	border-top: 10px solid #f5f5f5;
+	border-left: 10px solid transparent;
+	border-right: 11px solid transparent;
+	content:" ";
+}
+
+.no-cookies-tooltips strong {display:block;margin-bottom:10px;font-family:'LG smart';font-weight:normal}
+.no-cookies-tooltips em {color:#a50034;text-decoration:underline;font-style:normal}
+
+.no-cookies-tooltips.position-left .cookie-arrow:before,
+.no-cookies-tooltips.position-left .cookie-arrow:after {top:-12px;bottom:auto}
+.no-cookies-tooltips.position-right .cookie-arrow:before,
+.no-cookies-tooltips.position-right .cookie-arrow:after {top:-12px;bottom:auto}
+
+.no-cookies-tooltips.position-top .cookie-arrow:before,
+.no-cookies-tooltips.position-top .cookie-arrow:after {
+	border-top:0;
+	bottom:auto;
+}
+
+.no-cookies-tooltips.position-top .cookie-arrow {bottom:auto;top:1px}
+.no-cookies-tooltips.position-top .cookie-arrow:before {top:-11px; border-bottom:11px solid #a5a5a5}
+.no-cookies-tooltips.position-top .cookie-arrow:after {top:-10px;border-bottom:10px solid #fff}
+
+/* etc */
+.filter .no-cookies p {padding:0;font-size:18px;text-align:left}
+.my-search-box .no-cookies, .m-my-search-box .no-cookies {color:#fff}
+.my-search-box .no-cookies p, .m-my-search-box .no-cookies p {margin:0;text-align:center}
+.my-search-box .no-cookies button, .m-my-search-box .no-cookies button {color:#fff}
+
+.no-cookie-video {position:relative;background:#000;width:223px;height:125px;text-align:center}
+.no-cookie-video a {position:absolute; top:50%; left:50%; margin-left:-30px; margin-top:-30px}
+.no-cookie-video a:hover, .no-cookie-video a:focus {text-decoration:none}
+.no-cookie-video .icon-video-stop:after {display: block;content: '';width: 30px;height: 30px; margin-top:-46px; margin-left:18px;position: absolute;background-color: #fff;margin-top: -46px;margin-left: 18px;z-index: 1;}
+.no-cookie-video .icon-video-stop:before {font-size:60px; color: #a50034;z-index: 2;position: relative;}
+.no-cookie-video span {position:absolute; left:-999em; width:0;height:0;font-size:0;overflow:hidden;}
+
+.where-to-buy-info .no-cookies {padding:256px 30px}
+.where-to-buy-info .store-map-wrap .no-cookies {padding:279px 30px 246px;}
+.utility .store-map-box .no-cookies {padding:90px 0;}
+
+.guide-detail-content .no-cookie-video {display:block; width:100%; max-width:740px; height:415px}
+.video-area-content .no-cookie-video {display:block; width:100%; max-width:740px; height:415px; margin:0 auto}
+.modal-layer-cookie .no-cookie-video {position:absolute; display:block; width:100%; height:100%; max-height:640px}
+
+.list-shortcut li.list-item .order {vertical-align:top}
+.video-thumbnail .no-cookie-video {width:130px; height:75px}
+.video-thumbnail .no-cookie-video a {margin-left:-20px; margin-top:-20px}
+.video-thumbnail .no-cookie-video .icon-video-stop:before {font-size:40px}
+.video-thumbnail .no-cookie-video .icon-video-stop:after {width:20px; height:20px; margin-top:-31px; margin-left:15px}
+
+.feature-module .no-cookie-video {width:100%; padding:25% 20%; height:auto}
+
+.feature-module.text-right .no-cookies,
+.feature-module.text-left .no-cookies {width:100%}
+
+.feature-module.text-right .no-cookies .no-cookie-video,
+.feature-module.text-left .no-cookies .no-cookie-video {padding:30%}
+
+.hero .no-cookie-video {width:70%; padding:25%; margin:0 auto}
+.hero-type-b .no-cookie-video {margin:10% auto}
+
+.brandshop-wrap .no-cookies {padding:55px 0 65px; border-bottom:1px solid #bbb}
+
+.is-mobile .no-cookies-tooltips {width:250px}
+.is-mobile .no-cookies-tooltips div {padding:30px 20px 18px 20px;font-size:15px;line-height:20px}
+.is-mobile .no-cookies-tooltips div strong {font-size:18px}
+
+.is-mobile .no-cookie-video {width:100%; padding:30%;}
+.is-mobile .no-cookie-video a {margin-top:-30px}
+.is-mobile .where-to-buy-info-wrap .no-cookies {margin:0; padding:70px 20px;}
+.is-mobile .where-to-buy-info-wrap .no-cookies p {margin:0; padding:0;}
+.is-mobile .utility .store-map-box .no-cookies {padding:50px 0; border-top:1px solid #ccc; border-bottom:1px solid #ccc}
+
+.is-mobile .guide-detail-content .no-cookie-video {display:block; width:100%; max-width:100%; height:auto}
+.is-mobile .video-area-content .no-cookie-video {display:block; width:100%; max-width:100%; height:auto}
+
+.is-mobile .feature-module .no-cookies {max-width:400px}
+.is-mobile .feature-module.text-right .no-cookies,
+.is-mobile .feature-module.text-left .no-cookies {margin-bottom:25px}
+
+.is-mobile .hero .no-cookie-video {width:75%}
+.is-mobile .hero-type-b .no-cookie-video {margin:0 auto}
+.is-mobile .brandshop-wrap .no-cookies {border-bottom:0}
+
+
+@media only screen and (max-width:1024px) {
+	.all-setting p {width:100%;padding-right:50px;padding-bottom:15px}
+	.all-setting .btns-cookie {float:right;position:static;padding-top:0;padding-right:0;margin-top:0}
+}
+
+@media only screen and (max-width:767px) {
+	.eprivacy-cookie {font-size:14px}
+	.all-setting {max-width:100%;min-width:100%;padding:15px 20px 20px}
+	.all-setting p {padding:0;padding-right:35px}
+	.all-setting .btns-cookie {float:none;width:100%}
+	.all-setting .btns-cookie button {width:100%;margin-left:0;margin-top:10px}
+
+	.setting-detail .detail-wrap {max-width:100%;min-width:100%}
+	.setting-detail .detail-wrap .desc {display:none}
+
+	.setting-detail {padding:0}
+	.setting-detail .detail-option {display:block}
+	.setting-detail .detail-option dl {float:none;width:100%;min-height:46px;padding:0;margin:0;border:0;border-top:1px solid #fff;box-sizing:border-box}
+	.setting-detail .detail-option dl:first-child {border-top:0}
+	.setting-detail .detail-option dt {min-height:46px;padding:13px 20px 0}
+	.setting-detail .detail-option dd p {display:none;background:#e4e6e6;padding:20px;font-size:14px}
+	.setting-detail .detail-option dd .eprivacy {top:8px;right:72px}
+	.setting-detail .detail-option dd .desc-toggle {display:none;position:absolute;right:0;top:0;width:51px;height:46px;border:0;border-left:1px solid #fff;background:none;font-size:11px}
+	.setting-detail .detail-option dd .desc-toggle.on {display:block}
+	.setting-detail .detail-option dd .desc-toggle .icon {position:relative;top:-1px}
+	.setting-detail .detail-option dd .desc-toggle .icon-menu-minus {top:3px}
+
+	.setting-detail .detail-copy {padding:20px}
+	.setting-detail .detail-copy button {float:none;width:100%;margin:0}
+
+	.cookies-close-btn {top:10px;right:20px; padding:0}
+
+	.ec-tab-group-ul {height:40px;max-width:100%;min-width:100%}
+	.ec-tab-button {float:none;width:100%;padding:12px 20px;border-radius:0}
+
+	.no-cookies p {padding:0 20px;font-size:16px;line-height:22px}
+
+	.cookies-tooltip-close {right:5px}
+	.filter .no-cookies p {font-size:16px}
+	.support .container .contents-section .no-cookies.content-block p {margin-top:20px;text-align:center}
+
+	.agree-cookie .agree-cookie-close {right:10px}
+}
+
+
+@media print {
+	.agree-cookie-wrap, .eprivacy-cookie {display:none}
+}

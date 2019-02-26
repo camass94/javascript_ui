@@ -1,0 +1,11 @@
+.column-template {
+	&:before {
+		display: block;
+		content: '';
+		height: 60px;
+	}
+	padding: 45px 1.29032% 0 1.29032%;
+	max-width: 1240px;
+	margin: 0 auto;
+	text-align: left;
+}

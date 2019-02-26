@@ -1,0 +1,74 @@
+
+// Colors
+// color variable names inspired by:
+// http://chir.ag/projects/name-that-color
+$white: #fff; // 255,255,255
+$black: #000; // 0,0,0
+$grey-mine-shaft: #333;
+$grey-dove: #666;
+$grey-dusty: #999;
+$grey-silver-chalice: #a5a5a5;
+$grey-silver: #bbb;
+$grey-light: #e9ecf0;
+$grey-light-dark: #cecece;
+$grey-sky-light: #f4f5f7;
+$grey-athens: #f1f3f5; // somewhere between $grey-light and white.
+$grey-alabaster: #f9f9f9;
+$grey: #ccc;
+//$red-lg: #d80546;
+$red-lg: #a50034;
+$red: $red-lg;
+$red-btn-over:#d80546;
+
+// social media colors
+$color-twitter: #14a8da;
+$color-google-plus: #cd3e28;
+$color-pinterest: #c3202a;
+$color-youtube: #e42e28;
+$color-facebook: #365897;
+
+// Scaffolding
+$font-family-base: "LG Smart", Tahoma, Arial, sans-serif !default;
+$font-size-base: 14px !default;
+$line-height-base: 1.42857 !default;
+$font-weight-base: normal !default;
+$text-color: $grey-mine-shaft !default;
+$body-bg: $white !default;
+$text-selection-bg-color: #b3d4fc;
+$link-color: $red-lg;
+$link-hover-color: $red-lg;
+
+// Paths
+$path-base: "/";
+$path-fonts: $path-base + "lg4-common/fonts/";
+$path-img: $path-base + "lg4-common/img/";
+$path-content-img: $path-base + "lg4-common/content/img/";
+
+// Layouts
+$container-width: 992px !default;
+
+// z-index
+$z-tabs: 90;
+$z-text-block: 5;
+$z-loupe-foreground: 4;
+$z-loupe-middleground: 3;
+$z-loupe-background: 2;
+$z-meganav: 200;
+$z-appheader: 205;
+
+// Type
+$font-family-regular: "LG Smart", Tahoma, Arial, sans-serif !default;
+$font-family-semibold: "LG Smart SemiBold", Tahoma, Arial, sans-serif !default;
+$font-family-light: "LG Smart Light", Tahoma, Arial, sans-serif !default;
+$font-family-icon: "lg-icon";
+$heading-font: $font-family-light !default;
+$heading-color: $grey-mine-shaft !default;
+
+// Animations
+$rollover-duration: .5s;
+
+// Support
+$content-line-clamp: 3;
+
+// Padding
+$side-padding: (16% / 1240 * 100);

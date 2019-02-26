@@ -1,0 +1,591 @@
+$nav-link-bg-roll-color:#d8dadf;
+
+.skip_nav {
+	
+	background:#666666;
+	text-align:center;
+	a {
+		color:#fff;
+		font-size:18px;
+		line-height:40px;
+		font-family: $font-family-regular;
+		text-decoration:none;
+		position:absolute;
+		left:-10000px;
+		display:block;
+		border-bottom:1px solid #ffffff;
+		&:focus {
+			position:static;
+			color:#fff !important;
+		}
+	}
+}
+/*LGEGMO-2191 add*/
+.b2b-b2c-choice {
+	background:#333;
+	ul {
+		&:after {
+			display:block;
+			content:'';
+			clear:both;
+		}
+		list-style-type:none;
+		max-width: 1240px;
+		margin: 0 auto;
+		padding: 7px (16% / 1240 * 100) 0;
+		text-align:right;
+		li {
+			display:inline-block;
+			margin-left:15px;
+			&:first-child {
+				padding-left:0;
+				& + li {
+					padding-right:15px;
+				}
+			}
+			&.active {
+				a {
+					color:#fff;
+				}
+			}
+			a {
+				display:block;
+				font-size:18px;
+				color:#8b8b8b;
+				font-family:$font-family-regular;
+				&:hover,
+				&:focus {
+					color:#fff;
+				}
+			}
+		}
+	}
+}
+/*// LGEGMO-2191 add*/
+.appHeader {
+	position:absolute;
+	width:100%;
+	top:0;
+	min-width: 768px;
+	z-index:$z-appheader;
+	height:$header-height;
+	background-color:$grey-mine-shaft;
+	padding:0;
+	// @include rem(padding-top, 12px);
+	a {
+		text-decoration: none;
+		&:focus, &:link, &:visited, &:active, &:hover {text-decoration:none;}
+	}
+
+	.is-mobile & a {
+		padding:0;
+	}
+
+	ul {
+		padding: 0;
+		list-style: none;
+		@include margin-top(6px);
+	}
+
+	//logo
+	
+	.branding {
+		float:left;
+		display:table-cell;
+		margin-right: 10px;
+		vertical-align:top;
+		padding-top:9px;
+		a{
+			padding-left:0;
+			img.web {display:inline}
+			img.mobile {display:none;}
+		}
+		/* LGEGMO-2191 add*/
+		&.large-logo{
+			padding-top:0px;
+		}
+		/* //LGEGMO-2191 add*/
+	}
+	.nav-wrapper{
+		float:right;
+		display:table-cell;	
+		max-width:90%;
+		height:$header-height;
+
+		&.opened {
+
+			.primary-nav {
+				//width:64%;
+				width:66%;
+			}
+
+			.search-takeover {
+				position:relative;
+				display:inline;
+				float:left;
+				width:195px;
+				margin:0 20px;
+				opacity:1;
+
+
+				.search-box .search-box-heading .primary-nav-search-close {
+					display:none;
+				}
+
+				+ .right-side-nav > ul > li.search-item {
+					display:none;
+				}
+			}
+		}
+	}
+
+	.primary-nav {
+		float:none;
+		display:table-cell;	
+		height:$header-height;
+		vertical-align:top;
+		margin-right:0;
+
+		ul.primary-nav-list {
+			height:$header-height;
+			margin:0;
+			float:right;
+		 	> li {
+				//float:left;
+				display:table-cell;
+				height:$header-height;
+				table-layout: fixed;
+				vertical-align:middle;
+				.primary-nav-link, .primary-nav-open {
+					display:table-cell;
+					//@include padding(0 15px);
+					@include padding(0 10px);
+					line-height:20px;
+					font-family:$font-family-light;
+					color: $white;
+					//font-size:22px;
+					font-size:20px;
+					width: 100%;
+					height:64px;
+					vertical-align:middle;
+					text-align:center;
+					@include transition-property(color, background-color);
+					@include transition-duration($rollover-duration);
+					word-wrap:break-word;
+					&:hover {
+						color: $red-lg;
+					}
+				}
+				&.active {
+					> .primary-nav-link, .primary-nav-open {	/* LGEGMO-3452 20170824 modify */
+						color:$grey-mine-shaft;
+						background-color:$nav-link-bg-roll-color;
+					}
+				}
+			}
+		}
+
+
+		.search-menu-btn,
+		.mobile-nav-hamburger {display:none;}
+	}
+
+	.products-link {
+		display:none;
+	}
+
+	.search-takeover {
+		position:absolute;
+		width:50%;
+		top:14px;
+		max-width: 530px;
+		//display: none;
+		@include transition-property(opacity);
+		@include transition-duration($rollover-duration);
+		opacity:0;
+		display:none;
+		pointer-events: none;
+		z-index:-1;
+		&.active {
+			@include transition-property(opacity);
+			@include transition-duration($rollover-duration);
+			display:inline;
+			opacity:1;
+			pointer-events: auto;
+			z-index:10;
+		}
+		.search-box {
+			position: relative;
+			.search-box-heading {
+				position: relative;
+				z-index: 1;
+				label {width:1px;height:1px;display:block;overflow:hidden;position:absolute;top:0;right:0;}
+				input {
+					width:100%;
+					border-radius:6px;
+					padding-left:5px;
+					border:none;
+					@include rem(height, 35px);
+					box-sizing: border-box;
+					border: 1px solid #b6c0ca;
+					&.placeholder {
+						color: #acacac;
+					};
+				}
+				button {
+					position:absolute;
+					right:8px;
+					top:5px;
+					border:0;
+					background:$white;
+					.icon {
+						font-size:22px;
+						color:#808080;
+						span {width:1px;height:1px;display:block;overflow:hidden;position:absolute;top:0;right:0;}
+					}
+					&:focus {
+						.icon {color:#666;}
+					}
+				}
+				.primary-nav-search-close {
+					display:inline-block;
+					position:absolute;
+					top: -10px;
+					right: -87px;
+					width: 60px;
+					padding: 2px 0 7px;
+					border-left: 1px solid #b9b9bc;
+					line-height:48px;
+					text-align:center;
+					.icon {
+						@include transition-property(color);
+						@include transition-duration($rollover-duration);
+						color:$white;
+						@include font-size(32px);
+						&:hover {
+							@include transition-property(color);
+							@include transition-duration($rollover-duration);
+							color:$red;
+						}
+					}
+				}
+			}
+			.search-box-body.psearch-results {
+				display: none;
+				background: #ffffff;
+				text-align: left;
+				max-width:530px;
+				float:right;
+				//margin-top: -10px;
+				margin-top:0;
+				/* LGECI-2835 20170612 add */
+				li{
+					font-family: $font-family-regular;
+				}
+				/*// LGECI-2835 20170612 add */
+				a {
+					padding: 0;
+					color: #333333;
+					font-family: $font-family-regular;
+				}
+				h4 {
+					font-size: 22px;
+					line-height: 1.091em;
+				}
+				.enhanced {
+					position: relative;
+					//padding-top: 10px;
+					-webkit-box-shadow: 0px 0px 10px #000000;
+					-moz-box-shadow: 0px 0px 10px #000000;
+					box-shadow: 0px 0px 10px #000000;
+					> div {
+						padding: 0 27px;
+					}
+					.enhanced-heading {
+						@include linear-gradient(to bottom, #e9eaec, #fdfdfd, $fallback: #fdfdfd);
+						padding-top: 25px;
+						h4 {
+							margin-bottom: 0.318em;
+						}
+						.results {
+							overflow: hidden;
+							padding-bottom: 24px;
+							margin: 0;
+							> * {
+								font-size: 16px;
+								line-height: 16px;
+							}
+							> span {
+								float: left;
+							}
+							.see-all {
+								float: right;
+								color: #d80546;
+							}
+						}
+					}
+					.enhanced-body {
+						ul {
+							float: none;
+							border-top: 1px solid #b9b9bc;
+							margin: 0;
+							padding-bottom: 30px;
+							/* LGECI-2835 20170523 modify */
+							li {
+								padding-top: 30px;								
+								display: table !important;
+								width: 100%;
+								&:after{
+									content: '';
+								    display: block;
+								    clear: both;
+								}
+								.promotion{
+									margin: 0;
+									.item, .desc {
+										padding-left: 0;
+									}
+									p {
+										margin: 0;
+										.btn {
+											display: inline-block;
+											margin-top: 10px;
+											padding: 5px 15px 5px;
+											font-size: 16px;
+											color: #fff;
+										}
+									}
+								}
+								a {
+									display: block;
+									overflow: hidden;
+									.image-area {
+										float: none;
+										display: inline-block;
+										width: 110px;
+										text-align: center;
+										padding-left: 10px;
+									}
+									.item, .desc {
+										display: block;
+										width: 100%;
+										padding-left: 0;
+										font-size: 16px;
+										line-height: 1.375em;
+									}
+									.item {
+										color: $red-lg;
+									}
+								}
+								>a {
+									display: table-cell;
+								    float: none;
+								    width: 110px;
+								    vertical-align: middle;
+								}
+								.link-area{
+									display: table-cell;
+									a{
+										display: block;
+									    overflow: hidden;
+									    padding-left: 50px;
+									    &.md-text{
+									    	margin-top: 7px;
+											color: #666;
+									    }
+									    &.sf-text{
+									    	color: #666;
+									    }
+									}
+								}								
+							}
+							/*// LGECI-2835 20170523 modify */
+						}
+					}
+					.enhanced-footer {
+						@include linear-gradient(to bottom, #f2f2f4, #ffffff, $fallback: #ffffff);
+						padding-top: 25px;
+						padding-bottom: 25px;
+						> ul {
+							float: none;
+							li {
+								display: block !important;
+								font-size: 16px;
+    							line-height: 1.625em;
+    							color: $red-lg;
+								a {	
+									text-decoration: underline;
+									color: $red-lg;
+								}
+							}
+						}
+						.cta {
+							text-align: center;
+							a {
+								font-size: 23px;
+								line-height: 1;
+								color: $white;
+								@include rem-multi(padding, 10px 20px 8px, 10px 20px 8px, 6px 12px 4px, 7px 13px 5px, 9px 15px 6px);
+								@include rem-multi(font-size, 15px, 16px, 18px, 20px, 22px, 23px);
+							}
+						}
+					}
+					.psearch-results-close {
+						color: #929293;
+						position: absolute;
+						right: 11px;
+						top: 20px;
+						line-height: 1;
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 1440px) {
+	.appHeader {
+		.primary-nav {
+			margin-right:0;
+			a.primary-nav-link {
+				//@include rem(padding, 30px 10px 28px);
+				@include rem(padding, 0 10px );
+			}
+		}
+	}
+}
+
+// for business 
+.appHeader .right-side-nav {
+	float:none;
+	display:table-cell;	
+	width:auto;
+	height:74px;
+	/*position:relative;*/
+	vertical-align:top;
+	> ul {
+		display:table;
+		height:64px;
+		margin:0;
+		> li {
+			float:none;
+			//height:100%;
+			display:table-cell;
+			vertical-align:middle;
+			.primary-nav-link, .primary-nav-open {
+				display: table;
+				height:55px;
+				//padding: 0 15px 0 25px;
+				padding: 0 15px 0 15px;
+				border-left: 1px solid #b9b9bc;
+				line-height:20px;
+				font-family:$font-family-light;
+				color: $white;
+				//font-size:22px;
+				font-size:20px;
+				vertical-align: middle;
+				text-align: center;
+				@include transition-property(color, background-color);
+				@include transition-duration($rollover-duration);
+				span {
+					display: table-cell;
+					width: 100%;
+					height: 100%;
+					vertical-align: middle;
+				}
+				&:hover {
+					color: $red-lg;
+				}
+			}
+			.primary-nav-search {
+				position:relative;
+				margin-left:0;
+				padding-left:40px;
+				padding-left:4rem;
+				@include rem-multi-full(padding-right, 10px, 14px, 18px, 24px);
+				@include padding-top(15px);
+				@include padding-bottom(15px);
+				i span {display:block;width:1px;height:1px;overflow:hidden;position:absolute;left:100%;top:0;}
+				
+				&.disabled {
+					&:hover {
+						cursor: default;
+					}
+					i {
+						visibility: hidden;
+					}
+				}
+				.icon {
+					position:absolute;
+					padding-left:10px;
+					@include rem(top, 15px);
+					@include rem-multi-full(right, 14px, 18px, 22px, 30px);
+				}
+			}
+
+			// for safari
+			.no-flexbox.flexboxlegacy & .primary-nav-search {display:inline-block;border-right:0;}
+			.no-flexbox.flexboxlegacy & .primary-nav-search i.icon-search {top:7px;line-height:28px;}
+			.no-flexbox.flexboxlegacy & .primary-nav-search:after {content:"";display:block;width:1px;height:50px;background:#B9B9BC;position:absolute;right:0;top:-3px;}
+			&.search-item {
+				height:100%;margin-top:0;
+				@include rem(margin-left, 15px);
+				a {
+					font-family:$font-family-light;font-size:22px;color:$white;line-height:5.5rem;
+					&:focus {
+						outline:none;
+						i {outline:1px dotted #fff;}
+					}
+				}
+			}
+			&.active {
+				> .primary-nav-link {
+					@include transition-property(color, background-color);
+					@include transition-duration($rollover-duration);
+					height: 64px;
+					color:$grey-mine-shaft;
+					background-color:$nav-link-bg-roll-color;
+				}
+			}
+		}
+	}
+}
+
+html.ie9,
+html.lt-ie9 {
+	.appHeader .primary-nav ul li .tablet-sub-nav-wrap .meganav-menu{
+		.container.two-column section{
+			width: 49.5% !important;
+		}
+		.container.three-column section{
+			width: 33% !important;
+		}
+		.container.four-column section {
+			width: 24.5% !important;
+		}
+		.container.five-column section{
+			width: 19.5% !important;
+		}
+		.container.six-column section{
+			width: 16% !important;
+		}
+		.container.seven-column section{
+			width: 13.8% !important;
+		}
+	}
+}
+
+html.lt-ie9 .appHeader ul .primary-nav-search {padding-left:50px;}
+html.lt-ie9 .appHeader .search-takeover .search-box .search-box-heading input {
+	line-height: 30px;
+}
+
+.primary-nav + .search-takeover.search-menu.active {
+	display:table-cell !important;
+	float:none !important;
+	padding: 0 10px;
+	width: 180px;
+	max-width: 180px;
+}
+.primary-nav + .search-takeover.search-menu.active + .right-side-nav {
+	float:none;
+}

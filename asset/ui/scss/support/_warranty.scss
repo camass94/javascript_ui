@@ -1,0 +1,773 @@
+/* LGEGMO-1666 */
+.warranty {
+  .tab-style {
+    margin-top:0;
+    overflow:hidden;
+    &:before {
+      display:none;
+    }
+    ul {
+      &:after {
+        display:none;
+      }
+      li {
+                border:0;
+                width:percentage(1/3);
+                background:#fff;
+                z-index:1;
+                a {
+                    border:1px solid $grey-silver;
+                    border-bottom:1px solid $red-lg;
+                    border-radius:3px 3px 0 0;
+                }
+                &.active {
+                    z-index:2;
+                    a {
+                        border-color:$red-lg;
+                        border-bottom-color:#fff;
+                    }
+                }
+
+        &.extended, &.extended.active {
+          background:#fff;
+          border-bottom:solid 1px $red-lg;
+          padding-left:0;
+          padding-right:0;
+                    z-index:0;
+          a, a.active {
+                        border:0;
+                        border-top:1px solid #fff;
+            display:inline-block;
+            float:right;
+            padding-right:0;
+            span {
+              text-decoration:underline;
+              color:#333;
+            }
+            .icon-new-window-2 {
+              color:$grey-mine-shaft;
+            }
+          }
+
+        }
+        &.extended.active a {
+          color: $red-lg;
+          span {
+            color:$red-lg;
+          }
+          .icon-new-window-2 {
+            color:$red-lg;
+          }
+        }
+      }
+            &.cols2 li{
+                width:percentage(1/2);
+            }
+            &.cols4 li{
+                width:percentage(1/4);
+                a{
+                    @include rem-multi(min-height, 70px, 70px, 70px, auto, auto, auto);
+                    @include rem-multi(letter-spacing, 0, 0, 0, -1px, -1px, 0);
+                    @include rem-multi(padding-left, 10px, 10px, 10px, 0, 0, 0);
+                    @include rem-multi(padding-right, 10px, 10px, 10px, 0, 0, 0);
+                }
+            }
+            &.half-style {
+                li {
+                    width:percentage(1/2);
+                }
+            }
+    }
+  }
+  .warranty-content {
+    @if $is-mobile == 1 {
+      border-top:1px solid #bbb;
+    }
+    .content-header {
+      position:relative;
+      @include device-property(margin,40px 0 0 0,0 0 -1px 0);
+      @include device-property(padding,0 0 20px 0,0);
+      border-bottom:1px solid #bbb;
+      .tit {
+        font-family:$font-family-light;
+        font-size:34px;
+        line-height:38px;
+        color:$grey-mine-shaft;
+        a {
+          position:relative;
+          display:block;
+          font-family:$font-family-regular;
+          font-size:20px;
+          line-height:54px;
+          color:$grey-mine-shaft;
+          padding:0 35px 0 20px;
+          @extend .icon-menu-plus;
+          &:before {
+            @extend .icon;
+            font-size:12px;
+            color:$grey-mine-shaft;
+            position:absolute;
+            right:20px;
+            top:50%;
+            margin-top:-6px;
+          }
+          span.text-show,
+          span.text-hide {
+            color:transparent;
+            position:absolute;
+            top:-9999px;
+            left:0;
+          }
+          span.text-show {
+            display:none;
+          }
+          span.text-hide {
+            display:block;
+          }
+          &:focus,
+          &:hover {
+            text-decoration:none;
+          }
+          &.on {
+            color:$red-lg;
+            @extend .icon-menu-minus;
+            &:before {
+              margin-top:-0px;
+              color:$red-lg;
+            }
+            span.text-show {
+              display:block;
+            }
+            span.text-hide {
+              display:none;
+            }
+          }
+
+        }
+
+        &.tit_option {
+          a, a.on {
+            text-decoration:underline;
+            &:before {
+              content:"";
+            }
+          }
+          a > .icon-new-window-2 {
+            color:$grey-mine-shaft;
+          }
+          a.on > .icon-new-window-2 {
+            color:$red-lg;
+          }
+        }
+      }
+      .detail-skill {
+        position:absolute;
+        right:0;
+        top:5px;
+        .cmbox {
+          list-style-type:none;
+          padding:0;
+          margin:0;
+          &:after {
+            display:block;
+            clear:both;
+            content:"";
+          }
+          > li {
+            position: relative;
+            float: left;
+            padding-left:20px;
+            &:first-child {
+              padding-left:0;
+              &:before {
+                display:none;
+              }
+            }
+            &:before {
+              content:'';
+              display:block;
+              position:absolute;
+              top: 50%;
+              width: 1px;
+              height: 24px;
+              left: 10px;
+              height: 27px;
+              margin-top: -13px;
+              background: #ccc;
+            }
+            a, a:hover, a:focus {
+              font-size:20px;
+              color:$grey-mine-shaft;
+              text-decoration:none;
+              font-family:$font-family-light;
+            }
+            &:before {
+              left:10px;
+              height:27px;
+              margin-top:-13px;
+              background:$grey;
+            }
+            &.share {
+              .icon-share {
+                margin:-3px 0 0 10px;
+                font-size:22px;
+                color:$red-lg;
+              }
+            }
+          }
+        }
+      }
+    }
+    .content-inner {
+      @include device-property(display,block,none);
+      @include device-property(padding,0,0 0 30px 0);
+      /* 9997
+      @if $is-mobile == 1 {
+        .tabScroll-x {
+          overflow:hidden
+        }
+        table {
+          &.table-style-row, &.table-style-col {
+            table-layout:fixed;
+            min-width: auto;
+          }
+          &.table-style-row {
+            th, td {
+                font-size: 16px;
+                padding: 10px;
+                word-break: break-all;
+            }
+          }
+          &.table-style-col {
+            th, td {
+                font-size: 16px;
+                padding: 10px;
+                word-break: break-all;
+            }
+          }
+        }
+      }
+      */
+      &.active {
+        @if $is-mobile == 1 {
+          display:block;
+        }
+      }
+      .tit {
+        font-family:$font-family-semibold;
+        @include device-property(font-size,26px,20px);
+        @include device-property(padding,25px 0 5px,25px 20px 5px);
+      }
+      .sub-tit {
+        font-family:$font-family-semibold;
+        @include device-property(font-size,24px,18px);
+        @include device-property(padding,15px 0 10px,15px 20px 10px);
+        & + .table-style-row {
+          margin-top:0;
+        }
+      }
+      .mini-tit {
+        display:block;
+        font-family:$font-family-semibold;
+        @include device-property(padding,15px 0 10px,15px 20px 10px);
+        @include device-property(font-size,20px,18px);
+        & + .table-style-row {
+          margin-top:0;
+        }
+      }
+      p {
+        font-family:$font-family-regular;
+        @include device-property(font-size,20px,18px);
+        @include device-property(line-height,30px,24px);
+        margin:0;
+        &.bold {
+          font-family:$font-family-semibold;
+        }
+        &.indent-20 {
+          display:block;
+          padding-left:20px;
+          text-indent:-20px;
+          margin:0 0 0 20px;
+        }
+        &.indent-25 {
+          display:block;
+          padding-left:25px;
+          text-indent:-25px;
+          margin:0 0 0 25px;
+        }
+      }
+      .indent-20 {
+        display:block;
+        padding-left:20px;
+        text-indent:-20px;
+        // margin:0 0 0 20px;
+      }
+      .indent-25 {
+        display:block;
+        padding-left:25px;
+        text-indent:-25px;
+        // margin:0 0 0 25px;
+      }
+      > p {
+        @if $is-mobile == 1 {
+          padding:0 20px;
+        }
+      }
+      ul.list {
+        margin:0;
+        padding:0;
+        list-style-type:none;
+      }
+      > ul.list {
+        @if $is-mobile == 1 {
+          padding:0 20px;
+        }
+      }
+      > p.list {
+        @if $is-mobile == 1 {
+          margin:0 20px;
+        }
+      }
+      p.list,
+      .list li {
+        font-family:$font-family-regular;
+        font-size:20px;
+        line-height:30px;
+        color:$grey-mine-shaft;
+        padding-left:13px;
+        text-indent:-13px;
+        .indent-20 {
+          display:block;
+          padding-left:20px;
+          text-indent:-20px;
+          margin-left:-13px;
+        }
+        .indent-25 {
+          display:block;
+          padding-left:25px;
+          text-indent:-25px;
+          margin-left:-13px;
+        }
+      }
+
+      p.list, .indent-20, .indent-25 {
+        i:before {padding-left:20px;}
+      }
+      .bg-box {
+        background-color:#f4f5f7;
+        @include device-property(padding,50px,30px 20px);
+        margin-top:20px;
+        .cost-img {
+          @if $is-mobile == 0 {
+            padding-bottom:40px;
+            text-align:center;
+            .part-cost,
+            .bullit,
+            .repair-cost,
+            .svc-cost {
+              display:inline-block;
+              vertical-align:middle;
+            }
+            .part-cost,
+            .repair-cost,
+            .svc-cost {
+              position:relative;
+              padding:0 30px;
+              > p {
+                font-family:$font-family-light;
+                font-size:26px;
+                color:$grey-mine-shaft;
+                margin:0;
+                position:absolute;
+                bottom:-40px;
+                left:0;
+                width:100%;
+                text-align:center;
+              }
+            }
+                        &.row2 {
+                            padding-bottom: 60px;
+                            .part-cost,
+                            .repair-cost,
+                            .svc-cost {
+                                > p {
+                                    top: 145px;
+                                    bottom: 0;
+                                }
+                                padding-top: 30px;
+                                padding-bottom: 30px;
+                            }
+                        }
+          }
+          @else {
+            .part-cost,
+            .bullit,
+            .repair-cost,
+            .svc-cost {
+              display:block;
+              text-align:center;
+            }
+            .part-cost,
+            .repair-cost,
+            .svc-cost {
+              padding:15px 0;
+              > p {
+                font-family:$font-family-regular;
+                font-size:20px;
+                color:$grey-mine-shaft;
+                text-align:center;
+              }
+            }
+          }
+        }
+        .relative-cost-img {
+          @include device-property(margin,40px 0 0 0,0);
+          dt {
+            @include device-property(margin,10px 0 0 0,15px 0 0 0);
+            font-family:$font-family-semibold;
+            @include device-property(font-size,20px,18px);
+            line-height:26px;
+            color:$grey-mine-shaft;
+            &:first-child {
+              margin-top:0;
+            }
+          }
+          dd {
+            margin:0;
+            font-family:$font-family-light;
+            @include device-property(font-size,20px,18px);
+            @include device-property(line-height,26px,24px);
+            color:$grey-mine-shaft;
+          }
+        }
+      }
+      .table-style-col:first-child {
+        margin-top:20px;
+      }
+      .table-style-col {
+                th {
+                    background-color:#e9ecf1;
+                }
+        .bg {
+          background-color:#f4f5f7;
+        }
+        td:first-child[rowspan] {
+          border-right: 1px solid $grey-silver;
+        }
+      }
+      .table-style-row {
+        margin-bottom:0;
+        margin-top:20px;
+        th {
+          background-color:#e9ecf1;
+        }
+        .bg {
+          background-color:#f4f5f7;
+        }
+        td {
+          @if $is-mobile == 1 {
+            p,
+            ul li {
+              font-size:16px
+            }
+          }
+        }
+      }
+      .share {
+        padding:30px 20px 0;
+        .share_box {
+          button {
+            width:100%;
+            display:block;
+          }
+        }
+      }
+    }
+  }
+}
+/* LGEGMO-1666 */
+
+/* PJTBTOBCSR-138 */
+.warranty-b2b.support-content {
+    .container {
+        .img-alt {position:absolute;top:-9999px;color:transparent;width:1px;height:1px;}
+        .mt0 {margin-top:0 !important;}
+        .mt5 {margin-top:5px !important;}
+        .mt10 {margin-top:10px !important;}
+        .mt15 {margin-top:15px !important;}
+        .mt20 {margin-top:20px !important;}
+        .mb0 {margin-bottom:0 !important;}
+        .pt0 {padding-top:0 !important;}
+        .center {text-align:center;}
+        .bold {font-weight:normal;font-family: "LG Smart SemiBold";}
+        .underline {text-decoration:underline;}
+        .bl1 {border-left:1px solid #bbb !important;}
+        .color-a50034 {color:#a50034 !important;}
+        .top-title .background-image {max-height:250px;}
+        .inner-content {background-image: linear-gradient(#d4d4d4,#fff);background-size: 100% 100px;background-repeat: no-repeat;background-position: top;font-family:"LG Smart";font-size:20px;margin-bottom:70px;}
+        .warranty {max-width:1200px;margin:0 auto;text-align:left;}
+        .warranty p.title-desc {padding:42px 0;margin:0;}
+        ul.text-indent-list > li {margin-left: 10px !important;text-indent: -10px;}
+        ul.text-indent-list > li > ul {margin-left:20px !important;}
+        .tab-style:before {display:none;}
+        .tab-style, .tab-style li,.tab-style ul {margin: 0;padding: 0;list-style: none;}
+        .tab-style ul {table-layout:fixed;display:table;width:100%;}
+        .tab-style ul li {position:relative;display:table-cell;float:none;vertical-align:middle;border: 1px solid #bbb;border-radius: 3px 3px 0 0;background: #fff;border-bottom:1px solid #a50034;width:33.33333333%;}
+        .tab-style ul li + li {border-left:0;}
+        .tab-style ul li:first-child {margin-left: 0;}
+        .tab-style ul li a {display: block;font-size: 24px;text-align: center;min-width: 202px;padding: 11px 10px 7px;color: #333;border:0;border-radius:0;}
+        .tab-style ul li a:hover, .tab-style ul li a:focus {text-decoration:none;}
+        .tab-style ul li.active {z-index: 1;background: #fff;border: 1px solid #a50034;border-bottom: 1px solid #fff;}
+        .tab-style ul li.active a {color: #a50034;}
+        .tab-style.tab-none {padding-top:35px; }
+        .tab-style.tab-none ul li {width:100%;background:none;border:none;}
+        .tab-style.tab-none ul li a {width:100%;padding:0;text-align:left;color:#333;font-size:38px;cursor:text;}
+        .tab-style.tab-none + .warranty-content > div > .content-header:first-child { margin-top:15px; }
+        .table-style-row {width: 100%;border-top: 1px solid #bbb;margin:10px 0;text-align:center;}
+        .table-style-row.al {text-align:left;}
+        .table-style-col caption,.table-style-row caption {text-indent: -9999px;height: 1px;margin-bottom: -1px;}
+        .table-style-row caption {width: 1px;font-size: 1px;}
+        .table-style-row th {background-color: #e9ecf1;font-weight: 400;border: 1px solid #bbb;border-right: none;font-size: 20px;padding: 3px 15px 4px 20px;text-align:center;}
+        .table-style-row tr:first-child td,.table-style-row tr:first-child th {border-top: 0;}
+        .table-style-row tr th:first-child {border-left: 0;}
+        .table-style-row td {border: 1px solid #bbb;border-width: 0 0 1px 1px;color: #666;font-size: 20px;padding: 3px 15px 3px 20px;word-wrap: break-word;word-break:keep-all;-webkit-word-break:word-break;}
+        .table-style-row td.al {text-align:left;}
+        .table-style-row a.icon-link strong,.table-style-row strong {font-family: "LG Smart SemiBold";}
+        .table-style-row a {color:#666;text-decoration:none;font-size:inherit;line-height:inherit;}
+        .table-style-row a:hover,.table-style-row a:focus {color:#a50034;text-decoration:underline;}
+        .table-style-row td .no-data .icon {margin-right: 10px;}
+        .table-style-row td:first-child {border-left: 0;}
+        .warranty .warranty-content .content-inner .table-style-row .bg {background-color: #f4f5f7;color:#333;}
+        .warranty .warranty-content .content-header {position: relative;margin: 40px 0 0;padding: 0 0 20px;border-bottom: 1px solid #bbb;}
+        .warranty .warranty-content .content-header .tit {font-family: "LG Smart Light";font-size: 34px;line-height: 38px;color: #333;}
+        .warranty .warranty-content .content-header .detail-skill {position: absolute;right: 0;top: 5px;}
+        .warranty .warranty-content .content-header .detail-skill .cmbox {list-style-type: none;padding: 0;margin: 0;}
+        .warranty .warranty-content .content-header .detail-skill .cmbox:after {display: block;clear: both;content: "";}
+        .warranty .warranty-content .content-header .detail-skill .cmbox>li {position: relative;float: left;padding-left: 20px;}
+        .warranty .warranty-content .content-header .detail-skill .cmbox>li a,.warranty .warranty-content .content-header .detail-skill .cmbox>li a:focus,.warranty .warranty-content .content-header .detail-skill .cmbox>li a:hover {font-size: 20px;color: #333;text-decoration: none;font-family: "LG Smart Light";}
+        .warranty .warranty-content .content-header .detail-skill .cmbox>li a i{vertical-align:baseline;margin-right:10px;}
+        .warranty .warranty-content .content-inner .tit {font-family: "LG Smart SemiBold";font-size: 26px;padding: 15px 0 5px;}
+        .warranty .warranty-content .content-inner .sub-tit {font-family: "LG Smart";font-size: 24px;line-height: 32px;color: #333;padding:10px 0 12px;}
+        .warranty .warranty-content .content-inner strong.tit {font-size:20px;padding:0 0 10px;font-weight:normal;display:block;}
+        .warranty .warranty-content .content-inner p {font-family: "LG Smart";font-size: 20px;line-height: 24px;margin: 0;}
+        .warranty .warranty-content .content-inner ul {list-style-type:none;margin:0;padding:0;}
+        .warranty .warranty-content .content-inner ul li {font-family: "LG Smart";font-size: 20px;line-height: 24px;margin: 0;}
+        .warranty .warranty-content .content-inner .gray-box {background:#f4f5f7;padding:25px;}
+        .warranty .warranty-content .content-inner .gray-box ul li {line-height:24px;}
+        .warranty .warranty-content .content-inner .warranty-list {margin:20px 0;}
+        .warranty .warranty-content .content-inner .warranty-list li {display:table;margin-top:20px;}
+        .warranty .warranty-content .content-inner .warranty-list li:first-child {margin-top:0;}
+        .warranty .warranty-content .content-inner .warranty-list li div {display:table-cell;vertical-align:middle;width:81px;}
+        .warranty .warranty-content .content-inner .warranty-list li p {padding-left:20px;display:table-cell;line-height:24px;vertical-align:middle;}
+        .warranty .warranty-content .content-inner .tit-point {display:block;color:#a50034;font-size:24px;font-family: "LG Smart SemiBold";font-weight:normal;margin-bottom:5px;padding-top:5px;}
+        .warranty .warranty-content .content-inner .tit-point:before {font-family: "LG Smart SemiBold";display:inline-block;vertical-align:baseline;content:'.';color:#a50034;font-size:30px;padding-right:5px;line-height: 1px;position: relative;top: -5px;}
+        .warranty .warranty-content .content-inner .remark img{position:relative;top:-2px;}
+        .warranty .warranty-content .content-inner .remark strong{font-weight:normal;padding-left:5px;font-family: "LG Smart SemiBold";}
+        .warranty .warranty-content .content-inner .note { padding-left:20px; font-size:20px; display:block; }
+        .warranty .warranty-content .content-inner .note strong { font-weight:normal;font-family: "LG Smart SemiBold"; color:#a50034; text-indent:-20px; display:block; }
+        ul.indent-15 > li {margin-left: 15px !important;text-indent: -15px;}
+        ul.indent-20 > li {margin-left: 20px !important;text-indent: -20px;}
+        ul.indent-25 > li {margin-left: 25px !important;text-indent: -25px;}
+        ul.indent-30 > li {margin-left: 30px !important;text-indent: -30px;}
+
+        .accordion {
+            &, li {
+                list-style:none;
+                margin:0;
+                padding:0;
+            }
+            > li {
+                margin-top:-1px;
+
+                &:first-child {
+                    margin-top:0;
+                }
+            }
+            li {
+                font-family:$font-family-regular;
+
+                .accordion-title {
+                    @extend .icon-pagenav-down;
+
+                    display:block;
+                    position:relative;
+                    padding:11px 20px 10px;
+                    border-top:1px solid $grey-silver;
+                    border-bottom:1px solid $grey-silver;
+                    background:#f4f5f7;
+                    @include dmv(font-size, 24px, 18px);
+                    color:$grey-mine-shaft;
+                    text-decoration:none;
+
+                    &:focus, &:hover, &:active {
+                        text-decoration:none;
+                    }
+                    &:before {
+                        @extend %icon;
+
+                        position:absolute;
+                        top:50%;
+                        right:20px;
+                        margin-top:-5px;
+                        font-size:20px;
+                        color:#676767;
+                    }
+                    &.active {
+                        @extend .icon-pagenav-up;
+                    }
+                }
+                .accordion-box {
+                    display:none;
+                    @include dmv(padding, 30px 20px, 30px 0);
+                }
+                &.on {
+                    .accordion-title {
+                        @extend .icon-pagenav-up;
+                    }
+                }
+                &.on + li, &.active + li {
+                    @include dmv(margin-top, 50px, 30px);
+                    @extend .icon-pagenav-up;
+                }
+                &.active {
+                    .accordion-title {
+                        @extend .icon-pagenav-up;
+                    }
+                    .accordion-box {
+                        display:block;
+                    }
+                }
+            }
+        }
+        @media print {
+            .table-style-row {
+                thead {
+                    display: table-row-group;
+                }
+            }
+            .accordion {
+                li {
+                    .accordion-box { 
+                        display:block !important;
+                    }
+                }                
+            }
+        }
+    }
+}
+.is-mobile {
+    .warranty-b2b.support-content {
+        .container {
+            .top-title .background-image {display:none;}
+            .top-title .title .title-head {line-height:33px;}
+            .inner-content {background:none;font-family:"LG Smart";}
+            .warranty .warranty-content .content-inner p {font-size:16px;line-height:18px;padding:0;}
+            .warranty .warranty-content .content-inner ul li {font-size:16px;line-height:18px;}
+            .top-title .title .title-head {font-family:"LG Smart Light";}
+            .tab-style {margin-top:0;}
+            .tab-style ul {table-layout:fixed;display:table;width:100%;}
+            .tab-style ul li {width:33.3333333%;margin-left:0;border:0;background:#bbb;border-radius:0;position:relative;display:table-cell;float:none;vertical-align:middle;}
+            .tab-style ul li:before {display:block;content:'';position:absolute;width:1px;height:18px;background:#8a8a8a;top:50%;left:0;transform:translateY(-50%);}
+            .tab-style ul li:first-child:before,.tab-style ul li.active:before,.tab-style ul li.active+li:before {display:none;}
+            .tab-style ul li.active {background:#666;}
+            .tab-style ul li a {min-width:inherit;font-family:"LG Smart";color:#fff;font-size:18px;line-height:18px;padding:9px 10px 6px;}
+            .tab-style ul li a:before {display:none}
+            .tab-style.tab-none { padding-top:0; }
+            .tab-style.tab-none ul { background:none; margin:0 0 15px;}
+            .tab-style.tab-none ul li { background:none; }
+            .tab-style.tab-none ul li a {padding:0 20px;color:#333;font-size:24px;}
+            .tab-style.tab-none ul li a:after {display:none;}
+            .tab-style.tab-none + .warranty-content > div > .content-header:first-child { margin-top:0; }
+            .detail-skill {display:none;}
+            .warranty .warranty-content .content-header {margin:0;padding:12px 30px 10px 20px;}
+            .warranty .warranty-content .content-header .tit {font-size:20px;line-height:1;font-family:"LG Smart";}
+            .warranty .warranty-content .content-header .tit a {display:inline-block;width:100%;position:relative;color:#333;line-height:1;padding:0;}
+            .warranty .warranty-content .content-header .tit a.active {color:#a50034;}
+            .warranty .warranty-content .content-header .tit a.active:before{background:url(/lg4-common-gp/img/support/warranty/icon-minus.png) 0 0 no-repeat;margin:0;}
+            .warranty .warranty-content .content-header .tit a:before {display:block;content:'';width:11px;height:11px;background:url(/lg4-common-gp/img/support/warranty/icon-plus.png) 0 0 no-repeat;position:absolute;right:-10px;top:50%;transform:translateY(-50%);margin:0;}
+            .content-inner {padding:15px 20px;-webkit-box-shadow: inset 0px 0px 18px -9px rgba(0,0,0,0.75);-moz-box-shadow: inset 0px 0px 18px -9px rgba(0,0,0,0.75);box-shadow: inset 0px 0px 18px -9px rgba(0,0,0,0.75);border-bottom:1px solid #bbb;background-color:#f4f5f7;}
+            .warranty .warranty-content .content-inner .tit {font-size:18px;line-height:18px;padding:5px 0 9px;}
+            .warranty .warranty-content .content-inner .tit-point {margin:1px 0 0;background:#a5a5a5;position:relative;padding:12px 20px 6px 53px;font-size:18px;line-height:18px;}
+            .warranty .warranty-content .content-inner .tit-point.active {margin:20px -20px;}
+            .warranty .warranty-content .content-inner .tit-point:before {display:none;}
+            .warranty .warranty-content .content-inner .tit-point a {display:inline-block;width:100%;font-size:18px;line-height:1;color:#fff;font-family:"LG Smart";}
+            .warranty .warranty-content .content-inner .tit-point a:before {display:block;width:23px;height:23px;content:'';background:url(/lg4-common-gp/img/support/warranty/icon-circle-plus.png) 0 0 no-repeat;vertical-align:middle;position:absolute;left:20px;top:50%;transform:translateY(-50%);padding:0;}
+            .warranty .warranty-content .content-inner .tit-point a.active:before {background:url(/lg4-common-gp/img/support/warranty/icon-circle-minus.png) 0 0 no-repeat;}
+            .warranty .warranty-content .content-inner .tit-point a:hover, .warranty .warranty-content .content-inner .tit-point a:focus {text-decoration:none;}
+            .warranty .warranty-content .content-inner .tit-point.fixed {position:fixed; top:0; left:0; z-index:9999; width:100%; margin:0; }
+            .warranty .warranty-content .content-inner .table-scroll {overflow-x:scroll;margin:0 -20px;}
+            .warranty .warranty-content .content-inner .table-scroll table {min-width:768px;background-color:#fff;}
+            .table-style-row th {font-size:16px;padding:6px 15px 4px 20px;}
+            .table-style-row td {font-size:16px;padding:6px 15px 6px 20px;}
+            .warranty .warranty-content .content-inner .gray-box {background:#e1e2e4}
+            .warranty .warranty-content .content-inner .sub-tit {font-size:16px;line-height:20px;padding:5px 0 7px;}
+            .sticky-content {padding:15px 20px;}
+            #Guidance-for-Warranty-Period .content-inner,
+            #Service-Process .content-inner,
+            #Guidance-for-Cruise-Warranty .content-inner {padding:15px 20px 0;}
+            #Global-Service-Network-for-Cruise-Biz .content-inner {padding:0 20px;}
+            .warranty .warranty-content .content-inner ul.text-indent-list > li {margin-top:6px;}
+            .warranty .warranty-content .content-inner ul.text-indent-list > li:first-child {margin-top:0;}
+            .sticky-tab {margin:0 -20px;background:#fff;}
+            .warranty .warranty-content .content-inner .gray-box {padding:15px;}
+            .sticky-content .table-style-row {margin:0;}
+            .warranty .warranty-content .content-inner .note {font-size:16px;}
+        }
+    }
+}
+
+.warranty-b2b.support-content {
+    .container {
+        .warranty.china {
+            .tab-style ul li a {
+                font-size:22px;
+                @if $is-mobile == 1 {
+                    font-size:16px;
+                    line-height:16px;
+                }
+            }
+            .warranty-content {
+                .content-header {
+                    .tit{
+                        font-size:32px;
+                        line-height:36px;
+                        //font-weight:bold;
+                        @if $is-mobile == 1 {
+                            font-size:18px;
+                            line-height:1;
+                        }
+                    }
+                    .detail-skill .cmbox .print a {
+                        font-size:18px;
+                    }
+                }
+                .content-inner {
+                    .tit {
+                        font-size:24px;
+                        @if $is-mobile == 1 {
+                            font-size:16px;
+                            line-height:1;
+                        }
+                    }
+                    p,
+                    ul li,
+                    .table-style-row th,
+                    .table-style-row td,
+                    strong.tit,
+                    .note strong {
+                        font-size:18px;
+                        line-height:24px;
+                        @if $is-mobile == 1 {
+                            font-size:14px;
+                            line-height:18px;
+                        }
+                    }
+                    @if $is-mobile == 1 {
+                        .tit-point {padding:10px 20px 10px 53px;font-size:16px;line-height:16px;}
+                    }
+                }
+            }
+        }
+    }
+}
+/* //PJTBTOBCSR-138 */

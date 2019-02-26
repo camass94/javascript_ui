@@ -1,0 +1,653 @@
+.my-repair-inquiry-status {
+
+    .delivery_detail {
+        border:1px solid #bbb;
+        border-width:1px 0 1px;
+
+        @include device-property(position,relative,static);
+        @include dmv(padding,35px,15px 20px 30px);
+
+        &:after {
+            @if $is-mobile == 0 {
+                clear:both;
+                display:block;
+                content:'';
+            }
+        }
+        > .detail {
+            @if $is-mobile == 0 {
+                float:left;
+                width:85%;
+            }
+        }
+        > .btn-area {
+            @if $is-mobile == 0 {
+                float:right;
+                width:15%;
+                text-align:right;
+            }@else {
+                a {
+                    width:100%;
+                }
+            }
+        }
+    }
+
+    .inquiry_history_list {
+        @include device-property(margin-bottom,0,40px);
+        .pagination {
+            margin-bottom:0;
+        }
+    }
+    .icon-left-text-step {
+        overflow: hidden;
+
+        @include device-property(display, block, none);
+
+        ul {
+            float: right;
+            margin: 0;
+
+            li {
+                float: left;
+                list-style: none;
+                margin-left: 30px;
+                color: $grey-dove;
+                position: relative;
+
+                @include dmv(font-size, 18px, 16px);
+
+                i {
+                    position: absolute;
+
+                    @include dmv(top, 3px, 1px);
+
+                    left: 0;
+                    vertical-align: middle;
+
+                    @include dmv(font-size, 20px, 18px);
+
+                    margin-right: 3px;
+                }
+
+                span {
+                    @include dmv(padding-left, 27px, 24px);
+                }
+            }
+        }
+        & + .tit-area {padding-top:0;}
+    }
+    .required-fields {
+        color:#a50034;
+        text-align:right;
+        font-style:italic;
+        border-bottom:1px solid #ccc;
+
+        & + .tit-area {
+            @if $is-mobile==0 {
+                margin-top:40px;
+                padding-top:30px;
+            }
+        }
+
+        @if $is-mobile==0 {
+            font-size:18px;
+            margin:0 0 34px;
+            padding-bottom:10px;
+        } @else {
+            font-size:14px;
+            margin:0 0 24px;
+            padding:0 20px 10px;
+        }
+    }
+    .tit-area {
+        @include clearfix;
+        @include device-property(padding,25px 0 15px,25px 20px 15px);
+        .tit {
+            float:left;
+            font-family:$font-family-semibold;
+            @include device-property(font-size, 26px, 20px);
+            line-height:25px;
+            color:$grey-mine-shaft;
+        }
+        .lt-tit {
+            @include device-property(font-family,$font-family-light,$font-family-regular);
+            @include device-property(font-size,34px,24px);
+        }
+        .link-line-arrow {
+            float:right;
+        }
+        & + .table-style-row {
+            margin:0;
+        }
+		& + .faqs-list{
+			dl:first-child{
+          		@if $is-mobile==0 {
+				 margin-top:0;
+				}
+			}
+        }
+        &:first-child {
+			@if $is-mobile==1 {
+				 padding: 0 20px 20px;
+				}@else {
+              padding: 0 0 20px;
+            }
+
+        }
+        & + .tit-area {
+            @if $is-mobile==0 {
+                padding-top:19px;
+            }@else {
+                padding-top:0;
+            }
+        }
+    }
+    > form.styled-form:not(:first-child) {
+        margin-top:20px;
+    }
+    .table-style-row {
+        @include device-property(margin,20px 0 0 0,0);
+
+
+
+        & + .table-style-row {
+            @include device-property(margin,20px 0 0 0,0);
+            @include device-property(border-top,1px solid #bbb,0);
+        }
+        &.inquiry-table, &.repair-table {
+            & + .table-style-row {
+                margin-top:20px;
+                border-top:1px solid #bbb;
+            }
+            &:first-child {
+                margin-top:0;
+            }
+        }
+        .thumbnail {
+            padding-left:0;
+            padding-right:0;
+            span {
+                display:block;
+                margin:0 auto;
+                width:200px;
+
+                img {
+                    display:block;
+                    width:100%;
+                }
+            }
+            .icon-link {
+                display:block;
+                text-align:center;
+                color:#a50034;
+            }
+        }
+        & + .tit-area{
+            padding-top:35px;
+        }
+        @if $is-mobile==1 {
+            table-layout:fixed;
+        }
+        th {
+            word-break:break-word;
+        }
+        .request-type {
+            text-align:center;
+            @if $is-mobile == 0 {
+                border:1px solid #bbb;
+                border-width:1px 1px 1px 0;
+            }
+            .icon {
+                @if $is-mobile==0 {
+                    font-size:50px;
+                    color:$grey-dusty;
+                    /* LGEGMO-1767 start */
+                    &.icon-call {
+                        width:50px;
+                        font-size:37px;
+                    }
+                    /* LGEGMO-1767 end */
+                }
+            }
+            & + th {
+                border-right:0;
+            }
+        }
+        .cn_product_number {
+            & > div {
+                display:inline-block;
+                vertical-align:middle;
+                & > p {
+                    margin:0;
+                }
+            }
+        }
+    }
+    .guide-no-data {
+        strong {
+            color:$grey-dove;
+        }
+    }
+    .tab-style {
+        margin-top:0;
+        overflow:visible;
+        .required-fields {
+            color: #a50034;
+            font-style: italic;
+            margin: 0;
+            font-size: 18px;
+            position:absolute;
+            right:0;
+            top:16px;
+            @if $is-mobile == 1 {
+                font-size:14px;
+                top:-24px;
+            }
+        }
+    }
+    .receipt-number {
+        @include device-property(margin,0 0 40px,0 0 30px);
+        @include device-property(padding,0,0 20px);
+        @include device-property(max-width,700px,none);
+        > form {
+            display:block;
+        }
+        .input-validate {
+            position:relative;
+            @if $is-mobile == 1 {
+                display:block;
+            } @else {
+                display:inline-block;
+            }
+        }
+        label {
+            @include device-property(font-family,$font-family-regular,$font-family-semibold);
+            @include device-property(font-size,24px,18px);
+            line-height:38px;
+            color:$grey-mine-shaft;
+            display:block;
+            margin-bottom:5px;
+        }
+        button {
+            @if $is-mobile == 0 {
+                margin-left:5px;
+            } @else {
+                display:block;
+                margin-top:10px;
+                width:100%;
+            }
+        }
+    }
+    .sorting-area {
+        margin-bottom:40px;
+    }
+    .faqs-list {
+        .title {
+            font-weight:normal;
+            @if $is-mobile == 1{
+                font-family: $font-family-regular;
+                font-size:24px;
+                padding:35px 0 20px 20px;
+                & + .title-sub {
+                    border-top:1px solid #bbb;
+                }
+            } @else {
+                font-family: $font-family-light;
+                font-size:40px;
+                line-height:50px;
+                margin:40px 0 0 0;
+                &:first-child {
+                    margin-top:0;
+                }
+            }
+
+        }
+        .title-sub {
+            font-weight:normal;
+            font-family: $font-family-semibold;
+            @if $is-mobile == 1{
+                font-size:20px;
+                padding:12px 0 14px 20px;
+            } @else {
+                font-size:26px;
+                line-height:50px;
+                margin:33px 0 0 0;
+            }
+        }
+        dl {
+            margin:0;
+            border-bottom:1px solid #bbb;
+            dt {
+                position:relative;
+                font-family: $font-family-regular;
+                background-color:#f5f5f7;
+                border-top:1px solid #bbb;
+                @if $is-mobile == 1 {
+                    padding:14px 55px 13px 50px;
+                    font-size:18px;
+                    line-height:24px;
+                } @else {
+                    padding:14px 15px 13px 60px;
+                    font-size:24px;
+                    line-height:30px;
+                }
+                a {
+                    @if $is-mobile == 1 {
+                        display:block;
+                        color:#333;
+                        font-size:18px;
+                        line-height:24px;
+                        display: block;
+                        @extend .icon-pagenav-down;
+                        &:before {
+                            @extend %icon;
+                            position:absolute;
+                            right:20px;
+                            top:22px;
+                            font-size:16px;
+                            color:#333;
+                        }
+                        &.on {
+                            @extend .icon-pagenav-up;
+                        }
+                    }
+                }
+                &.include-date {
+                    color:#333;
+                    @if $is-mobile == 0{
+                        padding:14px 200px 13px 60px;
+                        word-break:break-all;
+                        .date {
+                            display:block;
+                            position:absolute;
+                            right:30px;
+                            top:50%;
+                            margin-top:-13px;
+                            text-align:center;
+                            font-family: $font-family-light;
+                            font-size:18px;
+                            line-height:26px;
+
+                        }
+                    } @else {
+                        padding:14px 14px 13px 50px;
+                        .date {
+                            font-size:14px;
+                        }
+                    }
+                }
+                strong {
+                    position:absolute;
+                    display:block;
+                    left:0;
+                    text-align:center;
+                    font-weight:normal;
+                    font-family: $font-family-semibold;
+                    @if $is-mobile == 1{
+                        width:50px;
+                        font-size:18px;
+                        line-height:24px;
+                        left:5px;
+                    } @else {
+                        font-size:24px;
+                        width:60px;
+                    }
+                    &.question {
+                        color:$red-lg;
+                    }
+                    &.answer {
+                        color:#666;
+                    }
+                }
+                em {
+                    color:#333;
+                    font-style:normal;
+                    word-wrap: break-word;
+                }
+                p {
+                    margin:8px 0 0 0;
+                    font-family: $font-family-regular;
+                    font-size:20px;
+                    line-height:26px;
+                    color:#666;
+                }
+            }
+            dd {
+                position:relative;
+                margin:0;
+                font-family: $font-family-regular;
+                color:#666;
+                word-wrap: break-word;
+                @if $is-mobile == 1{
+                    font-size:18px;
+                    line-height:24px;
+                    padding:13px 15px 33px 50px;
+                    // display:none;
+                } @else {
+                    font-size:20px;
+                    line-height:26px;
+                    padding:13px 15px 33px 60px;
+                }
+                strong{
+                    position:absolute;
+                    display:block;
+                    left:0;
+                    text-align:center;
+                    font-weight:normal;
+                    font-family: $font-family-semibold;
+                    @if $is-mobile == 1{
+                        width:50px;
+                        font-size:18px;
+                        line-height:24px;
+                    } @else {
+                        width:60px;
+                        font-size:24px;
+                    }
+                }
+                em {
+                    margin:0 0 6px 0;
+                    font-style:normal;
+                    font-family: $font-family-regular;
+                    font-size:24px;
+                    line-height:30px;
+                }
+                p {
+                    margin:0;
+                }
+                a {
+                    text-decoration:underline;
+                }
+            }
+        }
+    }
+    .btn-right {
+        @if $is-mobile == 1 {
+            margin:30px 20px;
+            a {
+                & + a {
+                    margin-top:10px;
+                }
+            }
+        }
+    }
+    .description {
+        @if $is-mobile == 1 {
+            margin:20px;
+        }
+    }
+    .inquiry-type{
+        @if $is-mobile == 0 {
+            position:relative;
+            padding-left:113px;
+            border-top:1px solid #bababa;
+            border-bottom:1px solid #bababa;
+            margin-bottom:20px;
+
+            .table-style-row{
+                border-top:none;
+                border-left:1px solid #bababa;
+                margin-bottom:-1px;
+                margin-top:0;
+            }
+            .image-title{
+                position:absolute;
+                width:113px;
+                text-align:center;
+                top:50%;
+                left:0;
+                margin-top:-13px;
+                .icon{
+                   font-size:26px;
+                   color:#999;
+                }
+                .icon-email-only{
+                   font-size:30px;
+                }
+                >span{display:none;}
+            }
+        }
+        @if $is-mobile == 1 {
+            margin:20px;
+        }
+    }
+    .sorting-area {
+        .selectbox {
+            width:100%;
+        }
+    }
+    .styled-form {
+        .receipt-number .input-validate {
+            input {
+                @include device-property(width,530px,100%);
+                display:inline-block;
+                vertical-align:middle;
+            }
+        }
+    }
+    
+    /* PJTEUGDPR-1 20180122 add */
+    .delete-history {
+    	@if $is-mobile == 0 {
+    		#repairList, #inquiryList {
+				.check-wrap {
+					position: relative;
+					
+					.check-cover {
+						position: absolute;
+						left: 0;
+						top: 0;
+						width: 90px;
+						height: 100%;
+						cursor: pointer;
+					}
+				}
+    		}
+    		
+    		#inquiryList {				
+    			> .table-style-row {	/* my-inquiry-status-list */
+					.delete-check {
+						border-right: 1px solid #bbb;
+    				}
+				}
+				.inquiry-type {
+					padding-left: 0;
+					
+					> .table-style-row {	/* inquiry-status-list */
+						border-left: 0;
+						
+						.delete-check {
+							border-right: 1px solid #bbb;
+	    				}
+						
+						.request-type {
+							border: 0;
+						}
+					}
+				}
+				.check-wrap + .inquiry-type {
+					margin-top: 20px;
+				}
+    		}
+			.btn-right-box {
+				margin-top: 20px;
+				
+				p {
+					text-align: left;
+					margin-top: 0;
+				}
+					
+				.btn-delete.disabled {
+					pointer-events: none;
+					background: #666;
+				}
+			}
+    	}	
+		
+		@if $is-mobile == 1 {
+			#repairList, #inquiryList {
+				.check-wrap {
+					position: relative;
+					
+					.check-label {
+					    padding: 0 20px;
+					}
+					
+					.check-cover {
+						position: absolute;
+						left: 0;
+						top: 0;
+						width: 90px;
+						height: 100%;
+					}
+				}
+						
+				.table-style-row {
+					.delete-check {
+						padding: 0;
+						
+						span.styled-checkbox {
+						    width: 100%;
+						    margin: 0 auto;
+						    background-position: center 3px;
+						    
+						    &.checked {
+						    	background-position: center -32px;
+						    }
+						}
+					}
+				}
+				
+				.btn-right-box {
+					p {
+					    text-align: left;
+					    margin: 10px 10px 20px;
+					    width: auto;
+					}
+					
+					.btn-delete {
+					    float: none;
+					    display: block;
+					    margin: 0 auto 20px;
+					    width: 70%;
+					}
+					
+					.btn-delete.disabled {
+						pointer-events: none;
+						background: #666;
+					}
+				}
+			
+				.inquiry-type {
+					margin: 20px 0;
+					
+					&:first-child {
+						margin-top: 0;
+					}
+				}
+			}
+			
+		}
+    }
+	/* //PJTEUGDPR-1 20180122 add */
+}

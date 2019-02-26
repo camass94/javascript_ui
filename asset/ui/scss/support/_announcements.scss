@@ -1,0 +1,10 @@
+.tab-style {
+    &.full-3 {
+        li {
+            width: 33.3%;
+            &:first-child {
+                width:33.4%;
+            }
+        }
+    }
+}

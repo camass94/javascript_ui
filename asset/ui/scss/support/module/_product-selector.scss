@@ -1,0 +1,11 @@
+.product-selector, .model-selector {
+	.modal-title {
+		border: 0;
+		margin: 0;
+	}
+	&.selected {
+		a.category {
+			color: $red-lg !important;
+		}
+	}
+}

@@ -1,0 +1,227 @@
+.complete-page{
+	.btn-print{
+		@include dmv(display, inline-block, none);
+	}
+	@if $is-mobile == 1{
+		.container {
+			.btn-right{
+				margin-bottom:30px !important;
+			}
+		}
+	}
+}
+.complete-page-step{
+	@include dmv(padding, 30px 0 35px 0, 30px 20px 30px 20px);
+	@include dmv(margin-bottom, 40px, 20px);
+	text-align:center;
+	border:1px solid #ffffff;
+	border-width:1px 0 1px;
+	background:#f4f5f7;
+	box-shadow:inset 0 -5px 15px -5px rgba(0, 0, 0, 0.08), inset 0 5px 5px -5px rgba(0, 0, 0, 0.08);
+	p{
+		margin:0;
+		font-family:$font-family-regular;
+		@include dmv(font-size, 20px, 16px);
+	}
+	h2{
+		@if $is-mobile == 1{
+			font-size:26px;
+		}
+		strong{
+			@include dmv(font-size, 40px, 26px);
+			font-weight:$font-weight-base;
+			font-family:$font-family-light;
+			@include dmv(margin-bottom, 0, 29px);
+			&.red{
+					 font-family:$font-family-regular;
+			}
+	
+		}
+	}
+	.text-step{
+			 @include dmv(margin,15px 0 0 0, 15px 0);
+		@include dmv(font-size, 24px, 20px);
+	}
+	@if $is-mobile==1{
+		.text-step {
+			 padding-top:25px;
+			 border-top: 1px solid $grey-silver;
+			 &.mc {
+			 	border-top:0;
+			 	padding-top:0;
+			 	font-size:18px;
+			 }
+		}
+	}@else{
+		.text-step{
+				 border-top: 0 solid $grey-silver;
+			}
+	}
+	 .icon-img-center{
+		width:100%;
+		display: block;
+		text-align: center;
+		margin-bottom:20px;
+		img{
+				@include dmv(width, 103px, 83px);
+		}
+	 }
+	.step-one{
+		position:relative;
+		overflow: hidden;
+		list-style:none;
+		margin:0 auto;
+		padding:0;
+		&:after{
+			content: '';
+			@include dmv(display, block, none);
+			width: 360px;
+			height: 50px;
+			border-top: 1px solid $grey-silver;
+			position: absolute;
+			top: 32px;
+			left: 50%;
+			margin-left:-180px;
+			z-index:1;
+		}
+		li{
+			position: relative;
+			min-height: 75px;
+			@include dmv(padding-top, 70px, 0);
+			@include dmv(font-size, 20px, 16px);
+			@if $is-mobile == 1{
+				&:first-child{
+					&:after{
+						//content:'';
+						width:1px;
+						height:90%;
+						position: absolute;
+						top: 55px;
+						left: 25px;
+						//border-left: 1px solid $grey-silver;
+					}
+				}
+				p{
+					clear:both;
+					padding-left: 70px;
+					text-align:left;
+					font-size:20px;
+				}
+				&:first-child p{
+					margin-bottom: 30px;
+				}
+			}
+			.icon{
+				text-align: center;
+				color:$white;
+				position: absolute;
+				@include dmv(top, 5px, 5px);
+				@include dmv(left, 50%, 0);
+				@include dmv(margin-left, -29px, 0);
+				z-index:10;
+				font-size:53px;
+				&:first-child{
+					color:$grey-silver;
+				}
+			}
+			.icon-service-center{
+				font-size:22px;
+				top:21px;
+				@include device-property (margin-left,-10px,19px);
+			}
+		}
+	}
+	.step_two{
+		position:relative;
+		overflow: hidden;
+		list-style:none;
+		margin:0 auto;
+		padding:0;
+		@include dmv(width, 768px, 100%);
+		&:after{
+			content: '';
+			@include dmv(display, block, none);
+			width: 343px;
+			height: 50px;
+			border-top: 1px solid $grey-silver;
+			position: absolute;
+			top: 32px;
+			left: 212px;
+		}
+		li{
+			position: relative;
+			min-height: 75px;
+			@include dmv(width, 50%, 100%);
+			@include dmv(float, left, none);
+			@include dmv(padding-top, 70px, 0);
+			@include dmv(font-size, 20px, 16px);
+			@if $is-mobile == 1{
+				&:first-child{
+					&:after{
+						content:'';
+						width:1px;
+						height:90%;
+						position: absolute;
+						top: 55px;
+						left: 25px;
+						border-left: 1px solid $grey-silver;
+					}
+				}
+				p{
+					clear:both;
+					padding-left: 70px;
+					text-align:left;
+					font-size:20px;
+				}
+				&:first-child p{
+					margin-bottom: 30px;
+				}
+			}
+			.icon{
+				text-align: center;
+				color:$white;
+				position: absolute;
+				@include dmv(top, 5px, 5px);
+				@include dmv(left, 50%, 0);
+				@include dmv(margin-left, -27px, 0);
+				font-size:53px;
+				&:first-child{
+					color:$grey-silver;
+				}
+			}
+			.icon-ship-in-service{
+				font-size:22px;
+				top:21px;
+				@include dmv(margin-left,-9px,16px);
+			}
+		}
+	}
+	.btn-right{
+		.btn{
+			@include dmv(width, auto,100%);
+		}
+	}
+}
+.complete-tip{
+	font-family:$font-family-regular;
+	margin-bottom:36px;
+	@include dmv(padding, 0, 0 20px);
+	@include dmv(font-size, 20px, 16px);
+	&.center p{
+		margin:0;
+		text-align:center;
+		font-family:$font-family-regular;
+	}
+}
+.complete-title{
+	font-family:$font-family-semibold;
+	margin-bottom:13px;
+	@include dmv(padding, 0, 0 20px);
+	@include dmv(font-size, 26px, 20px);
+}
+
+#caseNumberEdit {
+	.modal-inner {
+		max-width:600px;
+	}	
+}

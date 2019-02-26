@@ -1,0 +1,133 @@
+.site_landing {
+	padding-top:20px;
+	padding-bottom:40px !important;
+	position:relative;
+	.module-group + & {padding-top: 100px;}
+	.columns {
+
+		@if $is-mobile == 0 {
+			> div > a {
+				display:table;
+				width:100%;
+				.img, .txt {
+					display:table-cell;
+					width:50%;
+					vertical-align: top;
+				}
+
+				.img + .txt {
+					padding:0 20px;
+				}
+
+				&:hover, 
+				&:focus {
+					color:#333;
+				}
+			}
+		} @else {
+			> div > a {
+				display:block;
+				width:100%;
+				.img, .txt {
+					display:block;
+					width:100%;
+				}
+
+				&:hover, 
+				&:focus {
+					text-decoration:none;
+				}
+			}
+		}
+		
+
+		&:last-child {
+			padding-bottom: 0;
+		}
+		h2.title {
+			font-size: 30px;
+			font-weight:bold; // 160112
+			line-height: 1.133em;
+			word-break:break-word;
+		}
+		p {
+			color: #666666;
+			font-size: 20px;
+			line-height: 1.500em;
+			margin: 0.750em 0;
+		}
+		h2.title + ul.link-list {padding-top:17px;}
+		ul.link-list {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			font-size: 20px;
+			line-height: 1.200em;
+			font-family: $font-family-regular;
+			li {
+				margin-bottom: 0.400em;
+				a {
+					text-decoration: underline;
+					.icon {
+						text-decoration: none;
+						font-size: 0.650em;
+						margin-left:3px;
+					}
+				}
+			}
+		}
+	}
+	@media (max-width: 1440px) and (min-width: 1025px){ // 1025~1440
+		padding-top:16px;
+		.module-group + & {padding-top: 80px;}
+		.columns {
+			h2.title {
+				font-size: 24px;
+			}
+			p {
+				font-size: 16px;
+			}
+			h2.title + ul.link-list {padding-top:13px;}
+			ul.link-list {
+				font-size: 16px;
+			}
+		}
+	}
+	@media (max-width: 1024px) { // 769~1024
+		padding-top:12px;
+		.module-group + & {padding-top: 60px;}
+		.columns {
+			h2.title {
+				font-size: 18px;
+			}
+			p {
+				font-size: 16px;
+			}
+			h2.title + ul.link-list {padding-top:10px;}
+			ul.link-list {
+				font-size: 16px;
+			}
+		}
+	}
+	.is-mobile & {
+		padding-top:0;
+		.module-group + & {padding-top: 35px;}
+		.columns {
+			padding-top:0;
+			> * {
+				padding-top:15px;
+			}
+			h2.title {
+				font-size:28px;line-height:28px;
+			}
+			p {
+				font-size:18px;line-height:22px;color:#333;
+				margin:10px 0;
+			}
+			ul.link-list {
+				font-size:18px;line-height:22px;
+				li {margin-bottom: 5px;}
+			}
+		}
+	}
+}

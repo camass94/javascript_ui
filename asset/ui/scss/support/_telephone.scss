@@ -1,0 +1,227 @@
+.contact-area .info-list {
+	> li {
+		position:relative;
+		@include device-property(padding,71px 40px 71px 204px, 40px 20px);
+		/* PJTBTOBCSR-138 -*/
+		//border-top:1px solid $grey-silver;
+		//font-family:$font-family-regular;
+		// text-align:left;
+		/* // PJTBTOBCSR-138 -*/
+
+		.info-img {
+			@if $is-mobile == 0 {
+				position:absolute;
+				top:70px;
+				left:40px;
+			} @else {
+				display:block;
+				text-align:center;
+
+				img {
+					width:81px;
+				}
+			}
+		}
+
+		.telephone-tit {
+			font-family:$font-family-light;
+
+			@if $is-mobile == 0 {
+				font-size:40px;
+			}@else {
+				margin:15px 0;
+				font-size:26px;
+				text-align:center;
+			}
+		}
+
+		.telephone-info {
+			@if $is-mobile == 0 {
+				margin-top:22px;
+				padding-right:160px;
+			}
+
+			@include tablet-only {
+				padding-right:20px;
+			}
+
+			> div {
+				margin-top:28px;
+				padding:28px 0 0;
+				border-top:1px solid $grey;
+				text-align:left;
+
+				&:first-child {
+					margin-top:0;
+					padding-top:0;
+					border-top:0;	
+				}
+
+				.telephone-sit {
+					font-family:$font-family-regular;
+					@include device-property(font-size, 26px, 24px);
+
+					.icon {
+						@include device-property(margin-right, 10px, 5px);
+						font-size:25px;
+						color:$grey-dove;
+						vertical-align:baseline;
+					}
+
+					& + .telephone-box {
+						margin-top:10px;
+					}
+				}
+
+				.telephone-sim {
+					margin:0 0 5px;
+					font-family:$font-family-semibold;
+					@include device-property(font-size, 20px, 18px);
+					font-wieght:normal;
+				}
+
+				.telephone-box {
+
+					@if $is-mobile == 0 {
+						margin-top:17px;
+						padding-left:42px;
+					}@else {
+						margin-top:17px;
+						padding-left:35px;
+					}
+
+					ul {
+						margin:0;
+						padding:0;
+						list-style:none;
+
+						li {
+							display:block;
+							position:relative;
+							margin-top:7px;
+							padding-left:30px;
+							font-family:$font-family-semibold;
+							font-weight:normal;
+
+							@if $is-mobile == 0 {
+								font-size:20px;
+							}@else {
+								font-size:18px;
+							}
+
+							&:first-child {
+								margin-top:0;
+							}
+
+							a {
+								color:$grey-mine-shaft;
+
+								&:hover, &:focus {
+									color:$red-lg;
+								}
+							}
+
+							&:before {
+								@extend .icon;
+								margin-right:10px;
+								margin-left:-30px;
+								font-size:20px;
+								color:$grey-dusty;
+								/* PJTBTOBCSR-138 */
+								line-height:normal;
+								/* // PJTBTOBCSR-138 */
+							}
+
+							&.hours {
+								@extend .icon-clock;
+								font-family:$font-family-regular;
+								color:$red-lg;
+
+								&:before {
+									color:$red-lg;
+								}
+							}
+
+							&.tel {
+								@extend .icon-circle-phone;
+							}
+
+							&.email {
+								@extend .icon-email-01;
+							}
+
+							em {
+								display:inline-block;
+								min-width:30px;
+								@include device-property(margin-right, 10px, 5px);
+								vertical-align:middle;
+							}
+							span {
+								vertical-align:middle;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.telephone-text {
+			position:relative;
+			@if $is-mobile == 0{
+				margin-top:10px;
+				padding-right:250px;
+
+				@include tablet-only {
+					padding-right:20px;
+				}
+			}@else {
+				text-align:center;
+			}
+
+			> p {
+				margin:0;
+			}
+
+			.tel-title {
+				@include device-property(font-size, 24px, 20px);
+				@include mobile-only {
+					line-height:normal;
+				}	
+			}
+
+			.tel-text {
+				@include device-property(font-size, 20px, 18px);
+				@include mobile-only {
+					margin-top:7px;
+					color:$grey-dove;
+				}	
+			}
+
+			.tel-button {
+				@if $is-mobile == 0 {
+					position:absolute;
+					top:0;
+					right:0;
+
+					.btn {
+						min-width:240px;
+					}
+
+					@include tablet-only {
+						position:static;
+						display:block;
+						margin-top:25px;
+					}
+				}@else {
+					display:block;
+					width:100%;
+					margin-top:25px;
+
+					.btn {
+						width:100%;
+					}
+				}
+			}
+		}
+	}
+}

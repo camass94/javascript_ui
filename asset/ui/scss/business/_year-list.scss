@@ -1,0 +1,136 @@
+.year-list {width:100%;font-family:$font-family-light;
+	> div > .text-left {padding:68px 0 9px 0;
+		.subtitle {font-size:24px;line-height:32px;color:#333;}
+	}
+	> div > ul {width:100%;list-style:none;margin:0;padding:0 0 20px 0;
+		> li {width:100%;margin:0;padding:0;display:table;border-top:1px solid #ddd;
+			&:first-child {border-top:0;}
+			.year {
+				display:table-cell;width:180px;padding:49px 0 48px 0;vertical-align:top;color:#a50034;font-size:44px;line-height:53px;
+			}
+			.year2 {
+				display:table-cell;width:270px;padding:50px 0 0 0;vertical-align:top;color:#a50034;font-size:44px;line-height:44px;
+			}
+			.title {
+				display:table-cell;width:405px;padding:50px 0 0 0;vertical-align:top;color:#a50034;font-size:44px;line-height:44px;
+			}
+			.cont {
+				display:table-cell;vertical-align:top;
+				> ul {width:100%;list-style:none;margin:0;padding:60px 0 29px 0;
+					> li {width:100%;margin:0;padding:0 0 23px 0;font-size:24px;line-height:32px;
+						img {float:right;margin-left:50px;}
+						strong {display:block;padding:0 0 1px 0;font-family:$font-family-semibold;font-weight:normal;}
+						&:after {content:"";width:100%;display:block;height:1px;clear:both;}
+						ul {list-style:none;margin:0;padding:0;
+							li {
+								font-size:24px;line-height:40px;margin:0;padding:0 0 0 15px;
+								&:before {
+									background:url("/lg4-common-gp/img/common/dotted.gif") no-repeat 0 50%;
+									content: "*";
+									display: inline-block;
+									margin-left: -15px;
+									text-indent: -9999em;
+									width: 15px;
+								}
+							}
+
+						}
+						.sub-list {
+							margin-top:8px;
+							li {
+								font-size:20px;
+								line-height:28px;
+								color:#333333;
+								font-family:$font-family-light;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	@media (max-width: 1440px) and (min-width: 1025px){ // 1025~1440
+		> div > .text-left {padding:54px 0 7px 0;
+			.subtitle {font-size:19px;line-height:25px;}
+		}
+		> div > ul {padding:0 0 16px 0;
+			> li {
+				.year {width:144px;padding:38px 0 38px 0;font-size:35px;line-height:42px;}
+				.year2 {width:216px;padding:38px 0 38px 0;font-size:35px;line-height:42px;}
+				.title {width:324px;padding:40px 0 0 0;font-size:35px;line-height:35px;}
+				.cont {
+					> ul {padding:48px 0 23px 0;
+						> li {padding:0 0 18px 0;font-size:19px;line-height:25px;
+							img {margin-left:40px;}
+							ul li {font-size:19px;line-height:25px;}
+							.sub-list {
+								margin-top:6px;
+								li {
+									font-size:16px;
+									line-height:24px;
+								}
+							}
+						}
+					}
+
+				}
+
+			}
+		}
+	}
+	@media (max-width: 1024px) { // 769~1024
+		> div > .text-left {padding:40px 0 5px 0;
+			.subtitle {font-size:16px;line-height:20px;}
+		}
+		> div > ul {padding:0 0 12px 0;
+			> li {
+				.year {width:108px;padding:28px 0 28px 0;font-size:26px;line-height:31px;}
+				.year2 {width:162px;padding:28px 0 28px 0;font-size:26px;line-height:31px;}
+				.title {width:243px;padding:30px 0 0 0;font-size:26px;line-height:26px;}
+				.cont {
+					> ul {padding:36px 0 17px 0;
+						> li {padding:0 0 13px 0;font-size:16px;line-height:20px;
+							img {margin-left:30px;}
+							ul li {font-size:16px;line-height:20px;}
+							.sub-list {
+								margin-top:4px;
+								li {
+									font-size:16px;
+									line-height:20px;
+								}
+							}
+						}
+
+					}
+
+				}
+
+			}
+		}
+	}
+	.is-mobile & {
+		> div > .text-left {padding:34px 20px 0;
+			.subtitle {font-size:16px;line-height:20px;}
+		}
+		> div > ul {padding:0;
+			> li {display:block;padding:0 20px;
+				.year {display:block;width:100%;padding:36px 0 0 0;font-size:28px;line-height:26px;}
+				.year2 {display:block;width:100%;padding:36px 0 0 0;font-size:28px;line-height:26px;}
+				.cont {display:block;
+					> ul {padding:18px 0 20px 0;
+						> li {padding:0 0 13px 0;font-size:16px;line-height:24px;
+							img {margin-left:0;float:none;margin-top:10px;}
+							strong {padding:0;}
+							ul li {font-size:16px;line-height:24px;}
+							.sub-list {
+								li {
+									line-height:22px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

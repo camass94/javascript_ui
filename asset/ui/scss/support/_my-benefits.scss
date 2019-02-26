@@ -1,0 +1,89 @@
+%icon {
+    font-family:"lg-icon";
+    display:inline-block;
+    vertical-align:middle;
+    line-height:1;
+    font-weight:normal;
+    font-style:normal;
+    speak:none;
+    text-decoration:inherit;
+    text-transform:none;
+    text-rendering:optimizeLegibility;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+
+.slick-carousel { position:relative; min-height:100px; }
+.slick-carousel .slick-item { display:none; }
+.slick-carousel .slick-slider .slick-item { display:block; }
+.slick-carousel .slick-item img { width:100%; }
+.slick-carousel .next,
+.slick-carousel .prev { display: none; position:absolute; z-index:1; top:50%; font-size:0; line-height:0; text-decoration:none; }
+.slick-carousel .next { right:20px; @extend .icon-arrow-next;}
+.slick-carousel .prev { left:20px; @extend .icon-arrow-prev;}
+.slick-carousel .next:before,
+.slick-carousel .prev:before { font-size:46px; color:#808080; }
+.slick-carousel .next:before,
+.slick-carousel .prev:before { @extend %icon; }
+.slick-carousel .slick-dots { position:absolute; bottom:30px; }
+.slick-carousel .slick-dots li { width:12px; height:12px; margin:0 5px; }
+.slick-carousel .slick-dots li button { width:100%; height:100%; background-color:#fff; border-radius:12px}
+.slick-carousel .slick-dots li.slick-active button { background-color:#a5103f; border:1px solid #a5103f;}
+
+.support-content {
+    .benefits {
+        .slick-carousel {
+            @if $is-mobile == 1 {
+                padding: 0 30px;
+                margin-bottom: 60px;
+                .next { right: 5px; }
+                .prev { left: 5px; }
+                .next:before, .prev:before {
+                    font-size: 30px;
+                    color: #808080;
+                }
+            }@else {
+                padding: 0 20px;
+                margin-bottom:120px;
+            }
+            .viewport {
+                @if $is-mobile == 0 {
+                    max-width: 752px;
+                }
+                margin: 0 auto;
+            }
+            .slick-item {
+                text-align: center;
+                img {
+                    width: auto;
+                }
+            }
+            .slick-dots {
+                @if $is-mobile == 1 {
+                    bottom:-40px;
+                } @else {
+                    bottom:-90px;
+                }
+            }
+        }
+        .benefits-none {
+            @include device-property(padding,0,0 20px);
+            p {
+                @include device-property(font-size,24px,18px);
+                font-family:$font-family-regular;
+            }
+        }
+    }
+    @if $is-mobile == 1 {
+        .links {
+            padding: 0 20px;
+            margin-bottom: 40px;
+            .btn {
+                width: 100%;
+            }
+        }
+    }
+
+}
+

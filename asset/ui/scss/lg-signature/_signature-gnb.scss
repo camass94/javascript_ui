@@ -1,0 +1,183 @@
+/* LGEGMO-2281 MODIFY */
+/* LGEDE-2018 20170417 modfidy */
+/* LGEGMO-2599 20170120 modify */
+.appHeader{
+    .primary-nav ul.primary-nav-list > li.signature-inline{
+		/*min-width:140px;*/
+   		>a{
+   			position: relative;
+    		display: block;
+   			padding-left: 0.5em;
+    		padding-right: 7.5em;
+    		height: 64px;
+    		overflow: hidden;    		
+    		i{
+    			position: absolute;
+			    padding: 0;
+			    margin: 0;
+			    top: 25px;
+    			font-size: 6.1em;
+    			/*margin-top: -0.14em;*/
+    			&:before {
+				    height: 0;
+				    width: 0;
+				    display: block;
+				}
+    		}
+    		span{
+    			position: absolute;
+			    overflow: hidden;
+			    width: 0;
+			    height: 0;
+			    font-size: 0;
+			    line-height: 0;
+			    text-indent: -9999px;
+    		}
+    	}    	
+    }   
+}
+/*// LGEGMO-2599 20170120 modify */
+/*// LGEDE-2018 20170417 modfidy */
+
+/* LGEGMO-2599 20170120 add */
+html.ie.lt-ie9 .appHeader,
+	html.ie.ie9 .appHeader,
+	html.ie11 .appHeader {
+    .primary-nav ul.primary-nav-list > li.signature-inline > a i{
+    	/*margin-top: -0.07em !important;*/
+    	top : 30px !important;
+    }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  //ie10 hack
+	.primary-nav ul.primary-nav-list > li.signature-inline > a i{
+    	/*margin-top: -0.07em !important;*/
+    	top : 30px !important;
+    }
+}
+@media screen and (-webkit-min-device-pixel-ratio:0){ //chrome hack
+	html.mac .appHeader{
+		.primary-nav ul.primary-nav-list > li.signature-inline > a i{
+	    	top : 27px !important;
+	    }
+	}
+}
+/*// LGEGMO-2599 20170120 add */
+
+/*// LGEDE-2018 20170417 add */
+html.mac .appHeader{
+	.primary-nav ul.primary-nav-list > li.signature-inline > a{
+    	width: 162px;
+		padding: 0 1rem;
+		text-align: left;
+    }
+    .primary-nav ul.primary-nav-list > li.signature-inline > a i{
+    	top : 27px !important;
+    }
+    .primary-nav ul.primary-nav-list > li.signature-inline > a i:before{
+    	height:25px; width:162px; text-align:left;
+    }
+}
+/*// LGEDE-2018 20170417 add */
+
+.meganav-menu.signature-gnb {
+  >.container.signature {
+    position:relative;
+    max-width:1200px;
+    padding:0 1.5rem 2.9rem 4rem !important;
+    margin-left:0;
+    font-size:0;
+
+    section{
+      border-left:none !important;
+    }
+    .thumb-menu {
+      display:inline-block;
+      vertical-align: top;
+      width:340px;
+      padding-left:0;
+      padding-right:10px;
+      .nav-group{
+        text-align:center;
+        a{
+          background:none;
+          img{
+            width:330px;
+            height:184px;
+            @include margin-bottom(18px);
+          }
+        }
+      }
+    }
+    .signature-product{
+      display:inline-block;
+      vertical-align: top;
+      padding-left:20px;
+      padding-right:0;
+      width:215px;
+      .nav-group{
+        padding-right:60px;
+        a{
+          display:table;
+        }
+        >ul{
+          >li{
+            display:list-item;
+            padding-left:20px;
+            padding-bottom:4px;
+          }
+        }
+      }
+    }
+    .last{
+      display:inline-block;
+      float:none;
+      padding:0;
+      .right-slider {
+        max-width:230px;
+        @include padding-bottom(30px);
+        p {
+          margin:0;
+        }
+        .slick-dots {
+          bottom:0;
+          @include margin-bottom(0);
+        }
+        .slick-prev, .slick-next {
+          @include margin-top(-45px);
+          &:before, &:before {
+            @include font-size(22px);
+            font-weight:bold !important;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1200px) {
+  .meganav-menu.signature-gnb {
+    >.container.signature {
+      .thumb-menu{
+        width:auto;
+        display:table;
+        .nav-group{
+          text-align:left;
+          .heading{
+                background: url("/lg4-common-gp/img/global/mega-menus/gnb-arrow.png") right center no-repeat !important;
+            img{
+              display:none;
+            }
+          }
+        }
+      }
+      .signature-product{
+        display:table-cell;
+        border-left:1px solid #b9b9bc !important;
+        width:75% !important;
+      }
+      .last{
+        display:none !important;
+      }
+    }
+  }
+}
+/* //LGEGMO-2281 MODIFY */

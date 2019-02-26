@@ -1,0 +1,8 @@
+
+// Testing uncss ignore on .in
+.fade {
+    opacity: 0;
+    &.in {
+        opacity: 1;
+    }
+}

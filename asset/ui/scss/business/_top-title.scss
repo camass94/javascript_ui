@@ -1,0 +1,55 @@
+.top-title {
+    color: #fff;
+    font-family:$font-family-light;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    max-width: 100%;
+    position: relative;
+    text-align: center;
+	.title {
+		left: 0;
+		padding-bottom: 0;
+		padding-left: 0;
+		padding-right: 0;
+		padding-top: 0;
+		position: absolute;
+		top: 30%;
+		width: 100%;
+		.title-head {font-size:64px;}
+	}
+	.background-image {max-height:250px;overflow:hidden;
+		img {width:100%;max-width:100%;min-width:1050px;}
+	}
+	p {font-size: 26px;margin:0;line-height:34px;}
+
+	@media (max-width: 1440px) and (min-width: 1025px){ // 1025~1440
+		.title .title-head {font-size:50px;}
+		p {font-size: 20px;line-height:24px;}
+	}
+	@media (max-width: 1024px) { // 769~1024
+		.title .title-head {font-size:42px;}
+		p {font-size: 16px;line-height:18px;}
+	}
+	.is-mobile & {
+		color:#333;text-align:left;padding:25px 20px 20px;max-width:768px;margin:0 auto;
+		.title {position:relative;left:auto;top:auto;background:#fff;}
+		.title .title-head {font-size:28px;line-height:26px; font-family:$font-family-regular;}
+		p {padding:16px 0 4px 0;font-size: 18px;line-height:24px;}
+	}
+}
+
+
+.tip {
+    height: auto;
+    @include dmv(padding,45px 0, 0 20px 25px);
+    @include dmv(font-size,21px, 18px);
+    overflow: hidden;
+    position: relative;
+    text-align:left;
+    font-family: $font-family-regular;
+    p {
+    	@include dmv(margin,0, 0);
+    }
+}

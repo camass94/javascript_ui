@@ -1,0 +1,157 @@
+.cl-about {
+	#milestone {
+		margin-bottom:36px;
+		.container {
+			> ul {
+				> li {
+					table-layout:fixed;
+				}
+			}
+		}
+		.cont {
+
+			ul {
+				padding:49px 0 29px 0;
+				max-width:80%;
+				@media (max-width: 1440px) and (min-width: 1025px){ // 1025~1440
+					padding:38px 0 38px 0;
+				}
+				@media (max-width: 1024px) { // 769~1024
+					padding:28px 0 28px 0;
+				}
+				li {
+					margin:0;
+					padding:0;
+
+					&:before {
+						background:url("/lg4-common-gp/img/common/dotted.gif") no-repeat 0 50%;
+						content: "*";
+						display: inline-block;
+						margin-left: -15px;
+						text-indent: -9999em;
+						width: 15px;
+					}
+
+				}
+			}
+		}
+		.thumbnail {
+			display:table-cell;
+			width:15%;
+			text-align:right;
+			padding:49px 0 48px 0;
+			vertical-align:top;
+			@media (max-width: 1440px) and (min-width: 1025px){ // 1025~1440
+				padding:38px 0 38px 0;
+
+			}
+			@media (max-width: 1024px) { // 769~1024
+				padding:28px 0 28px 0;
+
+			}
+		}
+	}
+	#cl {
+		.text-section {
+			.text-block {
+				margin-top:93px;
+				h3 {
+					font-size:44px;
+					line-height:1;
+					font-family:$font-family-light;
+					margin-bottom:14px;
+				}
+				p {
+					font-size:30px;
+					line-height:38px;
+					font-family:$font-family-light;
+				}
+				@media (max-width: 1440px) and (min-width: 1025px){ // 1025~1440
+					margin-top:74px;
+					h3 {
+						font-size:35px;
+						margin-bottom:11px;
+					}
+					p {
+						font-size:24px;
+						line-height:30px;
+					}
+				}
+				@media (max-width: 1024px) { // 769~1024
+					margin-top:55px;
+					h3 {
+						font-size:26px;
+						margin-bottom:8px;
+					}
+					p {
+						font-size:18px;
+						line-height:22px;
+					}
+				}
+			}
+		}
+		.numberlist {
+			li {
+				&:first-child {
+					padding:0;
+				}
+			}
+		}
+	}
+}
+
+.is-mobile {
+	.cl-about {
+		#cl {
+			.text-section {
+				.text-block {
+					margin-top:56px;
+					h3 {
+						font-size:26px;
+						line-height:1;
+						font-family:$font-family-light;
+						margin-bottom:12px;
+					}
+					p {
+						font-size:16px;
+						line-height:20px;
+						font-family:$font-family-light;
+					}
+				}
+			}
+			.numberlist {
+				padding:28px 0 0 0;
+			}
+
+		}
+		#milestone {
+			margin-bottom:0;
+			.cont {
+				ul {
+					padding:11px 0 31px 0;
+					li {
+						margin:0 0 0 15px;
+						padding:0 15px 0 0;
+						line-height:22px;
+						&:before {
+							background:url("/lg4-common-gp/img/common/dotted.gif") no-repeat 0 50%;
+							content: "*";
+							display: inline-block;
+							margin-left: -15px;
+							text-indent: -9999em;
+							width: 15px;
+						}
+
+					}
+				}
+			}
+			.thumbnail {
+				margin-top:-18px;
+				display:block;
+				width:110px;
+				padding:0 0 40px 0;
+			}
+
+		}
+	}
+}

@@ -1,0 +1,26 @@
+html.lt-ie9 {
+	.tech_spec {
+		.tech_spec_wrap { max-width:1200px; margin:0 auto; padding:0 0rem; padding-bottom:34px; margin-bottom:44px; border-bottom:1px solid #e6e6e6;
+			table { width:100%; border-collapse:collapse; border:none; text-align:left; }
+			table caption { font-size:44px; text-align:left; padding-bottom:19px; }
+			table th { width:38%; padding:5px 1% 5px 0; font-size:24px; line-height:34px; text-align:left; vertical-align:top; }
+			table td { width:58%; padding:5px 1% 5px 0; font-size:24px; line-height:34px; text-align:left; vertical-align:top;}
+			table tr { border-top:none; }
+			span.op { display:inline; }
+			.product-summary {
+				th { width:27%; font-size:24px; padding:12px 1% 0px 0; font-weight:normal;}
+				td { width:27%; font-size:36px; text-align:left;  padding:0px 1% 12px 0;}
+			}
+			.product-dimensions {
+				th { padding:0; }
+				td { font-size:30px; padding:35px 0 5px;}
+			}
+			&.last {
+				margin-bottom:0;
+				border:none;
+				padding-bottom:54px;
+				table { border:none; }
+			}
+		}
+	}
+}

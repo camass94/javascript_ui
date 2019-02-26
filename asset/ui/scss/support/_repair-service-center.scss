@@ -1,0 +1,1731 @@
+$borderColor: #efefef;
+$grayf5: #f5f5f5;
+$gray-title: #444;
+
+.repair-service-center {
+    position: relative;
+    font-family: $font-family-regular;
+    @include device-property(border-top, 1px solid $grey-silver, 0);
+    color: $grey-mine-shaft;
+    ul, dl, dt, dd, ol, li, p, form {
+        margin: 0;
+        padding: 0;
+    }
+    
+    a.repair-gps {
+        position:absolute;
+        top:0;
+        right:0;
+        width:35px;
+        height:35px;
+        text-align: center;
+        text-decoration: none;
+        i:before {
+            line-height: 35px;
+        }
+    }
+    .map-expend {
+        position:absolute;
+        width:35px;
+        height:35px;
+        right:10px;
+        top:10px;
+        border: 1px solid #666;
+        border-radius: 3px;
+        background: rgba(255,255,255,0.7);
+        text-decoration:none;
+        text-align:center;
+        i {
+            color:#666;
+            font-size:23px;
+            &:before {
+                line-height:34px;
+            }
+            &.on:before {
+                @extend .icon-light-x;
+            }
+        }
+    }
+    .repair-detail-section {
+        .repair-center-picture {
+            position: relative;
+            height: 100%;
+            overflow: hidden;
+            border-bottom:1px solid #ccc;
+            background: #e5e5e5;
+            border-left: 0;
+            text-align: center;
+            img {
+                position: static;
+                left: 0;
+                top: 0;
+                max-height: 227px;
+                height: 100%;
+            }
+        }
+    }
+    .table-style-row {
+        th {
+            border-top:0;
+            @include device-property(padding, 13px 30px, 13px 20px);
+        }
+        td {
+            @include device-property(padding, 16px 30px, 16px 20px);
+            word-break: break-word;
+        }
+        .table-first-tr {
+            th {
+                padding:0;
+                border:0;
+                font-size:0;
+            }
+            td {
+                padding:0;
+                border:0;
+                font-size:0;
+                &.repair-center-picture {
+                    border-bottom: 1px solid #bbb;
+                }
+            }
+        }
+    }
+    .button-right {
+        width: 100%;
+        a {
+            @include device-property(width, auto, 100%);
+        }
+        @include device-property(padding, 0, 30px 20px);
+        @include device-property(text-align, right, center);
+        display:inline-block;
+        @if $is-mobile==0 {
+            margin-top: 30px;
+            padding: 0;
+        }
+    }
+    /* LGEGMO-2014 */
+    .map-area {
+        @media (max-width: 1024px) { // 769~1024
+            width:95%;
+        }
+        .is-mobile & {
+            width: 100%;
+        }
+        margin:0 auto;
+        @include device-property(height, 820px, 180px);
+        @include device-property(border, 1px solid #ccc, 0);
+    }
+    /* //LGEGMO-2014 */
+    .repair-more-section {
+        dl {
+            margin: 0
+        }
+    }
+    .repair-map-section {
+        position: relative;
+        width:100%;
+        &.full {
+            height:100%;
+            position:fixed;
+            z-index:1111;
+            top:0;
+            left:0;
+        }
+    }
+    .gm-style {
+        img {
+            max-width: none
+        }
+    }
+    .required-field {
+        @if $is-mobile == 1 {
+            text-align:right;
+            padding:0 20px 5px 0;
+        } @else {
+            position: absolute;
+            top: -30px;
+            right:0;        
+        }
+        width: 100%;
+        color: $red-lg;
+        font-size:16px;
+        font-weight: 100;
+        em {
+            display: block;
+            max-width: 1240px;
+            padding: 0;
+            margin: 0 auto;
+            text-align: right;
+            font-style:italic;
+        }
+    }
+    .blind-text {
+        text-indent: -500px;
+        overflow: hidden;
+        font-size: 0;
+        width: 0;
+        height: 0;
+    }
+    .adp-legal {
+        padding-bottom: 10px
+    }
+
+
+    .modal-layer .email_box .default-box .message-box .info-txt, .modal-manuals .email_box .default-box .message-box .info-txt, .support-content .email_box .default-box .message-box .info-txt {
+        color: #666;
+        font-size: 20px
+    }
+
+    @if $is-mobile == 0 {
+        .repair-direction-title {
+            .purchase-options {
+
+                &.detail-skill {
+                    .cmbox > li {
+                        position: relative;
+                        float: left;
+                        padding: 0 20px;
+                    }
+                }
+
+                .cmbox > li a {
+                    font-family: "LG Smart Light", Tahoma, Arial, sans-serif;
+                }
+
+                .cmbox {
+                    display: inline-block;
+                    vertical-align: middle
+                }
+
+                .cmbox:after {
+                    display: block;
+                    clear: both;
+                    content: ""
+                }
+
+                .cmbox > li:first-child {
+                    padding-left: 0
+                }
+
+                .cmbox > li:first-child:before {
+                    display: none
+                }
+
+                .cmbox > li.sms .sms_box, .cmbox > li.email .email_box {
+                    position:relative;
+                }
+
+                .cmbox > li.sms .sms_box .modal-content.search-model-title,
+                .cmbox > li.email .email_box .modal-content.email_send.support {
+                    right:auto !important;
+                    left:-100px !important;
+                    top:45px !important;
+                }
+            }
+        }
+    }
+    
+    /* LGEBR-3558 : 20180122 add */
+    /* LGEBR-3762, LGEBR-3793 : 20181002 modify */
+    &.expand-map-search {
+      .repair-regist-section {
+        > div.warranty-status-section {
+          width: 100%;
+          position: inherit;
+          left: 0;
+          span.info.highlight {
+            position: absolute;
+            float: right;
+            top: 10px;
+            right: 0;
+          }
+          .repair-map-search-wrap{
+            //position:relative;
+            .repair-map-search {
+              margin: 0;
+              padding: 0;
+              list-style: none;
+              display: none; 
+              width: 100%;
+      	      @if $is-mobile==1 {
+                margin-top:15px
+      	      }
+              a.my-location-button.repair-gps {
+          		 @if $is-mobile==1 {
+          		 	position:relative;
+          			width: auto;
+          			height: auto;
+          			text-align:left;
+          		 } @else {
+                  width: 35px;
+                  height: 35px;
+            		}
+                left: 0;
+                span{
+                  display: inline-block;
+            		  @if $is-mobile==0 {
+                    width: 32px
+            			}
+                  }
+                }
+               .map-tab-style {
+                @if $is-mobile==0 {
+                  margin-top: 30px;  
+                } @else {
+                  margin-top: 15px;
+                }
+                display: inline-block;          		 
+
+                &:before {
+                  display: block;
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 1px;
+                  background: #a50034;
+                 }
+                 ul {
+                  position: relative;
+                  bottom: 0;
+                  margin: 0;
+                  padding: 0;
+                  list-style: none;
+                  li {
+                    
+                    label {
+                      @include rem-multi(font-size, 16px, 16px, 18px, 22px, 24px);       
+                      display: inline;
+                    }
+                    
+                    @if $is-mobile==1 {
+                      width:100%;
+                    }
+                      margin: 0.3rem 2rem 0 0;
+                      padding: 0;
+                      list-style: none;
+                      position: relative;
+                      float: left;
+                      margin-left: 0.5rem;
+            		    	@if $is-mobile==0 {
+            		 	      &:first-child {
+                          margin-left: 0
+                        }
+            		      }
+                    
+                    a {
+                      display: block;
+                      font-size: 20px;
+                      font-size: 2rem;
+            		      @if $is-mobile==1 {
+                  		 	padding: 0 0px 0 0;
+                  		 } @else {
+                        text-align: center;
+                        padding: 0 40px 0 0;
+            		      }
+            		      @if $is-mobile==0 {
+                                  color: #333;
+            		      }
+                      span {padding-right: 5px}
+                    }
+                    &.active {
+                      z-index: 1;
+                      a {color: #a50034}
+                    }
+                   }
+                  &:after {
+                    display: block;
+                    clear: both
+                  }
+                }
+              }
+            }
+            
+            .repair-map-search-content{
+              display: none;
+              clear: both;
+              width: 100%;
+              margin-top:10px;
+              .repair-service-section {
+                display: inline-block;
+                width: 100%;
+              }
+              div.repair-service-section .link-line {display: inline-block;}
+            }
+          }
+          @if $is-mobile==0 {
+          .select-wrap > span {width: 31.85%;}
+          .select-wrap > span:last-child {margin-right:0;}
+	       }
+          
+        }
+        @if $is-mobile == 0 {
+          .input-search input {width: 90%;}
+          .input-search input + .msg-error {bottom:72px;}
+          #serviceCenterSubmit {bottom:0 !important;position:relative;float: right;}
+        } 
+      }      
+      .repair-map-section {
+        .repair-map-information {
+          .repair-informaiton-detail {
+            .map-store-distance.distance-range {
+              background: #fff;
+              .slide-box {
+                .slide-bar {
+                    width: 60%;
+                    float: left;
+                    position: relative;
+                    height: 2px;
+                    background: #bbb;
+            		    @if $is-mobile == 0 {
+                      margin: 25px 0 25px 30px;
+            		    } @else{
+                			margin: 15px 0 15px 30px;
+                			top:10px;
+            		    }
+                  .first-unit {
+                    position: absolute;
+                    bottom: 6px;
+                    left: 5px;
+                    font-size: 16px;
+                    color: #333;
+                    margin: 0;
+                    display: none;
+                  }
+                  .last-unit {
+                    position: absolute;
+                    bottom: 6px;
+                    right: 5px;
+                    font-size: 16px;
+                    color: #333;
+                    margin: 0;
+                    display: none;
+                  }
+                  .ui-slider-handle {
+                    text-indent: 0;
+                    position: absolute;
+                    bottom: -8px;
+                    width: 19px;
+                    height: 19px;
+                    margin-left: -10px;
+                    border-radius: 9px;
+                    background: #a50034;
+                    z-index: 2;
+                    text-decoration: none;
+                  }
+                  .state-default-disable {
+                    text-indent: 0;
+                    position: absolute;
+                    bottom: -8px;
+                    width: 19px;
+                    height: 19px;
+                    margin-left: -10px;
+                    border-radius: 9px;
+                    background: #a50034;
+                    z-index: 2;
+                    text-decoration: none;
+                    text-indent: -9999px;
+                  }
+                }
+                .slide-text {
+                  display: inline-block;
+                  line-height: 50px;
+                  font-size: 20px;
+                  text-align: right;
+                  float: right;
+                  margin-right: 20px;
+          		   @if $is-mobile == 1 {
+          			   margin-bottom:-50px
+          		   }
+                } 
+              }                  
+            }
+            .repair-center-list ol li dl dd.repair-detail {
+              margin-bottom: -10px; 
+              margin-top: 7px;
+              .storeDistance{
+                position: absolute;
+                left: 7%;
+                font-weight: bold;
+              }
+              a.btn {
+                color: #fff;
+                font-size: 12px;
+                font-weight: normal;
+                padding: 5px 10px
+              }
+              
+              
+            }        
+          }
+        }
+        &.tablet-mode-map .map-store-distance .slide-box .slide-bar {width: 84% !important;}
+      }
+    }
+    /* //LGEBR-3558 : 20180122 add */
+/* //LGEBR-3762, LGEBR-3793 : 20181002 modify */	
+}
+
+.repair-map-information {
+    position: absolute;
+    @include device-property(position, absolute, static);
+    left: 41px;
+    top: 41px;
+    @include device-property(width, 320px, 100%);
+    .repair-informaiton-title {
+        a {
+            display: block;
+            padding:0 15px 0 20px;
+            background: $gray-title;
+            line-height: 50px;
+            color: $white;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        span {
+            position: absolute;
+            top: 22px;
+            right: 15px;
+            color: $white;
+            font-size: 12px;
+            &.on {
+                @extend .icon-triangle-up;
+            }
+        }
+        i.icon {
+            margin-right: 10px
+        }
+        .icon-map {
+            font-size: 25px;
+            width: 21px;
+            position: relative;
+            top: -2px;
+        }
+    }
+    .repair-informaiton-detail {
+        display:none;
+        @include device-property(border, 1px solid $grey-silver, 0);
+        @include device-property(border-width, 0 1px 1px, 0 1px);
+        background: $white;
+        .repair-map-location {
+            padding:0 15px 0 20px;
+            margin: 0;
+            height: 50px;
+            line-height: 50px;
+            font-size: 20px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .map-store-distance {
+            height: 40px;
+            line-height: 38px;
+            background: #e5e5e5;
+            ul {
+                margin: 0;
+                padding: 0;
+                position: relative;
+                z-index: 2;
+                @include device-property(left, -1px, 0);
+                @include device-property(width, 320px, 100%);
+                &:after {
+                    content: "";
+                    display: block;
+                    clear: both;
+                }
+                li {
+                    float: left;
+                    width: 25%;
+                    border-left: 1px solid $grey-silver;
+                    border-top: 1px solid $grey-silver;
+                    border-bottom: 1px solid $grey-silver;
+                    text-align: center;
+                    list-style: none;
+                    a {
+                        display: block;
+                        color: $grey-mine-shaft;
+                        font-size: 18px;
+                    }
+                    &:first-child {
+                        border-left: 0;
+                    }
+                    &.active {
+                        position: relative;
+                        border: 0;
+                        border-top: 1px solid $red-lg;
+                        border-bottom: 1px solid $red-lg;
+                        background: $red-lg;
+                        color: $white;
+                        a {
+                            color: $white;
+                        }
+                        + li {
+                            border-left: 1px solid $red-lg;
+                        }
+                    }
+                }
+            }
+            /* LGECS-1142  :20170905 add */
+            &.overH {
+              @if $is-mobile==1 {
+                clear: both; 
+                display: inline-block;
+                width: 100%;
+                height: 50px;
+                ul li{
+                  height: 50px;
+                  a {
+                   line-height: 15px;
+                   padding: 10px 0;
+                  }   
+                }
+                
+              }                       
+            }
+            /* //LGECS-1142  :20170905 add */
+        }
+        .repair-center-list {
+            @include device-property(height, 590px, auto);
+
+            @if $is-mobile==0 {
+                
+            }
+            .slick-slide {
+                height:auto;
+                @if $is-mobile == 1 {
+                    width:100%;
+                }
+                > div:first-child {
+                    li {border-top:0}
+                }
+            }
+            @if $is-mobile==1 {
+                .pagination {
+                    display:none;
+                    border-top: 1px solid $grey;
+                    margin:0;
+                    padding:20px 0 40px 0;
+                    text-align:center;
+                    ul {
+                        li * {vertical-align:middle}
+                        li {
+                            a {
+                                background-color:#e6e6e6;
+                                border:1px solid #666;
+                                &:before {
+                                    color:#808080;
+                                }
+                            }
+                            &.slick-disabled a {
+                                background-color: #fff;
+                                border: 1px solid #b1b1b1;
+                                &:before {
+                                    color:#bfbfbf;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            ol li {
+                @include device-property(position, static, relative);
+                @include device-property(padding, 20px, 20px 50px 20px 20px);
+                border-top: 1px solid $grey;
+                list-style: none;
+                @include device-property(font-size, 20px, 18px);
+                &:after {
+                    content:"";
+                    display:block;
+                    clear:both;
+                }
+                &.on {
+                    background: $grayf5;
+                }
+
+                @if $is-mobile==1 {
+                &.error-list {
+                    &:before {
+                        display: none;
+                        
+                    }
+                }
+                &:before {
+                    content:""; //\f108  LGECS-1142 : 20170905 modify
+                    font-family:"lg-icon";
+                    display:inline-block;
+                    vertical-align:middle;
+                    line-height:1;
+                    font-weight:normal;
+                    font-style:normal;
+                    speak:none;
+                    text-decoration:inherit;
+                    text-transform:none;
+                    text-rendering:optimizeLegibility;
+                    -webkit-font-smoothing:antialiased;
+                    -moz-osx-font-smoothing:grayscale;
+                    position:absolute;
+                    top:50%;
+                    margin-top:-18px;
+                    text-decoration:none;
+                    color:#bfbfbf;
+                    right:20px;
+                    font-size:36px;
+                }
+                }
+                .icon-marker {
+                    @if $is-mobile==1 {
+                        position:absolute;
+                        left:20px;
+                        top:20px;
+                    }
+                    float: left;
+                    width: 28px;
+                    height: 34px;
+                    line-height: 25px;
+                    text-align: center;
+                    background: url($path-img + 'support/marker_bg.png');
+                    color: $red-lg;
+                    span {
+                        font-size: 15px;
+                        @if $is-mobile==1 {
+                           display:block;
+                           margin-top:5px;
+                           height:20px;
+                           line-height: 20px;
+                        }
+                    }
+                }
+                @if $is-mobile==0 {
+                    &:first-child {
+                        border-top: 0;
+                    }
+                } @else {
+                    border-top:0;
+                    border-bottom:1px solid $grey;
+                }
+                dl {
+                    @include device-property(float, right, none);
+                    @include device-property(width, 223px, 100%);
+                    line-height: 24px; /* LGEGMO-1955 add */
+                    @if $is-mobile==1 {
+                        padding-left:40px;
+                    }
+
+                    dt {
+                        margin: 0 0 4px;
+                        color: $red-lg;
+                        font-size: 19px;
+                        // text-decoration: underline;
+                    }
+                    dd {
+                        font-size: 18px;
+                        line-height:24px;
+                        margin-top: 10px;
+                    }
+                }
+            }
+            &.scroll-scrolly_visible {
+                ol li {
+                    padding: 20px 15px 20px 20px;
+                }
+            }
+        }
+    }
+}
+
+.repair-regist-section {
+    @include rem-multi(padding-top, 25px, 30px, 30px, 35px, 35px, 40px);
+    @include rem-multi(padding-bottom, 25px, 30px, 30px, 35px, 35px, 40px);
+    @include device-property(padding-left, 0, 20px);
+    @include device-property(padding-right, 0, 20px);
+    @include device-property(background, #ffffff, #e9ecf1);
+    position: relative;
+    width:100%;
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    > div {
+        @include device-property(float, left, none);
+        @include device-property(margin-right, percentage(16/1200), 0);
+        @include device-property(margin-bottom, 0, 10px);
+        @if $is-mobile==1 {
+           width: 100%;
+           @include screen(medium) {
+                float:left;
+                width:48%;
+                &:first-child {
+                    margin-right:2%;
+                }
+                &.repair-product-section {
+                    float:right;
+                }
+                &.warranty-status-section {
+                    width: 69%;
+                    margin-bottom:0;
+
+                }
+                a.repair-gps {
+                    position:absolute;
+                    top:0;
+                    right:0;
+                    width:35px;
+                    height:35px;
+                    text-align: center;
+                    text-decoration: none;
+                    i:before {
+                        line-height: 35px;
+                        color:$grey-dove;
+                    }
+                }
+            }
+
+            .link-line {
+                display:block;
+                margin:8px 0 10px 0;
+            }
+        }
+        @if $is-mobile==0 {
+            &.repair-service-section {
+                width: percentage(530/1200);
+                padding-right:5px;
+                position:relative;
+                .link-line {
+                    position:absolute;
+                    right:10px;
+                    bottom:-27px;
+                }
+            }
+            &.repair-product-section,
+            &.country-section, // LGEHK-847 : 20160629 add
+            &.warranty-status-section {
+                width: percentage(535/1200);
+            }
+        }
+        label {
+            @include device-property(display, block,block);
+            margin-bottom: 8px;
+            @include device-property(font-size,24px,18px);
+            font-family: $font-family-regular;
+        }
+    }
+    .repair-service-section {
+        .icon-include {
+            position: relative;
+        }
+        .input-search input {
+            @include device-property(padding-left, 55px, 35px);
+            @include device-property(padding-right, 15px, 40px);
+            @include dmv(line-height, 40px, 35px);
+            @include dmv(height, 40px, 35px);
+            &:focus {
+                @include device-property(padding-left, 55px, 35px);
+                @include device-property(padding-right, 15px, 40px);
+            }
+        }
+        .input-search.on input {
+            padding-left:10px;
+        }
+        .input-search.on .icon-search {
+            display:none;
+        }
+        .icon-include .icon-search {
+            position: absolute;
+            @if $is-mobile == 1 {
+                top:9px;
+                left:10px;
+                font-size:20px;
+            } @else {
+                top:0;
+                left:0;
+                font-size:26px;
+                padding:7px 0 0 15px;
+            }
+            @include device-property(font-size, 26px, 20px);
+            color: $grey-dove;
+        }
+        .icon-include .icon-search.icon-search-right {
+            @if $is-mobile == 1 {
+                left:auto;
+                right:20px;
+            } @else {
+                left:auto;
+                right:0;
+            }
+        }
+    }
+    .select-wrap select {
+        width: 100%;
+    }
+    #serviceCenterSubmit {
+        padding:0;
+        @include device-property(position, absolute, static);
+        @include device-property(margin-top, 0, 10px);
+        @include device-property(width, percentage(100/1200), 100%);
+        right: 0;
+        @include rem-multi(bottom, 25px, 35px, 35px, 35px, 40px, 40px);              
+        margin-right: 0;
+        min-width: inherit;
+        min-height: 35px;
+        @if $is-mobile==0 {
+            line-height:40px;
+        }
+        @if $is-mobile==1 {
+            @include screen(medium) {
+                float:right;
+                width:29%;
+                margin-top:32px;
+            }
+        }
+
+    }
+    
+    &.part-three {
+        > div {
+            @include device-property(margin-right, percentage(16/1200), 0);
+            @if $is-mobile==1 {
+               width: 100%;
+               @include screen(medium) {
+                    float:left;
+                    width:33%;
+                    &.repair-product-section {
+                        float:right;
+                    }
+                    &.warranty-status-section {
+                        width: 69%;
+                        margin-bottom:0;
+
+                    }
+                    a.repair-gps {
+                        position:absolute;
+                        top:0;
+                        right:0;
+                        width:35px;
+                        height:35px;
+                        text-align: center;
+                        text-decoration: none;
+                        i:before {
+                            line-height: 35px;
+                            color:$grey-dove;
+                        }
+                    }
+                }
+
+                .link-line {
+                    display:block;
+                    margin:8px 0 10px 0;
+                }
+            }
+            @if $is-mobile==0 {
+                &.country-section {
+                    width: percentage(350/1200);
+                    padding-right:5px;
+                    position:relative;
+                    .link-line {
+                        position:absolute;
+                        right:10px;
+                        bottom:-27px;
+                    }
+                }
+                &.repair-service-section {
+                    width: percentage(350/1200);
+                    padding-right:5px;
+                    position:relative;
+                    .link-line {
+                        position:absolute;
+                        right:10px;
+                        bottom:-27px;
+                    }
+                }
+                &.repair-product-section,
+                &.warranty-status-section {
+                    width: percentage(350/1200);
+                }
+            }
+            label {
+                @include device-property(font-size,24px,18px);
+            }
+            
+        }
+    }
+    
+    &.part-four {
+        > div {
+            @include device-property(margin-right, percentage(12/1200), 0);
+            @if $is-mobile==1 {
+               width: 100%;
+               @include screen(medium) {
+                    float:left;
+                    width:25%;
+                    &.repair-product-section {
+                        float:right;
+                    }
+                    &.warranty-status-section {
+                        width: 69%;
+                        margin-bottom:0;
+
+                    }
+                    a.repair-gps {
+                        position:absolute;
+                        top:0;
+                        right:0;
+                        width:35px;
+                        height:35px;
+                        text-align: center;
+                        text-decoration: none;
+                        i:before {
+                            line-height: 35px;
+                            color:$grey-dove;
+                        }
+                    }
+                }
+
+                .link-line {
+                    display:block;
+                    margin:8px 0 10px 0;
+                }
+            }
+            @if $is-mobile==0 {
+                &.purpose-section {
+                    width: percentage(260/1200);
+                    padding-right:3px;
+                    position:relative;
+                    .link-line {
+                        position:absolute;
+                        right:10px;
+                        bottom:-27px;
+                    }
+                }
+                &.country-section {
+                    width: percentage(260/1200);
+                    padding-right:3px;
+                    position:relative;
+                    .link-line {
+                        position:absolute;
+                        right:10px;
+                        bottom:-27px;
+                    }
+                }
+                &.repair-service-section {
+                    width: percentage(260/1200);
+                    padding-right:3px;
+                    position:relative;
+                    .link-line {
+                        position:absolute;
+                        right:10px;
+                        bottom:-27px;
+                    }
+                }
+                &.repair-product-section,
+                &.warranty-status-section {
+                    width: percentage(260/1200);
+                }
+            }
+            label {
+                @include device-property(font-size,24px,18px);
+            }
+            
+        }
+    }
+    
+}
+
+.repair-more-section {
+    position: relative;
+    min-height: 160px;
+    @include device-property(padding, 0 30px, 30px 20px);
+    @include device-property(margin-top, 20px, 0);
+    border: 1px solid $borderColor;
+    background: $grayf5;
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .more-thumbnail {
+        position: absolute;
+        left: 30px;
+        top: 20px;
+        width: 220px;
+        margin-right: 45px;
+    }
+    .more-detail {
+        min-height: 120px;
+        @include rem-multi(padding-right, 0, 0, 30px, 30px, 30px, 50px);
+        @include device-property(margin, 20px 160px 0 235px, 0);
+        @include device-property(border-right, 1px solid #d9d9d9, 0);
+        font-family: $font-family-regular;
+        dt {
+            @include rem-multi(font-size, 20px, 20px, 20px, 20px, 26px, 26px);
+            font-weight: bold;
+        }
+        dd {
+            margin: 0;
+            @include rem-multi(font-size, 18px, 18px, 18px, 18px, 20px, 20px);
+            * {
+                vertical-align: middle;
+            }
+            .center-phone {
+                display: inline;
+                color: $red-lg;
+                @include device-property(margin-right, 25px, 3px);
+                text-decoration: none;
+            }
+            a.popup-link {
+                @include device-property(position, relative, static);
+                top: -2px;
+                display:inline-block;
+                @include device-property(margin-top, 0, 3px);
+                @include rem-multi(font-size, 18px, 18px, 18px, 18px, 20px, 20px);
+                span {
+                    text-decoration: underline;
+                }
+                &:after {
+                    position: relative;
+                    top: 4px;
+                    left: 4px;
+                    content: ">";
+                    color: $red;
+                    @include rem-multi(font-size, 18px, 18px, 18px, 18px, 20px, 20px);
+                }
+                &:hover,
+                &:focus,
+                &:active {
+                    text-decoration: none
+                }
+            }
+        }
+    }
+    .repair-lg-logo {
+        position: absolute;
+        right: 55px;
+        top: 50px;
+        width: 90px;
+    }
+}
+
+#repairMap {
+    .infoWindow {
+        #infoWindowClose {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            font-size: 16px;
+            color: $grey-mine-shaft;
+            cursor: pointer;
+        }
+        position: relative;
+        z-index: 29;
+        border: 1px solid #aaa;
+        border-radius: 5px;
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.4);
+        overflow-y: visible;
+        .tail {
+            background: $white;
+            bottom: -3px;
+            box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.2);
+            display: block;
+            height: 20px;
+            left: 50%;
+            margin-left: -11px;
+            overflow: hidden;
+            position: absolute;
+            transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            width: 20px;
+            border: 1px solid #aaa;
+            z-index: -1;
+            + div {
+                overflow-x: hidden;
+            }
+        }
+        > div {
+            padding: 13px 20px;
+            background: $white;
+            border-radius: 5px;
+            margin: 0;
+            overflow-y: auto;
+            position: static;
+            width: 100%;
+            z-index: 999;
+            cursor: default;
+        }
+        .infowindow-wrap {
+            position: relative;
+            font-family: $font-family-regular;
+
+            dt {
+                font-size: 19px;
+                color: $red-lg;
+                a {
+                    text-decoration: underline;
+                }
+            }
+            dd {
+                font-size: 18px;
+                color: $grey-mine-shaft;
+                line-height:24px;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+.repair-direction {
+    .repair-direction-title {
+        padding:20px 0;
+        @if $is-mobile==0 {
+            padding-left:30px;
+        }
+        @if $is-mobile==1 {
+            padding-left:20px;
+        }
+        border-top: 1px solid #bbb;
+        color: #262626;
+
+        @include device-property(background, #ffffff, #f5f5f7);
+        > p  {
+            display: inline-block;
+            @include rem-multi(font-size, 20px, 20px, 26px, 26px, 30px, 30px);
+            @if $is-mobile==0 {
+                margin-right: 30px;
+                // line-height: 82px;
+                font-size:30px;
+            }
+            @if $is-mobile==1 {
+                font-size:20px;
+            }
+
+        }
+        .modal-content * {
+            font-family: LG Smart Light, Tahoma, Arial, sans-serif !important;
+        }
+        
+        p.prompt {
+            display: inline-block;
+            font-family: "LG Smart", Tahoma, Arial, sans-serif;
+            @include rem-multi(font-size, 16px, 16px, 20px, 20px, 20px, 20px);
+            margin:0 auto 15px auto;
+            @if $is-mobile==0 {
+                // line-height: 82px;
+                font-size:20px;
+            }
+            @if $is-mobile==1 {
+                font-size:20px;
+            }
+
+        }
+        
+        p.text.text-success {
+            display: inline-block;
+            font-family: "LG Smart", Tahoma, Arial, sans-serif;
+            @include rem-multi(font-size, 16px, 16px, 20px, 20px, 20px, 20px);
+            @if $is-mobile==0 {
+                margin-right: 30px;
+                // line-height: 82px;
+                font-size:20px;
+            }
+            @if $is-mobile==1 {
+                font-size:20px;
+            }
+
+        }
+        
+        .modal-title {
+            display: block;
+            font-family: $font-family-light;
+            font-weight: $font-weight-base;
+            @include device-property(padding-right, 50px, 30px);
+            @include rem-multi (font-size, 24px, 24px, 34px, 40px);
+            @include rem-multi (line-height, 26px, 26px, 34px, 40px);
+            @include rem-multi (padding-bottom, 15px, 15px, 30px, 35px);
+            @include rem-multi (margin-bottom, 15px, 15px, 30px, 35px);
+            border-bottom: 1px solid $grey-silver;
+        }
+        
+        .modal-content {
+            @include rem-multi (padding, 20px, 20px, 30px, 40px);
+            .modal-bottom {
+                text-align: center;
+                @include rem-multi (margin, 20px 0, 30px 0, 30px 0);
+                button {
+                    margin-left: 6px;
+                    min-width: 95px;
+                    &.first-child {
+                        margin-left: 0;
+                    }
+
+                    @if $is-mobile == 1 {
+                        font-size:18px;
+                    }
+                }
+            }
+            .alert-title-ex {
+                text-align: center;
+                @include rem-multi (font-size, 18px, 20px, 24px);
+            }
+            .btn-two-w50 {
+                overflow: hidden;
+                .btn {
+                    width: 49%;
+                    float: right;
+                    @include rem-multi (font-size, 16px, 16px, 23px);
+                    &:first-child {
+                        float: left;
+                    }
+                }
+            }
+            .bottom-center {
+                padding:30px 0 0;
+            }
+            &.repair-policy{
+                @if $is-mobile == 0 {
+                    .modal-title{
+                        margin-bottom:25px;
+                        padding-bottom:20px;
+                        font-size:40px;
+                        font-family: $font-family-light;
+                    }
+                }
+                .sub-header{
+                    font-family: $font-family-semibold;
+                    font-size:26px;
+                }
+                .title1{
+                    font-size:24px;
+                    margin-top:35px;
+                }
+                .title2{
+                    font-size:18px;
+                    font-family: $font-family-semibold;
+                    margin-top:25px;
+                }
+                .sub-text{
+                    font-size:20px;
+                }
+                p{
+                    font-size:18px;
+                    line-height:1.2;
+                    margin:15px 0 0;
+                }
+                ul{
+                    list-style: none;
+                    padding:0;
+                    li{
+                        list-style: none;
+                        font-size:18px;
+                        margin:10px 0 0 15px;
+                    }
+                }
+            }
+        }
+
+        .content-view-detail {
+            .modal-title {
+                border-bottom:0;
+                margin-bottom:0;
+            }
+        }
+
+        .cs-modal-signin {
+            .modal-title {
+                @if $is-mobile == 0 {
+                    font-size:40px;
+                    line-height:40px;
+                    margin-bottom:30px;
+                }
+
+                border-bottom:0;
+                padding-bottom:0;
+            }
+
+            @if $is-mobile == 0 {
+                .modal-content {
+                    padding:30px;
+                }
+            }
+
+            .move-top {
+                display:none;
+            }
+        }
+        
+        .options li {
+            line-height: 26px;
+            &.close {
+                line-height: 55px;
+            }
+            &:first-child{
+                padding:0 2px 0 0;
+            }
+            &.share{
+                .stickyshare > .icon-share{
+                    margin:-2px 0 0 10px;
+                    color:$red-lg;
+                    font-size:24px;
+                }
+            }
+        }
+    }
+    .repair-map-section {
+        position: relative;
+        .repiar-map-area {
+            @include device-property(border, 1px solid #ccc, 0);
+            @include device-property(margin-left, 320px, 0);
+            @include device-property(height, 925px, 180px);
+            @if $is-mobile==1 {
+                border: 0
+            }
+            border-left: 0;
+        }
+        .repair-direction-map {
+            position:relative;
+            width:100%;
+            &.full {
+                height:100%;
+                position:fixed;
+                z-index:1111;
+                top:0;
+                left:0;
+            }
+        }
+        .repiar-map-direction {
+            width: 100%;
+            @if $is-mobile==0 {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 320px;
+            }
+            border: 1px solid #ccc;
+            border-top: 0;
+            .repair-location-title {
+                position: relative;
+                @include device-property(width, 320px, 100%);
+                @if $is-mobile==0 {
+                    font-size:20px;
+                }
+                padding-left: 20px;
+                background: #444;
+                line-height: 50px;
+                color: #fff;
+            }
+            .repair-direction-location {
+                padding: 20px;
+                /*
+                @if $is-mobile==0 {
+                    height: 225px;
+                }
+                */
+                background: #e5e5e5;
+                border-bottom: 1px solid $grey-silver;
+                @if $is-mobile==1 {
+                    > div {
+                        position: relative;
+                        padding-left: 40px;
+                    }
+                }
+                div:after {
+                    display: block;
+                    content: "";
+                    clear: both;
+                }
+                .locaiton-start {
+                    margin-bottom: 5px;
+                    .repair-gps {
+                        height:30px;
+                        .icon{
+                            &:before{
+                                line-height: 30px;
+                            }
+                        }
+                    }
+                }
+                .locaiton-icon {
+                    @include device-property(position, static, absolute);
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 30px;
+                    height: 30px;
+                    @if $is-mobile==0 {
+                        position: static;
+                        float: left;
+                        margin-right: 5px;
+                        width: 40px;
+                        height: 40px;
+                    }
+                    background: $grey-dove;
+                    border-radius: 3px;
+                    color: $white;
+                    @include device-property(font-size, 20px, 18px);
+                    @include device-property(line-height, 40px, 30px);
+                    text-align: center;
+                }
+                .locaiton-start > span {
+                    float: left;
+                    @include device-property(width, 233px, 100%);
+                    input {
+                        @include dmv(line-height, 40px, 30px);
+                        @if $is-mobile==1 {
+                            font-size:16px;
+                        }
+                        @include device-property(width, 233px, 100%);
+                        @include device-property(height, 40px, 30px);
+                        @include device-property(padding-right, 15px, 40px);
+                    }
+                }
+
+                .locaiton-end {
+                    .locaiton-icon {
+                        background: $red-lg;
+                    }
+                    .locaiton-area {
+                        float: left;
+                        @include device-property(padding, 0 5px, 5px);
+                        @include device-property(width, 223px, 100%);
+                        @if $is-mobile==0 {
+                            /*
+                            max-height: 65px;
+                            */
+                            min-height: 65px;
+                            margin:10px 0;
+                            font-size:20px;
+
+                        }
+                        @if $is-mobile==1 {
+                            margin-bottom: 20px;
+                        }
+                        overflow: hidden;
+                    }
+                }
+                .location-button {
+                    padding-left: 0;
+                    @if $is-mobile==0 {
+                        padding-top: 15px;
+                        border-top: 1px solid #bbb;
+                    }
+                    button {
+                        width: 100%;
+                        padding: 10px 20px 8px;
+                        @include dmv(font-size, 23px, 18px);
+                    }
+                }
+            }
+        }
+        .repair-direction-result {
+            @if $is-mobile==0 {
+                /*height: 649px;*/
+                padding: 0 20px;
+                width:100% !important;
+                margin-right:-30px !important;
+                padding-right:30px !important;
+            }
+            font-size: 10px;
+            background: $white;
+            .suggest {
+                position:relative;
+                display: none;
+                margin-right:10px;
+                @if $is-mobile==1 {
+                    a {
+                        display:block;
+                        padding-left: 20px;
+                        color:#333;
+                        text-decoration:none;
+                        &:before {
+                            @extend .icon-pagenav-down;
+                            @extend %icon;
+                            position:absolute;
+                            top:20px;
+                            right:20px;
+                            font-size:19px;
+                        }
+                        &.active {
+                            &:before {
+                                @extend .icon-pagenav-up;
+                            }
+                        }
+                    }
+                }
+                @include device-property(height, 72px, 50px);
+                @include device-property(line-height, 72px, 50px);
+                @include device-property(font-size, 20px, 18px);
+                border-bottom: 1px solid #ccc;
+
+                img {
+                    tmargin-right:10px;
+                }
+            }
+        }
+    }
+    .repair-direction-result {
+        .adp-substep {
+            padding: 16px 2px;
+            font-size: 16px;
+            line-height: 22px;
+            color:#666;
+
+            b {
+                font-weight:normal;
+            }
+        }
+        .adp {
+            @if $is-mobile==1 {
+                margin: 0 20px;
+            } @else {
+                margin-right:10px;
+            }
+            table {
+                width: 100%;
+            }
+        }
+        tr td:first-child + td.adp-substep {
+            white-space: nowrap;
+        }
+        td {
+            padding: .5em 2px;
+            font-size: 12px;
+            font-family: arial;
+            word-wrap: break-word;
+            word-break: break-word;
+            min-width: 37px;
+            text-align: left;
+        }
+    }
+}
+
+.repair-direction-result {
+    .adp-placemark td {
+        vertical-align: middle;
+        padding: 7px;
+        background: #f6f6f6;
+    }
+    .adp-summary {
+        background: url('//maps.gstatic.com/tactile/directions/cards/travelmodes.png') 2px top no-repeat;
+        padding-left: 31px;
+        padding: 3px 0 0 25px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        font-size: 11px;
+    }
+    .adp-placemark {
+        td {
+            vertical-align: middle;
+            padding: 7px;
+            background: #f6f6f6;
+        }
+        .adp-marker {
+            width: 22px;
+            height: 40px;
+        }
+    }
+    img {
+        margin-left: auto;
+        margin-right: auto;
+        display: inline;
+        vertical-align: middle;
+    }
+    .repair-error-list {
+        display: none;
+        font-size: 20px
+    }
+}
+
+.repair-share {
+    color:$grey-dove;
+    display:block;
+    padding:0 20px 30px;
+    .stickyshare {
+        width:100%;
+        background:#d2d2d2;
+        color:$text-color;
+    }
+}
+
+.tangram-suggestion-main {
+    z-index:1000;
+}
+
+.BMap_pop {
+    z-index:1000;
+}
+
+/* PJTBTOBCSR-138 start */
+.btb-locate-banner {
+    position: relative;
+    @include device-property(padding, 20px 30px 20px 120px, 100px 20px 30px);
+    @include device-property(margin-top, 50px, 0);
+    @if $is-mobile==1 {
+        background: url('/lg4-common-gp/img/support/icon-btb-locate.png') center 30px no-repeat;
+    } @else {
+        background: url('/lg4-common-gp/img/support/icon-btb-locate.png') 40px 23px no-repeat;
+        border: 1px solid $borderColor;
+    }
+    background-color: $grayf5;
+    p{
+        @include device-property(text-align, left, center);
+        @include device-property(font-size, 20px, 18px);
+        font-family: $font-family-regular;
+        strong {
+           @include device-property(font-size, 24px, 20px);
+            font-family: $font-family-semibold;
+            font-weight:normal;
+        }
+    }
+    .btb-go-network {
+        position: absolute;
+        @include device-property(position, absolute, static);
+        right: 30px;
+        top: 50%;
+        @if $is-mobile==1 {
+            margin-top:20px;
+            width:100%;
+        } @else {
+            margin-top:-18.5px;
+        }
+        
+    }
+}
+/* PJTBTOBCSR-138 end */
+//LGEBR-2903 : 20161024 add Start
+.repair-map-information .pagination {display: none;}
+.tablet-mode-map {
+  .map-area {
+    height: 250px;
+    width: 100%!important;
+  }
+  .map-expend {
+    display: block!important;
+  }
+  .repair-map-information {
+    position: static;
+    width: 100%;
+    .pagination {
+      display: none;
+      border-top: 1px solid #ccc;
+      margin: 0;
+      padding: 20px 0 40px;
+    }
+    .repair-informaiton-title {
+        display: none!important;
+    }
+    .repair-informaiton-detail {
+      .map-store-distance{
+        ul {
+          width: 100%;
+          li {
+              width: 25%;
+          }
+        }
+      }
+      .repair-center-list {
+        ol li dl {
+            width: 90%;
+        }
+      }
+    }
+  } 
+}
+//LGEBR-2903 : 20161024 add End

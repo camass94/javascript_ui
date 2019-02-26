@@ -1,0 +1,311 @@
+.search-type {
+	@if $is-mobile == 1 {
+		@include dmv(padding, 0, 20px);
+		border-top:1px solid $grey-silver;
+		border-bottom:1px solid $grey-silver;
+		background:#f1f2f2;
+	}
+	.search-wrap {
+		position: relative;
+		width: 100%;
+		padding:0;
+		@include device-property(display, table, block);
+		> div {
+			@include device-property(display, table-cell, block);
+			vertical-align: top;
+			input, .category {
+				background: $white;
+				font-family: $font-family-light;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				overflow: hidden;
+				word-wrap: normal;
+				@if $is-mobile == 1 {
+					height: 40px;
+					border: 1px solid $red-lg !important;
+					border-radius: 3px !important;
+					// line-height: 15px;
+					font-size: 20px;
+				} @else {
+					height: 67px;
+					border: 2px solid $red-lg;
+					@include device-property(font-size, 26px, 24px);
+					@include tablet-only {
+						font-size:24px;
+					}
+					line-height: 44px;
+				}
+			}
+			&.selected {
+				.category {
+					font-family:$font-family-regular;
+				}
+			}
+		}
+		.search-category {
+			position: relative;
+			@include device-property(width, 433px, 100%);
+			@if $is-mobile == 1 {
+				margin-bottom:8px;
+			}
+			.category {
+				@extend .icon-search-select;
+				display: block;
+				@include device-property(padding, 10px 15px 8px, 0 15px);
+				width: 100%;
+				border-radius: 3px 0 0 3px;
+				border-right-width: 1px;
+				cursor: pointer;
+				text-decoration: none;
+				color: $grey-mine-shaft;
+				@include device-property(padding-left, 65px, 44px);
+				@if $is-mobile == 1 {
+					line-height:43px;
+				}
+
+				&:focus, &:hover, &:active {
+					text-decoration: none;
+				}
+				&:before {
+					@extend %icon;
+					position: absolute;
+					top: 50%;
+					@if $is-mobile == 1 {
+						left:14px;
+						margin-top:-7px;
+						font-size:15px;
+					} @else {
+						left: 24px;
+						margin-top: -12px;
+						font-size: 24px;
+					}
+				}
+			}
+		}
+		.search-keyword {
+			position: relative;
+			@include device-property(padding-right, 81px, 0);
+
+			@if $is-mobile == 1 {
+				> span {
+					position:relative;
+					z-index:21;
+				}
+			}
+			input {
+				width: 100%;
+				border-radius: 0;
+				border-left: 0;
+				border-right: 0;
+				@include device-property(padding-left, 20px, 20px);
+				&:focus {
+					border-width: 2px;
+				}
+				&:-ms-input-placeholder {
+					font-family:$font-family-light;
+					top:0;
+					color: $grey-mine-shaft;
+				}
+				&::placeholder {
+					font-family:$font-family-light;
+					color: $grey-mine-shaft;
+				}
+				@if $is-mobile == 1 {
+					line-height:41px;
+					-webkit-appearance: none;
+				}@else {
+					line-height:64px;
+				}
+				color:$red-lg;
+				font-family:$font-family-regular;
+			}
+			.msg-placeholder {
+				bottom:auto;
+				top:15px;
+				left:34px;
+				font-size:26px;
+				@include tablet-only {
+					font-size:24px;
+				}
+				font-family:$font-family-light;
+			}
+			.btn-search {
+				@extend .icon-search;
+				position: absolute;
+				top: 0;
+				right: 0;
+				text-align: center;
+				@if $is-mobile == 1 {
+					z-index:22;
+					width:37px;
+				 	height:38px;
+				 	border-radius:0;
+				 	background:none;
+				} @else {
+				 	width: 81px;
+				 	height: 67px;
+				 	border-radius: 0 3px 3px 0;
+					background: $red-lg;
+				}
+				&:before {
+					@extend %icon;
+					@if $is-mobile == 1 {
+						font-size:17px;
+						color:$red-lg;
+					 	line-height:39px;
+					} @else {
+						font-size: 27px;
+						color: $white;
+						line-height: 66px;
+					}
+				}
+				span {
+					width: 0;
+					height: 0;
+					font-size: 0;
+					line-height: 0;
+				}
+				&:hover, &:focus, &:active {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	.guide-txt {
+		margin-bottom: -5px;
+		padding-top: 15px; 
+		text-align: right; 
+		font-size: 20px;
+	}
+	.more-info {
+
+		@if $is-mobile == 1 {
+			padding-top:19px;
+			text-align:left;
+		} @else {
+			padding-top:16px;
+			text-align: right;
+		}
+		> span {
+			position: relative;
+			font-family: $font-family-regular;
+			@include device-property(padding-left, 40px, 20px);
+			@include device-property(font-size, 20px, 15px);
+			@if $is-mobile == 1 {
+				// display:inline-block;
+				// margin-left:20px;
+				display:table-cell;
+				max-width:50%;
+				vertical-align:top;
+			}
+			&:after {
+				display: block;
+				content: "";
+				position: absolute;
+				width: 1px;
+				background: #b0b0b0;
+				@if $is-mobile == 1 {
+					top: 0;
+					left: 0;
+					height: 100%;
+					margin-top:1px;
+				} @else {
+					top: 50%;
+					left: 15px;
+					height: 14px;
+					margin-top: -7px;
+				}
+			}
+			&:first-child {
+				@if $is-mobile == 1  {
+					padding-right:20px;
+				}
+				padding-left: 0;
+				margin-left:0;
+			}
+			&.model{
+				padding-left:0;
+				@if $is-mobile == 1  {
+					padding-right:20px;
+				}
+			}
+			&.model:after {
+				display: none;
+			}
+			&.re-search {
+				display:block;
+				@include dmv(padding-bottom, 5px, 14px);
+				@if $is-mobile == 1  {
+					max-width:100%;
+				}
+				&:after {
+					display:none
+				}
+			}
+			a {
+				color: $grey-mine-shaft;
+				text-decoration:none;
+				span {
+					// margin-right:3px;
+					text-decoration: underline;
+				}
+				.icon {
+					@include dmv(font-size, 16px, 14px);
+					color:$grey-dusty;
+				}
+			}
+		}
+	}
+}
+#search-type2 {
+	.search-wrap {
+		display: block;
+		&:after {
+			display: block;
+			clear: both;
+			content: "";
+		}
+		> div {
+			display: block;
+			@if $is-mobile == 0 {
+				float: left;
+				width: 50%;
+			}
+		}
+		.search-category {
+			.category {
+				width: 100%;
+			}
+		}
+		.search-or {
+			@if $is-mobile == 1 {
+				display:block;
+				width:100%;
+				margin:-3px 0 4px;
+				font-size: 18px;
+				font-family: $font-family-regular;
+			} @else {
+				display: inline-block;
+				position: absolute;
+				top: 13px;
+				left: 50%;
+				z-index: $z-text-block;
+				width: 80px;
+				margin-left: -40px;
+				background: $white;
+				font-size: 30px;
+				font-family: $font-family-semibold;
+			}
+			text-align: center;
+			color: $red-lg;
+		}
+		.search-keyword {
+			input {
+				@include device-property(padding-left, 40px, 20px);
+			}
+			.msg-placeholder {
+				left:35px;
+			}
+		}
+	}
+}

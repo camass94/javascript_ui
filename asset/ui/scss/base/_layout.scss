@@ -1,0 +1,191 @@
+.wrapper {
+	width: 100%;
+	text-align: center;
+	position:relative;
+	z-index:2;// fix bug - foresee 1x1 white dot.
+	padding-top:$header-height;
+
+	* {font-style:normal;}
+	.container {
+		max-width: 1240px;
+		margin: 0 auto;
+		padding: 0 (16% / 1240 * 100);
+		text-align: left;
+	}
+	.is-mobile & {
+		padding-top:0;z-index:2;
+	}
+}
+%container {
+	max-width: 1240px;
+	margin: 0 auto;
+	padding: 0 (16% / 1240 * 100);
+	text-align: left;
+}
+
+%content-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 percentage(60/1600);
+	box-sizing: content-box;
+}
+
+// Common
+// --------------------------
+
+.one-column, .two-column, .three-column, .four-column, .five-column, .six-column, .seven-column {
+	@include clearfix();
+}
+
+// One Column
+//
+// Creates one equal columns.
+//
+// Markup:
+// <div class="one-column">
+//  <div>Column 1</div>
+// </div>
+//
+// Styleguide 4.1
+//
+.one-column {
+	> div, > section {
+		float:left;
+		width: 100%;
+	}
+}
+
+// Two Column
+//
+// Creates two equal columns.
+//
+// Markup:
+// <div class="two-column">
+//  <div>Column 1</div>
+//  <div>Column 2</div>
+// </div>
+//
+// Styleguide 4.1
+//
+.two-column {
+	> div, > section {
+		float:left;
+		width: 50%;
+	}
+}
+
+// Three Column
+//
+// Creates three equal columns.
+//
+// Markup:
+// <div class="three-column">
+//  <div>Column 1</div>
+//  <div>Column 2</div>
+//  <div>Column 3</div>
+// </div>
+//
+// Styleguide 4.2
+//
+.three-column {
+	> div, > section {
+		float:left;
+		width: 33.3333%;
+	}
+}
+
+// Four Column
+//
+// Creates four equal columns.
+//
+// Markup:
+// <div class="four-column">
+//  <div>Column 1</div>
+//  <div>Column 2</div>
+//  <div>Column 3</div>
+//  <div>Column 4</div>
+// </div>
+//
+// Styleguide 4.3
+//
+.four-column {
+	> div, > section {
+		float:left;
+		width: 25%;
+	}
+}
+
+// Five Column
+//
+// Creates four equal columns.
+//
+// Markup:
+// <div class="five-column">
+//  <div>Column 1</div>
+//  <div>Column 2</div>
+//  <div>Column 3</div>
+//  <div>Column 4</div>
+//  <div>Column 5</div>
+// </div>
+//
+// Styleguide 4.3
+//
+.five-column {
+	> div, > section {
+		float:left;
+		width: 20%;
+	}
+}
+
+// Six Column
+//
+// Creates four equal columns.
+//
+// Markup:
+// <div class="six-column">
+//  <div>Column 1</div>
+//  <div>Column 2</div>
+//  <div>Column 3</div>
+//  <div>Column 4</div>
+//  <div>Column 5</div>
+//  <div>Column 6</div>
+// </div>
+//
+// Styleguide 4.3
+//
+.six-column {
+	> div, > section {
+		float:left;
+		width: 16.6%;
+	}
+}
+
+// Seven Column
+//
+// Creates four equal columns.
+//
+// Markup:
+// <div class="five-column">
+//  <div>Column 1</div>
+//  <div>Column 2</div>
+//  <div>Column 3</div>
+//  <div>Column 4</div>
+//  <div>Column 5</div>
+//  <div>Column 6</div>
+//  <div>Column 7</div>
+// </div>
+//
+// Styleguide 4.3
+//
+.seven-column {
+	> div, > section {
+		float:left;
+		width: 14.2%;
+	}
+}
+
+// .main-section {
+//  float:left;
+//  width: percentage(730px / $container-width);
+//  margin-right: percentage(27px / $container-width);
+// }

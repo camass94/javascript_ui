@@ -1,0 +1,237 @@
+%icon {
+	font-family:"lg-icon";
+	display:inline-block;
+	vertical-align:middle;
+	line-height:1;
+	font-weight:normal;
+	font-style:normal;
+	speak:none;
+	text-decoration:inherit;
+	text-transform:none;
+	text-rendering:optimizeLegibility;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+}
+
+.glossary {
+	.title-wrap {
+		margin-bottom:24px;
+
+		.title {
+			font-size:34px;
+		}
+	}
+
+	.refind-your-search {
+		padding-top:0;
+		padding-bottom:0;
+	}
+
+	.breadcrumbs {
+		padding:22px 0;
+		border-top:1px solid #bbb;
+
+		> p {
+			padding:0;
+			margin:0;
+			margin-bottom:40px;
+			font-size:18px;
+			font-weight:normal;
+			font-family:$font-family-regular;
+
+		}
+
+		> ul {
+			@include clearfix;
+			margin:0;
+			margin-left:-22px;
+			padding:0;
+			list-style:none;
+			> li {
+				float:left;
+				margin-left:22px;
+				a {
+					display:block;
+					color:$red-lg;
+					font-size:20px;
+					font-family:$font-family-regular;
+				}
+				span {
+					display:block;
+					color:#666;
+					font-size:20px;
+					font-family:$font-family-regular;
+				}
+			}
+		}
+	}
+
+	.btn-wrap {
+		text-align:right;
+
+		.back-to-top {
+			display:inline-block;
+			padding-bottom:1px;
+			line-height:16px;
+			text-decoration:underline;
+
+			> i {
+				font-size:16px;
+				padding-left:8px;
+				text-decoration:none;
+				vertical-align:top;
+			}
+		}
+	}
+
+	.row-group {
+		padding-top:0;
+	}
+
+	.content-block {
+		padding-top:20px;
+		padding-bottom:60px;
+		border-top:1px solid #e1e1e1;
+		&.disabled {
+			display:none;
+		}
+
+		.block-title {
+			margin-bottom:30px;
+			font-size:26px;
+			font-family:$font-family-regular;
+			font-weight:normal;
+		}
+
+		dl {
+
+			font-family:$font-family-regular;
+
+			dt {
+				font-size:20px;
+				font-family:$font-family-semibold;
+			}
+			dd {
+				font-size:20px;
+				margin-left:0;
+				line-height:26px;
+			}
+
+			dd + dt {
+				margin-top:15px;
+			}
+
+		}
+
+	}
+	.glossary-list {
+		margin:0;
+		padding:0;
+		list-style:none;
+		li {
+			&.disabled {
+				display:none;
+			}
+			> a {
+				position:relative;
+				display:block;
+				font-family:$font-family-regular;
+				background-color:#f1f2f2;
+				border-bottom:1px solid $white;
+				color:$grey-mine-shaft;
+				font-size:18px;
+				line-height:1;
+				display: block;
+				padding:13px 20px;
+				text-align:left;
+				text-decoration:none;
+				@extend .icon-menu-plus;
+
+				&:before {
+					@extend %icon;
+					position:absolute;
+					right:0;
+					top:0;
+					width:51px;
+					height:100%;
+					text-align:center;
+					line-height:45px;
+					font-size:16px;
+					color:$grey-mine-shaft;
+					border-left:1px solid $white;
+
+				}
+				&.on {
+
+					&:before {
+						top:0;
+						text-align:center;
+						line-height:58px;
+						text-decoration:none;
+					}
+					@extend .icon-menu-minus;
+				}
+			}
+			.list-content {
+				display:none;
+				padding:25px 20px 30px;
+				dl {
+					position:relative;
+					margin:0;
+					text-align:left;
+					font-family: $font-family-regular;
+					dt {
+						color:$grey-mine-shaft;
+						font-size:18px;
+						font-family: $font-family-semibold;
+						line-height:24px;
+						word-wrap: break-word;
+						margin:0;
+						margin-bottom:10px;
+					}
+					dd {
+						color:$grey-mine-shaft;
+						font-size:18px;
+						line-height:24px;
+						word-wrap: break-word;
+						margin:0;
+						margin-left:0;
+					}
+				}
+				dd + dt {
+					margin-top:30px;
+				}
+			}
+
+		}
+	}
+}
+
+.is-mobile {
+	.glossary {
+		.title-wrap {
+			margin-bottom:0;
+			padding:15px 20px 25px;
+
+			.title {
+				text-align: left;
+				font-size:28px;
+				line-height:1;
+				margin-bottom:10px;
+			}
+			p {
+				margin:0;
+				padding:0;
+				font-size:18px;
+				font-family: $font-family-regular;
+				line-height:24px;
+				text-align: left;
+			}
+		}
+	}
+
+}
+
+.is-mobile .refind-your-search {padding:0 20px; margin-bottom:20px !important}
+.is-mobile .refind-your-search .refind-apply-btn {margin-top:0 !important}
+.is-mobile .refind-your-search .refind-apply-btn > .sort {padding-left:0; border-left:0}

@@ -1,0 +1,96 @@
+.microsite-temp {font-family:$font-family-regular;}
+.microsite-top {padding:25px 0 26px;}
+.microsite-title {padding:0 20px; font-size:28px; font-family:$font-family-regular; font-weight:bold; color:#333; line-height:1.1; text-align:center;}
+.microsite-title em {color:$red-lg}
+
+.microsite-discover {position:relative;}
+.microsite-discover .slick-track {display:table; width:100%; height:100%; table-layout:fixed;}
+.microsite-discover .slick-slide {display:table-cell !important; height:100%; float:none !important; vertical-align:top; text-align:center;word-wrap: break-word; word-break: break-all;word-break: break-word;height: 49px;} /* LGEGMO-3925 20180315 modify */
+.microsite-discover .slick-slide a {display:block; height:100%; min-height:100%; padding:0 40px; background:$grey-mine-shaft; color:$white; font-size:20px; font-family:$font-family-light; text-decoration:none;}
+.microsite-discover .slick-slide.on a {background:$red-lg;}
+.microsite-discover .slick-slide a:before {display:inline-block; content:""; width:0; height:100%; vertical-align:middle;}
+.microsite-discover .slick-slide a:after {content:""; width:100%;position: absolute;left: 0;top: 0;height: 4px;box-shadow: inset 0 3px 3px 0 rgba(0,0,0,.2);}
+.microsite-discover .slick-slide a span {display:inline-block; width:95%; padding:11px 0; vertical-align:middle;}
+.microsite-discover .slick-prev,
+.microsite-discover .slick-next {display:block !important; position:absolute; top:50%; width:25px; height:20px;}
+.microsite-discover .slick-prev {left:10px;}
+.microsite-discover .slick-next {right:10px;}
+.microsite-discover .slick-prev:before,
+.microsite-discover .slick-next:before {color:$white; font-size:14px;}
+.microsite-discover .microsite-carousel:not(.slick-slider)  {background:#333;min-height:50px}
+.microsite-discover .microsite-carousel:not(.slick-slider) > div {display:none}
+.microsite-discover .microsite-carousel:not(.slick-slider) > div:first-child {display:block}
+.microsite-discover .microsite-carousel:not(.slick-slider) > div > a {display:inline-block;height:100%; min-height:100%; padding:11px 40px; background:$grey-mine-shaft; color:$white; font-size:20px; font-family:$font-family-light; text-decoration:none;}
+.microsite-discover .microsite-carousel:not(.slick-slider) > div > a:before {display:inline-block; content:""; width:0; height:100%; vertical-align:middle;}
+.microsite-discover .microsite-carousel:not(.slick-slider) > div > a:after {content:""; width:100%;position: absolute;left: 0;top: 0;height: 4px;box-shadow: inset 0 3px 3px 0 rgba(0,0,0,.2);}
+
+/* .microsite-content {text-align:left;} */
+.microsite-content .container {padding:0}
+.microsite-subject a {display:block; padding:7px 20px; background:$grey-silver-chalice; font-family:$font-family-light; color:$white; text-decoration:none;}
+.microsite-subject a > i,
+.microsite-subject a > span {vertical-align:middle;}
+.microsite-subject a > i {font-size:24px; @extend .icon-tab-plus;}
+.microsite-subject a > span {margin-left:10px;}
+.microsite-group {margin-bottom:2px;}
+.microsite-group.on .microsite-subject a > i {@extend .icon-tab-minus;}
+.microsite-form {padding-top:1px;}
+/* .microsite-widget {text-align:left;} */
+.microsite-h1-tag {max-width: 1240px;margin: 0 auto;padding:20px 1.29032%;text-align:center}
+.microsite-h1-tag h1 {font-family:$font-family-regular;font-size:18px;text-align:center}
+
+@media screen and (max-width: 47.9375em) {
+.microsite-h1-tag {padding: 20px }
+}
+
+/************************************* Form Filter Grouping *************************************/
+
+.m42 .md-model-search {display:flex; overflow:hidden; align-items:center; padding:0; background:#d6d6d6; font-size:14px;}
+.m42 .md-model-search > a {display:block; float:none; position:relative; overflow:hidden; flex-basis:auto; max-width:50%; height:100%; padding:0 44px 0 16px; background:#333; color:#fff; text-align:left; line-height:41px; overflow:visible;}
+.m42 .md-model-search > a:before {display:inline-block; content:""; width:0; height:100%; vertical-align:middle;}
+.m42 .md-model-search > a em {display:inline-block; line-height:1.2; vertical-align:middle; word-break:break-all;}
+.m42 .md-model-search > a i {position:absolute; top:50%; right:15px; margin-top:-6px; font-size:12px; @extend .icon-pagenav-down-light; text-decoration:none;}
+.m42 .md-model-search .sort-box {flex-basis:-webkit-max-content; flex-basis:-moz-max-content; flex-basis:max-content; align-items:center; flex:1 0; padding:0 15px 0 10px; border:0; line-height:41px}
+.m42 .md-model-search .sort-box select {width:100%;}
+
+.m42 .md-model-filter {display:none;}
+.m42 .md-model-filter .slide-bar {position:relative; height:2px; margin-top:25px; background:$grey-silver;}
+.m42 .md-model-filter ul,
+.m42 .md-model-filter li {list-style:none; margin:0; padding:0;}
+.m42 .md-model-filter .filter-title {padding-bottom:10px; font-weight:bold;}
+.m42 .md-model-filter .filter-block {padding:20px; border-top:1px solid #e7e7e7;}
+.m42 .md-model-filter .filter-block:first-child {border-top:0;}
+.m42 .md-model-filter .checkbox-wrap .filter-title {padding-bottom:4px;}
+.m42 .md-model-filter .checkbox-wrap ul:after {display:block; clear:both; content:"";}
+.m42 .md-model-filter .checkbox-wrap ul li {margin-top:4px;}
+.m42 .md-model-filter .checkbox-wrap ul li:first-child {margin-top:0;}
+.m42 .md-model-filter .checkbox-wrap ul li label {display:block; position:relative; padding-left:24px; cursor:pointer;}
+.m42 .md-model-filter .checkbox-wrap ul li label input {margin:1px 0 0 -24px;}
+.m42 .md-model-filter .checkbox-wrap ul li label input,
+.m42 .md-model-filter .checkbox-wrap ul li label span {vertical-align:top; word-break:break-all;}
+.m42 .md-model-filter .checkbox-wrap ul li label span {display:inline-block; margin:0 0 0 6px;}
+.m42 .md-model-filter .color-wrap .swatch-box {min-height:14px;}
+.m42 .md-model-filter .color-wrap .swatch-box label.swatch {margin:0 10px 0 0;}
+.m42 .md-model-filter .color-wrap .swatch-box .color-tag {display:block; float:none; clear:both; padding-top:15px; font-family:$font-family-light; font-size:15px; line-height:1;}
+.m42 .md-model-filter .slide-wrap .slide-bar {display:inline-block; position:relative; width:187px; height:2px; margin-top:25px; background:$grey-silver; vertical-align:middle;}
+.m42 .md-model-filter .slide-wrap .slide-bar .first-unit {position:absolute; top:-30px; left:0; margin:0;}
+.m42 .md-model-filter .slide-wrap .slide-bar .last-unit {position:absolute; top:-30px; right:0; margin:0;}
+.m42 .md-model-filter .slide-wrap .sort {display:none;}
+.m42 .md-model-filter .slide-wrap .img {display:inline-block; margin-right:10px; vertical-align:middle;}
+.m42 .md-model-filter .slide-wrap .img i {font-size:35px; color:$grey-silver;}
+.m42 .md-model-filter .filter-button {display:table; width:100%; height:33px; padding:4px 0; background:#d6d6d6;}
+.m42 .md-model-filter .filter-button.sticky {position:fixed; top:0; left:0; width:100%; z-index:10;}
+.m42 .md-model-filter .filter-button.clone {display:none; overflow:hidden; opacity:0;}
+.m42 .md-model-filter .filter-button a {display:table-cell; width:50%; font-size:14px; color:$grey-mine-shaft; text-align:center; text-decoration:none; vertical-align:middle;}
+.m42 .md-model-filter .filter-button a:first-child {border-right:1px solid #999;}
+
+.m42 .md-no-result {padding:55px 0; font-family:$font-family-light; font-size:20px; text-align:center;}
+.m42 .md-model-more {padding:21px 20px; border-top:1px solid #E6E6E6; text-align:center}
+.m42 .md-model-more a {display:inline-block; width:100%; padding:4px 0 5px; border-radius:5px; border:1px solid $grey-dusty; color:#333; text-decoration:none;}
+.m42 .md-model-more a i {@extend .icon-pagenav-down-light; margin-left:10px;}
+
+.m42 .product-list-wrap + .md-model-more {border-top:0;}
+
+/************************************* Form Filter Grouping *************************************/
+.is-mobile .m42 .column2.md-model-content .response ul.product-lists {margin-bottom:0; padding-bottom:0;}
+.is-mobile .m42 .column2.md-model-content .response ul.product-lists li {padding:20px 15px;}
+/* .is-mobile .m42 .column2.md-model-content .response ul.product-lists li .img-link img {width:100%;} */

@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+$is-mobile:0 !default;
+$header-height:64px !default;
+@import "../bower_components/bourbon/dist/bourbon";
+@import "../bower_components/ic/scss/ic";
+@import "base/base_support";
+@import "common/common";
+
+@import "support/common";
+@import "support/product-help";
+@import "support/related-contents";
+@import "support/service-policy";
+@import "support/component/form-builder";

@@ -1,0 +1,41 @@
+// .eco-m .eco-c {
+// 	line-height: 1em;
+// 	a:hover,
+// 	a {
+// 		//height: 1em;
+// 		text-decoration: none !important;
+// 		border-bottom: 1px solid !important;
+// 		line-height: 1em;
+// 		display: inline-block;
+// 		vertical-align: middle !important;
+// 		> span {
+// 			vertical-align: middle !important;
+// 		}
+// 	}
+// }
+
+.ecorebates-div {
+	.eco-widget {
+		line-height: 0 !important;
+		.eco-value a {
+ 			margin-top: 0.7em;
+ 			display: inline-block;
+			line-height: 1em !important;
+			text-decoration: underline;
+			span {
+				font-size: inherit !important;
+				color: inherit !important;
+			}
+		}
+	}
+}
+
+.ecorebates-div .eco-m .eco-c a,
+.ecorebates-div .eco-m .eco-c .btn-default {
+  color: #a50034 !important;
+}
+ 
+.ecorebates-div .eco-m .eco-c a:hover {
+	text-decoration:underline;
+	color:#d80546 !important;	
+}

@@ -1,0 +1,163 @@
+%icon {
+	font-family:"lg-icon";
+	display:inline-block;
+	vertical-align:middle;
+	line-height:1;
+	font-weight:normal;
+	font-style:normal;
+	speak:none;
+	text-decoration:inherit;
+	text-transform:none;
+	text-rendering:optimizeLegibility;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+}
+
+
+.slick-slider {
+	margin-bottom: 0;
+}
+
+.slick-dots {
+	@include rem-multi(bottom, 8px, 12px, 16px, 19px, 22px, 25px, 28px, 28px);
+	margin: 0;
+
+	li {
+		margin: 0;
+		width:30px;
+		text-align: center;
+
+		button:before {
+			@include rem-multi(font-size, 8px, 9px, 9px, 10px, 12px, 12px, 12px);
+			color: $white;
+			opacity: 1;
+		}
+
+		&.slick-active {
+			button:before {
+				color: $red-lg;
+				opacity: 1;
+			}
+		}
+		@if $is-mobile != 0 {
+			width:14px;
+			height:14px;
+			margin:0 3px;
+		}
+	}
+}
+
+.slick-prev:before, .slick-next:before {
+	color:$grey-dove;	
+}
+
+.dot-line{
+	li {
+		button i.icon {
+			color: $grey-dusty;
+			opacity: 1;
+		}
+
+		&.slick-active {
+			button i.icon {
+				color: $red-lg;
+				opacity: 1;
+			}
+		}
+	}
+	
+}
+.dot-view {
+	.slick-dots {
+		position:relative;
+		display:inline-block !important;
+		bottom:0 !important;
+		width:auto !important;
+	}
+}
+.autoplay {
+	.slick-indicator {
+		@include device-property (margin-top,35px,20px);
+		text-align:center;
+		.slick-button {
+			display:inline-block;
+		}
+		.slick-dots {
+			position:relative;
+			display:inline-block !important;
+			bottom:0 !important;
+			width:auto !important;
+			font-size:18px;
+			vertical-align:middle;
+			line-height:18px;
+			li {
+				vertical-align:middle;
+			}
+		}
+		.slick-button {
+			display:inline-block;
+			vertical-align:middle;
+			line-height:18px;
+			font-size:18px;
+			//margin-left:13px;
+			width:15px;
+			height:18px;
+			.slick-start {
+				display:block;
+				overflow:hidden;
+				font-size:0;
+				height:18px;
+				background:url('/lg4-common-gp/img/common/hero-dot-play.png') center no-repeat;
+			}
+			.slick-stop {
+				display:block;
+				overflow:hidden;
+				font-size:0;
+				height:18px;
+				background:url('/lg4-common-gp/img/common/hero-dot-pause.png') center no-repeat;
+			}
+		}
+
+	}
+
+	&.module-group {
+		.slick-indicator {
+			margin-top:0;
+			position:absolute;
+			@include rem-multi(bottom, 8px, 12px, 16px, 19px, 22px, 25px, 28px, 28px);
+			width:100%;
+			.slick-dots {
+				.icon-circle-stroke {
+					color:#000;
+					z-index:2;
+				}
+				.slick-active {
+					.icon-circle-stroke {
+						display:none;
+					}
+				}
+			}
+			.slick-button {
+				position:relative;
+			    &:before {
+			        display: block;
+			        content: '';
+			        position: absolute;
+			        width: 15px;
+			        height: 15px;
+			        left: 50%;
+			        top: 50%;
+			        //background: #fff;
+			        z-index: 1;
+			        margin: -7px;
+			    }
+			    .slick-stop,
+			    .slick-start {
+			        position:relative;
+			        z-index:2;
+			    }
+			}
+
+		}
+	}
+}

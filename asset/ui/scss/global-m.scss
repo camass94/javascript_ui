@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+$is-mobile:1 !default;
+$header-height:64px !default;
+$header-padding:54px !default;
+
+@import "../bower_components/bourbon/dist/bourbon";
+@import "../bower_components/ic/scss/ic";
+
+@import "base/base";
+@import "common/common";
+@import "components/components";
+
+//mobile specific stuff
+@import "components/header-m";
+@import "components/share-m";
+@import "lg-signature/signature-gnb"; /* LGEGMO-2230 ADD */
+
+@if $is-mobile == 1 {
+    .wrapper {
+       min-width:0;
+       max-width: 100%;
+       overflow-x: hidden;
+    }
+    .only-mobile {
+    	display:block !important;
+    }
+    .only-desktop {
+    	display:none !important;
+    }
+
+    // hide captcha sound button
+    .is-mobile .LBD_CaptchaDiv a.LBD_SoundLink:link { display: none !important; }
+
+}
+
+// NOTE: Styleguide root sections comments go in styleguide.scss
+/* LGECI-3407 : 20180913 add */
+.noMarginTop {margin-top : 0 !important}
+.noMarginBottom {margin-bottom : 0 !important}
+.marginTop10 {margin-top : 1rem !important}
+.marginTop20 {margin-top : 2rem !important}
+.marginTop30 {margin-top : 3rem !important}
+.noPaddingTop {padding-top : 0 !important}
+.noPaddingBottom {padding-bottom : 0 !important}
+.paddingTop10 {padding-top : 1rem !important}
+.paddingTop20 {padding-top : 2rem !important}
+.paddingTop30 {padding-top : 3rem !important}
+/* //LGECI-3407 : 20180913 add */

@@ -1,0 +1,294 @@
+.stickynav-m {
+	display:block;
+	padding:0 0px 0px;
+	font-family: $font-family-light;
+	text-align:left;
+	.sticky_wrap {
+		position:relative;
+		padding:0 20px 30px;
+		p { margin:0; padding:0; }
+		button { display:block; width:100%; margin-bottom:8px; }
+		button.compare { display:none; }
+		.product_information {
+			border-top:1px solid #bbbbbb;
+			margin-top:20px;
+			padding-top:17px;
+			margin-bottom:20px;
+			min-height:75px;
+		}
+		.price_before_p {
+			font-size:28px;
+			color:#333333;
+			span { font-size:16px; margin-top:-5px; display:block; }
+			sup { font-size:17px; }
+		}
+		.price_before {
+			font-size:28px;
+			color:#a5a5a5;
+			p { text-decoration:line-through; }
+			span { font-size:16px; margin-top:-5px; display:block; }
+			sup { font-size:17px; }
+		}
+		.price_after {
+			font-size:16px;
+			color:#333333;
+			span { display:inline-block; margin-right:4px;}
+			p { display:inline-block; }
+		}
+		.product_rebate {
+			font-size:16px;
+			line-height:20px;
+			color:#d80547;
+			text-decoration:underline;
+			.eco-m .eco-c .eco-widget .eco-value {float:none;}
+		}
+		.purchase_options {
+			position:relative;
+			.btn_wrap_addtocart,
+			.btn_wrap_buynow,
+			.btn_wrap_wheretobuy,
+			.btn_wrap_promotions,
+			.sms,
+			.email,
+			.share_box {
+				margin-bottom:8px;
+				display:block;
+			}
+			a {
+				display:block; width:100%;
+			}
+			.btn-tooltip-wrap {
+				position:relative;
+				padding:0;
+				&.active {
+					.download-tooltip {
+						display:block;
+					}
+				}
+
+				.download-tooltip {
+					display:none;
+					position:absolute;
+					width:100%;
+					top:50px;
+					left:0;
+					padding:40px 0 0 0;
+					border:1px solid #ccc;
+					background:#fff;
+					box-sizing:border-box;
+					z-index: 1;
+
+					&:after {
+						display:block;
+						position:absolute;
+						content:"";
+						top:-10px;
+						left:50%;
+						width:14px;
+						height:11px;
+						margin-left:-7px;
+						background:url('/lg4-common-gp/img/product/bg-bubble-tail03.png') no-repeat;
+					}
+
+					.tooltip-close {
+						display:block;
+						position:absolute;
+						top:10px;
+						right:10px;
+						width:21px;
+						height:21px;
+						margin:0;
+						padding:0;
+						color:#333;
+
+						&:focus,
+						&:hover {
+							text-decoration: none;
+						}
+
+						i {
+							color:#333;
+							margin:0;
+							padding:0;
+							font-size:20px;
+							line-height:1;
+							vertical-align: top;
+
+							&:before {
+								vertical-align: top;
+							}
+						}
+
+					}
+
+					.down-content {
+						font-family:$font-family-light;
+						text-align:left;
+						.tit {
+							display:block;
+							margin:0;
+							padding:6px 18px 6px;
+							font-size:22px;
+							font-weight:normal;
+							line-height:1;
+							color:#fff;
+							background:#bbb;
+							word-break:break-word;
+						}
+
+						.download-list {
+							margin:0;
+							padding:6px 18px 6px;
+							list-style:none;
+
+							> li {
+
+								a {
+									display:inline-block;
+									font-size:16px;
+									line-height:20px;
+									color:$red-lg;
+									word-break:break-word;
+									text-decoration:underline;
+
+									&.pdf {
+										padding-left:29px;
+										background:url('/lg4-common-gp/img/product/icon-pdf.png') no-repeat 0 0;
+									}
+								}
+
+								& + li {
+									margin-top:10px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.review_points {
+			position:absolute;
+			right:20px;
+			top:-7px;
+			color:#cc0037;
+			margin-top:29px;
+			text-align:right;
+
+			&#BVRRSummaryContainer {
+				top:23px;
+			}
+			a {
+				display:inline-block;
+				overflow:hidden;
+				text-decoration:none;
+			}
+			.view-all-reviews {
+				display:block;
+				font-size:16px;
+				font-family:$font-family-regular;
+				text-decoration:underline !important;
+				&:hover,
+				&:focus {
+					text-decoration:underline !important;
+				}
+			}
+			div.view-all-reviews {
+				color:#333;
+				text-decoration:none !important;
+				&:hover,&:focus {
+					text-decoration:none !important;
+				}
+			}
+			a:hover, a:focus {text-decoration:none;}
+			.points_wrap {
+				display:inline-block;
+				vertical-align:top;
+				.review_bg {
+					position:relative;
+					max-height:23px;
+					line-height:17px;
+
+				}
+				.review_point {
+					position:Absolute;
+					left:0; top:0;
+					width:100%;
+					min-height:40px;
+					overflow:hidden;
+					i.points {
+						color:$red-lg;
+					}
+				}
+				i {
+					vertical-align:top;
+					font-size:80px;
+					line-height:17px;
+					color:#333;
+					&:before {
+						line-height:23px;
+					}
+				}
+
+			}
+			> a > span {
+				display:inline-block;
+				font-size:16px;
+				margin-left:2px;
+				text-align:right;
+			}
+		}
+	}
+	.btn, a.btn {
+
+	    display: inline-block;
+	    border-radius: 6px;
+	    background-color: $red-lg;
+	    font-family: $font-family-regular;
+	    font-weight: normal;
+	    line-height: normal;
+	    color: $white;
+	    text-align: center;
+	    cursor: pointer;
+	    transition: width 0.2s ease-in;
+		border:none;
+
+	    &:hover,
+		&:focus {
+		background-color: $red-btn-over; //darken($red-lg, 5);
+		text-decoration: none;
+	    }
+		&:focus {outline:1px dotted #fff;}
+
+	    &.gray {
+			background-color: #d2d2d2;
+			text-decoration: none;
+			color:#333333;
+			&:hover,
+			&:focus {
+				background-color: darken(#d2d2d2, 5);
+				text-decoration: none;
+			}
+			&:focus {outline:1px dotted #000;}
+	    }
+	}
+}
+
+.is-mobile {
+	// #bvReview {overflow-x:auto}
+	#BVRRContainer,
+	#BVQAContainer {width:100%; margin:0 auto ;min-width:320px; max-width:768px;}
+}
+// ask and question for product page
+body.is-mobile .ask-answer .bv-cleanslate .bv-shared .bv-mbox-inline .bv-mbox-close {top:20px !important;}
+body.is-mobile .ask-answer .bv-cleanslate .bv-shared .bv-mbox-narrow .bv-mbox .bv-mbox-content-container,
+body.is-mobile .ask-answer .bv-cleanslate .bv-shared .bv-mbox-media .bv-mbox .bv-mbox-content-container {padding-top:0 !important;}
+
+body.is-mobile {
+	#BVRRContainer,
+	#BVQAContainer {margin-top:0;padding:0;}
+	.stickynav-m #BVRRSummaryContainer .bv-cleanslate .bv-shared .bv-primarySummary-rating-container .bv-rating-stars-container .bv-rating-stars {font-size:24px !important;}
+
+	.stickynav-m .sticky_wrap .review_points span.BVRRRatingNormalOutOf {display:none;}
+	.stickynav-m .sticky_wrap .review_points .BVRRRatingSummaryLinks a,
+	.stickynav-m .sticky_wrap .review_points .BVRRRatingSummaryLinks span { font-size:10px; text-decoration:underline }
+}

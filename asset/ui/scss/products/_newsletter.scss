@@ -1,0 +1,54 @@
+.news-content {
+	background-color:#f4f5f7;
+	max-width:1600px;
+	margin:0 auto;
+	text-align:left;
+	h3 {
+		font-family:$font-family-semibold;
+		color:$red-lg;
+	}
+	p {
+		font-family:$font-family-regular;
+		color:#333;
+	}
+	@if $is-mobile == 0 {
+		background:url("/lg4-common-gp/img/product/bg-newsletters.png") 0 0 no-repeat #f4f4f7;
+		background-size: 100% 100%;
+		margin-bottom:40px;
+		height:290px;
+		padding:40px 20px 0 58px;
+		h3 {
+			font-size:50px;
+			color:#fff;
+			font-family: $font-family-light;
+		}
+		p {
+			font-size:26px;
+			line-height: 30px;
+			margin:2% 0;
+			color:#fff;
+		}
+		.btn-area {
+
+		}
+	}
+	@else {
+		padding:30px 20px;
+		height:auto;
+		margin-bottom:0;
+		h3 {
+			font-size:18px;
+			line-height:24px;
+		}
+		p {
+			font-size:18px;
+			line-height:24px;
+			margin:20px 0;
+		}
+		.btn-area {
+			a {
+				display:block;
+			}
+		}
+	}
+}

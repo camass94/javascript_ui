@@ -1,0 +1,183 @@
+.is-mobile {
+	.share_box {position:relative;}
+	.product_share {
+		border:1px solid #ccc;
+		padding:10px;
+		background:#fff;
+		position:absolute;
+		width:100%;
+		bottom:42px;
+		left:0px;
+		z-index:10;
+		display:none;
+		> ul {
+			padding:0;
+			margin:0 auto;
+			list-style:none;
+			width:225px;
+			text-align:left;
+			&:after {
+				content:"";
+				display:block;
+				clear:both;
+			}
+			> li {
+				float:none;
+				display:inline-block;
+				width:100px;height:45px;
+				margin:5px;
+				background:#fff;
+				padding-right:0;
+				border-right:none;
+				max-height:45px;
+				text-align:left;
+				cursor:pointer;
+				vertical-align:top;
+				position:relative;
+				overflow:hidden;
+				span.hide { display:none; }					
+				.social-likes__counter {
+					display:block;width:56px;height:45px;position:absolute;right:0;top:0;color:#fff;text-align:center;line-height:45px;
+				}
+				&.facebookLike, &.linkedin, &.qzone, &.weibo, &.vk, &.odnoklassniki {
+					@include padding-top(13px);
+					text-align:center;
+				}
+				&.weibo {
+					iframe { width:60px; }
+					
+					&[data-count='false']{
+						iframe {width:24px !important; }
+					}
+				}
+				&.facebookLike {
+					iframe { width:90px; }
+
+					&[data-count='false']{
+						iframe {width:60px; }
+					}
+				}
+				&.delicious {
+					text-align:center;
+
+					img {
+						width:45px !important;
+						height:45px !important;
+					}
+				}
+				&.icon-facebook-top-layer {background:#5371a7;}
+				&.icon-twitter-top-layer {/*background:#39b5e0;*/ text-align:center;}
+				&.icon-google-plus-top-layer {background:#d55a49;}
+				&.icon-pinterest-top-layer {background:#cccccc;border:1px solid #ccc;
+					.social-likes__counter {color:#333;}
+				}
+
+				&.facebook-link.icon-facebook-top-layer,
+				&.twitter-link.icon-twitter-top-layer {background:#fff}
+				
+				&.email {width:45px;}
+				&.youtube, &.instagram, &.lgblog, &.facebook-link, &.twitter-link {
+					text-align:center;
+
+					a {
+						display:block;
+						position:absolute;
+						top:0;
+						left:0;
+						width:100%;
+						height:100%;
+						font-size:0;
+						line-height:0;
+					}
+				}
+				&[data-count='false'] {
+					min-width:auto !important;
+					border:none !important;
+					background:none !important;
+					text-align:center !important;
+					overflow:visible !important;
+
+					&.icon-pinterest-top-layer:before {
+						border:1px solid #ccc;
+					}
+				}
+			}
+			
+			.icon-facebook-top-layer:before {
+				font-size:47px;
+				color:#365897;
+				background:#fff;
+			}
+			.icon-twitter-top-layer:before {
+				font-size:47px;
+				color:#14a8da;
+				background:#fff;
+			}
+			.icon-google-plus-top-layer:before{
+				font-size:47px;
+				color:#cd3e28;
+				background:#fff;
+			}
+			.icon-pinterest-top-layer:before {
+				font-size:47px;
+				color:#c3202a;
+				background:#fff;
+			}
+			.icon-youtube-top-layer:before {
+				font-size:45px;
+				color:#e42e28;
+			}
+
+			.icon-lgblog-top-layer:before {
+				background:#a70036;
+				font-size:45px;
+				color:$white;
+			}
+
+			.icon-instagram-top-layer:before {
+				font-size:45px;
+				background:#2e5e86;
+				color:$white;
+			}
+
+			.icon-email-only {
+				font-size:45px;
+				width:45px;
+				height:45px;
+				color:#ffffff;
+				background:#a50034;
+				position:relative;
+			}
+			.icon-email-only:before {
+				position:absolute;
+				top:7px;
+				left:7px;
+				font-size:30px;
+				color:#ffffff;
+			}
+			
+		}
+		.icon-triangle-down {
+			position:absolute;
+			bottom:-18px;
+			left:50%;
+			width:20px;
+			height:20px;
+			color:#fff;
+			margin-left:-10px;
+			text-shadow:0px 1px 0px #ccc;
+		}
+	}
+}
+
+/* autoprefixer: off */
+@media \0screen {.product_share > ul > li.linkedin .IN-widget > span + span {top:0;}}  //ie8 hack
+@media screen and (min-width:0\0) and (min-resolution:.001dpcm) {.product_share > ul > li.linkedin .IN-widget > span + span{top:0;}}//ie9 hack
+_:-ms-lang(x),
+.product_share > ul > li.linkedin .IN-widget > span + span {top:0\9;} //ie10 hack
+_:-ms-fullscreen, .product_share > ul > li.linkedin .IN-widget > span + span { top:10px;}  //ie11 hack
+@-moz-document url-prefix() { 
+ .product_share > ul > li.linkedin .IN-widget > span + span { 
+    top:10px;
+ 	}
+ } //firefox hack

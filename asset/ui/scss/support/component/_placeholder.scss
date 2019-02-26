@@ -1,0 +1,46 @@
+@mixin ie-placeholder($left, $bottom, $fontSize, $color){
+	font-family:$font-family-regular;
+	position:absolute;
+	left : $left;
+	bottom : $bottom;
+	font-size:$fontSize;
+	color:$color;
+}
+
+@mixin placeholder($defaultColor, $activeColor) {
+	&::placeholder {
+		color:$defaultColor;
+	}
+
+	&::-webkit-input-placeholder { /* WebKit browsers */
+	    color:$defaultColor;
+	}
+	&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	   color:$defaultColor;
+	}
+	&::-moz-placeholder { /* Mozilla Firefox 19+ */
+	   color:$defaultColor;
+	}
+	&:-ms-input-placeholder { /* Internet Explorer 10+ */
+		color:$defaultColor;
+	}
+
+	&:focus {
+		&::placeholder {
+			color:$activeColor;
+		}
+
+		&::-webkit-input-placeholder { /* WebKit browsers */
+		    color:$activeColor;
+		}
+		&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		   color:$activeColor;
+		}
+		&::-moz-placeholder { /* Mozilla Firefox 19+ */
+		   color:$activeColor;
+		}
+		&:-ms-input-placeholder { /* Internet Explorer 10+ */
+			color:$activeColor;
+		}
+	}
+}

@@ -1,0 +1,36 @@
+.design-checkbox {
+	position:relative;
+	input {
+		visibility:hidden;
+		width:0;
+		height:0;
+		overflow:hidden;
+		float:left;
+	}
+	.checkbox {
+		display:block;
+		position:absolute;
+		line-height:0;
+		top:50%;
+		left:0;
+		i {
+			margin-top:-50%;
+			& {
+				color:$black;
+				background:$white;
+				border:1px solid $text-color;
+				&:before {
+					visibility:hidden;
+				}
+			}
+		}
+		&.checked i:before {
+			visibility: visible;
+		}
+	}
+	label {
+		padding-left: 38px;
+		position:relative;
+		display:block;
+	}
+}

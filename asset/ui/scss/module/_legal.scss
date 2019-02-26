@@ -1,0 +1,720 @@
+.legal {
+	h1 {
+		font-size:50px;
+		line-height:1em;
+		font-family:$font-family-light;
+	}
+
+	.legal-contents {
+		max-width:1240px;
+
+		margin:0 auto;
+		text-align:left;
+		.content-block {
+			margin-bottom:30px;
+		}
+		p {
+			font-size:14px;
+			line-height:20px;
+			color:#666666;
+			font-family:$font-family-regular;
+			margin:0 0 12px 0;
+		}
+		h2 {
+			margin:12px 0;
+			padding:0;
+			font-size:20px;
+			font-family:$font-family-semibold;
+			color:#333333;
+		}
+		h3,h4 {
+			margin:4px 0 3px 0;
+			padding:0;
+			font-size:16px;
+			line-height:20px;
+			font-family:$font-family-semibold;
+			color:#333333;
+		}
+
+		ul,ol {
+			list-style:none;
+			margin:0 0 12px 0;
+			padding:0;
+			li {
+				font-size:14px;
+				line-height:20px;
+				color:#666666;
+				font-family:$font-family-regular;
+			}
+			&.text-indent {
+				text-indent: -20px;
+				padding-left: 20px;
+				margin: 0 !important;
+				> li {
+					margin:5px 0;
+				}
+			}
+		}
+		.underline {
+			text-decoration:underline;
+		}
+		.bottom-space {
+			margin-bottom:30px;
+		}
+		a {
+			text-decoration:underline;
+			&:hover {
+				text-decoration:underline;
+				color:#d80546;
+			}
+		}
+		.tab-button > a {
+			text-decoration:none;
+		}
+		strong {
+			font-weight:normal;
+			font-family:$font-family-semibold;
+		}
+		table {
+			width:100%;
+			table-layout:fixed;
+			thead {
+				th {
+					border-top:1px solid #bbb;
+					border-left:1px solid #ccc;
+					border-bottom:1px solid #ccc;
+					background-color:#f4f5f7;
+					font-size:14px;
+					line-height:20px;
+					font-family:$font-family-semibold;
+					text-align:left;
+					padding:10px 10px 8px 20px;
+					vertical-align:top;
+				}
+				tr th:first-child {
+					border-left:0;
+
+				}
+			}
+			tbody {
+				td {
+					border-left:1px solid #ccc;
+					border-bottom:1px solid #ccc;
+					font-size:14px;
+					line-height:20px;
+					font-family:$font-family-regular;
+					text-align:left;
+					padding:10px 10px 8px 20px;
+					vertical-align:top;
+					word-break:break-all;
+
+					&[rowspan] {
+						border-right:1px solid #ccc;
+					}
+				}
+				tr td:first-child {
+					border-left:0;
+					border-right:1px solid #ccc;
+				}
+			}
+		}
+		.sign {
+			@if $is-mobile == 1 {
+				margin-top:10px;
+			}
+			h2 {
+				font-family:$font-family-light;
+			}
+			p {
+				@include clearfix;
+				strong {
+					float:left;
+					font-weight:normal;
+					font-family:$font-family-regular;
+				}
+				span {
+					display:table-cell;
+				}
+			}
+		}
+	}
+	.row.title-wrap {
+		position:relative;
+	}
+
+	&.patent {
+		.title-wrap {
+			position:relative;
+			.sort-box {
+				position:absolute;
+				bottom:0px;
+				right:0px;
+				select {opacity:0;}
+			}
+		}
+		p {
+
+			font-size:14px;
+			line-height:20px;
+			color:#666666;
+			font-family:$font-family-regular;
+			word-spacing:4px;
+		}
+		h2 {
+			margin:12px 0 25px;
+		}
+		h3,h4 {
+			margin:4px 0 6px 0;
+			text-transform:uppercase;
+		}
+
+		.patent-all {
+			background:transparent;
+			border:0;
+			font-size:14px;
+			color:#a50034;
+			margin-right:10px;
+			text-decoration:underline;
+		}
+		.chosen-container .chosen-drop {
+			z-index:10;
+		}
+	}
+
+	&.copyright {
+		p {
+			font-size:16px;
+			color:#333333;
+		}
+		ul {
+			padding:0 0 0 15px;
+		}
+		ol {
+			padding:0 0 0 30px;
+			li {
+				font-size:14px;
+				line-height:20px;
+				color:#666666;
+				font-family:$font-family-regular;
+			}
+		}
+	}
+	.back-to-top {
+		display:none;
+	}
+	.anchor-list {
+		margin-bottom:50px;
+		a {
+			font-family:$font-family-semibold;
+			font-size:20px;
+			line-height:30px;
+			color:$red-lg;
+			text-decoration:underline;
+		}
+	}
+	.anchor-cont {
+		margin-top:30px;
+	}
+
+
+	.btn-print {
+		display:none;
+		position:absolute;
+		right:0;
+		top:8px;
+		color:$white;
+		background:$grey-dove;
+		&:hover, &:focus, &:active {
+			color:$white;
+			background:$grey-dove;
+		}
+	}
+	
+	/* PJTEUGDPR-1 20180122 add, LGEGMO-4254 20180829 add */
+	&.gdpr-policy {
+		position: relative;		//LGEGMO-4254 20180829 add
+		.tab {
+		    display: table;
+		    width: 100%;
+			margin: 40px 0 20px;
+		    padding: 0;
+		    
+		    li {
+			    display: table-cell;
+			    text-align: center;
+			    background: #fff;
+			    border-left: 1px solid #bbb;
+			    border-top: 1px solid #bbb;
+			    border-bottom: 2px solid #a50034;
+			    font-family: "LG Smart SemiBold",Tahoma,Arial,sans-serif;
+				
+				a {
+					display: block;
+					padding: 10px 0;
+					color: #333;
+					text-decoration:  none;
+				}
+			    
+			    &.active {
+				    border: 2px solid #a50034;
+				    border-bottom: 0;
+				    
+				    a {
+						color: #333;
+					}
+				}
+				
+				/* LGEGR-806 20180423 add */
+				@if $is-mobile == 0 {
+					&:not(.active):last-child {
+						border-right: 1px solid #bbb;
+					}
+					
+					&.active + li {
+						border-left: 0;
+					}
+				}
+				/* //LGEGR-806 20180423 add */
+			}
+		}
+		
+		/* LGEGR-806 20180423 add */
+		.legal-contents {
+			strong {
+			    font-weight: bold;
+			}
+		}
+		/* //LGEGR-806 20180423 add */	
+		
+		/*LGEGMO-4254 20180829 add*/
+		.policy-list-sort {
+			position: absolute;
+			top: 17px;
+			right: 0;
+			.sort {
+				label {
+					padding-right: 10px;
+				}
+				.icon-arrow-sort {
+					display: none;
+				}
+				.chosen-container .chosen-single {
+				    text-decoration: none;
+				    color: #444;
+				}
+			}
+		}
+		dl.table-dl {
+		    display:none
+		}
+		/*//LGEGMO-4254 20180829 add*/
+	}
+	/* //PJTEUGDPR-1 20180122 add, LGEGMO-4254 20180829 add */
+	
+	/* LGEGMO-4254 20180829 add */
+	.tab-style {
+		.tab {
+			display: table;
+			width: 100%;
+			margin: 40px 0 20px;
+			padding: 0;
+			
+			li {
+				display: table-cell;
+				text-align: center;
+				background: #fff;
+				border-left: 1px solid #bbb;
+				border-top: 1px solid #bbb;
+				border-bottom: 2px solid #a50034;
+				font-family: "LG Smart SemiBold",Tahoma,Arial,sans-serif;
+				
+				a {
+					display: block;
+					padding: 10px 0;
+					color: #333;
+					text-decoration:  none;
+				}
+				
+				&.active {
+					border: 2px solid #a50034;
+					border-bottom: 0;
+					
+					a {
+						color: #333;
+					}
+				}
+				
+				/* LGEGR-806 20180423 add */
+				@if $is-mobile == 0 {
+					&:not(.active):last-child {
+						border-right: 1px solid #bbb;
+					}
+					
+					&.active + li {
+						border-left: 0;
+					}
+				}
+				/* //LGEGR-806 20180423 add */
+			}
+		}		
+		.tab-content {
+			> div {
+				display: none;
+				&.active {
+					display: block;
+				}
+				.text-block {
+					display: block;
+				}
+			}
+		}
+	}
+	/* LGEGMO-4254 20180829 add */
+}
+
+
+
+.is-mobile {
+	.legal {
+		h1 {
+			font-size:26px;
+		}
+
+
+		.legal-contents {
+			max-width:768px;
+			padding:0 0 50px 0;
+			> h2 {
+				span {
+					display:none !important
+				}
+			}
+			.content-block {
+				h2 {
+					margin:0;
+					padding:11px 20px;
+					background:#f2f2f2;
+					border-top:1px solid #e3e3e3;
+					position:relative;
+					font-size:16px;
+					cursor:pointer;
+					span {
+						display:block;
+						word-break:break-word;
+					}
+				}
+			}
+			.anchor-cont .tab-button {
+				display:none !important;
+			}
+			.text-block {
+				display:none;
+				padding:10px 20px 1px;
+				p {
+					padding:0;
+				}
+			}
+			.content-block {
+				margin-bottom:0;
+				&:last-child {
+					border-bottom:1px solid #e3e3e3;
+				}
+			}
+			p {
+				padding:0 0px;
+			}
+
+			.bottom-space {
+				margin-bottom:12px;
+			}
+
+			.mobile-display {
+				display:none;
+			}
+		}
+		&.patent {
+			.title-wrap {
+				position:relative;
+				.sort-box {
+					display:none;
+				}
+				h1 {
+					font-family:$font-family-regular;
+				}
+			}
+			p {
+
+				font-size:14px;
+				line-height:20px;
+				word-spacing:12px;
+			}
+			h2 {
+				margin:0;
+				padding:11px 0px;
+				background:none;
+				border-top:none;
+				position:relative;
+				font-size:20px;
+				cursor:default;
+			}
+			h3,h4 {
+				margin:4px 0 6px 0;
+				padding:0 0px;
+				text-transform:uppercase;
+			}
+
+			.legal-contents {
+				.text-block {
+					display:block;
+					padding:0 0px 1px;
+				}
+			}
+			.content-block {
+				margin-bottom:0;
+				&:last-child {
+					border-bottom:none;
+					margin-bottom:50px;
+				}
+			}
+
+		}
+		&.copyright {
+			p {
+				font-size:15px;
+			}
+			.content-block {
+				&:last-child {
+					border-bottom:none;
+					margin-bottom:0px;
+				}
+			}
+		}
+		.btn-print {display:none !important}
+			
+		/* PJTEUGDPR-1 20180122 add, LGEGMO-4254 20180829 add */
+		&.gdpr-policy {
+			.content-block {
+				
+				h2 {
+					background: none;
+					border-top: 0;
+					
+					span {
+						display: none;
+					}
+				}
+				
+				.text-block {
+					display: block;
+				}
+			}
+			.tab {
+			    display: block;
+			    width: 100%;
+				margin: 40px 0 20px;
+			    padding: 0;
+			    border-top: 1px solid #bbb;
+			    
+			    > li {
+				    display: block;
+				    border: 0;
+				    border-bottom: 1px solid #bbb;
+				    padding: 0;
+				    text-align: center;
+				    background: #fff;
+					font-family: "LG Smart SemiBold",Tahoma,Arial,sans-serif;
+					
+					> a {
+					    display: block;
+					    padding: 10px 20px;
+					    text-align: left;
+						color: #333;
+						font-size: 17px;
+						text-decoration: none;
+					}
+				    
+				    &.active {
+					    border: 0;
+					    background: #eaeaea;
+					    border-bottom: 1px solid #bbb;
+					    
+					    > a {
+							color: #333;
+						}
+					}
+				}
+			}
+			i.icon-menu-plus {
+				display: none;
+			}
+			table {
+			    display: none
+			}
+			dl.table-dl, table.no-mobile {
+				display: block;
+			}
+		}
+		/* //PJTEUGDPR-1 20180122 add, LGEGMO-4254 20180829 add */
+		
+		/*LGEGMO-4254 20180829 add*/
+		.tab-style {
+			.tab {
+				display: block;
+				width: 100%;
+				margin: 20px 0;
+				padding: 0;
+				border-top: 1px solid #bbb;
+				
+				> li {
+					display: block;
+					border: 0;
+					border-bottom: 1px solid #bbb;
+					padding: 0;
+					text-align: center;
+					background: #fff;
+					font-family: "LG Smart SemiBold",Tahoma,Arial,sans-serif;
+					
+					> a {
+						display: block;
+						padding: 10px 20px;
+						text-align: left;
+						color: #333;
+						font-size: 17px;
+						text-decoration: none;
+					}
+					
+					&.active {
+						border: 0;
+						background: #eaeaea;
+						border-bottom: 1px solid #bbb;
+						
+						> a {
+							color: #333;
+						}
+					}
+				}
+			}
+			.tab-content {
+				> div {
+					display: none;
+					&.active {
+						display: block;
+					}
+					.text-block {
+						display: block;
+					}
+					dl.table-dl {
+						border-top: 1px solid #bbb;
+						margin-bottom: 15px;
+						font-family: "LG Smart",Tahoma,Arial,sans-serif;
+						word-break: break-word;	
+						font-size: 14px;
+						line-height: 20px;
+						
+						dt {
+							padding: 4px 15px;
+							font-weight: bold;
+							background: #efefef;
+						}
+						
+						dd {
+							border-bottom: 1px solid #bbb;
+							margin: 0;
+							padding: 4px 15px 25px;
+						}
+					}
+				}
+			}
+			/*.content-block {
+				> div {display: none;}
+				> div.active {display: block;}
+			}*/
+		}
+		.policy-list-wrap {
+			.policy-list-sort {
+				position: static;
+				font-family: "LG Smart",Tahoma,Arial,sans-serif;
+				.sort {
+					position: relative;
+					display: block;
+					text-align: right;
+					padding-bottom: 5px;
+					#sortby {
+						border: 0;
+						margin-right: 17px;
+						font-size: 16px;
+						font-family: "LG Smart",Tahoma,Arial,sans-serif;
+						-webkit-appearance: none;
+						-moz-appearance: none; 
+						appearance: none;
+						background: none;
+						&::-ms-expand {
+							display: none;
+						}
+					}
+					.icon-arrow-sort {
+						display: block;
+						position: absolute;
+						right: 0;
+						top: 6px;
+						font-size: 1.2rem;
+					}
+				}
+			}
+		}
+		/*//LGEGMO-4254 20180829 add*/
+	}
+
+	.tab-button {
+		position:absolute;
+		right:0;
+		top:0;
+		width:40px;
+		height:100%;
+		text-align:center;
+		z-index:5;
+		a {
+			padding:0;
+			margin:0;
+			display:table;
+			width:100%;
+			height:100%;
+			table-layout:fixed;
+			text-decoration:none;
+			color:#333;
+			i {
+				font-size:13px;
+				display:table-cell;
+				color:#9d9d9d;
+			}
+
+			.icon-menu-minus {
+				&:before {
+					vertical-align:-12px;
+				}
+			}
+		}
+	}
+
+	.back-to-top {
+		padding:0px !important;
+		text-align:center;
+		border-top:1px solid #bbbbbb;
+		display:block;
+		a {
+			color:#a50034;
+			text-decoration:underline;
+			text-transform:uppercase;
+			display:block;
+			text-align:center;
+			padding:30px 0;
+			font-size:16px !important;
+		}
+	}
+}
+
+html.pc {
+	.legal {
+		.btn-print {display:inline-block}
+	}
+}

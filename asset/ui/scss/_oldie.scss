@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+$is-mobile:0 !default;
+$header-height:64px !default;
+
+html.lt-ie9 {
+	.hide-ltie9 {
+		display:none !important;
+	}
+}
+html.lt-ie9 .wrapper {
+	min-width: 1440px;
+	section.app-meganav {
+		border-top: 64px solid transparent;
+	}
+}
+
+html.lt-ie9 .appHeader {min-width:1440px;}
+html.lt-ie9 .appHeader ul.primary-nav-list li.active > .imaged.tablet-sub-nav-wrap {border-bottom:1px solid #cbcbcb;}
+//html.lt-ie9 .appHeader .container {background:$grey-mine-shaft;height:60px;/*position:relative;*/}
+html.lt-ie9 .search-takeover {display:none;}
+html.lt-ie9 .search-takeover.active {display:block;}
+html.lt-ie9 .search-takeover .search-box .psearch-results.search-box-body {border:1px solid #999}
+html.lt-ie9 .hide-desktop {display:none !important}
+

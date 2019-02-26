@@ -1,0 +1,520 @@
+.support-content .container.support-layout {
+	@if $is-mobile == 0 {
+		padding:0 20px;
+	}
+}
+.myaccount-home {
+	@include device-property(border-top,0,1px solid #bbb);
+	& > .tit-area {
+		@if $is-mobile == 0 {
+			padding:50px 0 15px;
+			border-top:1px solid $grey-silver;
+		}
+
+		.tit {
+			@include device-property(font-family,$font-family-light,$font-family-regular);
+			color:$grey-mine-shaft;
+			line-height:34px;
+			@include dmv(font-size,40px,24px);
+		}
+
+	}
+	.profile-information {
+		@if $is-mobile == 1{
+			border-bottom:1px solid #bbb;
+			padding:0 20px;
+		} @else {
+			border:1px solid #bbb;
+			border-width:1px 0 0;
+		}
+		@include dmv(padding,35px, 15px 20px 30px);
+		& > p {
+			margin:0;
+			font-family: $font-family-regular;
+			font-size:20px;
+			line-height:26px;
+		}
+		.profile-detail {
+			position:relative;
+			margin:0;
+			@include dmv(padding,0 200px 0 0,0 0 0 0);
+			ul {
+				list-style:none;
+				margin:0;
+				padding:0;
+				@if $is-mobile == 1 {
+
+				} @else {
+
+				}
+				li {
+					margin-top:18px;
+					&:first-child {
+						margin-top:0;
+					}
+					&.email {
+						strong {
+							font-family: $font-family-semibold;
+						}
+						span {
+							@if $is-mobile == 1 {
+								display: inline;
+							}
+							font-family: $font-family-semibold;
+							color:$red-lg;
+							&:before {
+								color:#333;
+								font-family: $font-family-semibold;
+							}
+						}
+						.sns_connected {
+							.icon-refresh {
+								margin:4px 10px 0 10px;
+								color:$red-lg;
+							}
+							color:#333;
+						}
+					}
+					strong {
+						@include device-property(min-width,200px,auto);
+						font-weight:normal;
+						@include device-property(display,table-cell,block);
+						@include device-property(font-family,$font-family-regular,$font-family-semibold);
+						@include dmv (font-size,20px,18px);
+						line-height:26px;
+						padding-right:15px;
+						position:relative;
+						&:after {
+							@include device-property(display,inline-block,none);
+							content:':';
+							@include device-property(font-family,$font-family-regular,$font-family-semibold);
+							position:absolute;
+							right:15px;
+							top:0;
+							font-size:20px;
+							line-height:26px;
+						}
+					}
+					span {
+						@include device-property(display,table-cell,block);
+						font-family: $font-family-regular;
+						@include dmv(font-size,20px,18px);
+						line-height:26px;
+					}
+				}
+			}
+			.btn-area {
+				@if $is-mobile == 0{
+					position:absolute;
+					top:50%;
+					right:0px;
+					width:153px;
+					margin-top:-65px;
+				} @else {
+					margin-top:0;
+				}
+				button {
+					@include device-property(display,block,none);
+					width:100%;
+				}
+				a {
+					display:block;
+					width:100%;
+					@include device-property(margin-top,40px,25px);
+				}
+
+				&.btn-list {
+					@include device-property(margin-top,-83px,0);
+					@include device-property(width,215px,100%);
+					a {
+						margin-top:10px;
+					}
+				}
+			}
+		}
+		/* LGEPJT-483 add */
+		.tit-area {
+			@include clearfix;
+			.tit {
+				float:left;
+				@include device-property(font-family,$font-family-light,$font-family-regular);
+				color:$grey-mine-shaft;
+				line-height:34px;
+				@include dmv(font-size,40px,24px);
+			}
+			.link-line-arrow {
+				float:right;
+				@if $is-mobile == 1 {
+					text-align:right;
+				}
+				@include device-property(margin-top,5px,9px)
+			}
+		}
+		.order-detail {
+			position:relative;
+			margin:0;
+			@include dmv(padding,0 350px 0 0,0 0 0 0);
+			ul {
+				list-style:none;
+				margin:0;
+				padding:0;
+				@if $is-mobile == 1 {
+
+				} @else {
+
+				}
+				li {
+					margin-top:18px;
+					&:first-child {
+						margin-top:0;
+					}
+					&.email {
+						strong {
+							font-family: $font-family-semibold;
+						}
+						span {
+							@if $is-mobile == 1 {
+								display: inline;
+							}
+							font-family: $font-family-semibold;
+							color:$red-lg;
+							&:before {
+								color:#333;
+								font-family: $font-family-semibold;
+							}
+						}
+						.sns_connected {
+							.icon-refresh {
+								margin:4px 10px 0 10px;
+								color:$red-lg;
+							}
+							color:#333;
+						}
+					}
+					strong {
+						@include device-property(min-width,200px,auto);
+						font-weight:normal;
+						@include device-property(display,table-cell,block);
+						@include device-property(font-family,$font-family-regular,$font-family-semibold);
+						@include dmv (font-size,20px,18px);
+						line-height:26px;
+						padding-right:15px;
+						position:relative;
+						&:after {
+							@include device-property(display,inline-block,none);
+							content:':';
+							@include device-property(font-family,$font-family-regular,$font-family-semibold);
+							position:absolute;
+							right:15px;
+							top:0;
+							font-size:20px;
+							line-height:26px;
+						}
+					}
+					span {
+						@include device-property(display,table-cell,block);
+						font-family: $font-family-regular;
+						@include dmv(font-size,20px,18px);
+						line-height:26px;
+					}
+				}
+			}
+			.btn-area {
+				@if $is-mobile == 0{
+					position:absolute;
+					top:50%;
+					right:0px;
+					width:230px;
+					margin-top:-65px;
+				} @else {
+					margin-top:0;
+				}
+				button {
+					@include device-property(display,block,none);
+					width:100%;
+				}
+				a {
+					display:block;
+					width:100%;
+					@include device-property(margin-top,40px,25px);
+				}
+
+				&.btn-list {
+					@include device-property(margin-top,-83px,0);
+					@include device-property(width,215px,100%);
+					a {
+						margin-top:10px;
+					}
+				}
+			}
+		}
+		/* //LGEPJT-483 add */		
+	}
+	.my-product-registed {
+
+		.tit-area {
+			border-top:1px solid #bbb;
+			@include device-property(padding,50px 0 15px,20px 20px 15px);
+			@include clearfix;
+			.tit {
+				float:left;
+				@include device-property(font-family,$font-family-light,$font-family-regular);
+				color:$grey-mine-shaft;
+				line-height:34px;
+				@include dmv(font-size,40px,24px);
+			}
+			.link-line-arrow {
+				float:right;
+				@if $is-mobile == 1 {
+					text-align:right;
+				}
+				@include device-property(margin-top,5px,9px)
+			}
+		}
+		.product-registed-list {
+			list-style-type:none;
+			@include device-property(margin,40px 0 0 0,0);
+			@include device-property(padding,0 0 90px 0,0 0 80px); //LGEGMO-2557 : 20161206 modify
+			@include clearfix;
+			border-bottom:1px solid #bbb;
+			li {
+				@include device-property(border-top,0,1px solid #bbb);
+				@include device-property(float,left,none);
+				@include device-property(width,300px,auto);
+				@include device-property(padding,0,30px 0);
+				&:first-child {
+					border-top:0;
+				}
+				a {
+					display:block;
+					.thumb {
+						display:block;
+						@include device-property(width,200px,180px);
+						@include device-property(height,200px,auto);
+                        margin:0 auto;
+						img {
+							@if $is-mobile == 0 {
+								display:block;
+								margin:0 auto;
+							} @else {
+								width:100%;
+							}
+						}
+					}
+					strong {
+						display:block;
+						font-family:$font-family-light;
+						@include device-property(font-size,20px,18px);
+						line-height:36px;
+						color:$red-lg;
+						text-decoration:underline;
+						text-align:center;
+					}
+				}
+			}
+			//LGEGMO-2557 : 20161206 modify Start
+			@if $is-mobile == 0 {
+				& + .my-status, & + .btn-area + .my-status{margin-top:-1px;} 
+			}			
+			& + .btn-area {
+			  position: relative;
+			  text-align: right;
+  			> .btn {
+  			  position: absolute;
+  			  @if $is-mobile == 1 {
+            width: 90%;
+            float: left;
+            top: -60px;
+            left: 0;
+            margin : 0 5%;
+          } @else {
+            right: 0;
+            top: -60px;
+          }
+  			}  
+			}
+			//LGEGMO-2557 : 20161206 modify End
+		}
+		.no-registered {
+			@if $is-mobile == 1 {
+				margin-bottom:0;
+			}
+			@if $is-mobile == 0 {
+				& + .my-status{margin-top:-31px;}	
+			}
+		}
+		.my-status {
+			@include clearfix;
+			position:relative;
+			.col {
+				@include device-property(width,50%,auto);
+				@include device-property(padding,0 75px,0 0 15px 0);
+				@include device-property(float,left,none);
+				&:first-child {
+					@if $is-mobile == 0 {
+						padding:0 75px 0 0;
+					} @else {
+						border-top:0;
+					}
+				}
+				& + .col {
+					@if $is-mobile == 0 {
+						padding:0 0 0 75px;
+						&:before {
+							display:block;
+							content:'';
+							position:absolute;
+							height:81%;
+							width:1px;
+							background-color:#bbb;
+							margin-left:-75px;
+							margin-top:60px;
+						}
+					} @else {
+						border-top:1px solid #bbb;
+					}
+				}
+				.status-list {
+					list-style-type:none;
+					margin:0;
+					@include device-property(padding,0,0 20px 15px);
+					@include clearfix;
+					li {
+						@include device-property(float,left,none);
+						@include device-property(width,50%,auto);
+						font-family: $font-family-regular;
+						@include device-property(font-size,20px,18px);
+						@include device-property(line-height,40px,35px);
+						@include device-property(margin-top,20px,0);
+						color:$grey-mine-shaft;
+						em {
+							color:$red-lg;
+							padding-left:10px;
+
+						}
+						.icon {
+							color:$grey-dusty;
+							margin-right:10px;
+							@include device-property(font-size, 29px, 24px);
+						}
+					}
+
+				}
+				.inquiry-status {
+					li {
+						@if $is-mobile == 0 {
+							float:none;
+							width:100%;
+						}
+					}
+				}
+			}
+			.inquiry-col {
+				.status-list {
+					list-style-type:none;
+					margin:0;
+					@include device-property(padding,0,0 20px 15px);
+					@include clearfix;
+					li {
+						@include device-property(float,left,none);
+						@include device-property(width,50%,auto);
+						font-family: $font-family-regular;
+						@include device-property(font-size,20px,18px);
+						@include device-property(line-height,40px,35px);
+						@include device-property(margin-top,20px,0);
+						color:$grey-mine-shaft;
+						em {
+							color:$red-lg;
+							padding-right:10px;
+
+						}
+						.icon {
+							color:$grey-dusty;
+							margin-right:10px;
+							@include device-property(font-size, 29px, 24px);
+						}
+					}
+
+				}
+				.inquiry-status {
+					li {
+						@if $is-mobile == 0 {
+							width:auto;
+						}
+						&:first-child {
+							margin-right:90px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.obs-info {
+		.tit-area {
+			@include device-property(padding,40px 0 25px, 20px 20px 15px);
+			border-top:1px solid #bbb;
+			.tit {
+				@include dmv(font-size,40px,24px)
+			}
+		}
+		.btn_list {
+			@include dmv(padding,0 40px 60px, 0 20px 40px);
+			a {
+				@if $is-mobile == 0 {
+					margin-left:47px;
+				}@else {
+					display:block;
+					margin-top:20px;
+					&:first-child {
+						margin-top:0;
+					}
+				}
+				&:first-child {
+					margin-left:0;
+				}
+			}
+		}
+	}
+}
+
+@include tablet-only {
+	.myaccount-home {
+		.my-product-registed {
+			.tit-area {
+				.tit {
+					float:none;
+					display:block;
+				}
+				.link-line-arrow {
+					float:none;
+					display: block;
+					text-align:right;
+				}
+			}
+			.my-status {
+				.col {
+					.status-list {
+						li {
+							float:none;
+							width:100%;
+						}
+					}
+					& + .col {
+						padding:0 0 0 4%;
+						&:before {
+							margin-left:-4%;
+						}
+					}
+					&:first-child {
+						padding:0 4% 0 0;
+					}
+				}
+			}
+		}
+		.profile-information {
+			.profile-detail {
+				@include device-property(padding,0 22rem 0 0,0);
+			}
+		}
+	}
+}

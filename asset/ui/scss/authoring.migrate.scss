@@ -1,0 +1,251 @@
+@charset "UTF-8";
+
+$is-mobile:0 !default;
+$header-height:64px !default;
+
+@import "../bower_components/bourbon/dist/bourbon";
+@import "../bower_components/ic/scss/ic";
+
+$white: #fff;
+
+.is-mobile .mpo-frame-wrapper { margin-top:-38px; position:relative; z-index:-1; }
+.mpo-frame-content { margin-top:38px; }
+
+.mpo-frame-content .wrapper { text-align:left; padding-top:0; }
+
+.mpo-frame-wrapper .container { padding:0; max-width:100% }
+
+.im-product-desc .im-product .im-pimg .img-link img { max-height:100%; }
+.im-product-desc .im-product .im-copy-area { margin-top:15px; }
+
+.fluid .mpo-container h3 { font-size:1.15em; }
+
+.fluid.mpo-with-lnb { max-width:745px; margin:0 auto; }
+
+.fluid .mpo-module p { line-height:1.3 !important; }
+
+.mpo-header .social-likes .facebookLike iframe { width:130px !important; }
+
+.mpo-with-lnb .mpo-header .span12 .mpo-header-h1 h1 { padding:30px 0px 20px 13px; }
+
+.ie11 .grid ul.content-pages { left:0 !important; }
+
+/* eprivacy cookis */
+.no-cookies p {
+  padding: 0 20px;
+  font-family: 'LG Smart Light';
+  font-size: 20px;
+  text-align: center; }
+
+.no-cookies p button {
+  background: none;
+  border: 0;
+  color: #ac0032;
+  text-decoration: underline; }
+
+.no-cookies.content-block p {
+  text-align: left; }
+
+.no-cookies .icon-stars {
+  color: #a5a5a5 !important; }
+
+.no-cookies .product-lists .rating .points_wrap,
+.no-cookies .product-area .rating .points_wrap {
+  margin-right: 0; }
+
+/* no-cookies tooltip type */
+.no-cookies-tooltips {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+  width: 280px;
+  z-index: 1000;
+}
+
+.no-cookies-tooltips div {
+  display: block;
+  position: relative;
+  padding: 10px 15px;
+  text-align: left;
+  z-index: 4;
+  border-radius: 10px;
+  background: #fff;
+  color: #333 !important;
+  border: 1px solid #a5a5a5;
+  background-image: linear-gradient(#fff, #f5f5f5);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  font-family: 'LG smart Light';
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.no-cookies-tooltips .cookie-arrow {
+  position: absolute;
+  left: 50%;
+  bottom: -11px;
+  z-index: 4;
+}
+
+.no-cookies-tooltips .cookie-arrow:before {
+  position: absolute;
+  bottom: 1px;
+  margin-left: -10px;
+  border-top: 11px solid #a5a5a5;
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+  content: " ";
+}
+
+.no-cookies-tooltips .cookie-arrow::after {
+  position: absolute;
+  bottom: 2px;
+  margin-left: -9px;
+  border-top: 10px solid #f5f5f5;
+  border-left: 10px solid transparent;
+  border-right: 11px solid transparent;
+  content: " ";
+}
+
+.no-cookies-tooltips strong {
+  display: block;
+  margin-bottom: 10px;
+  font-family: 'LG smart';
+  font-weight: normal;
+}
+
+.no-cookies-tooltips em {
+  display:inline-block;
+  color: #a50034;
+  text-decoration: underline;
+  font-style: normal;
+}
+
+.no-cookies-tooltips.position-left .cookie-arrow:before,
+.no-cookies-tooltips.position-left .cookie-arrow:after {
+  top: -12px;
+  bottom: auto;
+}
+
+.no-cookies-tooltips.position-right .cookie-arrow:before,
+.no-cookies-tooltips.position-right .cookie-arrow:after {
+  top: -12px;
+  bottom: auto;
+}
+
+.no-cookies-tooltips.position-top .cookie-arrow:before,
+.no-cookies-tooltips.position-top .cookie-arrow:after {
+  border-top: 0;
+  bottom: auto;
+}
+
+.no-cookies-tooltips.position-top .cookie-arrow {
+  bottom: auto;
+  top: 1px;
+}
+
+.no-cookies-tooltips.position-top .cookie-arrow:before {
+  top: -11px;
+  border-bottom: 11px solid #a5a5a5;
+}
+
+.no-cookies-tooltips.position-top .cookie-arrow:after {
+  top: -10px;
+  border-bottom: 10px solid #fff;
+}
+
+ .cookies-tooltip-close {
+  border: 0;
+  background: none;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding:0;
+  text-shadow:none;
+  box-shadow:none;
+}
+
+ .cookies-tooltip-close:hover,  .cookies-tooltip-close:focus,  .cookies-tooltip-close:active {
+   text-shadow:none;
+  box-shadow:none;
+ }
+
+
+.no-cookies-adv-video {position:relative;padding:25px 0 56.25% 0;}
+.no-cookies-adv-video .no-cookie-player {position:absolute;top:50%;left:50%;margin:-34px 0 0 -34px;}
+.no-cookies-adv-video .no-cookies-tooltips {padding: 10px !important;}
+.no-cookies-adv-video {background-color: #000000;}
+
+
+// youtube
+.iv-popup-wrap { position: absolute; }
+
+//share
+@import "base/lg-icon";
+
+.product_share * {box-sizing:border-box;}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before,
+[class^="icon-"]:after,
+[class*=" icon-"]:after {
+  font-family: "lg-icon" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@import "components/share";
+
+.product_share { display:block; position:relative; top:auto; left:auto; padding:0; background:none; }
+.product_share > ul > li { background:none; }
+.product_share > ul > li.close { display:none; }
+
+.product_share>ul>li.icon-facebook-top-layer, .product_share>ul>li.icon-google-plus-top-layer, .product_share>ul>li.icon-twitter-top-layer { border-right:none; margin-right:3px; }
+
+.mpo-header .span12.mpo-header-gradation .mpo-header-h1 {
+    display:block;
+    float: none;
+}
+.mpo-header .span12 #shareClick.share {
+    float: right;
+    margin:0;
+    padding:10px;
+    width: auto !important;
+    &:after {
+        content:"";
+        display:block;
+        clear: both;
+    }
+    h4 {
+        float: left;
+        width: 80px;
+    }
+    .shareload {
+        float:left;
+        //overflow-x: auto;
+        .product_share {
+            //display: block;
+            float: none;
+            border:none;
+            margin:0px;
+            ul {
+                display: block;
+                li {
+                    display: inline-block;
+                    &.close {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mpo-with-lnb { max-width:745px; margin:0 auto; }

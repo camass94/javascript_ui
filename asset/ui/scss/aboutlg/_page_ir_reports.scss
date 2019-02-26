@@ -1,0 +1,243 @@
+.ir {
+	#ir_report_table {
+		padding-bottom:72px;
+		.title {
+			font-size:30px;
+			line-height:30px;
+			color:#000000;
+			font-family:$font-family-regular;
+			@media (max-width: 1440px) and (min-width: 1025px){ // 1025~1440
+				font-size:24px;
+				line-height:24px;
+			}
+			@media (max-width: 1024px) { // 769~1024
+				font-size:18px;
+				line-height:18px;
+			}
+		}
+		.textbox-left-medium {
+			p {
+				padding:0 10px;
+				margin-top:16px;
+			}
+		}
+		.columns {
+			padding:0 10px 0;
+			> div {
+				padding:0 10px 0;
+			}
+		}
+		ul {
+			list-style:none;
+			margin:0;
+			padding:0 ;
+			border-top:1px solid #ccc;
+			
+			&.report_list {
+				li {
+					
+					&.active {
+						border-top:2px solid #666;
+						margin-top:-2px;
+					}
+					
+					a {
+						text-decoration:none;
+						.year {
+							display:block; 
+							line-height:1;
+							font-size:24px;
+							color:#333333;
+							padding:25px 10px 26px;
+							font-family:$font-family-regular;						
+							i {
+								margin-right:7px;
+								vertical-align:top;
+								font-size:21px;
+								line-height:25px;
+							}
+						}
+
+						&.active {
+							
+							.year {
+								color:#a50034;
+							}
+						}
+					}
+					@media (max-width: 1440px) and (min-width: 1025px){ // 1025~1440
+						.year {
+							font-size:19px;						
+							i {
+								font-size:16px;
+								line-height:16px;
+							}
+						}
+					}
+					@media (max-width: 1024px) { // 769~1024
+						.year {
+							font-size:16px;						
+							i {
+								font-size:16px;
+								line-height:16px;
+							}
+						}
+					}
+					.quarter {
+						padding:13px 18px;
+						border-bottom:1px solid #666666;
+						ol {
+							list-style:none;
+							margin:0;
+							padding:0;
+							li {
+								padding:15px 0;
+								img {
+									width:16px;
+									vertical-align:top;
+									margin-right:6px;
+								}
+								a {
+									font-size:20px;
+									line-height:24px;
+									text-decoration:underline;
+									color:#333333;
+									display:inline-block;
+									width:90%;
+									@media (max-width: 1440px) and (min-width: 1025px){ // 1025~1440
+										font-size:16px;
+										line-height:20px;
+									}
+									@media (max-width: 1024px) { // 769~1024
+										font-size:16px;
+										line-height:20px;
+									}
+								}
+							}
+						}
+					}
+				}
+
+
+			}
+		}
+		.view_more {
+			 
+			line-height:1;
+			font-size:24px;
+			padding:25px 10px 26px;
+			font-family:$font-family-regular;						
+			i {
+				margin-right:7px;
+				vertical-align:top;
+				font-size:21px;
+				line-height:25px;
+			}
+			a {
+				display:block;
+				color:#a50034;
+				text-decoration:none;
+			}
+			@media (max-width: 1440px) and (min-width: 1025px){ // 1025~1440
+				font-size:19px;
+				i {
+					font-size:16px;
+					line-height:16px;
+				}
+			}
+			@media (max-width: 1024px) { // 769~1024
+				font-size:16px;
+				i {
+					font-size:16px;
+					line-height:16px;
+				}
+			}
+		}
+	}
+}
+
+.is-mobile{
+	.ir {
+		#ir_report_table {
+			padding-bottom:0px;
+			.title {
+				font-size:22px;
+				line-height:20px;
+				color:#010101;
+				padding:0 20px;
+			
+			}
+			p {
+				margin:10px 0 15px;
+				padding:0 20px;
+				font-size:18px;
+				line-height:20px;
+			}
+			.columns {
+				padding:0;
+				overflow:hidden;
+				> div {
+					padding:0; 
+					overflow:hidden;
+				}
+			}
+			.container {
+				padding:0;
+			}
+			.report_list {
+				li {
+					
+					
+					.year {
+						font-size:18px;
+						padding:15px 20px 15px;						
+						i {
+							font-size:21px;
+							line-height:21px;
+						}
+					}
+
+					.quarter {
+						padding:9px 18px;
+						border-bottom:1px solid #666666;
+						ol {
+							li {
+								padding:7.5px 0;
+								img {
+									vertical-align:top;
+								}
+								a {
+									font-size:18px;
+									color:#333333;
+									font-family:$font-family-regular;
+									display:inline-block;
+									width:90%;
+								}
+							}
+						}
+					}
+				}
+
+
+			}
+			.statements {
+				padding-top:37px;
+			}
+		
+			.view_more {
+			 
+				line-height:1;
+				font-size:18px;
+				padding:15px 20px 15px;	
+				font-family:$font-family-regular;						
+				i {
+					margin-right:7px;
+					vertical-align:top;
+					font-size:21px;
+					line-height:21px;
+				}
+			}
+		}
+	}
+	
+}

@@ -1,0 +1,315 @@
+.msg-datepicker {
+	position:absolute;
+	left:-999em;
+	width:0;
+	height:0;
+	font-size:0;
+	overflow:hidden;
+}
+.datepicker {
+	position:absolute;
+	background:#fff;
+	padding:0 10px 10px;
+	border:1px solid #888888;
+	border-radius: 0 0 5px 5px;
+	direction: ltr;
+	font-family: $font-family-regular;
+	box-shadow: 3px 4px 9px 1px rgba(0, 0, 0, 0.2);
+	margin-top:5px;
+	@if $is-mobile==0 {
+	}
+}
+.datepicker-inline {
+}
+.datepicker.datepicker-rtl {
+	direction: rtl;
+}
+.datepicker.datepicker-rtl table tr td span {
+	float: right;
+}
+.datepicker-dropdown {
+	top: 0;
+	left: 20px;
+	@if $is-mobile==1 {
+		right:20px;
+	}
+}
+.datepicker-dropdown.datepicker-orient-bottom:before {
+	bottom: -7px;
+	border-bottom: 0;
+	border-top: 7px solid #999;
+}
+.datepicker-dropdown.datepicker-orient-bottom:after {
+	bottom: -6px;
+	border-bottom: 0;
+	border-top: 6px solid #fff;
+}
+.datepicker > div {
+	display: none;
+}
+.datepicker.days .datepicker-days,
+.datepicker.months .datepicker-months,
+.datepicker.years .datepicker-years {
+	display: block;
+}
+.datepicker.months .datepicker-months {
+	td {
+		padding-top:15px;
+	}
+}
+
+.datepicker table {
+	margin: 0;
+	//table-layout: fixed;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border-spacing: 0;
+	border-collapse: collapse;
+	@if $is-mobile==1 {
+		width:100%;
+	}
+	@else {
+		width:226px;
+	}
+}
+.datepicker:after {
+	position:absolute;
+	top:50px;
+	left:0;
+	width:100%;
+	height:1px;
+	background:#dcdcdc;
+	content:'';
+}
+.datepicker table tr th {
+	font-size:18px;
+	font-weight: 100;
+	font-family: $font-family-semibold;
+}
+.datepicker table tr td,
+.datepicker table tr th {
+	text-align: center;
+	border: none;
+	font-size:18px;
+	@if $is-mobile==1 {
+		width:14%;
+		height: 42px;
+	}
+	@else {
+		width: 14%;
+		height: 33px;
+	}
+}
+.datepicker table tbody tr td {
+	font-size:16px;
+}
+.datepicker table tbody tr td.active {
+	background: $red-lg;
+	color:#fff;
+	padding:0;
+}
+.datepicker table tbody tr td.highlighted {
+	color:$red-lg;
+}
+.datepicker table tbody tr td:first-child.active {
+	color:$white;
+}
+.datepicker table tbody tr td.highlighted.new,
+.datepicker table tbody tr td.highlighted.old {
+	color:#d789a1;
+}
+.table-striped .datepicker table tr td,
+.table-striped .datepicker table tr th {
+	background-color: transparent;
+}
+.datepicker table tr td.day:hover,
+.datepicker table tr td.day.focused {
+	div {
+		border:2px solid $red-lg;
+		cursor: pointer;
+	}
+}
+.datepicker table tr td.day.disabled:hover{
+	div {
+		border:2px solid #fff;
+		//cursor: pointer;
+	}
+}
+.datepicker table tr td.old,
+.datepicker table tr td.new {
+	color: #999999;
+}
+.datepicker table tr td.disabled,
+.datepicker table tr td.disabled:hover {
+	div {
+		background: none;
+		color: #999999;
+		cursor: default;
+	}
+}
+.datepicker table tr td.today,
+.datepicker table tr td.today:hover,
+.datepicker table tr td.today.disabled,
+.datepicker table tr td.today.disabled:hover {
+	div {
+		color: #000000;
+		background-color: #ffdb99;
+		border-color: #ffb733;
+	}
+}
+.datepicker table tr td.day div {
+
+	border:2px solid #fff;
+	width:100%;
+	@if $is-mobile == 1{
+		height:42px;
+		padding-top:8px;
+	} @else {
+		height:32px;
+		padding-top:3px;
+	}
+
+}
+.datepicker table tr td.day.active div {
+	border:2px solid $red-lg;
+}
+.datepicker .datepicker-years table tr td span,
+.datepicker .datepicker-months table tr td span {
+	display: block;
+	width: 23%;
+	float: left;
+	//margin: 1%;
+	cursor: pointer;
+	border:2px solid #fff;
+	font-family: $font-family-semibold;
+	&:hover, &:focus {
+		border:2px solid $red-lg;
+	}
+	@if $is-mobile==1 {
+		height: 90px;
+		line-height: 90px;
+	}
+	@else {
+		height: 73px;
+		line-height: 73px;
+	}
+}
+.datepicker table tr td div:hover {
+	border:2px solid $red-lg;
+}
+.datepicker table tr td div.disabled,
+.datepicker table tr td div.disabled:hover {
+	background: none;
+	color: #999999;
+	cursor: default;
+}
+.datepicker table tr td div.active,
+.datepicker table tr td div.active:hover,
+.datepicker table tr td div.active.disabled,
+.datepicker table tr td div.active.disabled:hover {
+	color: #ffffff;
+	background-color: $red-lg;
+	border-color: $red-lg;
+}
+.datepicker table tr td div.old,
+.datepicker table tr td div.new {
+	color: #999999;
+}
+.datepicker .datepicker-switch {
+	width: 145px;
+	padding-top:6px;
+}
+.datepicker thead tr:first-child th.prev,
+.datepicker thead tr:first-child th.next {
+	text-align:center;
+	font-size: 20px;
+}
+.datepicker thead tr:first-child th {
+	color:#333;
+	cursor: pointer;
+	height: 50px;
+	font-size:20px;
+	line-height: 1.2;
+}
+.datepicker thead tr:first-child th .icon {
+	color:#999999;
+	width: 13px;
+	&:hover, &:focus {
+		color:#333333;
+	}
+}
+.datepicker thead tr th {
+	height:42px;
+}
+.datepicker thead tr:first-child th .icon {
+	text-align:center;
+}
+.datepicker thead tr:first-child th.prev:hover,
+.datepicker thead tr:first-child th.next:hover,
+.datepicker thead tr:first-child th.prev:focus,
+.datepicker thead tr:first-child th.next:focus {
+	color:#333;
+}
+.datepicker .cw {
+	font-size: 10px;
+	width: 12px;
+	padding: 0 2px 0 5px;
+	vertical-align: middle;
+}
+.datepicker thead tr:first-child .cw {
+	cursor: default;
+	background-color: transparent;
+}
+.input-group.date .input-group-addon {
+	cursor: pointer;
+}
+.input-daterange {
+	width: 100%;
+}
+.input-daterange input {
+	text-align: center;
+}
+.input-daterange input:first-child {
+	border-radius: 3px 0 0 3px;
+}
+.input-daterange input:last-child {
+	border-radius: 0 3px 3px 0;
+}
+.input-daterange .input-group-addon {
+	width: auto;
+	min-width: 16px;
+	padding: 4px 5px;
+	font-weight: normal;
+	line-height: 1.42857143;
+	text-align: center;
+	text-shadow: 0 1px 0 #fff;
+	vertical-align: middle;
+	background-color: #eeeeee;
+	border: solid #cccccc;
+	border-width: 1px 0;
+	margin-left: -5px;
+	margin-right: -5px;
+}
+.datepicker-years,.datepicker-months{
+	table.table-condensed{
+		td{
+			padding-top:15px;
+			span.year,span.month{
+				width:25%;
+				font-size:18px;
+				color:#333;
+				font-family: $font-family-semibold;
+				margin-bottom:1px;
+				&.active{
+					border:2px solid $red-lg;
+					background:$red-lg;
+					color:$white;
+				}
+			}
+		}
+	}
+}

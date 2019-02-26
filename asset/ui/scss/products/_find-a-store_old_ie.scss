@@ -1,0 +1,25 @@
+html.lt-ie9 {
+.find-a-store {
+		.content-area{
+			@include rem(padding, 41px 0px 60px 0px);
+			form{	
+				div{
+					display:inline-block;
+					@include rem(padding, 23px 0);
+				}
+				/*
+				div:first-child {
+					border-right:1px solid #cccccc;
+					margin-right:36px;
+					padding-right:36px;
+				}
+				*/
+			}
+			
+
+		}
+		.container {
+			padding:0;
+		}
+	}
+}

@@ -1,0 +1,17 @@
+.tooltip-layer {
+	display:block;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:9999;
+	width:300px;
+	border-radius:5px;
+	background:#000;
+	opacity:.5;
+	color:#fff;
+
+	.tooltip-inner {
+		position:relative;
+		padding:10px;
+	}
+}

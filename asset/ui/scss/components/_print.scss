@@ -1,0 +1,18 @@
+@media print {
+	.skip_nav,
+	#appHeader,
+	#app-my-lg,
+	#appFooter,
+	.bottom-bar,
+	.new-quick-menu,
+	.return-to-compare-button,
+	.module.m15,
+	.move-top,
+	.footer,//LGEGMO-2927 add
+	.footer-seo,
+	.list-shortcut,
+	.content-feedback,	
+	.column-template:before {display:none !important;}
+	.wrapper {padding-top:0 !important;}
+	.video-box{display:block}	
+}

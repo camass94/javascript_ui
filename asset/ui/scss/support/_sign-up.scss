@@ -1,0 +1,423 @@
+a.btn-black {
+    @extend %btn;
+    background-color: $grey-dove;
+ 
+    &:hover {
+        text-decoration: none;
+        background-color: darken($grey-dove, 5);
+    }
+    &:focus, &:active {
+        text-decoration: none;
+        background-color: darken($grey-dove, 5);
+    }
+    &.disable {
+        background-color: $grey-dusty;
+        color: $grey;
+        cursor: default;
+    }
+    &.able {
+        background-color: $red-lg;
+    }
+}
+.signup-registraion {
+
+    .required-text {
+        margin: 0;
+        color: $red-lg;
+        font-family: $font-family-regular;
+        text-align: right;
+        border-bottom: 1px solid #bbb;
+        padding-bottom: 10px;
+        @include device-property(margin-bottom, 25px, 30px);
+        font-style: italic;
+
+        @if $is-mobile == 1 {
+            padding-bottom: 10px;
+            font-size: 14px;
+        }
+        @else {
+            font-size: 18px;
+        }
+    }
+    @if $is-mobile == 0 {
+        .signup-case + .required-text {
+            position: absolute;
+            top: 18px;
+            right: 0;
+            border-bottom: none;
+        }
+    }
+    label {
+        display: inline-block;
+        @include dmv(margin-bottom, 10px, 5px);
+        @include dmv(font-size, 24px, 18px);
+        font-family: $font-family-regular;
+    }
+    @if $is-mobile == 1 {
+        .btn-black {
+            font-size: 18px;
+        }
+    }
+    input.error {
+        border-color: $red-lg;
+    }
+    .fieldbox p {
+        @include dmv(margin, 0 0 20px 0, 0 0 15px 0);
+
+        & + p {
+            @if $is-mobile == 1 {
+                color: #666;
+                //padding-bottom: 26px;
+                //border-bottom: 1px solid #bbb;
+            }
+        }
+    }
+    .sub-title {
+        margin-bottom: 50px;
+    }
+    .policy-wrapper {
+        padding-top: 30px;
+        margin-top: 20px;
+        border-top: 1px solid $grey-silver;
+
+        &:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .check {
+            font-family: $font-family-regular;
+
+            label, p {
+                @include rem-multi(font-size, 16px, 16px, 16px, 20px, 20px, 20px);
+                display: inline;
+            }
+            a {
+                display: inline-block;
+                @include rem-multi(font-size, 16px, 16px, 16px, 20px, 20px, 20px);
+            }
+
+            &.depth2 {
+                padding-left: 25px;
+                margin-bottom: 20px;
+            }
+            &.depth2 label {
+                display: inline-block !important;
+                @if $is-mobile == 1 {
+                    font-size: 1.4rem;
+                    width: 140px;
+                } @else {
+                    width: 250px;
+                }
+                margin-bottom: 0;
+            }
+        }
+    }
+
+}
+.signup-result {
+    .complete-box {
+        @if $is-mobile == 0 {
+            min-height: 400px;
+        }
+
+        @if $is-mobile == 1 {
+            .result-text {
+                text-align: left;
+            }
+        }
+    }
+}
+.mylg-signup {
+    text-align: left
+}
+.signup-registraion {
+    position: relative;
+    max-width: 1200px;
+    @include dmv(margin, 0 auto, 0 20px);
+
+    .guide-text {
+        display: inline-block;
+        padding-top: 7px;
+        color: $grey-dove;
+        font-family: $font-family-regular;
+        @include rem-multi(font-size, 16px, 16px, 16px, 18px, 18px, 18px);
+
+        span {
+            vertical-align: middle;
+            margin-left: .5em;
+        }
+    } 
+    .fieldbox {
+        width: 100%;
+
+        div {
+            p {
+                float: left;
+
+                @if($is-mobile==1) {
+                    width: 100%;
+                }
+                @else {
+                    width: 47.5%;
+                }
+                + p {
+                    float: right;
+                }
+            }
+            .policy-field {
+                width: auto
+            }
+            &:after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+        }
+    }
+
+
+    .email-section, .second-email {
+        @include device-property(width, 47.5%, 100%);
+        
+        &.full-col {
+            .full-col-field {
+                display: block;
+                @include device-property(width, 47.5%, 100%);
+                
+                &.obs-link-type {
+                    display:block;
+                    width:100%;
+                }
+            }
+            width: 100%;
+        }
+
+        .guide-text label {
+            margin-bottom: 0;
+            font-size: 18px;
+        }
+    }
+
+    .obs-link-type {
+        label {
+            display:block;
+        }
+        input {
+            @include device-property(width, 47.5%, 100%);                        
+        }
+        .obs-txt {
+            @include device-property(margin, 0 10px, 0);
+            i {
+                color:#666;
+                font-size:18px;
+                @include device-property(vertical-align, baseline, middle);
+            }
+            span {
+                margin-left:.5em;
+                @include device-property(vertical-align, baseline, middle);
+            }
+        }
+        a {
+            @include device-property(vertical-align, baseline, middle);
+        }
+    }
+
+    .obs-link-type + .guide-text {
+        display:block;
+    }
+
+    .commen-text {
+        @if $is-mobile == 1 {
+            margin-bottom: 30px;
+        }
+    }
+    .mailaccount-field {
+        @include device-property(margin-bottom, 30px, 0);
+        @include device-property(padding-bottom, 15px, 0);
+        @include device-property(border-bottom, 1px solid #ccc, none);
+
+        .btn-right-box {
+            button, a {
+                @if $is-mobile == 1 {
+                    width: 49%;
+                    margin-top: 25px;
+                }
+            }
+        }
+    }
+    .captcha {
+        @include device-property(padding, 30px 0 20px, 20px 0 10px);
+        @include device-property(margin-top, 30px, 15px);
+        border-top: 1px solid #bbb;
+
+        .prompt {
+            float: none;
+            width: auto;
+            margin-bottom: 5px;
+        }
+        .LBD_CaptchaIconsDiv {
+            a {
+                line-height: 1;
+                i {
+                    margin: 0;
+                    font-size: 1em;
+                }
+            }
+        }
+    }
+    .highlight {
+        color: $red;
+    }
+}
+.btn-right-box {
+    overflow: hidden;
+    width: 100%;
+    text-align: right;
+
+    >* {
+        @include dmv(margin-left, 6px, 0);
+        margin-bottom: 30px;
+    }
+    a {
+        vertical-align: top;
+    }
+    @if $is-mobile == 1 {
+        >* {
+            width: 48%;
+            margin-top: 25px;
+        }
+        .btn {
+            float: right;
+
+            &:first-child {
+                float: left;
+                margin-right: 2%;
+            }
+        }
+        .btn-submit {
+            float: none;
+            width: 100%;
+            margin-right: 0;
+            margin-top: 0;
+        }
+        a {
+            float: left;
+        }
+    }
+}
+.signup-result {
+    margin-bottom: 60px;
+
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .singup-infor {
+        float: left;
+        width: percentage(560/1200);
+        padding: 60px 0;
+        background: #e5e5e5;
+        border: 1px solid #bbb;
+        border-width: 1px 0;
+        text-align: center;
+
+        i {
+            margin-bottom: 30px;
+            display: block;
+            font-size: 113px;
+        }
+    }
+    .singup-message {
+        float: right;
+        width: percentage(560/1200);
+
+        .message-txt {
+            margin-bottom: 30px;
+            padding: 30px 0;
+            border: 1px solid #bbb;
+            border-width: 1px 0;
+        }
+    }
+    .btn {
+        @include dmv(min-width, 80px, 100%);
+    }
+}
+.signup-case {
+    @extend %list-unstyled;
+    border-bottom: 1px solid $red-lg;
+    font-family: $font-family-regular;
+    margin: 0;
+    margin-bottom: 20px;
+
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    li {
+        float: left;
+        position: relative;
+        top: 1px;
+        @include device-property(width, 300px, 50%);
+        height: 53px;
+        text-align: center;
+        line-height: 46px;
+
+        &.lg {
+            border: 1px solid $red-lg;
+            border-bottom: none;
+            background: $white;
+        }
+        &.sns {
+            border: 1px solid #bbb;
+            border-bottom: 1px solid $red-lg;
+            background: #ececec;
+        }
+        a {
+            color: #333;
+
+            .icon {
+                color: #355999;
+                font-size: 24px;
+                background: $white;
+            }
+            font-size: 24px;
+
+            &:hover, &:focus, &:active {
+                text-decoration: none;
+            }
+            span {
+                position: relative;
+                top: 3px;
+                left: 3px;
+            }
+        }
+    }
+}
+.certification {
+    text-align: center;
+
+    p {
+        @include dmv(font-size, 24px, 18px);
+        line-height: 1.25em;
+    }
+}
+
+.agree-box {
+    @if $is-mobile == 0 {
+        margin:30px 0 20px;
+    } @else {
+        padding:7px 0;
+    }
+    .radio p.agree-txt {
+        float:none;
+        width:auto;
+        margin:0;
+    }
+    label {
+        @include device-property(font-size, 20px, 17px);
+    }
+}

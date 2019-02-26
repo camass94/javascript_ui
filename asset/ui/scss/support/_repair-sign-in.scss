@@ -1,0 +1,377 @@
+.repair-signin {
+    .required-field {
+        padding-bottom: 5px;
+        text-align: right;
+        font-size: 18px;
+        font-family: $font-family-regular;
+        font-style: italic;
+        color: $red-lg;
+    }
+    .signin-wrap {
+        width: 100%;
+        border-top: 1px solid $grey-silver;
+        font-family: $font-family-regular;
+        @if $is-mobile==0 {
+            display: table;
+            padding: 31px 55px 40px;
+            border-bottom: 1px solid $grey-silver;
+            background: #e9ecf0;
+            &:after {
+                display: block;
+                clear: both;
+                content: "";
+            }
+        }
+        @else {
+            display: none;
+        }
+        .signin-box {
+            @if $is-mobile==0 {
+                position: relative;
+                display: table-cell;
+                width: 50%;
+                padding: 0 0 0 81px;
+                @include tablet-only {
+                    display: block;
+                    width: 100%;
+                    padding: 45px 0 0 0;
+                }
+                hr {
+                    margin: 40px 0 20px 0;
+                }
+                &:first-child {
+                    padding: 0 84px 0 0;
+                    @include tablet-only {
+                        padding: 0 0 60px 0;
+                    }
+                    &:before {
+                        display: block;
+                        content: "";
+                        position: absolute;
+                        right: 0;
+                        width: 2px;
+                        @include tablet-only {
+                            width: 100%;
+                            bottom: 0;
+                            height: 2px;
+                        }
+                    }
+                    &:before {
+                        z-index: 0;
+                        background-color: #bebebf;
+                        @include background-image(linear-gradient(top, #e9ecf0 0%, #bebebf 10%, #bbbbbb 50%, #bebebf 90%, #e9ecf0 100%, #e9ecf0 100%));
+                        @include desktop-min {
+                            top: 10px;
+                            height: 100%;
+                        }
+                    }
+                }
+                .or-text {
+                    overflow: hidden;
+                    position: absolute;
+                    top: 50%;
+                    left: -25px;
+                    z-index: 3;
+                    width: 50px;
+                    height: 50px;
+                    margin: -25px 0 0 0;
+                    border-radius: 50%;
+                    line-height: 50px;
+                    text-align: center;
+                    @include tablet-only {
+                        top: -25px;
+                        left: 50%;
+                        margin: 0 0 0 -25px;
+                    }
+                    span {
+                        display: inline-block;
+                        position: relative;
+                        z-index: 3;
+                        line-height: 20px;
+                        font-size: 20px;
+                        color: $white;
+                        word-break: break-all;
+                    }
+                    i {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: 0;
+                        font-size: 50px;
+                        color: #a5a5a5;
+                    }
+                }
+                .signin-title {
+                    padding-bottom: 11px;
+                    font-size: 36px;
+                    font-family: $font-family-light;
+                    color: $grey-dove;
+                    em {
+                        color: $red-lg;
+                    }
+                }
+            }
+            @else {
+                padding: 23px 20px 30px;
+            }
+            .signin-form {
+                .form-wrap {
+                    margin-top: 14px;
+                    > div {
+                        position: relative;
+                        @include device-property(margin-top, 17px, 8px);
+                        &:first-child {
+                            margin-top: 0;
+                        }
+                        @include desktop-min {
+                            &.mtype01 {
+                                margin-top: 57px;
+                            }
+                        }
+                    }
+                    > div.call-field,
+                    > div.email-field {
+                        display: none;
+                    }
+                    > div.agree {
+                        margin-top: 0;
+                        @if $is-mobile==0 {
+                            padding-top: 12px;
+                            font-size: 20px;
+                        }
+                        @else {
+                            padding-top: 9px;
+                            font-size: 18px;
+                        }
+                    }
+                    .title {
+                        display: block;
+                        @if $is-mobile==0 {
+                            padding-bottom: 6px;
+                            font-size: 24px;
+                        }
+                        @else {
+                            padding-bottom: 4px;
+                            font-family: $font-family-semibold;
+                            font-size: 18px;
+                        }
+                        em {
+                            color: $red-lg;
+                        }
+                    }
+                }
+                .btn-sign-in {
+                    width: 100%;
+                    @include device-property(margin-top, 30px, 20px);
+                }
+            }
+            #forgotForm {
+                .btn-find-pw {
+                    display: block;
+                    padding: 0;
+                    margin-top: 20px;
+                    background: none;
+                    border: 0;
+                    color: $grey-mine-shaft;
+                    text-decoration: underline;
+                    font-family: $font-family-regular;
+                    @include rem-multi(font-size, 18px, 18px, 18px, 20px, 20px);
+                    &.active {
+                        color: $red-lg
+                    }
+                }
+                .input.input-find-pw {
+                    display: none;
+                    position: relative;
+                    margin-top: 15px;
+                    @if $is-mobile==0 {
+                        padding-right: 109px;
+                    }
+                    @else {
+                        padding-right: 78px;
+                    }
+                    .btn-submit {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        padding: 0;
+                        background-color: $red-lg;
+                        &:hover {
+                            background-color: $red-btn-over;
+                        }
+                        @if $is-mobile==0 {
+                            width: 104px;
+                            @include rem-multi(height, 30px, 30px, 30px, 30px, 40px);
+                        }
+                        @else {
+                            width: 72px;
+                            height: 30px;
+                        }
+                    }
+                }
+            }
+            .btn-sign-up {
+                float: right;
+                display: block;
+                margin-top: 20px;
+                font-family: $font-family-regular;
+                @include rem-multi(font-size, 18px, 18px, 18px, 20px, 20px);
+                span {
+                    text-decoration: underline;
+                    padding-right: 3px;
+                }
+            }
+            .btn-sns-login {
+                @include device-property(margin-top, 46px, 28px);
+            }
+            @if $is-mobile==1 {
+                .btn {
+                    height: 35px;
+                    padding: 0;
+                    line-height: 1.9;
+                }
+                .btn-right {
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+            }
+            .signin-notice {
+                @include desktop-min {
+                    min-height: 44px;
+                }
+                ul,
+                li {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                }
+                ul {
+                    li {
+                        position: relative;
+                        margin-top: 6px;
+                        @if $is-mobile==0 {
+                            font-size: 24px;
+                        }
+                        @else {
+                            font-size: 18px;
+                        }
+                        &:first-child {
+                            margin-top: 0;
+                        }
+                    }
+                }
+            }
+            .signin-txt {
+                display: block;
+                font-family: $font-family-light;
+                @if $is-mobile==0 {
+                    padding-top: 24px;
+                    font-size: 24px;
+                }
+                @else {
+                    padding-top: 8px;
+                    font-size: 18px;
+                }
+            }
+        }
+        .msg-error-match {
+            margin-top: 10px;
+            padding: 15px 10px;
+            background: #dbdee1;
+            @include rem-multi(font-size, 18px, 18px, 18px, 20px, 20px, 20px);
+            strong {
+                font-weight: $font-weight-base;
+                color: $red-lg
+            }
+            /* LGECS-669 20160907 add */
+	   		.basic{ margin:0 }
+	        .rock-msg{ margin:0 50px;color: #a50034;}
+	        /* LGECS-669 20160907 add */
+            i {
+                color: $red-lg;
+                margin-right: 10px;
+                font-size: 18px;
+            }
+        }
+    }
+    .select-tabs {
+        > li > a .text em {
+            color: $red-lg;
+        }
+    }
+    .radio-select {
+        @include device-property(font-size, 20px, 16px);
+        @include device-property(padding, 16px 0, 12px 0 8px);
+        margin: 30px 0;
+        @if $is-mobile==1 {
+            margin-top: 25px;
+        }
+        border:1px solid #ccc;
+        border-width:1px 0 1px;
+        > span:first-child {
+            @include device-property(margin-right, 12px, 8px);
+        }
+    }
+}
+
+.repair-signin {
+    .signin-wrap {
+    	@if $is-mobile==1 {
+            &.one-column {
+                display: block;
+                padding: 31px 25px 40px;
+                border-bottom: 1px solid $grey-silver;
+                background: #e9ecf0;
+                &:after {
+                    display: block;
+                    clear: both;
+                    content: "";
+                }
+            }
+            .msg-error-match .rock-msg{ margin:0 24px;} // LGECS-669 20160907 add
+        }
+        &.one-column {
+            .signin-box {
+            	@include device-property(max-width, 460px, inherit);
+                padding: 0;
+                margin: 0 auto;
+                float: none;
+                display: block;
+                &:last-child {
+                    padding: 0
+                }
+                > div:first-child {
+                    margin-bottom: 15px
+                }
+                > div:first-child + button.btn {
+                    margin-top: 15px
+                }
+                &:before,
+                .or-text {
+                    display: none;
+                }
+                .signin-form {
+                    .form-wrap {
+                        margin-top: 14px;
+                        > div {
+                            &.mtype01 {
+                                margin-top: 14px;
+                            }
+                        }
+                    }    
+                }
+            }
+            .title {
+                display: block;
+                padding-bottom: 6px;
+                font-size: 24px;
+                em {
+                    color: $red-lg;
+                }
+            }
+            .signin-title em {
+            	color: $red-lg;
+            }
+        }
+    }
+}

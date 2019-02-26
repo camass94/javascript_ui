@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+$is-mobile:0 !default;
+$header-height:64px !default;
+
+@import "../bower_components/bourbon/dist/bourbon";
+@import "../bower_components/ic/scss/ic";
+
+@import "base/base";
+@import "common/common";
+@import "components/components";
+
+//desktop specific stuff
+@import "components/header";
+@import "components/share";
+@import "lg-signature/signature-gnb"; /* LGEGMO-2230 ADD */
+
+@if $is-mobile == 0 {
+    .wrapper {
+        min-width: 768px;
+    }
+    .only-mobile {
+    	display:none !important;
+    }
+    .only-desktop {
+    	display:block !important;
+    }
+    a.btn.only-desktop {
+    	display:inline-block !important;
+    }
+}
+
+
+// IE
+@import "oldie";
+
+/* LGECI-3407 : 20180913 add */
+.noMarginTop {margin-top : 0 !important}
+.noMarginBottom {margin-bottom : 0 !important}
+.marginTop10 {margin-top : 1rem !important}
+.marginTop20 {margin-top : 2rem !important}
+.marginTop30 {margin-top : 3rem !important}
+.noPaddingTop {padding-top : 0 !important}
+.noPaddingBottom {padding-bottom : 0 !important}
+.paddingTop10 {padding-top : 1rem !important}
+.paddingTop20 {padding-top : 2rem !important}
+.paddingTop30 {padding-top : 3rem !important}
+/* //LGECI-3407 : 20180913 add */

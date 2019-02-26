@@ -1,0 +1,255 @@
+.homepage-content {
+	margin:8px auto;
+	.close {font-size:30px;position:absolute;right:12px;top:8px;line-height:1;width:45px;height:40px;display:block;z-index:1055;color:#a7a7a7;}	/* LGEGMO-2881 20170515 modify, LGEAU-2614 20180808 modify */
+	iframe { display:block; }
+	img.mobile { display:none !important; }
+	img.web { display:inline !important; }
+	video {
+		span {
+			color:#ffffff;
+		}
+	}
+	
+	.hc-wrap {
+		position:relative;
+		max-width:1600px;
+		margin:0 auto;
+		
+		.image-box {
+			width:28.125%;
+			position:absolute;
+		}
+
+		.cont-box {
+			position:relative;
+			.caption {
+				position:absolute;
+				width:100%;
+				background:rgba(#333333,0.7);
+				line-height:36px;
+				min-height:36px;
+				bottom:0;
+				color:#ffffff;
+				font-size:30px;
+				left:0;
+				text-align:left;
+				font-family: $font-family-light;
+				padding:10px 6.7%;
+			}
+		}
+		.wide {
+			width:42.75%;
+			position:relative;
+			background:#000;
+			.caption {
+				padding:10px 4.4%;
+			}
+			.play-vod {
+				font-size:30px;
+				position:absolute; 
+				top:50%;
+				left:50%;
+				margin-left:-33px;
+				margin-top:-33px;
+				text-decoration:none;
+				opacity:0.9;
+				.icon-video-play:after {
+					font-size:66px;
+				}
+				.icon-video-play:before {
+					font-size:44px;
+					margin-right:-50px;
+				}
+			}
+		}
+		.vod-box { position:absolute; width:100%; height:100%; }
+	}
+
+	&.wide-left {
+		.wide {
+			left:0;
+			top:0;
+		}
+		.image-1 {
+			right:28.625%;
+			top:0;
+			z-index:2;
+		}
+		.image-2 {
+			right:0px;
+			top:0;
+		}
+	}
+	&.wide-right {
+		.wide {
+			right:0;
+			top:0;
+			position:absolute;
+		}
+		.image-1 {
+			left:0;
+			top:0;
+			position:relative;
+		}
+		.image-2 {
+			left:28.625%;
+			top:0;
+		}
+	}
+	a:hover .caption {
+		text-decoration:underline;
+		color:#CCCCCC !important;
+	}
+	&.wide-full {
+		.wide {
+			left:0;
+			top:0;
+			width:100%;
+		}
+	}
+	&.wide-half {
+		.image-1 {
+			// position:absolute;
+			// left:0;
+			// top:0;
+			width:49.75%;
+		}
+		.image-2 {
+			position:absolute;
+			left:inherit !important;
+			right:0;
+			top:0;
+			width:49.75%;
+		}
+	}
+}
+
+@media screen and (max-width: 1440px) {
+	.homepage-content {
+		.hc-wrap {
+			.cont-box {
+				.caption {
+					line-height:30px;
+					min-height:30px;
+					font-size:24px;
+					padding:7px 4.4%;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.homepage-content {
+		.hc-wrap {
+			.cont-box {
+				.caption {
+					line-height:24px;
+					min-height:24px;
+					font-size:18px;
+					padding:4px 4.4%;
+				}
+			}
+			.wide {
+				.play-vod {
+					font-size:20px;
+					margin-left:-23px;
+					margin-top:-23px;
+					.icon-video-play:after {
+						font-size:46px;
+					}
+					.icon-video-play:before {
+						font-size:34px;
+						margin-right:-40px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.is-mobile {
+	img.mobile { display:inline !important; }
+	img.web { display:none !important; }
+	.homepage-content {
+		.hc-wrap {
+			max-width:768px;
+			padding-bottom:0px;
+			.image-box {
+				width:100%;
+				position:relative;
+			}
+			.section-image {
+				border-bottom:1px solid #ffffff;
+				position:relative;
+			}
+
+			.cont-box {
+				position:relative;
+				.caption {
+					background:rgba(#333333,0.7);
+					line-height:26px;
+					min-height:26px;
+					font-size:18px;
+					font-family: $font-family-light;
+					padding:7px 4.4%;
+				}
+			}
+			.wide {
+				width:100%;
+				position:relative;
+				background:none;
+				.caption {
+					padding:7px 4.4%;
+				}
+				.play-vod {
+					margin-left:-25px;
+					margin-top:-25px;
+					.icon-video-play:after {
+						font-size:50px;
+					}
+					.icon-video-play:before {
+						font-size:42px;
+						margin-right:-47px;
+					}
+				}
+			}
+			
+		}
+		&.wide-left {
+			.image-1 {
+				right:0;
+			}
+		}
+		&.wide-right {
+			.wide {
+				position:relative;
+			}
+			.image-2 {
+				left:0;
+			}
+		}
+		&.wide-half {
+			.image-1,
+			.image-2 {
+				width:100%;
+			}
+		}
+	}
+	
+}
+
+.lt-ie9 {
+	.homepage-content {
+		.hc-wrap {
+			.cont-box {
+				.caption {
+					background:none;
+					-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2333333,endColorstr=#B2333333);
+					filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2333333,endColorstr=#B2333333);
+					zoom: 1;
+				}
+			}
+		}
+	}	
+}

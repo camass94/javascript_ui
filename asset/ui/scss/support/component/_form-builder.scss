@@ -1,0 +1,165 @@
+
+/* form builder */
+.fb-area {
+
+    font-size:0;
+
+    hr {
+        @if $is-mobile == 0 {
+            margin:0 0 20px 5% !important;
+        }@else {
+            margin:0 0 10px 0 !important;
+        }
+        clear:both;
+    }
+    @include dmv(margin-left,-5%,0);
+    > div {
+        @include dmv(margin-left,5%,0);
+        @include dmv(margin-bottom, 20px, 7px);
+        >p {
+            margin-bottom: 0 !important;
+        }
+    }
+
+    .clearbox + div {
+        clear:left;
+    }
+
+    .full-col {
+        // margin-left:5%;
+        @if $is-mobile == 0 {
+            clear:both;
+            & > span {
+                display:inline-block;
+                width:100%;
+            }
+        }
+        .full-col-field {
+            @if $is-mobile == 0 {
+                display:block;
+                width:47.5%;
+            }
+        }
+    }
+
+    @if $is-mobile == 0 {
+        .offset-right {
+            margin-right: 50%;
+        }
+        .offset-left {
+            margin-left: 50%;
+        }
+        .half-col {
+            // margin-left:5%;
+            // float:left;
+            display:inline-block;
+            width:45%;
+            vertical-align: top;
+            & > span {
+                display:inline-block;
+                width:100%;
+            }
+        }
+        .captcha {
+            display:inline-block;
+            width:95%;
+            margin-top:10px;
+            margin-bottom:0;
+        }
+    }
+    select {
+        width:100%;
+    }
+
+    select.error, select.error + div a.chosen-single {
+        border-color:$red-lg;
+    }
+
+    label {
+        &.guide-text {
+            padding-top:0;
+        }
+    }
+
+    .single-tit {
+        display:block;
+        font-weight:normal;
+        @include dmv(margin-bottom,10px,5px);
+        @include dmv(font-size,24px,18px)
+        // font-family: "LG Smart", Tahoma, Arial, sans-serif;
+    }
+
+    .gender-radio-type {
+        list-style:none;
+        margin:0;
+        padding:5px 0 0;
+        &:after {
+            display:block;
+            clear:both;
+            content:'';
+        }
+        li {
+            float:left;
+            width:50%;
+            & + li {
+                @include device-property(text-align,right, left);
+            }
+            label {
+                margin-bottom:0;
+                display:inline-block;
+                height:24px;
+                line-height:24px;
+                vertical-align:top;
+                @include dmv(font-size,20px,16px);
+            }
+            span.styled-radio {
+                top:0;
+                vertical-align:top;
+            }
+        }
+    }
+
+    .visibleFlag:disabled ~ .visibleElement {
+        display:none
+    }
+
+    & ~ .button-right {
+        clear:both;
+    }
+
+    @if $is-mobile == 0 {
+        div.set-field-text {
+            margin-left: 0;
+            margin-bottom: 0;
+            & > div {
+                margin-left:5%;
+                @include dmv(margin-bottom,20px,15px);
+            }
+            .set-field-full {
+                display:block;
+                float:none;
+            }
+
+            .set-field-half {
+                display:inline-block;
+                width:45%;
+                vertical-align: top;
+                float:none;
+                &.full {
+                    display:block;
+                    float:none;
+                }
+            }
+        }
+
+    }@else {
+        div.set-field-text {
+            & > div {
+                margin-left:0;
+                @include dmv(margin-bottom,20px,15px);
+            }
+        }
+    }
+
+
+}

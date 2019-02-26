@@ -1,0 +1,66 @@
+// Buttons
+//
+// Use the standard, but classy, <code>.btn</code> for form actions and primary page actions. These are used extensively around the site.
+//
+// Compatible in IE6+, Firefox 2+, Safari 4+.
+//
+// Markup:
+// <a href="#" class="btn {$modifiers}">Button (a.btn)</a>
+// <button class="btn {$modifiers}">Button (button.btn)</button>
+//
+// :hover               - Highlight the button when hovered.
+// :active              - "Press" the button down when clicked.
+// :disabled            - Make the button change appearance to reflect it being disabled.
+// .btn-default         - A default button style.
+// .btn-primary         - Indicate that the button is the primary feature of this form.
+// .btn-warning         - A warning button.
+// .btn-danger          - A danger button.
+// .btn-success         - A success button.
+// .btn-info            - An info button.
+//
+// Styleguide 2.1
+.btn, a.btn {
+    @include rem-multi(padding, 10px 20px 8px,10px 20px 8px, 10px 20px 8px, 6px 12px 4px, 7px 13px 5px, 9px 15px 6px);
+    @include rem-multi(font-size, 15px, 16px, 18px, 20px, 22px, 23px);
+    display: inline-block;
+    border-radius: 6px;
+    background-color: $red-lg;
+    font-family: $font-family-regular;
+	.lt-ie9 & {font-family:'LG Smart Light';font-style:normal;}
+    font-weight: normal;
+    line-height: normal;
+    color: $white;
+    text-align: center;
+    cursor: pointer;
+    transition: width 0.2s ease-in;
+	border:none;
+
+    &:hover,
+	&:focus {
+        background-color: $red-btn-over; //darken($red-lg, 5);
+        text-decoration: none;
+    }
+	&:focus {outline:1px dotted #fff;}
+
+    &.gray {
+        background-color: #d2d2d2;
+        text-decoration: none;
+        color:#333333;
+        &:hover,
+        &:focus {
+            background-color: darken(#d2d2d2, 5);
+            text-decoration: none;
+        }
+        &:focus {outline:1px dotted #000;}
+    }
+    &.dark-gray {
+        background-color: #666;
+        text-decoration: none;
+        color:#fff;
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+        &:focus {outline:1px dotted #fff;}
+    }
+}

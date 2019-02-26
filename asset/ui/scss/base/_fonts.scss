@@ -1,0 +1,313 @@
+
+// http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax
+
+// REGULAR
+// @font-face {
+// 	font-family: "LG Smart";
+// 	src:url($path-fonts + "lg-smart/LG_Smart_Regular.eot");
+// 	src:url($path-fonts + "lg-smart/LG_Smart_Regular.eot?#iefix") format('embedded-opentype'),
+// 		url($path-fonts + "lg-smart/LG_Smart_Regular.woff") format('woff'),
+// 		url($path-fonts + "lg-smart/LG_Smart_Regular.ttf") format('truetype'),
+// 		url($path-fonts + "lg-smart/LG_Smart_Regular.svg#LG Smart") format('svg');
+// 	font-weight: normal;
+// 	font-style: normal;
+// }
+
+// @font-face {
+// 	font-family: "LG Smart";
+// 	src:url($path-fonts + "lg-smart/LG_Smart_Regular_Italic.eot");
+// 	src:url($path-fonts + "lg-smart/LG_Smart_Regular_Italic.eot?#iefix") format('embedded-opentype'),
+// 		url($path-fonts + "lg-smart/LG_Smart_Regular_Italic.woff") format('woff'),
+// 		url($path-fonts + "lg-smart/LG_Smart_Regular_Italic.ttf") format('truetype'),
+// 		url($path-fonts + "lg-smart/LG_Smart_Regular_Italic.svg#LG Smart") format('svg');
+// 	font-weight: normal;
+// 	font-style: italic;
+// }
+
+// @font-face {
+// 	font-family: "LG Smart";
+// 	src:url($path-fonts + "lg-smart/LG_Smart_Bold.eot");
+// 	src:url($path-fonts + "lg-smart/LG_Smart_Bold.eot?#iefix") format('embedded-opentype'),
+// 		url($path-fonts + "lg-smart/LG_Smart_Bold.woff") format('woff'),
+// 		url($path-fonts + "lg-smart/LG_Smart_Bold.ttf") format('truetype'),
+// 		url($path-fonts + "lg-smart/LG_Smart_Bold.svg#LG Smart") format('svg');
+// 	font-weight: bold;
+// 	font-style: normal;
+// }
+
+// @font-face {
+// 	font-family: "LG Smart";
+// 	src:url($path-fonts + "lg-smart/LG_Smart_Bold_Italic.eot");
+// 	src:url($path-fonts + "lg-smart/LG_Smart_Bold_Italic.eot?#iefix") format('embedded-opentype'),
+// 		url($path-fonts + "lg-smart/LG_Smart_Bold_Italic.woff") format('woff'),
+// 		url($path-fonts + "lg-smart/LG_Smart_Bold_Italic.ttf") format('truetype'),
+// 		url($path-fonts + "lg-smart/LG_Smart_Bold_Italic.svg#LG Smart") format('svg');
+// 	font-weight: bold;
+// 	font-style: italic;
+// }
+
+// // SEMIBOLD - DEFAULTS TO STANDARD BOLD OR ITALICS WHEN WEIGHT OR STYLE APPLIED
+// @font-face {
+// 	font-family: "LG Smart SemiBold";
+// 	src:url($path-fonts + "lg-smart/LG_Smart_SemiBold.eot");
+// 	src:url($path-fonts + "lg-smart/LG_Smart_SemiBold.eot?#iefix") format('embedded-opentype'),
+// 		url($path-fonts + "lg-smart/LG_Smart_SemiBold.woff") format('woff'),
+// 		url($path-fonts + "lg-smart/LG_Smart_SemiBold.ttf") format('truetype'),
+// 		url($path-fonts + "lg-smart/LG_Smart_SemiBold.svg#LG Smart SemiBold") format('svg');
+// 	font-weight: normal;
+// 	font-style: normal;
+// }
+
+// @font-face {
+// 	font-family: "LG Smart SemiBold";
+// 	src:url($path-fonts + "lg-smart/LG_Smart_Bold.eot");
+// 	src:url($path-fonts + "lg-smart/LG_Smart_Bold.eot?#iefix") format('embedded-opentype'),
+// 		url($path-fonts + "lg-smart/LG_Smart_Bold.woff") format('woff'),
+// 		url($path-fonts + "lg-smart/LG_Smart_Bold.ttf") format('truetype'),
+// 		url($path-fonts + "lg-smart/LG_Smart_Bold.svg#LG Smart SemiBold") format('svg');
+// 	font-weight: bold;
+// 	font-style: normal;
+// }
+
+// // faux italic for just font-style: italic;
+
+// @font-face {
+// 	font-family: "LG Smart SemiBold";
+// 	src:url($path-fonts + "lg-smart/LG_Smart_Bold_Italic.eot");
+// 	src:url($path-fonts + "lg-smart/LG_Smart_Bold_Italic.eot?#iefix") format('embedded-opentype'),
+// 		url($path-fonts + "lg-smart/LG_Smart_Bold_Italic.woff") format('woff'),
+// 		url($path-fonts + "lg-smart/LG_Smart_Bold_Italic.ttf") format('truetype'),
+// 		url($path-fonts + "lg-smart/LG_Smart_Bold_Italic.svg#LG Smart SemiBold") format('svg');
+// 	font-weight: bold;
+// 	font-style: italic;
+// }
+
+// // LIGHT - DEFAULTS TO REGULAR WHEN BOLD OR ITALICS WHEN WEIGHT OR STYLE APPLIED
+// @font-face {
+// 	font-family: "LG Smart Light";
+// 	src:url($path-fonts + "lg-smart/LG_Smart_Light.eot");
+// 	src:url($path-fonts + "lg-smart/LG_Smart_Light.eot?#iefix") format('embedded-opentype'),
+// 		url($path-fonts + "lg-smart/LG_Smart_Light.woff") format('woff'),
+// 		url($path-fonts + "lg-smart/LG_Smart_Light.ttf") format('truetype'),
+// 		url($path-fonts + "lg-smart/LG_Smart_Light.svg#LG Smart Light") format('svg');
+// 	font-weight: normal;
+// 	font-style: normal;
+// }
+
+// @font-face {
+// 	font-family: "LG Smart Light";
+// 	src:url($path-fonts + "lg-smart/LG_Smart_Regular.eot");
+// 	src:url($path-fonts + "lg-smart/LG_Smart_Regular.eot?#iefix") format('embedded-opentype'),
+// 		url($path-fonts + "lg-smart/LG_Smart_Regular.woff") format('woff'),
+// 		url($path-fonts + "lg-smart/LG_Smart_Regular.ttf") format('truetype'),
+// 		url($path-fonts + "lg-smart/LG_Smart_Regular.svg#LG Smart Light") format('svg');
+// 	font-weight: bold;
+// 	font-style: normal;
+// }
+
+// // faux italic for just font-style: italic;
+
+// @font-face {
+// 	font-family: "LG Smart Light";
+// 	src:url($path-fonts + "lg-smart/LG_Smart_Regular_Italic.eot");
+// 	src:url($path-fonts + "lg-smart/LG_Smart_Regular_Italic.eot?#iefix") format('embedded-opentype'),
+// 		url($path-fonts + "lg-smart/LG_Smart_Regular_Italic.woff") format('woff'),
+// 		url($path-fonts + "lg-smart/LG_Smart_Regular_Italic.ttf") format('truetype'),
+// 		url($path-fonts + "lg-smart/LG_Smart_Regular_Italic.svg#LG Smart Light") format('svg');
+// 	font-weight: bold;
+// 	font-style: italic;
+// }
+
+// Bourbon mixins, but compass errors on them.
+
+// @include font-face("LG Smart", $path-fonts + "/lg-smart/LG-Smart-Regular", $file-formats: ttf);
+// @include font-face("LG Smart", $path-fonts + "/lg-smart/LG-Smart-Bold", bold, $file-formats: ttf);
+// @include font-face("LG Smart", $path-fonts + "/lg-smart/LG-Smart-Regular-Italic", normal, italic, $file-formats: ttf);
+// @include font-face("LG Smart", $path-fonts + "/lg-smart/LG-Smart-Bold-Italic", bold, italic, $file-formats: ttf);
+
+// // SEMIBOLD - DEFAULTS TO STANDARD BOLD OR ITALICS WHEN WEIGHT OR STYLE APPLIED
+// @include font-face("LG Smart SemiBold", $path-fonts + "/lg-smart/LG-Smart-SemiBold", $file-formats: ttf);
+// @include font-face("LG Smart SemiBold", $path-fonts + "/lg-smart/LG-Smart-Bold", bold, $file-formats: ttf);
+// // faux italic for just font-style: italic;
+// @include font-face("LG Smart SemiBold", $path-fonts + "/lg-smart/LG-Smart-Bold-Italic", bold, italic, $file-formats: ttf);
+
+// // LIGHT - DEFAULTS TO REGULAR WHEN BOLD OR ITALICS WHEN WEIGHT OR STYLE APPLIED
+// @include font-face("LG Smart Light", $path-fonts + "/lg-smart/LG-Smart-Light", $file-formats: ttf);
+// @include font-face("LG Smart Light", $path-fonts + "/lg-smart/LG-Smart-Regular", bold, $file-formats: ttf);
+// // faux italic for just font-style: italic;
+// @include font-face("LG Smart Light", $path-fonts + "/lg-smart/LG-Smart-Regular-Italic", bold, italic, $file-formats: ttf);
+
+
+
+// icon fonts
+@charset "UTF-8";
+@import "lg-icon";
+
+[data-icon]:before,
+[data-icon]:after {
+	font-family: "lg-icon" !important;
+	content: attr(data-icon);
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	speak: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before,
+[class^="icon-"]:after,
+[class*=" icon-"]:after,
+[class^="slick-"]:before,
+[class*=" slick-"]:before {
+	font-family: "lg-icon" !important;
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	speak: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-link:before {
+	vertical-align:middle;
+	line-height:initial;
+	margin-left:4px;
+}
+.slick-next:before {
+	// content: ">" !important;
+	// content:"\f105" !important;
+	@extend .icon-arrow-next:before;
+}
+
+.slick-prev:before {
+	// content: "<" !important;
+	// content:"\f107" !important;
+	@extend .icon-arrow-prev:before;
+}
+
+// .icon-star:before {
+//	 top: 0.2em;
+//	 position: relative;
+// }
+// .icon-shopping-cart:before {
+//	 top: 0.2em;
+//	 position: relative;
+// }
+//LGEGMO-1884 : 20160614 modify Start
+.module .icon-video-play:before {
+	@extend .icon-circle:before;
+	color: $white;
+	@include rem-multi(font-size, 14px, 18px, 22px, 26px);
+
+	@include mobile-lt-medium {
+		@include font-size(44px);
+		@include margin-right(-45px);
+	}
+}
+.module .icon-video-play:after {
+	@extend .icon-video-play:before; 
+	color: $red-lg;
+	@include rem-multi(font-size, 16px, 20px, 24px, 28px);
+	@include mobile-lt-medium {
+		@include font-size(46px);
+	}
+}
+//LGEGMO-1884 : 20160614 modify End
+.module .icon-video-stop:before {
+	@extend .icon-circle:before;
+	color: $white;
+	@include rem-multi(font-size, 14px, 18px, 22px, 26px);
+	@include rem-multi(margin-right, -15px, -19px, -23px, -27px);
+
+	@include mobile-lt-medium {
+		@include font-size(44px);
+		@include margin-right(-45px);
+	}
+}
+.module .icon-video-stop:after {
+	@extend .icon-video-stop-top-layer:before;
+	color: $red-lg;
+	@include rem-multi(font-size, 16px, 20px, 24px, 28px);
+	@include mobile-lt-medium {
+		@include font-size(46px);
+	}
+}
+.icon-google-plus:after {
+	@extend .icon-google-plus-top-layer:before;
+	color: $color-google-plus;
+	@include rem-multi(font-size, 16px, 20px, 24px, 28px);
+	@include mobile-lt-medium {
+	 	@include font-size(46px);
+	}
+}
+.icon-youtube:after {
+	@extend .icon-youtube-top-layer:before;
+	color: $color-youtube;
+	@include rem-multi(font-size, 16px, 20px, 24px, 28px);
+	@include mobile-lt-medium {
+	 	@include font-size(46px);
+	}
+}
+.icon-pinterest:after {
+	@extend .icon-pinterest-top-layer:before;
+	color: $color-pinterest;
+	@include rem-multi(font-size, 16px, 20px, 24px, 28px);
+	@include mobile-lt-medium {
+	 	@include font-size(46px);
+	}
+}
+.icon-facebook:after {
+	@extend .icon-facebook-top-layer:before;
+	color: $color-facebook;
+	@include rem-multi(font-size, 16px, 20px, 24px, 28px);
+	@include mobile-lt-medium {
+	 	@include font-size(47px);
+	}
+}
+.icon-twitter:before,
+.icon-facebook:before,
+.icon-youtube:before,
+.icon-google-plus:before,
+.icon-pinterest:before {
+	@extend .icon-rounded-square:before;
+	color: $white;
+	@include rem-multi(font-size, 15px, 19px, 23px, 27px);
+	@include rem-multi(margin-right, -15.5px, -19.5px, -23.5px, -27.5px);
+
+	@include mobile-lt-medium {
+	 	@include font-size(46px);
+		@include margin-right(-46px);
+	}
+}
+.icon-facebook:before {
+	@include mobile-lt-medium {
+		@include margin-right(-46.5px);
+	}
+}
+.icon-pinterest-on-white:after {
+	@extend .icon-pinterest-top-layer:before;
+	color: $color-pinterest;
+	@include rem-multi(font-size, 16px, 20px, 24px, 28px);
+
+}
+.icon-pinterest-on-white:before {
+	@extend .icon-rounded-square-border:before;
+	color: $grey-dusty;
+	@include rem-multi(font-size, 16px, 20px, 24px, 28px);
+	@include rem-multi(margin-right, -16px, -20px, -24px, -28px);
+}
+.icon-twitter:after {
+	@extend .icon-twitter-top-layer:before;
+	color: $color-twitter;
+	@include rem-multi(font-size, 16px, 20px, 24px, 28px);
+	right: 0;
+	@include mobile-lt-medium {
+	 	@include font-size(46px);
+	}
+}

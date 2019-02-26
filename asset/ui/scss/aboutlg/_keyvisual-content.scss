@@ -1,0 +1,59 @@
+body {
+	position: relative;
+}
+
+#content {
+	.keyvisual-top {
+		width: 100%;
+		height: 252px;
+		// background: url('/global/support/cedoc/images/cedoc_kv.jpg') no-repeat 0 50%;
+		.title { 
+			color: #fff;
+			font-family: $font-family-light;
+			line-height: 252px;
+			text-align: center;
+			br {
+				display: none;
+			}
+		}
+	}
+}
+
+.is-mobile {
+	#content {
+		.keyvisual-top {
+			background: #e7e9e4;
+			height: auto;
+			h1 {
+				text-align: left;
+				color: #333;
+				font-family: $font-family-semibold;
+				text-transform: uppercase;
+				line-height: 1;
+				padding: 20px 10px;
+				font-size: 24px;
+				br {
+					display: block;
+				}
+			}
+		}
+	}
+	@media (max-width: 639px) and (min-width: 480px){ // 480~639
+		#content {
+			.keyvisual-top {
+				h1 {
+					font-size: 33px;
+				}
+			}
+		}
+	}
+	@media (min-width: 640px){ // 480~639
+		#content {
+			.keyvisual-top {
+				h1 {
+					font-size: 43px;
+				}
+			}
+		}
+	}
+}

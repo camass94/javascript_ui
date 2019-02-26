@@ -1,0 +1,158 @@
+.find-a-store{
+
+	border-top:1px solid #666666;
+
+	font-family: $font-family-light;
+	background-color:$grey-mine-shaft;
+	color:$white;
+
+	/*
+	.mobile{
+		display:none;
+	}
+	.desktop {
+		display:block;
+	}
+
+	*/
+	@include mobile-lt-medium {
+		/*
+		.mobile{
+			display:block;
+		}
+		.desktop {
+			display:none;
+		}
+		*/
+
+	}
+
+
+
+
+	.content-area{
+		text-align:center;
+		@include rem(padding, 31px 20px 14px 20px);
+	}
+	h3{
+		@include rem-multi(font-size, 30px, 30px, 30px, 30px, 34px, 34px);
+		@include rem-multi(margin-bottom, 20px, 20px, 20px, 20px, 20px, 29px);
+	}
+
+	form{
+
+		//@include rem-multi(font-size, 14px, 18px, 26px, 22px);
+		@include rem-multi(font-size, 15px, 16px, 19px, 22px, 24px, 24px);
+
+
+		input{
+			border-radius:6px;
+			border:none;
+			max-width:186px;
+			@include rem(padding, 5px);
+			color:#333;
+		}
+
+
+		div{
+			display:block;
+			@include rem(padding, 6px 0);
+
+		}
+		div.find-a-store-or {
+			@include rem-multi(font-size, 14px, 14px, 14px, 18px, 18px, 23px);
+		}
+		.btn{
+
+			@include rem-multi(font-size, 15px, 16px, 18px, 19px, 19px, 23px);
+		}
+		.authorized-retailer {
+			@include rem-multi(font-size, 14px, 14px, 14px, 19px, 19px, 23px);
+		}
+		&.mobile{
+			.authorized-retailer{
+				border-top:solid 1px $grey-dove;
+				@include rem(padding-top, 16px);
+				@include rem(margin-top, 26px);
+
+				a{
+					color:$white;
+					text-decoration:underline;
+				}
+			}
+			input{
+				//min-width:206px;
+				@include rem-multi(min-width, 206px, 216px, 246px, 246px, 246px, 306px);
+				@include rem(padding, 5px);
+			}
+		}
+
+	}
+
+}
+
+
+
+@media screen and (max-width: 1279px) {
+	.find-a-store {
+		.content-area{
+			@include rem(padding, 31px 20px 31px 20px);
+		}
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.find-a-store {
+		.content-area{
+			@include rem(padding, 31px 20px 14px 20px);
+		}
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.find-a-store {
+		.content-area{
+			@include rem(padding, 41px 0px 60px 0px);
+			form{
+				div{
+					display:inline-block;
+					@include rem(padding, 23px 0);
+				}
+				/*
+				div:last-child {
+					border-left:1px solid #cccccc;
+					margin-left:36px;
+					padding-left:36px;
+				}
+				*/
+			}
+
+
+		}
+		.container {
+			padding:0;
+		}
+	}
+}
+
+.is-mobile {
+	.find-a-store{
+		.content-area{
+			text-align:center;
+			@include rem(padding, 31px 20px 31px 20px);
+		}
+		label {
+			display:block;
+			font-size:16px;
+			line-height:18px;
+			font-family: $font-family-regular;
+		}
+		.btn {
+			display:inline-block;
+			margin-top:16px;
+			@include rem-multi(padding, 10px 68px 8px);
+		}
+	}
+}
+
+//@import "_find-a-store_old_ie";

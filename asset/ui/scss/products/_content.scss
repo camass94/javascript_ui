@@ -1,0 +1,73 @@
+img.lazy,
+img.error-src {min-height:500px;}
+.is-mobile img.lazy,
+.is-mobile img.error-src {min-height:200px;}
+.is-mobile .slick-slide img.lazy {min-height:0}
+
+.loupe {
+	position: relative;
+	overflow: hidden;
+	img {
+		display: block;
+		margin: 0 auto;
+	}
+	.layer-1 {
+		position: absolute;
+		z-index: $z-loupe-foreground;
+		top: 500px;
+		width: 100%;
+	}
+	.layer-2 {
+		position: absolute;
+		z-index: $z-loupe-middleground;
+		top: 307px;
+		width: 100%;
+	}
+	.layer-3 {
+		position: absolute;
+		z-index: $z-loupe-background;
+		top: 300px;
+		width: 100%;
+	}
+}
+
+// .return-to-compare-button {
+// 	position:absolute;
+// 	height:38px;
+// 	width:100%;
+// 	background:#666666;
+// 	top:110px;
+// 	z-index:3;
+// 	.wrap {
+// 		text-align:left;
+// 		max-width:1240px;
+// 		padding: 0 (16% / 1240 * 100);
+// 		margin:0 auto;
+// 		a {
+// 			color:#ffffff;
+// 			font-size:18px;
+// 			line-height:38px;
+// 			font-family: $font-family-regular;
+// 			.lt-ie9 & {font-family:'LG Smart Light';font-style:normal;}
+// 			display:inline-block;
+// 			text-decoration:none;
+// 			&:hover {
+// 				text-decoration:underline;
+// 				color:#CCCCCC;
+// 			}
+// 		}
+// 	}
+// }
+
+// .is-mobile {
+// 	.return-to-compare-button {
+// 		position:static;
+// 		.wrap {
+// 			text-align:center;
+// 			min-width:320px;
+// 			a {
+// 				display:block;
+// 			}
+// 		}
+// 	}
+// }

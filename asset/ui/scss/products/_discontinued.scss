@@ -1,0 +1,145 @@
+.is-mobile .refind-your-search.discontinued,
+.refind-your-search.discontinued {
+	form {
+		.column2 {
+			width: 100%;
+			max-width: 100%;
+			padding-left: 0;
+			.response {
+				//.product-grid-header {
+				//	.compare-state {
+				//		float: right;
+				//	}
+				//}
+				ul.product-lists {
+					> li {
+						width: 25%;
+						.img-link {
+							display: block;
+							padding-bottom: 100%;
+							height: 0 !important;
+							overflow: hidden;
+							position: relative;
+							width: auto;
+							text-align: left;
+							span {
+								position: absolute;
+								left: 0;
+								height: 100%;
+								width: 100%;
+								max-width: 100%;
+								img {
+									width: 100%;
+									top: 50%;
+									position: absolute;
+									transform: translateY(-50%);
+									-ms-transform: translateY(-50%);
+									-webkit-transform: translateY(-50%);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.product-rebate {
+		font-size: 0;
+	}
+}
+
+.filter.refind-your-search.discontinued .column2 .response ul.product-lists .img-link {
+	height: auto;
+	line-height: 1;
+}
+.is-mobile .refind-your-search.discontinued {
+	.refind-apply-btn span,
+	.refind-apply-btn a,
+	.refind-apply-answer-btn a {border-left:none;}
+}
+@media screen and (max-width: 1024px) {
+	.is-mobile .refind-your-search.discontinued,
+	.refind-your-search.discontinued {
+		form {
+			.column2 {
+				.response {
+					ul.product-lists {
+						> li {
+							//width: 33.33%;
+						}
+					}
+				}
+			}
+		}
+	}
+	.refind-your-search.discontinued {
+		form {
+			.column2 {
+				.response {
+					.page-controls .pages,
+					.page-controls .sort {
+						width: auto;
+					}
+					.page-controls .pages {
+						padding: 0;
+						margin-top: 0;
+						border-top: 0;
+					}
+				}
+			}
+		}
+	}
+}
+.is-mobile {
+	.refind-your-search.discontinued {
+		form {
+			.column2 {
+				.response {
+					.product-grid-header,
+					.product-grid {
+						//padding: 0;
+					}
+					ul.product-lists {
+						> li {
+							width: 50%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 639px) {
+	.is-mobile {
+		.refind-your-search.discontinued {
+			form {
+				.column2 {
+					.response {
+						ul.product-lists {
+							> li {
+								width: 50%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 479px) {
+	.is-mobile {
+		.refind-your-search.discontinued {
+			form {
+				.column2 {
+					.response {
+						ul.product-lists {
+							> li {
+								//width: 100%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

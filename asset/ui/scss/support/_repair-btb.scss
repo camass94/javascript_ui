@@ -1,0 +1,124 @@
+.btb-repair {
+	&[data-view='ForBtc'] {
+		[data-target='ForBtb'] {
+			display:none;
+		}
+		[data-target='ForBtc'] {
+			display:block;
+		}
+	}
+	&[data-view='ForBtb'] {
+		[data-target='ForBtb'] {
+			display:block;
+		}
+		[data-target='ForBtc'] {
+			display:none;
+		}
+	}
+
+	.btb-selector {
+		.container {
+			border-top:1px solid #bbb;
+			@if $is-mobile == 1 {
+				padding:20px;
+	        } @else {
+	        	padding-top:45px;
+	        	padding-bottom:45px;
+	        }
+			p {
+				margin:15px 0 0;
+			}
+			.product-txt {
+				display:inline-block;
+				margin:0;
+				@include dmv(padding-right, 60px, 0);
+				@include dmv(font-size, 24px, 20px);
+				font-family:$font-family-semibold;
+				color:$red-lg;
+			}
+			.btn-box {
+				@include dmv(margin-top, 15px, 0);
+				@include dmv(display, block, block);
+				button {
+					padding:0;
+					display:block;
+					@include dmv(margin-right, 60px, 0);
+					@include dmv(font-size, 20px, 18px);
+					background:none;
+					border:none;
+					text-align:left;
+					//outline:none;
+					@if $is-mobile == 1 {
+						margin-top:10px;
+			        }
+			        padding:0 0 0 30px;
+			        span.styled-radio {
+		        		margin-left:-30px;
+		        	}
+				}
+				button + button {
+					margin-top: 10px
+				}
+				@if $is-mobile == 1 {
+					
+		        }
+			}			
+		}
+	}
+
+	#step01 {
+		.unavailable-product {
+			font-family:$font-family-semibold;
+			padding:30px 0;
+			font-weight:bold;
+			line-height:30px;
+			@if $is-mobile == 1 {
+		      padding:37px 20px 50px;
+		      border-bottom:0;
+		      line-height:24px;
+		      p{
+		      	font-size:16px;
+		      }
+		    }
+		}
+	}
+	@if $is-mobile == 1 {
+		#step02 {
+			.step-content {
+				>p {
+					padding:0 20px;
+				}
+			}	
+		}
+		.step.edit-able .step-result .repair-result dl {
+			padding:0;
+			margin:0;
+			dt, dd {
+				font-size:18px
+			}
+		}
+		.step-list>.step.edit-able .step-result dl {
+			padding:0;
+			margin:0;
+			dt, dd {
+				font-size:18px
+			}
+		}
+    }
+
+}
+
+.step-type-btb {
+	@extend .step-type;
+}
+
+.tab-panel-btb {
+	@extend .tab-panel;
+}
+
+@if $is-mobile == 1 {
+	.step-list .step-content.contact-info .column .check-agree > label {display:inline;font-size:16px}
+	.btb-repair.integration .step-list .product-choice .step-result {min-height:auto}
+}
+
+.step-list .unavailable-product .normal {font-weight:normal}

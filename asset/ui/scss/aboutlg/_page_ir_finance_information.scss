@@ -1,0 +1,335 @@
+.ir {
+	#ir-fi-table {
+		padding-bottom:75px;
+		caption {
+			position:absolute;
+			left:-99999px;
+		}
+		.finance-table {
+			padding-bottom:75px;
+			.title30 {
+				padding:0 10px;
+				margin-bottom:25px;
+			}
+			&.income {
+				padding-bottom:0px;
+				.caution {
+					padding-bottom:75px;
+				}
+			}
+		}
+		.columns {
+			margin:0 auto;
+			width:100%;
+			.txt {
+				padding:0;
+			}
+		}
+		.table-section {
+			border-top:2px solid #cccccc;
+			
+			table {
+				table-layout:fixed;
+				width:100%;
+				th,td {
+
+					border-right:1px solid #ccc;
+					border-bottom:1px solid #ccc;
+					text-align:center;
+					font-weight:normal;
+					font-size:20px;
+					line-height:22px;
+					padding:15px 10px 15px;
+					@media (max-width: 1440px) and (min-width: 1025px){ // 1025~1440
+						font-size:16px;
+						line-height:22px;
+					}
+					@media (max-width: 1024px) { // 769~1024
+						font-size:16px;
+						line-height:16px;
+					}
+				}
+				
+				th {
+					font-family:$font-family-regular;
+					font-weight:bold;
+					background:#f2f2f2;
+					color:#000000;
+					
+				}
+				tr.year {
+					th { 
+						background:#f8f8f8; 
+						font-weight:normal;
+						
+					}
+				}
+				td {
+					font-family:$font-family-light;
+					color:#333333;
+					text-align:right;
+				}
+
+				th:last-child,td:last-child {
+					border-right:none;
+				}
+
+				th:first-child,td:first-child {
+					width:23.7%;
+					font-family:$font-family-regular;
+					color:#000000;
+				}
+				td:first-child {
+					text-align:left;
+				}
+			}
+			
+		}
+		.caution {
+			font-size:20px; 
+			line-height:34px;
+			color:#666666;
+			font-family:$font-family-light;
+			margin-top:19px;
+			padding:0 10px;
+			@media (max-width: 1440px) and (min-width: 1025px){ // 1025~1440
+				font-size:16px;
+				line-height:27px;
+			}
+			@media (max-width: 1024px) { // 769~1024
+				font-size:16px;
+				line-height:20px;
+			}
+		}
+	}
+
+	#ir-fi-statement {
+		.container {
+			> div {
+				padding:0 10px;
+			}
+			.pdf-downloads {
+				padding:0 10px 0;
+			}
+		}
+		.pdf-downloads {
+			
+			.title30 {
+				font-size:24px;
+				line-height:34px;
+				color:#000000;
+				@media (max-width: 1440px) and (min-width: 1025px){ // 1025~1440
+					font-size:19px;
+					line-height:27px;
+				}
+				@media (max-width: 1024px) { // 769~1024
+					font-size:16px;
+					line-height:20px;
+				}
+			}
+			.pdf-wrap {
+				margin-top:15px;
+				overflow:hidden;
+				padding-bottom:35px;
+				> span , > ul {
+					display:inline-block;
+					vertical-align:top;
+				}
+				> span {
+					width:10%;
+					max-width:87px;
+					font-size:24px;
+					line-height:24px;
+					@media (max-width: 1440px) and (min-width: 1025px){ // 1025~1440
+						font-size:19px;
+						line-height:19px;
+					}
+					@media (max-width: 1024px) { // 769~1024
+						font-size:16px;
+						line-height:16px;
+					}
+					color:#000000;
+					font-family:$font-family-light;
+				}
+				ul {
+					margin:0;
+					padding:0;
+					list-style:none;
+					width:80%;
+					li {
+						> span {
+							width:90%;
+						}
+						img {
+							margin-right:10px;
+							vertical-align:top;
+							margin-bottom:12px;
+							width:auto;
+							@media (max-width: 1440px) and (min-width: 1025px){ // 1025~1440
+								width:20px;
+							}
+							@media (max-width: 1024px) { // 769~1024
+								width:15px;
+							}
+						}
+						a {
+							font-size:20px;
+							line-height:1;
+							color:#666666;
+							font-family:$font-family-light;
+							display:inline-block;
+							@media (max-width: 1440px) and (min-width: 1025px){ // 1025~1440
+								font-size:16px;
+							}
+							@media (max-width: 1024px) { // 769~1024
+								font-size:16px;
+							}
+							
+							text-decoration:none;
+							span {
+								text-decoration:underline;
+								color:#333333;
+								font-size:24px;
+								@media (max-width: 1440px) and (min-width: 1025px){ // 1025~1440
+									font-size:19px;
+								}
+								@media (max-width: 1024px) { // 769~1024
+									font-size:16px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.is-mobile {
+	
+	#ir-fi-table {
+		padding-bottom:40px;
+		.finance-table {
+			padding-bottom:40px;
+			.title30 {
+				padding:16px 20px 0;
+				margin-bottom:16px;
+				font-size:28px;
+				line-height:28px;
+			}
+			&.income {
+				padding-bottom:0px;
+				.caution {
+					padding-bottom:40px;
+				}
+			}
+		}
+		.columns {
+
+			.txt {
+				padding:0 20px;
+			}
+		}
+		.table-section {
+			
+			table {
+				th,td {
+					font-size:18px;
+					line-height:22px;
+					padding:10px 10px 10px;
+				}
+				
+			}
+			
+		}
+		.container {
+			padding:0;
+		}
+		.visible-wrap {
+			overflow-y:hidden;
+			overflow-x:scroll;
+			margin-bottom:0;
+			webkit-overflow-scrolling:touch;
+			overflow-scrolling:touch;
+			-webkit-transform: translateZ(0);
+			
+			.table-section {
+				width:916px;
+			}
+		}
+		.caution {
+			padding:0 20px;
+		}
+	}
+
+	#ir-fi-statement {
+		padding:0 10px;
+		.container{
+			padding:0;
+		}
+		.textbox-left-small {
+			.title30 {
+				font-size:28px;
+				line-height:20px;
+			}
+		}
+		.pdf-downloads {
+			padding-bottom:100px;
+			
+			.title30 {
+				font-size:20px;
+				line-height:20px;
+			}
+			.pdf-wrap {
+				margin-top:15px;
+				padding-bottom:20px;
+				> span , > ul {
+					display:block;
+				}
+				> span {
+					width:auto;
+					max-width:inherit;
+					font-size:18px;
+					line-height:20px;
+					color:#000000;
+					font-family:$font-family-light;
+					margin-bottom:16px;
+				}
+				ul {
+					margin:0;
+					padding:0;
+					list-style:none;
+					width:auto;
+					li {
+						margin-bottom:11px;
+						> span {
+							width:85%;
+							display:inline-block;
+							
+						}
+						img {
+							width:15px;
+							margin-right:8px;
+						}
+						a {
+							font-size:16px;
+							line-height:22px;
+							
+							span {
+								font-size:18px;
+								line-height:22px;
+							}
+						}
+					}
+				}
+				
+			}
+			a.btn {
+				width:100%;
+				padding:1.2rem 2rem 1.2rem;
+				line-height:normal;
+				height:auto;
+			}
+		}
+	}
+}

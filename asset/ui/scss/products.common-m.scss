@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+$is-mobile:1 !default;
+$header-height:64px !default;
+$header-padding:54px !default;
+
+@import "../bower_components/bourbon/dist/bourbon";
+@import "../bower_components/ic/scss/ic";
+@import "base/base_products";
+@import "common/common";
+
+@import "products/content";
+@import "products/filter-m";
+@import "products/product-lists";
+@import "products/find-a-store";
+@import "products/find-a-store_old_ie";
+@import "products/model-sticky";
+@import "products/tooltip";
+@import "products/jquery-modal"; /* LGEPJT-254 20170804 add */

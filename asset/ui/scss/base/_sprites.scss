@@ -1,0 +1,38 @@
+/*
+ * COMPASS MIXIN FOR SPRITING
+ * documentation: http://compass-style.org/reference/compass/css3/
+ */
+
+
+@import "compass/utilities/sprites/base";
+
+
+/* COMPASS SPRITING CONFIG */
+// base class that spriting extends to all icons
+.icon {
+    display: inline-block;
+}
+
+$icon-spacing: 10px;
+$icon-sprite-dimensions: true;
+$icon-layout: horizontal;
+
+// @import "../img/global/icon/*.png";
+// @include all-icon-sprites;
+
+/* Mixin */
+// @mixin link-bg-sprite($map, $img, $img-active: $img + '_hover') {
+// .#{sprite-map-name($map)}-#{$img} {
+// background: sprite($map, $img) no-repeat;
+// width: image-width(unquote("/" + sprite-map-name($map) + "/" + $img + ".png"));
+// height: image-height(unquote("/" + sprite-map-name($map) + "/" + $img + ".png"));
+//         a[href]:hover &, .fn-state-active & {
+//             background: sprite($map, $img-active) no-repeat;
+//         }
+//     }
+// }
+
+/* Account Icons */
+// $map: sprite-map("../img/global/icon/*.png");
+// @include link-bg-sprite($map, nav-services-brakes);
+// @include link-bg-sprite($map, nav-services-oil-change);

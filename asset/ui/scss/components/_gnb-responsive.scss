@@ -1,0 +1,82 @@
+@media screen and (max-width: 1200px) {
+	html {
+		.appHeader {
+			.primary-nav {
+				span.m {
+					display:inline;
+				}
+				span.d {
+					display:none;
+				}
+				.product-link {
+					display:none;
+					padding:none;
+				}
+			}
+			.products-link {
+				display:inline;
+				//width:auto;
+			}
+			.primary-nav a.primary-nav-link {
+				@include rem(padding, 27px 15px 28px);
+			}
+			.primary-nav li {
+				margin:0;
+			}
+		}
+		.tablet-sub-control {display:block;}
+		
+		nav.meganav-menu .container.one-column,
+		nav.meganav-menu .container.two-column,
+		nav.meganav-menu .container.three-column,
+		nav.meganav-menu .container.four-column,
+		nav.meganav-menu .container.five-column,
+		nav.meganav-menu .container.six-column,
+		nav.meganav-menu .container.seven-column
+		{ 
+			width:100%;
+			section.last {display:none;} 
+		}
+		//nav.meganav-menu .container.four-column {
+		//	padding-right:67px;
+		//}
+		nav.meganav-menu .container.one-column{
+			section { width:100%; }
+		}
+		nav.meganav-menu .container.two-column{
+			section { width:100%; }
+		}
+		nav.meganav-menu .container.three-column{
+			section { width:50%; }
+		}
+		nav.meganav-menu .container.four-column{
+			section { width:33%; }
+		}
+		nav.meganav-menu .container.five-column{
+			section { width:25%; }
+		}
+		nav.meganav-menu .container.six-column{
+			section { width:20%; }
+		}
+		nav.meganav-menu .container.seven-column{
+			section { width:16.6%; }
+		}
+
+		nav.meganav-menu .container.four-column {
+			padding-right:67px;
+			section {width:33%;}
+			
+		}
+		nav.meganav-menu .container.five-column {
+			section { width:25%; }
+			section.last {display:none;}
+		}
+
+		nav.meganav-menu .container.text-based {
+			display:block !important;
+		}
+		nav.meganav-menu .container.image-based {
+			display:none !important;
+		}
+	}
+}

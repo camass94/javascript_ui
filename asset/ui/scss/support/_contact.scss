@@ -1,0 +1,1120 @@
+.no-flexboxlegacy.no-flexbox {
+	.contact-area {
+		.title,
+		h2.title {
+			font-family:$font-family-semibold;
+			@include device-property(font-size, 26px, 20px);
+			@if $is-mobile==1 {
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
+
+.contact-area {
+	position: relative;
+	font-family: $font-family-regular;
+	.signin-area {
+		margin-top: 0;
+		@if $is-mobile==0 {
+			padding: 3%;
+			margin-top: 30px;
+		}
+		@else {
+			border-bottom: 1px solid $grey-silver;
+			margin-bottom: 15px;
+		}
+	}
+	.my-repair-inquiry-status {
+		.receipt-number {
+			margin-top: 0 !important;
+		}
+	}
+	.required-fields {
+		margin-bottom: 10px;
+		color: $red-lg;
+		text-align: right;
+		font-style: italic;
+		margin: 0;
+		@include device-property(font-size, 18px, 14px);
+		@if $is-mobile==0 {
+			padding-bottom: 10px;
+		}
+		@else {
+			padding: 0 20px 8px;
+		}
+	}
+	.button-right {
+		@if $is-mobile==1 {
+			display: flex;
+			padding: 0 20px 40px;
+			> .btn {
+				width: 100%;
+			}
+		}
+	}
+	&+.button-right {
+		@if $is-mobile==1 {
+			margin: 0 20px 30px;
+			.btn {
+				width: 100%;
+			}
+		}
+	}
+	.title,
+	h2.title {
+		font-family: $font-family-semibold;
+		@include device-property(font-size, 26px, 20px);
+		@if $is-mobile==1 {
+			padding: 10px 20px;
+		}
+	}
+	.info-list {
+		margin:0;
+		@extend %list-unstyled;
+		@if $is-mobile==0 {
+			border-top: 1px solid $grey-silver;
+		}
+		> li {
+			display: block;
+			border-top: 1px solid $grey-silver;
+			padding-top: 40px;
+			@include device-property(padding-left, 195px, 20px);
+			@include device-property(padding-right, 50px, 20px);
+			@include rem-multi(padding-bottom, 40px, 70px, 70px, 70px, 40px, 40px, 40px);
+			@if $is-mobile==0 {
+				position: relative;
+				border-top: 1px solid #ddd;
+				min-height: 200px;
+				&:first-child {
+					border-top: 0;
+				}
+			}
+			@else {
+				text-align: center;
+			}
+			> .img {
+				@if $is-mobile==0 {
+					position: absolute;
+					top: 45px;
+					left: 40px;
+					width: 113px;
+				}
+				@else {
+					display:inline-block;
+					margin-bottom:15px;
+				}
+				img {
+					@if $is-mobile==1 {
+						width: 80px;
+						height: 80px;
+					}
+				}
+			}
+			p {
+				margin: 0;
+			}
+			&.chat {
+				@if $is-mobile==0 {
+					padding-top: 70px;
+					.img {
+						top: 75px;
+					}
+					.point {
+						border-top: none;
+					}
+				}
+			}
+			&.location {
+				#map {
+					@if $is-mobile==0 {
+						margin-top: 20px;
+						padding: 0;
+						widht:700px;
+						height:400px;
+					}
+					@else {
+						display: none;
+					}
+				}
+			}
+			p {
+				margin: 0;
+			}
+			> .inner{
+				strong {
+					font-weight: $font-weight-base;
+				}
+				> strong {
+					font-family: $font-family-light;
+					@include device-property(font-size, 40px, 26px);
+					@include device-property(margin-bottom, 15px, 10px);
+					@if $is-mobile==1 {
+						display: inline-block;
+					}
+					@else {
+						display: block;
+						line-height: 40px;
+					}
+				}
+				.btn {
+					@if $is-mobile==1 {
+						width: 100%;
+						margin-top: 25px;
+					}
+				}
+				> div{
+					@if $is-mobile==0 {
+						position: relative;
+						@include screen(gt-large) {
+							padding-right: 210px;
+							&.wide {
+								padding-right: 0;
+							}
+						}
+					}
+					> p {
+						@include device-property(font-size, 24px, 20px);
+						@if $is-mobile==0 {
+							font-size: 24px;
+							margin-top: 10px;
+							&:first-child {
+								margin-top: 0;
+							}
+						}
+					}
+					.point {
+						color: $red-lg;
+					}
+					.icon-clock {
+						@include device-property(padding-left, 30px, 0px);
+						@include device-property(font-size, 20px, 18px);
+						@include device-property(margin-top, 0, 10px);
+						&:before {
+							margin-right: 8px;
+							@include device-property(margin-left, -28px, 0px);
+						}
+					}
+					.small{
+						@include device-property(font-size, 20px, 18px);
+					}
+					> .small{
+						@include device-property(margin-top, 0, 10px);
+					}
+					.gap-top{
+						margin-top:10px;
+					}
+					> .btn {
+						@if $is-mobile==0 {
+							float: right;
+							width: 190px;
+							margin-top:20px;
+							@include screen(gt-large) {
+								position: absolute;
+								right: 0;
+								top: 2px;
+								margin-top: 0;
+							}
+						}
+					}
+					> a:not(.btn) {
+						@if $is-mobile==0 {
+							font-family: $font-family-semibold;
+							color: $grey-mine-shaft;
+							span {
+								&:before {
+									color: $grey-dusty;
+								}
+							}
+							&:hover,
+							&:focus,
+							&:active {
+								text-decoration: none;
+							}
+						}
+					}
+					ul {
+						@extend %list-unstyled;
+						li {
+							display: block;
+							position: relative;
+							font-size: 20px;
+							@include device-property(margin-top, 12px, 10px);
+							@if $is-mobile==1 {
+								text-align: left;
+							}
+							> p {
+								@include device-property(padding-left, 11px, 25px);
+								@if $is-mobile==1 {
+									font-size: 18px;
+									color: $grey-dove;
+								}
+								@else {
+									display:inline-block;
+									background: url('/us/content/img/support/contact/bg-line.png') no-repeat left 3px;
+								}
+							}
+							.icon-circle-phone {
+								@if $is-mobile==0 {
+									width: 175px;
+									font-family: $font-family-semibold;
+									display:inline-block;
+									vertical-align:top;
+								}
+								&:before {
+									position: relative;
+									color: $grey-dusty;
+									@include device-property(top, 3px, 1px);
+									@include device-property(margin-right, 8px, 5px);
+									@include device-property(font-size, 25px, 20px);
+								}
+							}								
+							> strong {
+								@if $is-mobile==0 {
+									padding-left: 10px;
+									font-family: $font-family-semibold;
+									font-weight: normal;
+								}
+								@else {
+									font-weight:normal;
+								}
+							}
+						}
+						a{
+							@if $is-mobile==1 {
+								color:$grey-mine-shaft;
+							}
+						}
+						@if $is-mobile==0 {
+							&.uk > li > span{
+								width: 67px;
+							}
+							&.ae > li > span{
+								width: 130px;
+							}
+							&.call-basic > li > span{
+								width: 100%;
+							}
+							&.text-long > li > span{
+								width: 220px;
+							}
+						}
+						&.cn {
+							li{
+								> span{
+									@if $is-mobile==0 {
+										width: 128px;
+									}
+								}
+								> strong {
+									@if $is-mobile==1 {
+										display:block;
+										padding-left:25px;
+									}
+									> span {
+										@if $is-mobile==1 {
+											display:block;
+										}
+										@else {
+											margin-left:4px;
+										}
+									}
+									& + strong {
+										margin-top:10px;
+										@if $is-mobile==0 {
+											display:block;
+											margin-left: 128px;
+										}
+									}
+								}
+							
+							}
+						}
+						&.br {
+							li{
+								@if $is-mobile==0 {
+									padding-left: 0;
+								}
+								> span{
+									@if $is-mobile==0 {
+										position: static;
+										width: auto;
+										display:inline-block;
+										vertical-align: middle;
+										&:before {
+											vertical-align: middle;
+										}
+									}
+									> strong {
+										@if $is-mobile==0 {
+												display:block;
+										}
+										@else {
+											font-weight:normal;
+										}
+									}
+									> .small{
+										display:block;
+										font-family: $font-family-light;
+										@if $is-mobile==1 {
+											padding-left:30px;
+										}
+									}
+								}
+							}
+						}
+					}
+					&.china {
+						> .small {
+							@if $is-mobile==0 {
+								margin-top:40px;
+							}
+						}
+						.btn + p {
+							@if $is-mobile==1 {
+								padding-left: 0;
+								text-align: center;
+							}
+						}
+					}
+				}
+				.no-cookies p {
+					@if $is-mobile==0 {
+						padding-left: 0;
+					}
+				}
+			}
+			> li:first-child {
+				border-top: 0 none;
+			}
+		}
+	}
+	.faqs-list {
+		@if $is-mobile==1 {
+			margin-bottom: 20px;
+		}
+		dl {
+			@if $is-mobile==0 {
+				margin: 20px 0 30px;
+			}
+			dd {
+				@if $is-mobile==1 {
+					display: block;
+				}
+				@else {
+					padding-bottom: 20px;
+				}
+			}
+		}
+	}
+	.check-text {
+		text-align: center;
+		font-size: 20px;
+		margin-bottom: 40px;
+		> a {
+			border-bottom: 1px solid $red-lg;
+			&:hover,
+			&:focus,
+			&:active {
+				text-decoration: none
+			}
+		}
+	}
+	.table-title {
+		margin: 0;
+		margin-bottom: 15px;
+		font-size: 26px;
+		font-family: $font-family-semibold;
+		@include device-property(font-size, 26px, 20px);
+		@if $is-mobile==1 {
+			padding: 0 20px;
+		}
+	}
+	.thumb-number {
+		span,
+		p {
+			display: inline-block;
+			margin: 0;
+			vertical-align: middle;
+		}
+	}
+	.about-inquiry {
+		@if $is-mobile==1 {
+			padding: 0 0 20px 0;
+		}
+		@else {
+			padding-top: 20px;
+		}
+	}
+	.about-you {
+		border-top: 1px solid $grey-silver;
+		@if $is-mobile==1 {
+			padding: 20px 0;
+		}
+		@else {
+			padding-top: 30px;
+		}
+	}
+	.info {
+		@extend %list-inline;
+		position: relative;
+		margin: 5px 0;
+		@if $is-mobile==0 {
+			left: -5.2%;
+			width: 105%;
+		}
+		@else {
+			margin: 0;
+			padding: 0 20px;
+		}
+		&:after {
+			content: "";
+			display: block;
+			clear: both
+		}
+		input[type="text"],
+		textarea {
+			@include placeholder($grey-dove, $red-lg);
+		}
+		> li {
+			position: relative;
+			@if $is-mobile==0 {
+				float: left;
+				padding: 12px 0 12px 5%;
+				width: 50%;
+				font-size: 20px;
+			}
+			@else {
+				width: 100%;
+				font-size: 18px;
+				padding-top: 15px;
+			}
+			> span {
+				label {
+					display: block;
+					margin-bottom: 10px;
+					@if $is-mobile==0 {
+						@include rem-multi (font-size, 20px, 20px, 24px);
+					}
+					@else {
+						font-size: 18px;
+					}
+				}
+			}
+			input {
+				width: 100%;
+				color: $grey-dove;
+			}
+			.required {
+				color: $red-lg;
+			}
+			.check {
+				margin-top: 10px;
+			}
+			.help {
+				margin-top: 10px;
+				color: $grey-dove;
+			}
+		}
+		> li:first-child {
+			@if $is-mobile==0 {
+				padding-left: 5%;
+			}
+			@else {
+				padding-top: 0;
+			}
+		}
+		> li.col-span {
+			display: block;
+			float: none;
+			width: 100%;
+			clear: both;
+			&:after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+		}
+		> li.col-half {
+			@if $is-mobile==0 {
+				margin-right:50px;
+			}
+		}
+		> li.col-hide {
+			display: none;
+		}
+	}
+	.info.china-login + .about-inquiry,
+	.info.after-login + .about-inquiry{
+		border-top: 1px solid $grey-silver;   
+	}
+	.info.china-login li .check:after,
+	.info.after-login li .check:after{
+		content: "";
+		display: block;
+		clear: both;
+		height:1px;
+		position:relative;
+		top:20px;
+		background-color: $grey-silver;   
+	}
+	.characters {
+		@include device-property(font-size, 18px, 14px);
+		text-align: right;
+		margin: 5px 0;
+		strong {
+			font-weight: $font-weight-base;
+			color: $red-lg;
+		}
+	}
+	.file-comment {
+		@if $is-mobile==0 {
+			margin: 5px 0;
+			font-size: 18px;
+		}
+	}
+	.description {
+		font-size: 20px;
+	}
+	.privacy-policy {
+		background: #f4f5f7;
+		@include device-property(margin, 25px 0, 30px 0);
+		@include device-property(padding, 20px 30px 25px, 10px 20px 15px);
+		strong {
+			display: block;
+			margin-bottom: 5px;
+			font-weight: $font-weight-base;
+			@include device-property(font-size, 24px, 18px);
+		}
+		a {
+			margin-left: 5px;
+			&:hover,
+			&:focus,
+			&:active {
+				text-decoration: none;
+			}
+			strong {
+				display: inline;
+				@include device-property(font-size, 20px, 16px);
+				font-weight: $font-weight-base;
+			}
+		}
+		p {
+			margin: 0;
+			@if $is-mobile==1 {
+				font-size: 16px;
+				margin-bottom: 20px;
+			}
+		}
+	}
+	.banner-app	{
+		display:none;
+	}
+}
+
+.call-appointment {
+	.one-column {
+		.column {
+			padding: 35px 0 40px;
+			.time-table {
+				font-size: 20px;
+			}
+		}
+	}
+	.step-content {
+		.two-column.check-country,
+		.two-column.time-date {
+			> p {
+				@if $is-mobile==1 {
+					padding: 0 20px;
+				}
+				@else{
+					margin-bottom:0;
+				}
+			}
+			.column {
+				@include device-property(width, 47.5%, 100%);
+				@if $is-mobile==1 {
+					padding: 15px 20px;
+				}
+				@else {
+					padding-left: 0;
+					padding-bottom: 0;
+				}
+				+ .column {
+					float: right;
+				}
+			}
+		}
+	}
+	.contact-information {
+		.txt-policy {
+			label {
+				font-size: 20px;
+			}
+		}
+		textarea ~ span.msg-placeholder {
+			bottom: auto;
+			top: 10px;
+		}
+	}
+}
+
+.email-appointment {
+	@include device-property(margin, 0 0 15px,  15px 0 30px);
+	article.active {
+		border-bottom: 0;
+		@if $is-mobile==0 {
+			background: #f4f5f7;
+			box-shadow: inset 0 -5px 15px -5px rgba(0, 0, 0, 0.08), inset 0 5px 15px -5px rgba(0, 0, 0, 0.08);
+		}
+		@else {
+			box-shadow: inset 0 0 15px 3px #e1e1e1;
+		}
+	}
+	.step-content {
+		@include device-property(padding, 40px 0, 0);
+		.two-column.choice-product {
+			margin-top: 0;
+			@if $is-mobile==1 {
+				background-color:#fff; // LGEGMO-1700
+			}
+			.column {
+				@if $is-mobile==1 {
+					background: none;
+					.or-text {
+						position: relative;
+						width: 80%;
+						&:before {
+							left: 20%;
+						}
+						&:after {
+							right: 20%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.privacy-modal-text {
+	margin: 0;
+	padding-bottom: 40px;
+	border-bottom: 1px solid $grey-silver;
+	word-break: break-word;
+	@include device-property(font-size, 20px, 18px);
+	@include device-property(line-height, 30px, 28px);
+}
+
+.btn-modal-print {
+	min-width: 115px;
+}
+
+.signin-inner {
+	display: none;
+	max-width: 1240px;
+	margin: 0 auto;
+	margin-bottom: 30px;
+	&.active {
+		display: block;
+	}
+	@if $is-mobile==0 {
+		margin-bottom: 0;
+	}
+	.signin-area {
+		position: relative;
+		background: #e9ecf0;
+		margin: 0;
+		border:1px solid $grey-silver;
+		@if $is-mobile==0 {
+			margin-top: 40px;
+			padding: 3%;
+		}
+		else {
+			padding: 30px 20px;
+		}
+		@include device-property(padding, 4%, 20px 20px 25px);
+		@include device-property(border-width, 1px 0 1px, 1px 0 1px);
+		&:after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		p {
+			@include device-property(float, left, none);
+			margin: 0;
+			@if $is-mobile==0 {
+				font-family: $font-family-semibold;
+			}
+		}
+		.btn {
+			@include device-property(margin-top, 20px, 15px);
+			@if $is-mobile==0 {
+				float: right;
+				@include screen(gt-large) {
+					position: absolute;
+					right: 4%;
+					top: 50%;
+					margin-top: -20px;
+				}
+			}
+			@else {
+				width: 100%;
+			}
+		}
+	}
+	&+.contact-area {
+		.info-list {
+			> li:first-child {
+				border-top: none;
+			}
+		}
+	}
+}
+
+.support-content {
+	.container {
+		.tip {
+			&+.signin-inner {
+				.signin-area {
+					margin-bottom: 58px;
+					margin-top: 0;
+					@if $is-mobile==1 {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+	// start LGEGMO-1700
+	.step-list {
+		background-color:#fff;
+	}
+	// end LGEGMO-1700
+}
+
+.modal-content {
+	.btn-two-w50 {
+		.btn {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
+
+.no-support-wrap {
+	> .bg {
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		z-index: 300;
+		opacity: 0.75;
+		background: rgb(0, 0, 0);
+	}
+	.modal-layer {
+		display: block;
+		position: absolute;
+		top: 311px;
+		left: 0px;
+		width: 100%;
+		text-align:center;
+		z-index: 9999;
+	}
+	.modal-inner {
+		@if $is-mobile==0 {
+			width:auto;
+		}
+		position: relative;
+		display: inline-block;
+		z-index: 10;
+		text-align: left;
+		vertical-align: middle;
+		overflow: visible;
+		margin-top: 0px;
+		.detail-content {
+			padding:0;
+		}
+		.modal-bottom {
+			margin-bottom:0;
+		}
+	}
+}
+
+/* only gp */
+.smart-area {
+	border-top: 1px solid #ccc;
+	.smart-wrap {
+		padding: 0 20px;
+	}
+	h2 {
+		margin: 15px 0 35px;
+		color: #333;
+		font-size: 3.4rem;		
+		@if $is-mobile==1  {
+			margin: 15px 0 25px;
+		}
+	}
+	.smart-answer {
+		margin: 0 0 35px;
+		strong {
+			font-size: 26px;			
+			@if $is-mobile==1  {
+				font-size: 20px;
+			}
+		}
+		p {
+			margin: 3px 0 0;
+		}
+	}
+	.smart-list {
+		> div {
+			position: relative;
+			margin: 0 0 40px;
+			@if $is-mobile==0  {
+				min-height: 335px;
+			}
+		}
+		h3 {
+			margin-bottom: 16px;
+			color: #333;
+			font-size: 24px;
+		}
+		.img {
+			float: left;
+			@if $is-mobile==1  {
+				float: none;
+				margin: 0 0 20px;
+				img {
+					width: 100%;
+				}
+			}
+		}
+		&:after {
+			content: "";
+			clear: both;
+			display: block;
+		}
+		&:first-child {
+			margin-bottom: 55px;
+		}
+		dl {
+			margin: 0;
+			padding: 0 0 0 452px;
+			@if $is-mobile==1  {
+				padding: 0;
+			}
+			dt {
+				font-size: 20px;
+				font-weight: bold;
+			}
+			dd {
+				position: relative;
+				margin: 7px 0 0;
+				padding: 0 0 0 10px;
+				&:after {
+					content: "-";
+					display: block;
+					position: absolute;
+					left: 0;
+					top: -2px;
+				}
+				p {
+					margin: 0;
+					&:first-child {
+						margin-top: 4px;
+					}
+				}
+			}
+		}
+	}
+	.text-note {
+		position: relative;
+		margin-bottom: 35px;
+		padding: 0 0 0 28px;
+		color: #666;		
+		@if $is-mobile==1  {
+			padding: 0;
+			strong {
+				margin: 0 0 0 28px;
+			}
+		}		
+		&:after {
+			content:"\f167";
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 4px;
+			width: 19px;
+			height: 19px;
+			font-size: 19px;
+			line-height: 20px;
+			font-family: "lg-icon";
+		}
+	}
+	.smart-download {
+		border-top :1px solid #ccc;
+		@if $is-mobile==1  {
+			padding: 0 20px;
+		}
+		h2 {
+			margin: 35px 0 10px;
+			font-size: 24px;
+			@if $is-mobile==1  {
+				font-size: 20px;
+			}
+		}
+		p {
+			margin: 0;
+		}
+		ul {
+			margin: 0;
+			padding: 0;
+			li {
+				position: relative;
+				list-style: none;
+				margin: 5px 0 0;
+				padding: 0 0 0 12px;
+				&:after {
+					content: "-";
+					display: block;
+					position: absolute;
+					left: 0;
+					top: -2px;
+				}
+				.download {
+					padding: 0 0 30px;
+					&:after {
+						content: "";
+						clear: both;
+						display: block;
+					}
+					@if $is-mobile==1  {
+						
+					}
+					> div {
+						position: relative;
+						float: left;
+						width: 50%;
+						padding: 15px 0 0;
+						text-align: center;
+						
+						@if $is-mobile==1  {
+							float: none;	
+							width: 100%;
+							&.android {
+								margin: 10px 0 0;
+								padding: 0 0 30px;
+								border-bottom: 1px solid #ccc;
+							}
+						}
+						&:first-child:after {
+							content: "";
+							display: block;
+							position: absolute;
+							right: 0;
+							top: 0;
+							width: 1px;
+							height: 256px;
+							background: #ccc;
+							@if $is-mobile==1  {
+								display: none;
+							}
+						}
+						.barcode {
+							> * {
+								display: block;
+							}
+							strong {
+								margin-bottom: 13px;
+								font-size: 24px;
+								@if $is-mobile==1  {
+									font-size: 20px;
+									text-align: left;
+								}
+							}
+							img {
+								display: inline-block
+							}
+						}
+						a {
+							display: inline-block;
+							height: 42px;
+							margin-top: 30px;
+							padding: 0 21px;
+							background: #a50034;
+							border-radius: 5px;
+							color: #fff;
+							font-size: 23px;
+							line-height: 42px;
+							&:hover {
+								text-decoration: none;
+							}
+							@if $is-mobile==1  {
+								margin: 0;
+								width: 100%;
+								font-size: 18px;
+							}
+						}
+					}
+				}
+				.logo-check {
+					padding: 45px 0 0;
+					&:after {
+						content: "";
+						clear: both;
+						display: block;
+					}
+					> div {
+						float: left;
+						width: 50%;
+						text-align: center;
+					}
+					@if $is-mobile==1  {
+						padding: 35px 0 0;
+						> div {
+							float: none;
+							width: 100%;
+							margin-bottom: 40px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.contact-area .info-list > li > .inner > div {
+   ul.dot-list li {
+     position: relative;
+     padding-left: 12px;
+
+     &:before {
+       position: absolute;
+       top: 13px;
+       left: 0px;
+       width: 3px;
+       height: 3px;
+       background: #333;
+       content: "";
+       display: block;
+     }
+   }
+
+  .text-clock {
+    @include device-property(font-size, 20px, 18px);
+  }
+
+  p.sub-tit {
+  	margin-top:20px;
+  	@include device-property(font-weight, normal, bold);
+  }
+}
+
+
+

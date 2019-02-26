@@ -1,0 +1,145 @@
+#pdpGallery .pdp-popup-wrap {max-height:none;height:auto;max-width:1335px;}
+#pdpGallery .product-hero-layer-inner{height:100%;padding-right: 70px;}
+
+#pdpGallery .product-hero-layer-inner .hero-carousel-nav {position:relative;float:left;left:0px;bottom:0px;width:160px;height:730px;padding-left:14px;padding-bottom:32px;}
+#pdpGallery .hero-carousel-view{position:relative;float:left;padding:0px;width:1100px;height:730px;}
+
+#pdpGallery .product-hero-layer-inner ul {position:absolute;left:14px;bottom:29px;}
+#pdpGallery .product-hero-layer-inner ul.center {left:40px}
+#pdpGallery .product-hero-layer-inner ul + ul {left:79px;margin-left:3px;}
+
+#pdpGallery .hero-carousel-view .slide, #pdpGallery .hero-carousel-view .visuals {width:auto;}
+#pdpGallery .zoom-wrap {display:flex;align-items:center;}
+
+
+#pdpGallery .hero-carousel-view .visuals img {max-width:1100px;min-height:auto;}
+
+#pdpGallery .zoom-target.zoomOut {cursor: url(/lg4-common-gp/img/pdp/zoomin_cursor.png), url(/lg4-common-gp/content/pdp/zoomin_cursor.cur), move !important;}
+#pdpGallery .zoom-target.zoomOut.out {cursor: url(/lg4-common-gp/img/pdp/zoomout_cursor.png), url(/lg4-common-gp/content/pdp/zoomout_cursor.cur), move !important;}
+
+
+#pdpGallery .hero-zoom-btn button {width:32px;height:32px;}
+#pdpGallery .hero-zoom-btn button + button {height:32px;border-top:0px;margin-top:5px;}
+
+
+@media screen and (max-width: 1439px) {
+	#pdpGallery .pdp-popup-wrap {width:1200px;}
+	#pdpGallery .product-hero-layer-inner {padding-right:70px;}
+	#pdpGallery .product-hero-layer-inner .hero-carousel-nav {width:144px;height:657px;padding-left:12px;padding-bottom:20px;}
+	#pdpGallery .product-hero-layer-inner ul {width:59px;bottom:17px;}
+	#pdpGallery .product-hero-layer-inner ul.center {left:40px}
+	#pdpGallery .product-hero-layer-inner ul + ul {left:73px;margin-left:3px;}
+	#pdpGallery .hero-carousel-view{width:983px;height:657px;}
+	#pdpGallery .hero-carousel-view .visuals img {max-width:983px;}
+	#pdpGallery .product-hero-layer-inner ul li {width:59px;height:59px;}
+	#pdpGallery .product-hero-layer-inner ul li .thumb {width:59px;height:55px;}
+	#pdpGallery .hero-zoom-btn {right:20px;bottom:20px;}
+	.pdp-modal-wrap a.btn-pdp-modal-close {right:20px;top:20px !important;}	
+}
+
+@media screen and (max-width: 1366px) {
+	#pdpGallery .pdp-popup-wrap {width:1136px;}
+	#pdpGallery .product-hero-layer-inner {padding-right:55px;}
+	#pdpGallery .product-hero-layer-inner .hero-carousel-nav {width:144px;height:623px;padding-left:12px;padding-bottom:14px;}
+	#pdpGallery .product-hero-layer-inner ul {width:59px;bottom:11px;left:12px;}
+	#pdpGallery .product-hero-layer-inner ul.center {left:40px}
+	#pdpGallery .product-hero-layer-inner ul + ul {left:68px;margin-left:3px;}
+	#pdpGallery .hero-carousel-view{width:930px;height:623px;}
+	#pdpGallery .hero-carousel-view .visuals img {max-width:930px;}
+	#pdpGallery .product-hero-layer-inner ul li {width:56px;height:56px;}
+	#pdpGallery .product-hero-layer-inner ul li .thumb {width:56px;height:52px;}
+	#pdpGallery .hero-zoom-btn {right:16px;bottom:16px;width:28px;}
+	.pdp-modal-wrap a.btn-pdp-modal-close {right:16px;top:16px !important;}
+
+	.pdp-modal-wrap a.btn-pdp-modal-close {background-size:29px 29px;width:29px;height:29px;}
+	#pdpGallery button.hero-zoom-plus {background-size: 28px 28px;width:28px;height:27px;}
+	#pdpGallery button.hero-zoom-minus {background-size:28px 27px;width:28px;height:27px;}
+
+	.signature.pdp-modal-wrap a.btn-pdp-modal-close {background-size:29px 29px;width:29px;height:29px;}
+	.signature button.hero-zoom-plus {background-size:28px 27px;width:28px;height:28px;}
+	.signature button.hero-zoom-minus {background-size: 28px 27px;width:28px;height:27px;}
+
+	#pdpGallery button.hero-zoom-plus {height:28px;}
+	#pdpGallery .hero-zoom-btn button + button {height:27px;}
+}
+
+@media screen and (max-width: 1280px) {
+	#pdpGallery .pdp-popup-wrap {width:1070px;}
+	#pdpGallery .product-hero-layer-inner {padding-right:55px;}
+	#pdpGallery .product-hero-layer-inner .hero-carousel-nav {width:128px;height:584px;}
+	#pdpGallery .product-hero-layer-inner ul {width:52px;bottom:11px;left:12px;}
+	#pdpGallery .product-hero-layer-inner ul.center {left:30px}
+	#pdpGallery .product-hero-layer-inner ul + ul {left:64px;margin-left:3px;}
+	#pdpGallery .hero-carousel-view {width:866px;height:584px;}
+	#pdpGallery .hero-carousel-view .visuals img {max-width:866px;}
+	#pdpGallery .product-hero-layer-inner ul li {width:52px;height:52px;}
+	#pdpGallery .product-hero-layer-inner ul li .thumb {width:52px;height:48px;}
+	#pdpGallery .hero-zoom-btn {right:16px;bottom:16px;width:28px;}
+	.pdp-modal-wrap a.btn-pdp-modal-close {right:16px;top:16px !important;}
+
+	.pdp-modal-wrap a.btn-pdp-modal-close {background-size:29px 29px;width:29px;height:29px;}
+	#pdpGallery button.hero-zoom-plus {background-size: 28px 28px;width:28px;height:27px;}
+	#pdpGallery button.hero-zoom-minus {background-size:28px 27px;width:28px;height:27px;}
+
+	.signature.pdp-modal-wrap a.btn-pdp-modal-close {background-size:29px 29px;width:29px;height:29px;}
+	.signature button.hero-zoom-plus {background-size:28px 27px;width:28px;height:27px;}
+	.signature button.hero-zoom-minus {background-size: 28px 27px;width:28px;height:27px;}
+
+	#pdpGallery button.hero-zoom-plus {height:28px;}
+	#pdpGallery .hero-zoom-btn button + button {height:27px;}
+}
+
+@media screen and (max-width: 1024px) {
+	#pdpGallery .pdp-popup-wrap {width:855px;}
+	#pdpGallery .product-hero-layer-inner {padding-right:55px;}
+	#pdpGallery .product-hero-layer-inner .hero-carousel-nav {width:102px;height:467px;}
+	#pdpGallery .product-hero-layer-inner ul {width:42px;bottom:8px;left:8px;}
+	#pdpGallery .product-hero-layer-inner ul.center {left:30px}
+	#pdpGallery .product-hero-layer-inner ul + ul {left:50px;margin-left:3px;}
+	#pdpGallery .hero-carousel-view{width:694px;height:467px;}
+	#pdpGallery .hero-carousel-view .visuals img {max-width:679px;}
+	#pdpGallery .product-hero-layer-inner ul li {width:42px;height:42px;}
+	#pdpGallery .product-hero-layer-inner ul li .thumb {width:42px;height:38px;}
+
+	#pdpGallery .hero-zoom-btn {right:16px;bottom:16px;width:28px;}
+	.pdp-modal-wrap a.btn-pdp-modal-close {right:16px;top:16px !important;}
+
+	.pdp-modal-wrap a.btn-pdp-modal-close {background-size:29px 29px;width:29px;height:29px;}
+	#pdpGallery button.hero-zoom-plus {background-size: 28px 28px;width:28px;height:27px;}
+	#pdpGallery button.hero-zoom-minus {background-size:28px 27px;width:28px;height:27px;}
+
+	.signature.pdp-modal-wrap a.btn-pdp-modal-close {background-size:29px 29px;width:29px;height:29px;}
+	.signature button.hero-zoom-plus {background-size:28px 27px;width:28px;height:27px;}
+	.signature button.hero-zoom-minus {background-size: 28px 27px;width:28px;height:27px;}
+
+	#pdpGallery button.hero-zoom-plus {height:28px;}
+	#pdpGallery .hero-zoom-btn button + button {height:27px;}
+}
+
+
+@media screen and (max-width: 768px) {
+	#pdpGallery .pdp-popup-wrap {width:700px;}
+	#pdpGallery .product-hero-layer-inner {padding-right:55px;}
+	#pdpGallery .product-hero-layer-inner .hero-carousel-nav {width:102px;height:467px;}
+	#pdpGallery .product-hero-layer-inner ul {width:42px;bottom:8px;left:8px;}
+	#pdpGallery .product-hero-layer-inner ul.center {left:30px}
+	#pdpGallery .product-hero-layer-inner ul + ul {left:50px;margin-left:3px;}
+	#pdpGallery .hero-carousel-view{width:539px;height:467px;}
+	#pdpGallery .hero-carousel-view .visuals img {max-width:524px;}
+	#pdpGallery .product-hero-layer-inner ul li {width:42px;height:42px;}
+	#pdpGallery .product-hero-layer-inner ul li .thumb {width:42px;height:38px;}
+
+	#pdpGallery .hero-zoom-btn {right:16px;bottom:16px;width:28px;}
+	.pdp-modal-wrap a.btn-pdp-modal-close {right:16px;top:16px !important;}
+
+	.pdp-modal-wrap a.btn-pdp-modal-close {background-size:29px 29px;width:29px;height:29px;}
+	#pdpGallery button.hero-zoom-plus {background-size: 28px 28px;width:28px;height:27px;}
+	#pdpGallery button.hero-zoom-minus {background-size:28px 27px;width:28px;height:27px;}
+
+	.signature.pdp-modal-wrap a.btn-pdp-modal-close {background-size:29px 29px;width:29px;height:29px;}
+	.signature button.hero-zoom-plus {background-size:28px 27px;width:28px;height:27px;}
+	.signature button.hero-zoom-minus {background-size: 28px 27px;width:28px;height:27px;}
+
+	#pdpGallery button.hero-zoom-plus {height:28px;}
+	#pdpGallery .hero-zoom-btn button + button {height:27px;}
+}

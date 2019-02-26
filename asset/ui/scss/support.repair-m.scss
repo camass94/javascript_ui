@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+$is-mobile:1 !default;
+$header-height:64px !default;
+$header-padding:54px !default;
+@import "../bower_components/bourbon/dist/bourbon";
+@import "../bower_components/ic/scss/ic";
+@import "base/base_support";
+@import "common/common";
+
+@import "support/common";
+@import "support/repair";
+@import "support/steplist";
+@import "support/my-repair-inquiry-status";
+@import "support/repair-service-center";
+@import "support/contact";
+@import "support/track-repair";
+@import "support/warranty";
+@import "support/repair-sign-in";
+@import "support/faqs";
+/* LGECS-872 */
+@import "support/telephone";
+/* LGECS-872 */
+/* PJTBTOBCSR-138 start */
+@import "support/offering";
+@import "support/repair-btb";
+/* PJTBTOBCSR-138 end */

@@ -1,0 +1,42 @@
+// Headings
+//
+// Description Here
+//
+// Markup:
+// <h1></h1>
+// <h2></h2>
+// <h3></h3>
+// <h4></h4>
+// <h5></h5>
+// <h6></h6>
+//
+// Styleguide 1.1
+//
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    font-family: $heading-font;
+    font-weight: normal;
+    line-height: 1.2em;
+    //color: $heading-color;
+}
+
+h1 {
+    @include device-property(font-size,60px,28px);
+}
+
+h2 {
+    @include device-property(font-size,55px,26px); // could be 50 or 55.
+}
+
+h3 {
+    @include device-property(font-size,44px,23px);
+}
+
+h4 {
+    @include device-property(font-size,34px,20px); // could be 34 or 36.
+}
+
+h5, h6 {
+    @include device-property(font-size,22px,14px);
+}

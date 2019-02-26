@@ -1,0 +1,2031 @@
+@charset "UTF-8";
+
+$is-mobile:0 !default;
+$header-height:64px !default;
+
+@import "../bower_components/bourbon/dist/bourbon";
+@import "../bower_components/ic/scss/ic";
+@import "base/base_products";
+// @import "common/common";
+
+// @import "products/products";
+// @import "./products/tech-specs_oldie";
+
+#content .module {
+  &.m39 {
+    .text-block {
+		width:auto;
+      .tit-new {
+          font-weight: bold;
+      }
+      .text-new {
+        font-style: italic;
+      }
+	}
+	.slick-dots {
+		li {
+			i.icon {
+				background: transparent;
+				color:#fff;
+				&:before {
+					@extend .icon-circle:before;
+				}
+			}
+			&.slick-active {
+				i.icon {
+					color:#ba8748 !important;
+				}
+			}
+		}
+	}
+  }
+}
+
+#content {
+	.contact {
+		.container-head, .container-title {
+			h2 {
+				color:#fff;
+			}
+		}
+	}
+}
+
+html.ie9,
+html.lt-ie9 {
+	.module.m40,
+	#content .module.m28,
+	#content .module.m08,
+	.module-layer-popup {
+		.slick-dots {
+			li {
+				button i.icon {
+					background: transparent;
+					&:after {
+						content:"";
+						position:absolute;
+						top:50%;
+						left:50%;
+						width:10px;
+						height:10px;
+						margin:-5px 0 0 -5px;
+						border-radius:50% 50%;
+						background: #aaa;
+					}
+				}
+				&.slick-active {
+					button i.icon {
+						&:after {
+							background: #ba8748;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#content {
+	.module-group .module.text-top .text-block {
+		top: 35px;
+	}
+	.m01.module {
+		.text-block {
+			padding: 75px 0 70px 0;
+			@media screen and (max-width: 1280px) {
+				padding: 36px 0 30px 0;
+			}
+			@media screen and (max-width: 900px) {
+				padding: 25px 0 23px 0;
+			}
+			h1,
+			h2, /* add */
+			h3,
+			p {
+				width: 1000px;
+				@media screen and (max-width: 1280px) {
+					width: 800px;
+				}
+				@media screen and (max-width: 900px) {
+					width: 620px;
+				}
+			}
+			h4 {
+				width: 600px;
+				font-size: 18px;
+				line-height: 20px;
+				letter-spacing: 1px;
+				color: #000;
+				text-transform: uppercase;
+				font-family: "LG Smart",Tahoma,Arial,sans-serif;
+				font-weight: bold;
+				padding-bottom: 5px;
+				@media screen and (max-width: 1280px) {
+					width: 400px;
+					font-size: 15px;
+					line-height: 17px;
+					padding-bottom: 3px;
+				}
+				@media screen and (max-width: 900px) {
+					width: 620px;
+					font-size: 13px;
+					line-height: 15px;
+					padding-bottom: 0;
+				}
+			}
+			h1,h3 {/* add */
+				font-family: "LG Smart",Tahoma,Arial,sans-serif;
+				font-weight: bold;
+				text-transform: uppercase;
+				font-size: 50px;
+				line-height: 54px;
+				letter-spacing: 4px;
+				color: #000;
+				padding-top: 0;
+				@media screen and (max-width: 1280px) {
+					font-size: 42px;
+					line-height: 45px;
+				}
+				@media screen and (max-width: 900px) {
+					font-size: 37px;
+					line-height: 40px;
+				}
+			}
+			h2,p {  /* LGEGMO-3664 20180129 modify */
+				font-family: "LG Smart",Tahoma,Arial,sans-serif;
+				font-size: 20px;
+				line-height: 26px;
+				color: #333;
+				@media screen and (max-width: 1280px) {
+					font-size: 17px;
+					line-height: 22px;
+					padding-top: 3px;
+					padding-bottom: 0;
+				}
+				@media screen and (max-width: 900px) {
+					font-size: 15px;
+					line-height: 19px;
+					padding-top: 0;
+				}
+			}
+
+			.cta {
+				@media screen and (max-width: 1280px) {
+					margin: 15px 0;
+				}
+				
+				&.cta-button {
+					a {
+						background-color: #000000;
+						color: #fff;
+						border-radius: 0;
+						font-weight: bold;
+						font-size: 18px;
+						height: 42px;
+						line-height: 42px;
+						padding: 0 30px;
+						.icon {
+							display: none;
+						}
+						@media screen and (max-width: 1280px) {
+							font-size: 15px;
+							height: 36px;
+							line-height: 36px;
+							padding: 0 20px;
+						}
+						@media screen and (max-width: 900px) {
+							font-size: 13px;
+							height: 30px;
+							line-height: 30px;
+							padding: 0 15px;
+						}
+					}
+				}
+
+				&.cta-text {
+					margin-top: 27px;
+					a {
+					    font-family: "LG Smart Semibold",Tahoma,Arial,sans-serif;
+					    color: #000000;
+					    font-size: 20px;
+					    // text-decoration: underline;
+					    // border-bottom: 2px solid #000;
+					    margin: 0 23px 23px;
+					    .icon {
+			    		    margin-top: -7px;
+					    	&:before {
+								// content: "\f111"; /* modify */
+								@extend .icon-arrow-next:before;
+								font-size: 15px;
+								color:#000;
+				    		    // font-family: "LG Smart Semibold",Tahoma,Arial,sans-serif;
+				    		}
+					    }
+					}
+					@media screen and (max-width: 1280px) {
+						margin-top: 20px;
+				    	a {
+				    		font-size: 17px;
+						    margin: 0 18px 19px;
+						    // border-bottom: 1px solid #000;
+					    	.icon {
+				    		    margin-top: -6px;
+						    	&:before {
+					    		    font-size: 13px;
+					    		}
+						    }
+				    	}
+				    }
+				    @media screen and (max-width: 1024px) {
+						margin-top: 22px;
+				    	a {
+				    		font-size: 15px;
+						    margin: 0 14px 15px;
+					    	.icon {
+				    		    margin-top: -4px;
+						    	&:before {
+					    		    font-size: 11px;
+					    		}
+						    }
+				    	}
+				    }
+				}
+			}
+		}
+		&.text-light {
+			.text-block {
+				h4,
+				h3,
+				h2, /* add */
+				h1, /* add */
+				p {
+					color: #fff;
+				}
+			}
+		}
+
+		.video-thumb {
+			a {
+				width: 18.25%;
+				height: 28.75%;
+			}
+			.icon-video-play {
+				&:before,
+				&:after {
+					content: '';
+				}
+			}
+		}
+	}
+	.module.m28 {
+		padding: 0;
+		height: 410px;
+		background: #f4f4f4;
+	    font-family: "LG Smart",Tahoma,Arial,sans-serif;
+
+		.container {
+			max-width: 1320px;
+			padding: 0 60px;
+			box-sizing: content-box;
+			width: auto;
+			.carousel {
+				height: 410px;
+			}
+		}
+
+
+
+		@media screen and (max-width: 1279px) {
+			height: 345px;
+			.container {
+				padding: 0;
+				// padding: 0 30px;
+				.carousel {
+					height: 345px;
+				}
+			}
+		}
+		@media screen and (max-width: 1023px) {
+			height: 324px;
+			.container {
+				.carousel {
+					height: 324px;
+
+					.slick-prev {
+						left: -16px;
+					}
+					.slick-next {
+						right: -16px;
+					}
+				}
+			}
+		}
+		@media screen and (max-width: 767px) {
+			height: auto;
+			.container {
+				.carousel {
+					height: auto;
+				}
+			}
+		}
+		.slick-slide {
+			outline: none;
+		}
+		.slide-inner {
+			margin: 85px auto 0 auto;
+			@media screen and (max-width: 1279px) {
+				margin-top: 67px;
+			}
+			@media screen and (max-width: 1023px) {
+				margin-top: 47px;
+			}
+		}
+		.container .carousel .slide .slide-inner .copy-area {
+			text-align: center;
+			width: 100%;
+			font-size: 0;
+			line-height: 0;
+			min-height: 250px;
+			padding: 0 12.12%;
+
+			.pooduct-item-img {
+				vertical-align: top;
+				width: 40%;
+				max-width: 200px;
+				display: inline-block;
+				margin: 0 auto;
+				// margin: 0 0 0 80px;
+
+			}
+
+			.pooduct-item-text {
+				display: inline-block;
+				margin: 0 auto;
+				padding-left: 8%;
+				text-align: left;
+				width: 60%;
+				vertical-align: middle;
+
+				.model-name {
+					// height: 68px;
+					height: auto;
+					overflow: hidden;
+					font-family: "LG Smart SemiBold";
+					font-size: 18px;
+					line-height: 22px;
+					margin-bottom: 13px;
+					margin-top: 0;
+					a {
+						color: #000000;
+					}
+				}
+				.model-num {
+					z-index: 2;
+					position: relative;
+					font-size: 16px;
+					line-height: 1;
+					margin-bottom: 13px;
+					margin-top: 0;
+					a {
+						color: #666666;
+					}
+				}
+				.product-purchase {
+					.cta {
+						text-align: left;
+					}
+					a.btn {
+						font-size: 18px;
+						display: inline-block;
+						width: auto;
+						font-weight: bold;
+						background: #000;
+						border-radius: 0;
+						padding: 6px 18px 7px;
+						min-width:51%;
+						&::first-child {
+							margin-top: 0;
+						}
+					}
+				}
+				.product-price {
+					line-height: 1.42857;
+					color: #000000;
+					font-size: 20px;
+					margin: 13px 0 20px 0;
+					position: relative;
+					font-weight: bold;
+					p {
+						margin: 0;
+					}
+					.legal {
+					    font-size: 14px;
+					    font-weight: normal;
+					    color: #666666;
+					}
+					span {
+						font-size: 14px;
+						vertical-align: top;
+					}
+				}
+				.details {
+					.rating {
+						color: #ba8748;
+						margin: 12px 0;
+						-webkit-transform: translateZ(0);
+						position: relative;
+						z-index: 1;
+						cursor: pointer;
+						.points_wrap {
+							line-height: 20px;
+							vertical-align: top;
+							display: inline-block;
+							position: relative;
+							z-index: -1;
+							margin-right: 7px;
+							top: 0;
+							.review_bg {
+								position: relative;
+								top: 0;
+								i{
+									font-size: 71px;
+									line-height: 13px;
+									color: #cccccc;
+
+									&:before {
+										line-height: 0;
+									}
+								}
+
+								.review_point {
+									position: absolute;
+									left: 0;
+									top: 0;
+									width: 100%;
+									min-height: 25px;
+									overflow: hidden;
+
+									i.points {
+										color: #ba8748;
+									}
+								}
+							}
+						}
+						> span {
+							line-height: 20px;
+							vertical-align: top;
+							font-size: 14px;
+							a {
+								color: #666666;
+							}
+							
+						}
+					}
+				}
+			}
+
+			@media screen and (max-width: 1279px) {
+				
+				min-height: 215px;
+				padding: 0 9.765%;
+				.pooduct-item-img {
+					max-width: 180px;
+					width: 43.6893%;
+				}
+				.pooduct-item-text {
+					padding-left: 6.1%;
+					width: 100-43.6893%;
+					.model-name {
+						font-size: 15px;
+						line-height: 18px;
+						margin-bottom: 6px;
+					}
+					.model-num {
+						font-size: 14px;
+						margin-top: 6px;
+						margin-bottom: 9px;
+					}
+					.details {
+						.rating {
+							margin: 9px 0 11px 0;
+						}
+						> span {
+							font-size: 12px;
+						}
+					}
+					.product-purchase {
+						a.btn {
+							font-size: 15px;
+							min-width: 150px;
+							padding: 9px 18px 10px;
+						}
+					}
+					.product-price {
+						margin: 13px 0;
+						font-size: 17px;
+						line-height: 18px;
+						span {
+							font-size: 11px;
+						}
+					}
+				}
+			}
+			@media screen and (max-width: 1023px) {
+				min-height: 225px;
+				padding: 0 6.51%;
+				.pooduct-item-img {
+					max-width: 160px;
+					width: 47.9%;
+				}
+				.pooduct-item-text {
+					padding-left: 5.9%;
+					width: 100-47.9%;
+					.model-name {
+						a {
+							font-size: 14px;
+							line-height: 17px;
+						}
+					}
+					.model-num {
+						font-size: 14px;
+					}
+					.product-purchase {
+						a.btn {
+							font-size: 13px;
+							padding: 8px 18px 7px;
+							min-width: 128px;
+						}
+					}
+					.details {
+						.rating {
+							> span {
+								font-size: 12px;
+							}
+						}
+					}
+					.product-price {
+						margin: 10px 0;
+						font-size: 17px;
+						line-height: 18px;
+						span {
+							font-size: 11px;
+						}
+					}
+				}
+			}
+
+			.cta {
+				width: 100%;
+				margin: 0 0 10px;
+				text-align: center;
+			}
+		}
+
+		.slick-dots {
+			height: 20px;
+			margin: 22px 0;
+			bottom: 0;
+			position: absolute;
+		}
+		.slick-prev,
+		.slick-next {
+			&:before {
+				color: #818181;
+			}
+		}
+		
+	}
+	.module.m08 {
+		.container {
+			max-width: 1195px;
+			padding: 60px 0 80-6px 0;
+
+			@media screen and (max-width: 1280px) {
+				padding: 60px 0 70-6px 0;
+			}
+			@media screen and (max-width: 900px) {
+				padding: 50px 0 70-6px 0;
+			}
+
+			.carousel {
+				padding-bottom: 0;
+				.slide {
+					.slide-inner {
+						.copy-area {
+							.desc {
+								font-size: 18px;
+								line-height: 22px;
+								letter-spacing: 1px;
+								margin-top: 4px;
+								a {
+									font-family: "LG Smart semibold",Tahoma,Arial,sans-serif;
+									color: #333;
+								}
+								@media screen and (max-width: 1280px) {
+									font-size: 16px;
+									line-height: 20px;
+									margin-top: 5px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.slick-prev {
+			left: -115px;
+		}
+		.slick-next {
+			right: -115px;
+		}
+		@media screen and (max-width: 1600px) {
+			.slick-prev {
+				left: -85px;
+			}
+			.slick-next {
+				right: -85px;
+			}
+		}
+		@media screen and (max-width: 1500px) {
+			.slick-prev {
+				left: -25px;
+			}
+			.slick-next {
+				right: -25px;
+			}
+		}
+		@media screen and (max-width: 1280px) {
+			.slick-next:before, .slick-prev:before {
+				font-size: 30px;
+			}
+		}
+	}
+	/* cta */
+	.cta-dropdown {
+		position: relative;
+		z-index: 5;
+		.cta-active-btn {
+
+			padding-right: 35px !important;
+			position: relative;
+			.icon {
+				font-size: 10px!important;
+				color: #fff!important;
+				position: absolute!important;
+				right: 13px!important;
+				left: auto!important;
+				bottom: auto!important;
+				top: 50%!important;
+				margin: -4px 0 0!important;
+				opacity: 1!important;
+			}
+		}
+		.dropdown-content {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			position: absolute;
+			z-index: 3;
+			width: 100%;
+			display: none;
+			li {
+				&:first-child a {
+					border-top-left-radius: 6px;
+					border-top-right-radius: 6px;
+				}
+				a {
+					background-color: #333333;
+					font-size: 18px;
+					line-height: 18px;
+					margin: 0!important;
+					display: block;
+					text-align: left;
+				    @media screen and (min-width: 90em) {
+			    	    padding: .9rem 2rem .6rem 1.5rem;
+				    }
+				    @media screen and (min-width: 80em) {
+			    	    padding: .9rem 2rem .6rem 1.5rem;
+				    }
+				    @media screen and (min-width: 64em) {
+			    	    padding: .9rem 2rem .6rem 1.5rem;
+				    }
+				    @media screen and (min-width: 55em) {
+			    	    padding: .7rem 2rem .5rem 1.3rem;
+				    }
+				    @media screen and (min-width: 48em) {
+			    	    padding: .6rem 2rem .4rem 1.2rem;
+				    }
+				    @media screen and (min-width: 40em) {
+			    	    padding: 1rem 2rem .8rem 1rem;
+				    }
+					&:hover,
+					&:focus {
+						background-color: #404040;
+					}
+				}
+			}
+		}
+		&.active {
+			.dropdown-content {
+				bottom: 100%;
+				border-top: 0;
+				border-bottom: 1px solid #bbb;
+				display: block;
+				margin-top: -1px;
+			}
+		}
+	}
+	/* footer */
+	.m14.module {
+		.container {
+			padding-top: 61px;
+			padding-bottom: 88px;
+			@media screen and (max-width: 1280px) {
+				padding-top: 53px;
+				padding-bottom: 78px;
+			}
+			@media screen and (max-width: 900px) {
+				padding-top: 45px;
+				padding-bottom: 66px;
+			}
+			.title {
+				margin-bottom: 53px;
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 1000px;
+				@media screen and (max-width: 1280px) {
+					margin-bottom: 43px;
+					max-width: 800px;
+				}
+				@media screen and (max-width: 900px) {
+					margin-bottom: 36px;
+					max-width: 640px;
+				}
+				h3 {
+					font-size: 32px;
+					line-height: 34px;
+					font-family: "LG Smart",Tahoma,Arial,sans-serif;
+					font-weight: bold;
+					letter-spacing: 2px;
+					@media screen and (max-width: 1280px) {
+						font-size: 28px;
+						line-height: 30px;
+					}
+					@media screen and (max-width: 900px) {
+						font-size: 24px;
+						line-height: 26px;
+					}
+				}
+				p {
+					color: #ccc;
+					font-size: 20px;
+					line-height: 26px;
+					padding-top: 9px;
+					font-family: "LG Smart",Tahoma,Arial,sans-serif;
+					@media screen and (max-width: 1280px) {
+						font-size: 18px;
+						line-height: 24px;
+					}
+					@media screen and (max-width: 900px) {
+						font-size: 16px;
+						line-height: 20px;
+						padding-top: 4px;
+					}
+				}
+			}
+
+			.carousel .slide .slide-inner {
+				.copy-area {
+					.desc {
+						font-size: 18px;
+						line-height: 1;
+						color: #ccc;
+						margin-top: 7px;
+					}
+				}
+			}
+		}
+	}
+	.contact {
+		padding-top: 64px;
+		padding-bottom: 85px;
+		background: #333333;
+		@media screen and (max-width: 1280px) {
+			padding-top: 54px;
+			padding-bottom: 75px;
+		}
+		@media screen and (max-width: 900px) {
+			padding-top: 54-12px;
+			padding-bottom: 75-9px;
+		}
+		.container {
+			padding: 0 1%;
+		}
+		.container-title {
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 1000px;
+			margin-bottom: 55px;
+			@media screen and (max-width: 1280px) {
+				max-width: 800px;
+				margin-bottom: 45px;
+			}
+			@media screen and (max-width: 900px) {
+				max-width: 640px;
+				margin-bottom: 34px;
+			}
+			h2 {
+				font-size: 32px;
+				line-height: 34px;
+				font-family: "LG Smart",Tahoma,Arial,sans-serif;
+				font-weight: bold;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				margin-bottom: 0;
+				letter-spacing: 1px;
+				@media screen and (max-width: 1280px) {
+					font-size: 28px;
+					line-height: 30px;
+				}
+				@media screen and (max-width: 900px) {
+					font-size: 24px;
+					line-height: 26px;
+				}
+			}
+			p {
+				color: #ccc;
+				font-size: 20px;
+				line-height: 26px;
+				padding-top: 9px;
+				@media screen and (max-width: 1280px) {
+					font-size: 18px;
+					line-height: 24px;
+				}
+				@media screen and (max-width: 900px) {
+					font-size: 16px;
+					line-height: 20px;
+					padding-top: 5px;
+				}
+			}
+		}
+
+		.icon-wrap {
+			margin-bottom: 6px;
+			.icon {
+				width: 60px;
+				height: 60px;
+				line-height: 60px;
+				margin-bottom: 0;
+			}
+		}
+
+		.content-block {
+			h4 {
+				font-size: 22px;
+				line-height: 24px;
+				font-family: "LG Smart",Tahoma,Arial,sans-serif;
+				font-weight: bold;
+				margin-bottom: 10px;
+				@media screen and (max-width: 1280px) {
+					font-size: 20px;
+					line-height: 22px;
+				}
+				@media screen and (max-width: 900px) {
+					font-size: 18px;
+					line-height: 20px;
+				}
+			}
+			p {
+				margin-left: auto;
+				margin-right: auto;
+				font-size: 16px;
+				line-height: 22px;
+				max-width: 240px;
+				font-family: "LG Smart Light",Tahoma,Arial,sans-serif;
+				@media screen and (max-width: 1280px) {
+					font-size: 16px;
+					line-height: 22px;
+				}
+				@media screen and (max-width: 900px) {
+					font-size: 15px;
+					line-height: 20px;
+				}
+			}
+		}
+		.three-column {
+			margin: 0 auto;
+			@media screen and (max-width: 1280px) {
+				width: 95.71%;
+			}
+			@media screen and (max-width: 900px) {
+				width: 98.1%;
+			}
+			.content-block {
+				.center-content {
+					float: none;
+				}
+			}
+		}
+	}
+	
+	/* //add */
+	.contact {
+		&.m15 {
+			padding: 0 1%;
+			padding-top: 64px;
+			padding-bottom: 85px;
+			background: #333333;
+			@media screen and (max-width: 1280px) {
+				padding-top: 54px;
+				padding-bottom: 75px;
+			}
+			@media screen and (max-width: 900px) {
+				padding-top: 54-12px;
+				padding-bottom: 75-9px;
+			}
+			.container-head {
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 1000px;
+				margin-bottom: 55px;
+				@media screen and (max-width: 1280px) {
+					max-width: 800px;
+					margin-bottom: 45px;
+				}
+				@media screen and (max-width: 900px) {
+					max-width: 640px;
+					margin-bottom: 34px;
+				}
+				h2 {
+					font-size: 32px;
+					line-height: 34px;
+					font-family: "LG Smart",Tahoma,Arial,sans-serif;
+					font-weight: bold;
+					letter-spacing: 1px;
+					text-transform: uppercase;
+					margin-bottom: 0;
+					letter-spacing: 1px;
+					@media screen and (max-width: 1280px) {
+						font-size: 28px;
+						line-height: 30px;
+					}
+					@media screen and (max-width: 900px) {
+						font-size: 24px;
+						line-height: 26px;
+					}
+				}
+				p {
+					color: #ccc;
+					font-size: 20px;
+					line-height: 26px;
+					padding-top: 9px;
+					font-family: "LG Smart Light", Tahoma, Arial, sans-serif;
+					@media screen and (max-width: 1280px) {
+						font-size: 18px;
+						line-height: 24px;
+					}
+					@media screen and (max-width: 900px) {
+						font-size: 16px;
+						line-height: 20px;
+						padding-top: 5px;
+					}
+				}
+			}
+
+			.icon-block {
+				margin-bottom: 6px;
+				.icon {
+					width: 60px;
+					height: 60px;
+					line-height: 60px;
+					margin-bottom: 0;
+				}
+			}
+
+			.slide {
+				display:inline-block;
+				vertical-align: top;
+				width:32%;
+				h4 {
+					font-size: 22px;
+					line-height: 24px;
+					font-family: "LG Smart",Tahoma,Arial,sans-serif;
+					font-weight: bold;
+					margin-bottom: 10px;
+					@media screen and (max-width: 1280px) {
+						font-size: 20px;
+						line-height: 22px;
+					}
+					@media screen and (max-width: 900px) {
+						font-size: 18px;
+						line-height: 20px;
+					}
+				}
+				p {
+					margin-left: auto;
+					margin-right: auto;
+					font-size: 16px;
+					line-height: 22px;
+					max-width: 240px;
+					font-family: "LG Smart Light",Tahoma,Arial,sans-serif;
+					@media screen and (max-width: 1280px) {
+						font-size: 16px;
+						line-height: 22px;
+					}
+					@media screen and (max-width: 900px) {
+						font-size: 15px;
+						line-height: 20px;
+					}
+				}
+			}
+			.carousel {
+				margin: 0 auto;
+				max-width: 1240px;
+				.slide {
+					.slide-inner {
+						float: none;
+					}
+				}
+			}
+		}
+	}
+	/* add// */
+}
+
+.is-mobile #content {
+	.group-carousel .m01.module {
+		.text-block {
+			padding: 73px 0 !important;
+			width:100%;
+			left:auto;
+			right:auto;
+			margin-left:0;
+			margin-right:0;
+			h4 {
+				padding-bottom: 0 !important;
+			}
+			.cta {
+				margin-top: 40px !important;
+			}
+			@media screen and (max-width: 480px) {
+				padding: 25px 0 !important;
+				.cta {
+					margin-top: 25px !important;
+				}
+			}
+		}
+	}
+	.m01.module {
+		.text-block {
+			padding: 73px 0;
+			width:100%;
+			left:auto;
+			right:auto;
+			margin-left:0;
+			margin-right:0;
+			@media screen and (max-width: 480px) {
+				padding: 27px 0 25px 0;
+				right: 0; //add 2017-08-18
+			}
+			h1,
+			h2, /* add */
+			h3,
+			p {
+				max-width: 620px;
+				width: 80%;
+				margin:0 auto; //add 2017-08-18
+				@media screen and (max-width: 480px) {
+					width: 100%;
+					padding: 0 20px;
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			h4 {
+				font-size: 27px;
+				line-height: 28px;
+				margin-bottom: 4px;
+				@media screen and (max-width: 480px) {
+					font-size: 15px;
+					line-height: 16px;
+					margin-bottom: 2px;
+				}
+			}
+			h1,h3 { /* add */
+				font-size: 46px;
+				line-height: 50px;
+				width:auto;
+				margin:0 auto;
+				margin-bottom: 15px;
+				@media screen and (max-width: 480px) {
+					font-size: 26px;
+					line-height: 28px;
+					margin-bottom: 11px;
+				}
+			}
+			p {
+				font-size: 28px;
+				line-height: 36px;
+				@media screen and (max-width: 480px) {
+					font-size: 16px;
+					line-height: 20px;
+				}
+			}
+
+			.cta {
+				margin-top: 41px;
+				&.cta-button {
+					a {
+						font-size: 27px;
+						height: 60px;
+						line-height: 60px;
+						padding: 0 30px;
+					}
+					@media screen and (max-width: 480px) {
+						margin-top: 23px;
+						a {
+							font-size: 15px;
+							height: 35px;
+							line-height: 35px;
+							padding: 0 20px;
+						}
+					}
+				}
+
+				&.cta-text {
+					a {
+						border-bottom: none;
+						// text-decoration: underline;
+						font-size: 28px;
+						border-width: 2px;
+						display: block;
+						margin: 50px 0 0 0;
+						width: auto;
+						&:hover {
+							text-decoration: none;
+						}
+						&:first-child {
+							margin-top: 47px;
+						}
+						.icon {
+							margin-top: -10px;
+							&:before {
+								font-size: 23px;
+								margin-left: 0;
+							}
+						}
+					}
+					@media screen and (max-width: 480px)  {
+						margin-top: 23px;
+						a {
+							font-size: 16px;
+							margin: 26px 0 0 0;
+							&:first-child {
+								margin-top: 0;
+							}
+							.icon {
+								margin-top: -5px;
+								&:before {
+									font-size: 13px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.module.m28 {
+		height: 1050px;
+		@media screen and (max-width: 479px) {
+			height: 500px;
+		}
+		padding: 0 8.3%;
+		.container {
+			// padding: 0 0 40px;
+			width: 100%!important;
+			.carousel {
+				height: 1050px;
+				@media screen and (max-width: 479px) {
+					height: 500px;
+				}
+			}
+		}
+		.slide-inner {
+			margin-top: 40px;
+			@media screen and (max-width: 479px) {
+				margin-top: 20px;
+			}
+		}
+		.container .carousel .slide .slide-inner .copy-area {
+			margin-top: 0;
+			padding: 0 5.62%;
+			.pooduct-item-img {
+				max-width: 432px;
+				width: 100%;
+				display: block;
+				margin: 0 auto;
+				padding-left: 0;
+				padding-top: 0;
+				img {
+					width: 100%;
+				}
+			}
+			.pooduct-item-text {
+				padding-left: 0;
+				width: 100%;
+				max-width: 570px;
+				margin-top: 34px;
+				padding-top: 0;
+				.model-name,
+				.model-num {
+					a {
+						font-size: 28px;
+						line-height: 36px;
+						padding-bottom: 0;
+					}
+				}
+				.model-num {
+					margin-top: 12px;
+				}
+				.product-purchase {
+					.cta {
+						padding-bottom: 0;
+					}
+					a.btn {
+						font-size: 27px;
+						padding: 14px 18px 15px;
+						width: 100%;
+					}
+				}
+				.details {
+					.rating {
+						height: 30px;
+						overflow: hidden;
+						margin: 32px 0 37px 0;
+						.points_wrap {
+							line-height: 1;
+							margin-top: -60px;
+							position: relative;
+							.review_bg {
+								.review_point {
+									// height: 29px;
+								}
+								i {
+									font-size: 147px;
+									line-height: 1;
+								}
+							}
+						}
+						> span {
+							font-size: 21px;
+							line-height: 29px;
+						}
+					}
+				}
+				.product-price {
+					margin: 33px 0;
+					font-size: 36px;
+					line-height: 39px;
+					span {
+						font-size: 22px;
+						line-height: 33px;
+					}
+					.legal {
+						font-size: 28px;
+						line-height: 36px;
+						margin-top: 4px;
+					}
+				}
+			}
+			@media screen and (max-width: 479px) {
+				
+				padding: 0 13px;
+				.pooduct-item-img {
+					max-width: 180px;
+				}
+				.pooduct-item-text {
+					margin-top: 16px;
+					.model-name,
+					.model-num {
+						a {
+							font-size: 16px;
+							line-height: 20px;
+						}
+					}
+					.model-name {
+						margin-bottom: 6px;
+					}
+					.model-num {
+						margin-top: 6px;
+					}
+					.product-purchase {
+						a.btn {
+							font-size: 15px;
+							// 2017-08-18
+							line-height: 36px;
+							height: 35px;
+							padding: 0;
+						}
+					}
+					.details {
+						.rating {
+							height: 16px;
+							margin: 16px 0;
+							.points_wrap {
+								margin-top: -29px;
+								.review_bg {
+									.review_point {
+										// height: 29px;
+									}
+									i {
+										font-size: 71px;
+										line-height: 1;
+									}
+								}
+							}
+							> span {
+								font-size: 12px;
+								line-height: 14px;
+							}
+						}
+					}
+					.product-price {
+						margin: 16px 0;
+						font-size: 20px;
+						line-height: 22px;
+						span {
+							font-size: 12px;
+							line-height: 1.6;
+						}
+						.legal {
+							font-size: 16px;
+							line-height: 20px;
+							margin-top: 3px;
+						}
+					}
+				}
+			}
+		}
+
+	}
+	.module.m08 {
+		.container {
+			padding: 100px 0 80-7px 0;
+			@media screen and (max-width: 480px) {
+				padding: 50px 0 40px 0;
+			}
+			.carousel {
+				padding-bottom: 110px;
+				@media screen and (max-width: 480px) {
+					padding-bottom: 50px;
+				}
+				.slide .slide-inner .copy-area {
+					.image {
+						@media screen and (max-width: 480px) {
+							max-width: 240px;
+						}
+					}
+					.desc {
+						font-size: 28px;
+						line-height: 36px;
+						margin-top: 1px;
+						@media screen and (max-width: 480px) {
+							font-size: 16px;
+							line-height: 20px;
+						}
+					}
+				}
+				.slick-dots {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+	/* footer */
+	.m14.module {
+		padding: 0 20px;
+		.container {
+		    padding-top: 85px;
+		    padding-bottom: 116px;
+		    @media screen and (max-width: 480px) {
+		    	padding-top: 50-7px;
+		    	padding-bottom: 57px;
+		    }
+			.title {
+				max-width: 560px;
+				margin-bottom: 79px;
+				h3 {
+					font-size: 43px;
+					line-height: 50px;
+				}
+				p {
+					font-size: 28px;
+					line-height: 36px;
+					padding-top: 20px;
+				}
+				@media screen and (max-width: 480px) {
+					margin-bottom: 40-16px;
+					h3 {
+						font-size: 24px;
+						line-height: 28px;
+					}
+					p {
+						font-size: 16px;
+						line-height: 20px;
+						padding-top: 10px;
+					}
+				}
+			}
+		}
+		.carousel {
+			.slide {
+				.slide-inner {
+					.copy-area {
+						.img-link {
+							width: 160px;
+							height: 160px;
+						}
+						.desc {
+							font-size: 28px;
+							line-height: 36px;
+							margin-top: 8px;
+						}
+						@media screen and (max-width: 480px) {
+							.img-link {
+								width: 70px;
+								height: 70px;
+							}
+							.desc {
+								font-size: 16px;
+								line-height: 20px;
+								margin-top: 8px;
+							}
+						}
+					}
+				}
+			}
+			.slick-indicator {
+				margin-top: 80px;
+				@media screen and (max-width: 480px) {
+					margin-top: 31px;
+				}
+			}
+		}
+
+
+
+		/* Slick indicators */
+		.slick-dots li {
+			width: 30px!important;
+			vertical-align: middle;
+			margin:0;
+			height:20px;
+			background: none; //gp ar
+			button {
+				border: 0;
+				display: block;
+				height: 23px;
+				width: 23px;
+				line-height: 0;
+				font-size: 0;
+				padding: 5px;
+				cursor: pointer;
+			}
+			i.icon {
+				text-shadow: none;
+				background: transparent;
+				position: absolute;
+				top: 2px;
+				left: 0;
+				width: 23px;
+				height: 23px;
+				line-height: 25px;
+				text-align: center;
+				-webkit-font-smoothing: antialiased;
+				color:#fff;
+				&:before {
+					@extend .icon-circle:before;
+					font-size:15px;
+				}
+			}
+			&.slick-active i.icon {
+				color: #ba8746 !important;
+				text-shadow: none;
+			}
+		}
+		.slick-prev {
+			left: 0;
+		}
+		.slick-next {
+			right: 0;
+		}
+		@media screen and (min-width: 481px) {
+			.slick-next,
+			.slick-prev {
+				width: 50px;
+				height: 50px;
+				margin-top: -25px;
+				&:before {
+					font-size: 50px;
+				}
+			}
+			.slick-prev {
+				left: 0;
+			}
+			.slick-next {
+				right: 0;
+			}
+			.slick-dots {
+				line-height: 32px;
+				li {
+					width: 47px !important;
+					height: 32px;
+					line-height: 32px;
+
+					button,
+					i.icon {
+						width: 32px;
+						height: 32px;
+						padding: 0;
+					}
+
+					i.icon {
+						&:before {
+							font-size: 30px;
+						}
+					}
+
+				}
+			}
+			.slick-button {
+				width: 31px;
+				height: 31px;
+				line-height: 31px;
+				font-size: 31px;
+				.slick-stop {
+					background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjlDNzFBNDBCNUY5RTExRTc5MzNGOEE3MkIxQ0FFRUU0IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjlDNzFBNDBDNUY5RTExRTc5MzNGOEE3MkIxQ0FFRUU0Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OUM3MUE0MDk1RjlFMTFFNzkzM0Y4QTcyQjFDQUVFRTQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OUM3MUE0MEE1RjlFMTFFNzkzM0Y4QTcyQjFDQUVFRTQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4usVOpAAAAPklEQVR42uzNuQ0AIAwDwIgxs/8eoaLgEZQ0Z8mdrYuqiqW35GE/mo/v9mnxMXA4HA6Hw+FwOBwOh0/pAgwAKUprhre6/iUAAAAASUVORK5CYII=) no-repeat;
+					width: 31px;
+					height: 31px;
+				}
+				.slick-start {
+					background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjE3RjA3RDc4NUZBNjExRTdBRUZBODMzRDdBOTBCNkU5IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjE3RjA3RDc5NUZBNjExRTdBRUZBODMzRDdBOTBCNkU5Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MTdGMDdENzY1RkE2MTFFN0FFRkE4MzNEN0E5MEI2RTkiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MTdGMDdENzc1RkE2MTFFN0FFRkE4MzNEN0E5MEI2RTkiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7rISvxAAABTUlEQVR42mL4//8/Aw48BYhZ8MhTjBlBBA4AktgPxGFA/IaBBoCQ5SBwD4gDgfgStS1nIkKNEhAfhTqA7paDAA8QrwXielBoUc12PAkCF1gLxDz0SHC4wCVoNNyjR7CjAz0gPgnEjgNhOQiIAPEuIM6mZ5xjA7OAmI1ecY4NgLJjEBC/okewowNrID4DxEYDYTkIyALxYSCOGAjLQYALiJcBcRsh86kZ59jAViCOAuJPA2E5CKwD4mB6BTu6z5PoGeewUOsEYj8g/ohLEQsNLP4OxMlAvJyQQmpb/gSI/YH4HL2zGqiEMyHWYmpaPgeInYH4JT0rlt9AnENuY4KSOH8LxKHQFi5ZgFzLLwNxwEC0ZNYDsRWlFpNqOajgaIIWlV+okUqJDXaQZQnQ5jPVADGW34fGL917LKCUbEYLiwlZPhWI3WnVSQQBgAADAJqp1yCf3BjEAAAAAElFTkSuQmCC) no-repeat;
+					width: 31px;
+					height: 31px;
+				}
+			}
+		}
+	}
+	.contact {
+		padding-top: 95px;
+		padding-bottom: 110px;
+
+		@media screen and (max-width: 480px) {
+			padding-top: 44px;
+			padding-bottom: 60px;
+		}
+		.container {
+			padding: 0;
+		}
+		.container-title {
+			max-width: 560px;
+			margin-bottom: 54px;
+			h2 {
+				font-size: 43px;
+				line-height: 50px;
+			}
+			p {
+				font-size: 28px;
+				line-height: 36px;
+				padding-top: 17+4px;
+			}
+			@media screen and (max-width: 480px) {
+				padding: 0 20px;
+				margin-bottom: 19px;
+				h2 {
+					font-size: 24px;
+					line-height: 28px;
+				}
+				p {
+					font-size: 16px;
+					line-height: 20px;
+					padding-top: 10px;
+				}
+			}
+		}
+		.three-column {
+			width: 100%;
+			.content-block {
+				margin-top: 80px;
+				padding-top: 50px;
+				@media screen and (max-width: 480px) {
+					margin-top: 35px;
+					padding-top: 20px;
+				}
+				&:first-child {
+					margin-top: 0;
+					padding-top: 0;
+				}
+				h4,
+				p {
+					max-width: 100%;
+					padding: 0 100px;
+					@media screen and (max-width: 480px) {
+						padding: 0 20px;
+					}
+				}
+				h4 {
+					font-size: 36px;
+					line-height: 43px;
+					margin-bottom: 18px;
+					@media screen and (max-width: 480px) {
+						font-size: 20px;
+						line-height: 24px;
+						margin-bottom: 6px;
+					}
+				}
+				p {
+					font-size: 27px;
+					line-height: 34px;
+					color: #aaa;
+					a {
+						color: #aaa;
+						// br {
+						// 	display: none;
+						// }
+					}
+					@media screen and (max-width: 480px) {
+						font-size: 15px;
+						line-height: 19px;
+					}
+				}
+
+				.call-row {
+					margin-top: 25px;
+					.red-block {
+						background: #ba8746;
+						max-width: 480px;
+						padding: 17px 0;
+						font-family: "LG Smart",Tahoma,Arial,sans-serif;
+						margin-bottom: 17px;
+
+						&,
+						strong {
+							font-size: 27px;
+							line-height: 34px;
+							font-weight: normal;
+						}
+					}
+					@media screen and (max-width: 480px) {
+						margin-top: 10px;
+						margin-bottom: 0;
+						.red-block {
+							padding: 6px 0;
+							margin-bottom: 7px;
+							&,
+							strong {
+								font-size: 15px;
+								line-height: 19px;
+							}
+						}
+					}
+				}
+			}
+		}
+		.icon-wrap {
+			margin-bottom: 17px;
+			.icon {
+				width: 144px;
+				height: 144px;
+				line-height: 144px;
+				font-size: 84px;
+			}
+			@media screen and (max-width: 480px) {
+			margin-bottom: 4px;
+				.icon {
+					width: 60px;
+					height: 60px;
+					line-height: 60px;
+					font-size: 34px;
+				}
+			}
+		}
+	}
+	/* //add */
+	.contact {
+		&.m15 {
+			padding-top: 95px;
+			padding-bottom: 110px;
+			@media screen and (max-width: 480px) {
+				padding-top: 44px;
+				padding-bottom: 60px;
+			}
+			.contents-section {
+				padding: 0;
+			}
+			.container-head {
+				max-width: 560px;
+				margin-bottom: 54px;
+				h2 {
+					font-size: 43px;
+					line-height: 50px;
+				}
+				p {
+					font-size: 28px;
+					line-height: 36px;
+					padding-top: 17+4px;
+				}
+				@media screen and (max-width: 480px) {
+					padding: 0 20px;
+					margin-bottom: 19px;
+					h2 {
+						font-size: 24px;
+						line-height: 28px;
+					}
+					p {
+						font-size: 16px;
+						line-height: 20px;
+						padding-top: 10px;
+					}
+				}
+			}
+			ul {
+				width: 100%;
+				padding:0;
+				> li {
+					list-style: none;
+					margin-top: 80px;
+					padding-top: 50px;
+					border-top: solid 1px #fff;
+					@media screen and (max-width: 480px) {
+						margin-top: 35px;
+						padding-top: 20px;
+					}
+					&:first-child {
+						margin-top: 0;
+						padding-top: 0;
+						border-top:none;
+					}
+					h4,
+					p {
+						max-width: 100%;
+						padding: 0 100px;
+						@media screen and (max-width: 480px) {
+							padding: 0 20px;
+						}
+					}
+					h4 {
+						font-size: 36px;
+						line-height: 43px;
+						margin-bottom: 18px;
+						@media screen and (max-width: 480px) {
+							font-size: 20px;
+							line-height: 24px;
+							margin-bottom: 6px;
+						}
+					}
+					p {
+						font-size: 27px;
+						line-height: 34px;
+						color: #aaa;
+						a {
+							color: #aaa;
+							br {
+								display: none;
+							}
+						}
+						@media screen and (max-width: 480px) {
+							font-size: 15px;
+							line-height: 19px;
+						}
+					}
+
+					.call-row {
+						margin-top: 25px;
+						.red-block {
+							background: #ba8746;
+							max-width: 480px;
+							padding: 17px 0;
+							font-family: "LG Smart",Tahoma,Arial,sans-serif;
+							margin-bottom: 17px;
+
+							&,
+							strong {
+								font-size: 27px;
+								line-height: 34px;
+								font-weight: normal;
+							}
+						}
+						@media screen and (max-width: 480px) {
+							margin-top: 10px;
+							margin-bottom: 0;
+							.red-block {
+								padding: 6px 0;
+								margin-bottom: 7px;
+								&,
+								strong {
+									font-size: 15px;
+									line-height: 19px;
+								}
+							}
+						}
+					}
+				}
+			}
+			.icon-block {
+				margin-bottom: 17px;
+				.icon {
+					width: 144px;
+					height: 144px;
+					line-height: 144px;
+					font-size: 84px;
+				}
+				@media screen and (max-width: 480px) {
+				margin-bottom: 4px;
+					.icon {
+						width: 60px;
+						height: 60px;
+						line-height: 60px;
+						font-size: 34px;
+					}
+				}
+			}
+		}
+	}
+	/* add// */
+}
+
+
+
+.ie, .ie11, .ie10 {
+	.module.m28 .container .carousel .slide .slide-inner .copy-area .pooduct-item-text .details .rating > span {
+		line-height: 13px;
+	}
+}
+
+
+.module-layer-popup,
+#content .module.m28,
+#content .module.m08 {
+	.slick-dots {
+		left: 0;
+		li {
+			vertical-align: top;
+			button i.icon {
+				color: #dedede;
+				text-shadow: none;
+				vertical-align: top;
+				background: none; //gp ar
+				&:before {
+					@extend .icon-circle:before;
+				}
+			}
+
+			&.slick-active {
+				button {
+					i.icon {
+						color: #ba8748 !important;
+						text-shadow: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+#content .module.m28 {
+	.slick-dots {
+		li {
+			width: 19px;
+		}
+	}
+
+	.slick-prev,
+	.slick-next {
+		width: 70px;
+		height: 70px;
+		margin-top: -43px;
+	}
+	.slick-prev {
+		left: -98px;
+	}
+	.slick-next {
+		right: -98px;
+	}
+	@media screen and (max-width: 1600px) {
+		.slick-prev {
+			left: -40px;
+		}
+		.slick-next {
+			right: -40px;
+		}
+	}
+	@media screen and (max-width: 1279px) {
+		.slick-dots {
+			margin: 19px 0;
+		}
+		.slick-prev,
+		.slick-next {
+			&:before {
+				font-size: 30px;
+			}
+		}
+		.slick-prev {
+			left: 0;
+			// left: -35px;
+		}
+		.slick-next {
+			right: 0;
+			// right: -35px;
+		}
+	}
+	@media screen and (max-width: 1023px) {
+
+		.slick-dots {
+			margin: 14px 0;
+		}
+	}
+}
+
+
+.is-mobile {
+	#content .module.m28 {
+		.slick-dots {
+			margin: 75px 0 34px 0;
+			height: 30px;
+			li {
+				width: auto;
+				button {
+					width: 30px;
+					height: 30px;
+					i.icon {
+						font-size: 15px;
+						line-height: 30px;
+						&:before {
+							font-size: 15px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	#content .module.m28,
+	#content .module.m08,
+	.module-layer-popup {
+		.slick-dots {
+			@media screen and (max-width: 479px) {
+				margin: 20px 0;
+				height: 9px;
+				// li {
+				// 	vertical-align: top;
+				// 	button {
+				// 		width: 16px;
+				// 		height: 20px;
+				// 		i.icon {
+				// 			font-size: 10px;
+				// 			line-height: 23px;
+				// 			&:before {
+				// 				font-size: 10px;
+				// 			}
+				// 		}
+				// 	}
+				// }
+				li {
+					width: 14px;
+					margin: 0;
+					button {
+						padding: 7px;
+						width: auto;
+						height: auto;
+						i.icon {
+							&:before {
+								display:none;
+							}
+
+							width: 8px;
+							height: 8px;
+							border-radius: 50%;
+						}
+					}
+					button i.icon {
+						background: #dedede;
+					}
+					&.slick-active {
+						button i.icon {
+							background: #ba8746;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/* LGEGMO-3666, PJTPDP-23 : 20180109 add */
+.m40-media span[itemprop="description"],.m40-media span[itemprop="name"] {display: inline-block;text-indent: -99999px; position: absolute;}
+/* //LGEGMO-3666, PJTPDP-23 : 20180109 add */
